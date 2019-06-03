@@ -143,7 +143,6 @@ kasumi-config: &kasumi-config
   firmware:
     <<: *firmware_common
   $firmware-target: "aleena"
-  $audio-config: "kasumi"
   touch:
     <<: *touch_common
     $touch_present: "yes"
@@ -160,6 +159,7 @@ kasumi-config: &kasumi-config
 
 kasumi360-config: &kasumi360-config
   <<: *kasumi-config
+  $audio-config: "kasumi"
   touch:
     <<: *touch_common
     $touch_present: "yes"
