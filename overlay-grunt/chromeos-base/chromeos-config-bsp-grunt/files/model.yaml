@@ -66,13 +66,13 @@ base_config: &base_config
     key-id: "{{$key-id}}"
     signature-id: "{{name}}"
 
-  firmware: &firmware_common
-    build-targets:
-      coreboot: "{{$firmware-target}}"
-      depthcharge: "grunt"
-      ec: "{{$firmware-target}}"
-      libpayload: "grunt"
-      u-boot: "coreboot"
+firmware: &firmware_common
+  build-targets:
+    coreboot: "{{$firmware-target}}"
+    depthcharge: "grunt"
+    ec: "{{$firmware-target}}"
+    libpayload: "grunt"
+    u-boot: "coreboot"
 
 grunt-config: &grunt-config
   <<: *base_config
@@ -187,6 +187,19 @@ liara-config: &liara-config
       - source: "touch/raydium/raydium_0xa2221840_1.3.bin"
         destination: "{{$fw_dest}}/raydium_0xa2221840_1.3.bin"
         symlink: "{{$fw_root}}/raydium_0xa2221840.fw"
+
+treeya-config: &treeya-config
+  <<: *base_config
+  firmware:
+    <<: *firmware_common
+  touch:
+    <<: *touch_common
+
+treeya360-config: &treeya360-config
+  <<: *treeya-config
+  $audio-config: "treeya"
+  firmware:
+    $firmware-target: "treeya"
 
 chromeos:
   devices:
@@ -346,3 +359,30 @@ chromeos:
         - $sku-id: 135
           $has-keyboard-backlight: "1"
           config: *liara-config
+
+    - $device-name: "treeya"
+      products:
+        - $brand-code: "TBD"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 160
+          config: *treeya-config
+
+    - $device-name: "treeya360"
+      products:
+        - $brand-code: "TBD"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 168
+          config: *treeya360-config
+
+        - $sku-id: 169
+          config: *treeya360-config
+
+        - $sku-id: 174
+          config: *treeya360-config
+
+        - $sku-id: 175
+          config: *treeya360-config
