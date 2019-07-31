@@ -209,6 +209,10 @@ chromeos:
         - $sku-id-val: 34
           $num-mic-locations: 2
           config: *convertible_config
+        - $sku-id-val: 35
+          $num-mic-locations: 2
+          $stylus-category: "external"
+          config: *convertible_config
     - $device-name: "orbatrix"
       $fw-name: "Fleex"
       $num-mic-locations: 1
