@@ -8,14 +8,11 @@
 # the package, and it prints a string on stdout with the numerical version
 # number for said repo.
 
-# Matching regexp for all known kernel release tags to date.
-PATTERN="v[234].*"
-
 if [ ! -d "$1" ] ; then
     exit
 fi
 
 cd "$1" || exit
 
-git describe --match "${PATTERN}" --abbrev=0 HEAD | grep -E "${PATTERN}" |
-  sed s/v\\.*//g | sed s/-/_/g
+# Strip any .0 fix level from the version string.
+make kernelversion | sed -Ee 's/([0-9]*\.[0-9]*)\.0/\1/' -e s/-/_/g
