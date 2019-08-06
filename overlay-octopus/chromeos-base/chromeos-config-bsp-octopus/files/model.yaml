@@ -455,6 +455,18 @@ chromeos:
           config: *convertible_config
         - $sku-id-val: 52
           config: *convertible_config
+    - $device-name: "blooglet"
+      $fw-name: "Bloog"
+      $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
+      skus:
+        - $sku-id-val: 65
+          $has-keyboard-backlight: 1
+          $keyboard-backlight-no-als-brightness: 20
+          config: *clamshell_touchscreen_config
+        - $sku-id-val: 66
+          config: *clamshell_touchscreen_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
