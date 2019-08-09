@@ -1,1 +1,0 @@
-kubernetes-1.14.4.ebuild
