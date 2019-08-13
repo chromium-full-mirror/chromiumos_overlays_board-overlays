@@ -106,7 +106,7 @@ chromeos:
       $touchpad-wakeup: "1"
       products:
         - $marketing-name: "TBD"
-          $brand-code: "SOCA"
+          $brand-code: "KXUH"
           $key-id: "AKALI"
       skus:
         - $sku-id: 0x29e1
