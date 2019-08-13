@@ -89,7 +89,7 @@ chromeos:
     - $device-name: "akali"
       products:
         - $marketing-name: "TBD"
-          $brand-code: "SOCA"
+          $brand-code: "KXUH"
           $key-id: "AKALI"
       skus:
         - $sku-id: 0x29e1
