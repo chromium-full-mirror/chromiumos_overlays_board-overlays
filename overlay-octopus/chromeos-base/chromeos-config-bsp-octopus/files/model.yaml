@@ -344,6 +344,20 @@ chromeos:
           config: *clamshell_config
         - $sku-id-val: 18
           config: *clamshell_touchscreen_config
+    - $device-name: "dorp"
+      $fw-name: "Meep"
+      $num-mic-locations: 1
+      skus:
+        - $sku-id-val: 33
+          config: *clamshell_config
+        - $sku-id-val: 34
+          $has-keyboard-backlight: 1
+          config: *clamshell_config
+        - $sku-id-val: 35
+          config: *clamshell_touchscreen_config
+        - $sku-id-val: 36
+          $has-keyboard-backlight: 1
+          config: *clamshell_touchscreen_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
