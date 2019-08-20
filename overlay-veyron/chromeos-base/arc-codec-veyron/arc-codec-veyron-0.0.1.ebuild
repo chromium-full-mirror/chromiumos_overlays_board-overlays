@@ -10,7 +10,7 @@ DESCRIPTION="Install codec configuration for ARC++"
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-IUSE="android-container-nyc"
+IUSE="android-container-nyc kernel-4_19"
 S="${WORKDIR}"
 
 RDEPEND="!chromeos-base/arc-codec-software"
@@ -18,7 +18,9 @@ RDEPEND="!chromeos-base/arc-codec-software"
 src_install() {
 	insinto "${ARC_VENDOR_DIR}/etc/"
 
-	if use android-container-nyc; then
+	if use kernel-4_19; then
+		ARC_CODEC_DIR="${FILESDIR}/kernelnext"
+	elif use android-container-nyc; then
 		ARC_CODEC_DIR="${FILESDIR}/nyc"
 	else
 		# Adopt for pic and future desserts
