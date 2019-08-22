@@ -510,6 +510,12 @@ chromeos:
           config: *clamshell_touchscreen_config
         - $sku-id-val: 66
           config: *clamshell_touchscreen_config
+        - $sku-id-val: 67
+          $has-keyboard-backlight: 1
+          $keyboard-backlight-no-als-brightness: 20
+          config: *clamshell_config
+        - $sku-id-val: 68
+          config: *clamshell_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
