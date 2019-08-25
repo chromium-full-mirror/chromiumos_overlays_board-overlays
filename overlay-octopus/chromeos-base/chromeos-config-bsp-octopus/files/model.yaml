@@ -534,3 +534,12 @@ chromeos:
           config: *clamshell_config
         - $sku-id-val: 17
           config: *clamshell_config
+        - $sku-id-val: 18
+          config: *clamshell_config
+    - $device-name: "garg360"
+      $fw-name: "Garg"
+      skus:
+        - $sku-id-val: 37
+          $stylus-category: "internal"
+          $num-mic-locations: 1
+          config: *convertible_config
