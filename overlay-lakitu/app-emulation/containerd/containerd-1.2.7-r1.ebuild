@@ -1,1 +1,0 @@
-containerd-1.2.7.ebuild
