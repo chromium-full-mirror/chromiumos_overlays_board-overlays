@@ -357,7 +357,7 @@ chromeos:
 
     - $device-name: "treeya"
       products:
-        - $brand-code: "ZZCR"   # TODO: Update when assigned
+        - $brand-code: "BAUA"
           $marketing-name: "TBD"
           $key-id: "DEFAULT"
       skus:
@@ -366,7 +366,7 @@ chromeos:
 
     - $device-name: "treeya360"
       products:
-        - $brand-code: "ZZCR"   # TODO: Update when assigned
+        - $brand-code: "XFUX"
           $marketing-name: "TBD"
           $key-id: "DEFAULT"
       skus:
