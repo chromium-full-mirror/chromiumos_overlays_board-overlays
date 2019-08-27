@@ -230,6 +230,14 @@ chromeos:
           config: *device_specific_audio_device_config
         - $sku-id: 0x10018e1
           config: *device_specific_audio_device_config
+        - $sku-id: 0x10118e2
+          config: *device_specific_audio_device_config
+        - $sku-id: 0x10018e2
+          config: *device_specific_audio_device_config
+        - $sku-id: 0x10118e0
+          config: *device_specific_audio_device_config
+        - $sku-id: 0x10018e0
+          config: *device_specific_audio_device_config
     - $device-name: "bard"
       $touchpad-wakeup: "1"
       products:
@@ -248,4 +256,8 @@ chromeos:
         - $sku-id: 0x1009ce0
           config: *device_specific_audio_device_config
         - $sku-id: 0x1009ce2
+          config: *device_specific_audio_device_config
+        - $sku-id: 0x1019ce0
+          config: *device_specific_audio_device_config
+        - $sku-id: 0x1019ce2
           config: *device_specific_audio_device_config
