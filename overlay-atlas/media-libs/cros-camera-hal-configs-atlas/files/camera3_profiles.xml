@@ -281,7 +281,7 @@
 
         <Common>
             <faceAeEnabled value="true"/>
-            <faceEngineRunningInterval value="1"/>
+            <faceEngineRunningInterval value="3"/>
         </Common>
 <!-- ******************PSL specific section end **************************************************************-->
     </Profiles>
