@@ -194,8 +194,7 @@ treeya-config: &treeya-config
 treeya360-config: &treeya360-config
   <<: *treeya-config
   $audio-config: "treeya"
-  firmware:
-    $firmware-target: "treeya"
+  $firmware-target: "treeya"
 
 chromeos:
   devices:
