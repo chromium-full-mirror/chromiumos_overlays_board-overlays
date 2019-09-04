@@ -30,5 +30,5 @@ src_install() {
 
 	# Install audio config files
 	local audio_config_dir="${FILESDIR}/audio-config"
-	install_audio_config auron_yuna "${audio_config_dir}"
+	install_audio_configs auron_yuna "${audio_config_dir}"
 }
