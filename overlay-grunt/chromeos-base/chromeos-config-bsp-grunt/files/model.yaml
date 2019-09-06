@@ -9,7 +9,8 @@ audio_common: &audio_common
   $ucm_root: "/usr/share/alsa/ucm"
   $card: "acpd7219m98357"
 
-  cras-config-dir: "{{$audio-config}}"
+  $sub_cras_config: ""
+  cras-config-dir: "{{$audio-config}}{{$sub_cras_config}}"
 
   files:
     - source: "cras-config/{{cras-config-dir}}/{{$card}}"
@@ -268,9 +269,27 @@ chromeos:
           $key-id: "CAREENA"
       skus:
         - $sku-id: 32
+          $sub_cras_config: ""
           config: *barla-config
 
         - $sku-id: 33
+          $sub_cras_config: ""
+          config: *barla-config
+
+        - $sku-id: 40
+          $sub_cras_config: ".refresh"
+          config: *barla-config
+
+        - $sku-id: 41
+          $sub_cras_config: ".refresh"
+          config: *barla-config
+
+        - $sku-id: 42
+          $sub_cras_config: ".refresh"
+          config: *barla-config
+
+        - $sku-id: 43
+          $sub_cras_config: ".refresh"
           config: *barla-config
 
     - $device-name: "aleena"
