@@ -139,8 +139,8 @@ aleena-config: &aleena-config
     <<: *touch_common
     $touch_present: "yes"
     files:
-      - source: "touch/raydium/raydium_0xa222173f_2.6.bin"
-        destination: "{{$fw_dest}}/raydium_0xa222173f_2.6.bin"
+      - source: "touch/raydium/raydium_0xa222173f_2.7.bin"
+        destination: "{{$fw_dest}}/raydium_0xa222173f_2.7.bin"
         symlink: "{{$fw_root}}/raydium_0xa222173f.fw"
       - source: "touch/elan/176.0_4.0.bin"
         destination: "{{$fw_dest}}/176.0_4.0.bin"
