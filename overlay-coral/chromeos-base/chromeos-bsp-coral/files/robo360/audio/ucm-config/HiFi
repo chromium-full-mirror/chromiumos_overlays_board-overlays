@@ -106,12 +106,8 @@ SectionDevice."Front Mic".0 {
 		MaxSoftwareGain "2000"
 	}
 	EnableSequence [
-		cdev "hw:bxtda7219max"
-		cset "name='media0_out mo dmic01_hifi_in mi Switch' on"
 	]
 	DisableSequence [
-		cdev "hw:bxtda7219max"
-		cset "name='media0_out mo dmic01_hifi_in mi Switch' off"
 	]
 }
 
@@ -122,12 +118,8 @@ SectionDevice."Rear Mic".0 {
 		MaxSoftwareGain "2000"
 	}
 	EnableSequence [
-		cdev "hw:bxtda7219max"
-		cset "name='media0_out mo dmic01_hifi_in mi Switch' on"
 	]
 	DisableSequence [
-		cdev "hw:bxtda7219max"
-		cset "name='media0_out mo dmic01_hifi_in mi Switch' off"
 	]
 }
 
