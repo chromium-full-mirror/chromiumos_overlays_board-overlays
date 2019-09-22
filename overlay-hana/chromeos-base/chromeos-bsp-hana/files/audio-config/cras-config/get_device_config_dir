@@ -12,6 +12,8 @@ elif [ "${CHASSIS}" = "SYCAMORE" ]; then
         CHASSIS_ID="SYCAMORE"
 elif [ "${CHASSIS}" = "SYCAMORE360" ]; then
         CHASSIS_ID="SYCAMORE360"
+elif [ "${CHASSIS}" = "TELESU" ]; then
+        CHASSIS_ID="TELESU"
 fi
 
 echo "/etc/cras/${CHASSIS_ID}"
