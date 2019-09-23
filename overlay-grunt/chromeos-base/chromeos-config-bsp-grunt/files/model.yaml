@@ -9,18 +9,19 @@ audio_common: &audio_common
   $ucm_root: "/usr/share/alsa/ucm"
   $card: "acpd7219m98357"
 
+  $ucm_extra_suffix: ""
   $sub_cras_config: ""
   cras-config-dir: "{{$audio-config}}{{$sub_cras_config}}"
-
+  ucm-suffix: "{{$num-mic-locations}}mic{{$ucm_extra_suffix}}"
   files:
     - source: "cras-config/{{cras-config-dir}}/{{$card}}"
       destination: "{{$cras_root}}/{{cras-config-dir}}/{{$card}}"
     - source: "cras-config/{{cras-config-dir}}/dsp.ini"
       destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
-    - source: "ucm-config/{{$card}}/HiFi.conf"
-      destination: "{{$ucm_root}}/{{$card}}/HiFi.conf"
-    - source: "ucm-config/{{$card}}/{{$card}}.conf"
-      destination: "{{$ucm_root}}/{{$card}}/{{$card}}.conf"
+    - source: "ucm-config/{{$card}}.{{$num-mic-locations}}mic/HiFi.conf"
+      destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+    - source: "ucm-config/{{$card}}.{{$num-mic-locations}}mic/{{$card}}.{{$num-mic-locations}}mic.conf"
+      destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{$num-mic-locations}}mic.conf"
 
 touch_common: &touch_common
   $touch_present: "no"
@@ -218,6 +219,7 @@ treeya360-config: &treeya360-config
 chromeos:
   devices:
     - $device-name: "grunt"
+      $num-mic-locations: 1
       products:
         - $brand-code: "ZZCR"
           $marketing-name: "TBD"
@@ -242,6 +244,7 @@ chromeos:
           config: *grunt-config
 
     - $device-name: "careena"
+      $num-mic-locations: 1
       products:
         - $brand-code: "HHRN"
           $marketing-name: "TBD"
@@ -276,6 +279,7 @@ chromeos:
           config: *careena-config
 
     - $device-name: "barla"
+      $num-mic-locations: 1
       products:
         - $marketing-name: "TBD"
           $key-id: "CAREENA"
@@ -299,6 +303,7 @@ chromeos:
           config: *mordin-config
 
     - $device-name: "aleena"
+      $num-mic-locations: 1
       products:
         - $brand-code: "MXUY"
           $marketing-name: "TBD"
@@ -331,6 +336,7 @@ chromeos:
           config: *aleena-config
 
     - $device-name: "kasumi"
+      $num-mic-locations: 1
       products:
         - $brand-code: "UGAY"
           $marketing-name: "TBD"
@@ -343,6 +349,7 @@ chromeos:
           config: *kasumi-config
 
     - $device-name: "kasumi360"
+      $num-mic-locations: 1
       products:
         - $brand-code: "OFPE"
           $marketing-name: "TBD"
@@ -352,6 +359,7 @@ chromeos:
           config: *kasumi360-config
 
     - $device-name: "liara"
+      $num-mic-locations: 1
       products:
         - $brand-code: "JFZB"
           $marketing-name: "TBD"
@@ -386,6 +394,7 @@ chromeos:
           config: *liara-config
 
     - $device-name: "treeya"
+      $num-mic-locations: 1
       products:
         - $brand-code: "BAUA"
           $marketing-name: "TBD"
@@ -401,13 +410,17 @@ chromeos:
           $key-id: "DEFAULT"
       skus:
         - $sku-id: 168
+          $num-mic-locations: 1
           config: *treeya360-config
 
         - $sku-id: 169
+          $num-mic-locations: 2
           config: *treeya360-config
 
         - $sku-id: 174
+          $num-mic-locations: 1
           config: *treeya360-config
 
         - $sku-id: 175
+          $num-mic-locations: 2
           config: *treeya360-config
