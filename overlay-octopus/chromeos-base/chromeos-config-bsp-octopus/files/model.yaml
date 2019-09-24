@@ -27,6 +27,21 @@ unprovisioned-convertible-config: &unprovisioned_convertible_config
     $stylus-category: "none"
     stylus-category: "{{$stylus-category}}"
 
+bluetooth-flags: &bluetooth_flags
+  enable-suspend-management: true
+
+bluetooth-default: &bluetooth_default
+  config:
+    build-path: "bluetooth/main.conf"
+    system-path: "/etc/bluetooth/main.conf"
+  flags: *bluetooth_flags
+
+bluetooth-stop-on-suspend: &bluetooth_stop_on_suspend
+  <<: *bluetooth_default
+  flags:
+    <<: *bluetooth_flags
+    stop-on-suspend: true
+
 device-config: &device_config
   <<: *unprovisioned_config
   audio:
@@ -58,6 +73,7 @@ device-config: &device_config
         # ALSA UCM SectionUseCase configuration (defined in UCM conf file)
         - source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}mic/HiFi.conf"
           destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+  bluetooth: *bluetooth_default
   camera:
     $camera-clock: "monotonic"
     count: "{{$num-mic-locations}}"
@@ -549,15 +565,23 @@ chromeos:
         - $sku-id-val: 65
           $has-keyboard-backlight: 1
           $keyboard-backlight-no-als-brightness: 20
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 66
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 67
           $has-keyboard-backlight: 1
           $keyboard-backlight-no-als-brightness: 20
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 68
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            bluetooth: *bluetooth_stop_on_suspend
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
