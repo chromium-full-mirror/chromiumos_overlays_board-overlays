@@ -121,7 +121,14 @@ careena-config: &careena-config
 
 barla-config: &barla-config
   <<: *careena-config
+  $brand-code: "PXDO"
   $firmware-target: "careena"
+  $sub_cras_config: ""
+
+mordin-config: &mordin-config
+  <<: *barla-config
+  $brand-code: "ZKJH"
+  $sub_cras_config: ".refresh"
 
 aleena-config: &aleena-config
   <<: *base_config
@@ -264,33 +271,26 @@ chromeos:
 
     - $device-name: "barla"
       products:
-        - $brand-code: "PXDO"
-          $marketing-name: "TBD"
+        - $marketing-name: "TBD"
           $key-id: "CAREENA"
       skus:
         - $sku-id: 32
-          $sub_cras_config: ""
           config: *barla-config
 
         - $sku-id: 33
-          $sub_cras_config: ""
           config: *barla-config
 
         - $sku-id: 40
-          $sub_cras_config: ".refresh"
-          config: *barla-config
+          config: *mordin-config
 
         - $sku-id: 41
-          $sub_cras_config: ".refresh"
-          config: *barla-config
+          config: *mordin-config
 
         - $sku-id: 42
-          $sub_cras_config: ".refresh"
-          config: *barla-config
+          config: *mordin-config
 
         - $sku-id: 43
-          $sub_cras_config: ".refresh"
-          config: *barla-config
+          config: *mordin-config
 
     - $device-name: "aleena"
       products:
