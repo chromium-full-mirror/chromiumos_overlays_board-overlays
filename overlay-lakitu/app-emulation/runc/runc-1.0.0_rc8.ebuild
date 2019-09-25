@@ -34,6 +34,9 @@ src_prepare() {
 	pushd "src/${EGO_PN}" || die
 	eapply "${FILESDIR}/1.0.0_rc6-Use-GO-cross-compiler.patch"
 	eapply "${FILESDIR}/1.0.0_rc8-Do-not-clone-proc-self-exe-in-case-of-lakitu.patch"
+	# cherry-pick from upstream commit
+	# https://github.com/opencontainers/runc/pull/2117/commits/518c855833c4920f9901f47f2a520425a33cceb4
+	eapply "${FILESDIR}/1.0.0_rc8-Remove-libcontainer-detection-for-systemd-features.patch"
 	default
 	sed -i -e "/^GIT_BRANCH/d"\
 		-e "/^GIT_BRANCH_CLEAN/d"\
