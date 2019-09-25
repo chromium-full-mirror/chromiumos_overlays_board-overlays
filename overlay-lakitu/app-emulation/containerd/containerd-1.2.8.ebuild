@@ -48,6 +48,9 @@ PATCHES=(
 	# 2. set containerd path to /usr/bin/containerd
 	# 3. set OOM score to -999
 	"${FILESDIR}"/1.2.6-customize-containerd-service.patch
+	# lakitu: cherry-pick https://github.com/containerd/cri/pull/1084 to
+	# containerd v1.2.
+	"${FILESDIR}"/1.2.8-improve-sandbox-emptydir-performance.patch
 )
 
 RESTRICT="test"
