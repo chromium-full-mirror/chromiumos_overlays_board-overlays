@@ -1,0 +1,29 @@
+From 5c55cf93de44131f77e84e5e98ae4eb4b39533b7 Mon Sep 17 00:00:00 2001
+From: Yu Watanabe <watanabe.yu+github@gmail.com>
+Date: Fri, 20 Jan 2017 09:46:47 +0900
+Subject: [PATCH 4/6] core: add missing unit_add_to_load_queue() to
+ mount_setup_new_unit()
+
+unit_add_to_load_queue was present in the code before 03b8cfede9ff3441b1ec8ff5cdf6876294846aa4,
+and was inadvertently dropped.
+
+Fixes #5105
+---
+ src/core/mount.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/core/mount.c b/src/core/mount.c
+index 037ab93150..7b031dbbb6 100644
+--- a/src/core/mount.c
++++ b/src/core/mount.c
+@@ -1417,6 +1417,7 @@ static int mount_setup_new_unit(
+                         return r;
+         }
+ 
++        unit_add_to_load_queue(u);
+         flags->is_mounted = true;
+         flags->just_mounted = true;
+         flags->just_changed = true;
+-- 
+2.23.0.351.gc4317032e6-goog
+

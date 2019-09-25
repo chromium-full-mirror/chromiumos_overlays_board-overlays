@@ -1,0 +1,35 @@
+From 376b43320aa09eca6382eb3fab36e8ba287b3158 Mon Sep 17 00:00:00 2001
+From: Vaibhav Rustagi <vaibhavrustagi@google.com>
+Date: Tue, 24 Sep 2019 23:05:18 -0700
+Subject: [PATCH 5/6] core: Fix edge case when processing /proc/self/mountinfo
+
+Currently, if there are two /proc/self/mountinfo entries with the same
+mount point path, the mount setup flags computed for the second of
+these two entries will overwrite the mount setup flags computed for
+the first of these two entries. This is the root cause of issue #7798.
+This patch changes mount_setup_existing_unit to prevent the
+just_mounted mount setup flag from being overwritten if it is set to
+true. This will allow all mount units created from /proc/self/mountinfo
+entries to be initialized properly.
+
+Fixes: #7798
+---
+ src/core/mount.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/core/mount.c b/src/core/mount.c
+index 7b031dbbb6..c9c247d544 100644
+--- a/src/core/mount.c
++++ b/src/core/mount.c
+@@ -1457,7 +1457,7 @@ static int mount_setup_existing_unit(
+ 
+         flags->just_changed = r1 > 0 || r2 > 0 || r3 > 0;
+         flags->is_mounted = true;
+-        flags->just_mounted = !MOUNT(u)->from_proc_self_mountinfo;
++        flags->just_mounted = !MOUNT(u)->from_proc_self_mountinfo || MOUNT(u)->just_mounted;
+ 
+         MOUNT(u)->from_proc_self_mountinfo = true;
+ 
+-- 
+2.23.0.351.gc4317032e6-goog
+

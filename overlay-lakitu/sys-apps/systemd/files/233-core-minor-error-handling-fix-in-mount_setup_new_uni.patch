@@ -1,0 +1,27 @@
+From ab9bfc431e81f1372b23582590c65a2ef32f8aa1 Mon Sep 17 00:00:00 2001
+From: Yu Watanabe <watanabe.yu+github@gmail.com>
+Date: Fri, 20 Jan 2017 09:45:58 +0900
+Subject: [PATCH 3/6] core: minor error handling fix in mount_setup_new_unit()
+
+The function mount_setup_new_unit() should return -ENOMEM
+if at least one of `strdup` calls are failed.
+---
+ src/core/mount.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/core/mount.c b/src/core/mount.c
+index 623143f652..037ab93150 100644
+--- a/src/core/mount.c
++++ b/src/core/mount.c
+@@ -1390,7 +1390,7 @@ static int mount_setup_new_unit(
+ 
+         u->source_path = strdup("/proc/self/mountinfo");
+         MOUNT(u)->where = strdup(where);
+-        if (!u->source_path && !MOUNT(u)->where)
++        if (!u->source_path || !MOUNT(u)->where)
+                 return -ENOMEM;
+ 
+         /* Make sure to initialize those fields before mount_is_extrinsic(). */
+-- 
+2.23.0.351.gc4317032e6-goog
+

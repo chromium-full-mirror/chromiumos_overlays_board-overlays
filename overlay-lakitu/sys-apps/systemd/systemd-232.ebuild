@@ -190,14 +190,25 @@ src_prepare() {
 		"${FILESDIR}"/232-0003-resolved-define-various-packet-sizes-as-unsigned.patch
 		# Lakitu: fix for upstream bug https://github.com/systemd/systemd/issues/4747
 		"${FILESDIR}"/232-avoid-calling-unit-free-null-in-device-setup.patch
-		# Lakitu: fix for upstream bug https://github.com/systemd/systemd/issues/7798
-		"${FILESDIR}"/232-mount-prevent-zombie-units.patch
 		# Lakitu: Fix compilation error with util-linux 2.32-r3.
 		"${FILESDIR}"/232-core-don-t-include-libmount-h-in-a-header-file.patch
 		# Lakitu: Fix compilation error with glibc 2.27
 		"${FILESDIR}"/232-xlocale.patch
 		# Lakitu: Fix compilation error with glibc 2.27
 		"${FILESDIR}"/232-memfd_create.patch
+		# Lakitu: Fix for separating the process of iterating over existing and new
+		# mount units. These fix are ported from upstream systemd-233.
+		# https://github.com/systemd/systemd/commit/ad2706db7cceba69203f3ac2b6ef65d7490c5f29
+		"${FILESDIR}"/233-core-rework-logic-to-determine-when-we-decide-to-add.patch
+		# https://github.com/systemd/systemd/commit/03b8cfede9ff3441b1ec8ff5cdf6876294846aa4
+		"${FILESDIR}"/233-core-make-sure-to-init-mount-params-before-calling-m.patch
+		# https://github.com/systemd/systemd/commit/a51ee72d2eb40e9747418fa4de4d3a266ca0a4f5
+		"${FILESDIR}"/233-core-minor-error-handling-fix-in-mount_setup_new_uni.patch
+		# https://github.com/systemd/systemd/commit/cfcd431890e7b8cf6fb773a3d1c8ca86b52bfd99
+		"${FILESDIR}"/233-core-add-missing-unit_add_to_load_queue-to-mount_set.patch
+		# Lakitu: fix for upstream bug https://github.com/systemd/systemd/issues/7798
+		# https://github.com/systemd/systemd/commit/65d36b49508a53e56bae9609ff00fdc3de340608
+		"${FILESDIR}"/237-core-Fix-edge-case-when-processing-proc-self-mountin.patch
 	)
 
 	[[ -d "${WORKDIR}"/patches ]] && PATCHES+=( "${WORKDIR}"/patches )
@@ -208,6 +219,8 @@ src_prepare() {
 
 	epatch_user
 	eautoreconf
+	echo "${D}"
+	echo "${S}"
 }
 
 src_configure() {
