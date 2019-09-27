@@ -169,6 +169,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "dopefish"
+        - $whitelabel-tag: "laser-r"
       skus:
         - $sku-id-val: 2
           $num-mic-locations: 1
@@ -186,13 +187,16 @@ chromeos:
           config: *convertible_wl_config
     - $device-name: "laser14"
       $fw-name: "Phaser"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "laser14-r"
       skus:
         - $sku-id-val: 6
           $num-mic-locations: 1
-          config: *clamshell_config
+          config: *clamshell_wl_config
         - $sku-id-val: 7
           $num-mic-locations: 1
-          config: *clamshell_config
+          config: *clamshell_wl_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
