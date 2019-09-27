@@ -3,15 +3,15 @@
 
 EAPI="6"
 
-CROS_WORKON_COMMIT="e8cfa1cbc8b33e22bc167690a705529a73bbd4d0"
-CROS_WORKON_TREE="a0dc873592500e54b8192e6bdff3d5f3ec8a211a"
+CROS_WORKON_COMMIT="ced26b9d9ab028ccd75eb714e4f752b87a8620af"
+CROS_WORKON_TREE="21bea4a1ca0a96c1bc6bbb6464fb17b52faed5ca"
 inherit cros-constants
 
 CROS_WORKON_PROJECT="chromiumos/overlays/board-overlays"
 CROS_WORKON_LOCALNAME="../overlays/"
 CROS_WORKON_SUBTREE="overlay-grunt/chromeos-base/chromeos-config-bsp-grunt/files"
 
-inherit cros-unibuild cros-workon
+inherit cros-model cros-unibuild cros-workon
 
 DESCRIPTION="Chrome OS Model configuration package for grunt"
 HOMEPAGE="http://src.chromium.org"
