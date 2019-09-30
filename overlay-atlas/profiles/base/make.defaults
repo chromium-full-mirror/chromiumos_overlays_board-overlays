@@ -17,7 +17,8 @@ USE="${USE} atlas"
 USE="${USE} als"
 
 # Enable background blur.
-USE="${USE} background_blur"
+# Disable this until compositor bug crbug.com/1008740 is fixed.
+# USE="${USE} background_blur"
 
 # Enable keyboard backlight control
 USE="${USE} has_keyboard_backlight"
