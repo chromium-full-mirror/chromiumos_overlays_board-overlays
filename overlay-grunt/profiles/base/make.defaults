@@ -10,8 +10,6 @@ USE=""
 
 USE="${USE} grunt"
 
-USE="${USE} cros_ec"
-
 USE="${USE} als touchview"
 
 # Use ext4 crypto
