@@ -34,10 +34,10 @@
             <Limit name="measured-frame-rate-1920x1080" range="13-25" />
         </MediaCodec>
         <MediaCodec name="OMX.arc.h264.encode" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="161-174" />
-            <Limit name="measured-frame-rate-720x480" range="114-135" />
-            <Limit name="measured-frame-rate-1280x720" range="86-99" />
-            <Limit name="measured-frame-rate-1920x1080" range="61-61" />
+            <Limit name="measured-frame-rate-320x240" range="44-96" />
+            <Limit name="measured-frame-rate-720x480" range="32-69" />
+            <Limit name="measured-frame-rate-1280x720" range="25-54" />
+            <Limit name="measured-frame-rate-1920x1080" range="19-41" />
         </MediaCodec>
     </Encoders>
     <Decoders>
