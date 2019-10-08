@@ -34,7 +34,7 @@ dptf_get_override() {
     i5-MT-8)  dptf_file="1098_0987.bin" ;;
     i5-K4-16) dptf_file="1098_0987.bin" ;;
     i5-MT-16) dptf_file="1199_0886.bin" ;;
-    i7-K4-16) dptf_file="2200_0987.bin" ;;
+    i7-K4-16) dptf_file="1199_0886.bin" ;;
     i7-MT-16) dptf_file="1199_1098.bin" ;;
   esac
 
