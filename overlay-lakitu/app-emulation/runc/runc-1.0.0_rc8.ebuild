@@ -33,6 +33,7 @@ RDEPEND="
 src_prepare() {
 	pushd "src/${EGO_PN}" || die
 	eapply "${FILESDIR}/1.0.0_rc6-Use-GO-cross-compiler.patch"
+	eapply "${FILESDIR}/1.0.0_rc8-Do-not-clone-proc-self-exe-in-case-of-lakitu.patch"
 	default
 	sed -i -e "/^GIT_BRANCH/d"\
 		-e "/^GIT_BRANCH_CLEAN/d"\
