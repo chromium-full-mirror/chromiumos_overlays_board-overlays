@@ -53,8 +53,20 @@ jacuzzi-config: &jacuzzi_config
   identity:
     <<: *identity
 
+juniper-config: &juniper_config
+  <<: *common_config
+  $fw-name: "google,juniper"
+  $fw-build-name: "juniper"
+  $key-id: "JUNIPER"
+  identity:
+    <<: *identity
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
       skus:
         - config: *jacuzzi_config
+  devices:
+    - $device-name: "juniper"
+      skus:
+        - config: *juniper_config
