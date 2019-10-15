@@ -1,0 +1,9 @@
+# Copyright 2019 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Realtek chips will lose firmware and reset on suspend unless the chip's wake
+# source is enabled. Until we manage this with powerd, enable wakeup by default
+ACTION=="add", DRIVERS=="usb", SUBSYSTEM=="usb", \
+  ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="b00c", \
+  RUN+="/bin/sh -c 'echo enabled > /sys$env{DEVPATH}/power/wakeup'"
