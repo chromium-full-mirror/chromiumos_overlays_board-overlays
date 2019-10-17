@@ -85,7 +85,7 @@ krane-config: &krane_config
   $fw-name: "google,krane"
   $fw-build-name: "krane"
   $key-id: "KRANE"
-  $fw-base-build-name: ""
+  $fw-base-build-name: "masterball"
   power:
     <<: *power_common
     charging-ports: |
