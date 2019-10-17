@@ -11,7 +11,7 @@ if [[ ${PV} = *9999* ]]; then
 	EGIT_CHECKOUT_DIR="${WORKDIR}/${P}/src/${EGO_PN}"
 	inherit git-r3
 else
-	DOCKER_GITCOMMIT="6a30dfc"
+	DOCKER_GITCOMMIT="a872fc2"
 	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	[ "$DOCKER_GITCOMMIT" ] || die "DOCKER_GITCOMMIT must be added manually for each bump!"
@@ -65,7 +65,7 @@ RESTRICT="installsources strip"
 S="${WORKDIR}/${P}/src/${EGO_PN}"
 
 PATCHES=(
-	"${FILESDIR}"/docker-19.03.0-go-cross-compilation.patch
+	"${FILESDIR}"/docker-19.03.3-go-cross-compilation.patch
 	"${FILESDIR}"/docker-18.06.0-log-line-max-size.patch
 	"${FILESDIR}"/docker-18.09.5-customize-docker-service.patch
 )
@@ -263,7 +263,7 @@ src_install() {
 	use container-init && dosym tini /usr/bin/docker-init
 
 	pushd components/engine || die
-	newbin "$(readlink -f bundles/latest/dynbinary-daemon/dockerd)" dockerd
+	newbin "$(readlink -f bundles/dynbinary-daemon/dockerd)" dockerd
 
 	newinitd contrib/init/openrc/docker.initd docker
 	newconfd contrib/init/openrc/docker.confd docker

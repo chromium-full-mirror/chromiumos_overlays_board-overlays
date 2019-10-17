@@ -1,16 +1,3 @@
-From d08702b1d4f50a209e354592d42833e9a4f4f905 Mon Sep 17 00:00:00 2001
-From: Robert Kolchmeyer <rkolchmeyer@google.com>
-Date: Wed, 24 Jul 2019 13:59:25 -0700
-Subject: [PATCH] Use specified Go compiler for cross compilation
-
----
- components/cli/scripts/build/.variables |  6 +++---
- components/cli/scripts/build/dynbinary  |  2 +-
- components/engine/hack/make.sh          |  4 ++--
- components/engine/hack/make/.binary     | 10 +++++-----
- components/engine/hack/make/.go-autogen |  4 ++--
- 5 files changed, 13 insertions(+), 13 deletions(-)
-
 diff --git a/components/cli/scripts/build/.variables b/components/cli/scripts/build/.variables
 index b8ebe667cd..3289115240 100755
 --- a/components/cli/scripts/build/.variables
@@ -41,28 +28,6 @@ index 4feb7e71d8..d35cadc547 100755
 +${GO} build -o "${TARGET}" -tags pkcs11 --ldflags "${LDFLAGS}" -buildmode=pie "${SOURCE}"
  
  ln -sf "$(basename "${TARGET}")" build/docker
-diff --git a/components/engine/hack/make.sh b/components/engine/hack/make.sh
-index e1e3dc46fa..d20c7acb6c 100755
---- a/components/engine/hack/make.sh
-+++ b/components/engine/hack/make.sh
-@@ -31,7 +31,7 @@ export PKG_CONFIG=${PKG_CONFIG:-pkg-config}
- # We're a nice, sexy, little shell script, and people might try to run us;
- # but really, they shouldn't. We want to be in a container!
- inContainer="AssumeSoInitially"
--if [ "$(go env GOHOSTOS)" = 'windows' ]; then
-+if [ "$(${GO} env GOHOSTOS)" = 'windows' ]; then
- 	if [ -z "$FROM_DOCKERFILE" ]; then
- 		unset inContainer
- 	fi
-@@ -189,7 +189,7 @@ main() {
- 	mkdir -p bundles
- 
- 	# Windows and symlinks don't get along well
--	if [ "$(go env GOHOSTOS)" != 'windows' ]; then
-+	if [ "$(${GO} env GOHOSTOS)" != 'windows' ]; then
- 		rm -f bundles/latest
- 		# preserve latest symlink for backward compatibility
- 		ln -sf . bundles/latest
 diff --git a/components/engine/hack/make/.binary b/components/engine/hack/make/.binary
 index 53de6749e5..dede04dd37 100644
 --- a/components/engine/hack/make/.binary
@@ -125,6 +90,3 @@ index ef5c6a40f2..9ba3b3ae02 100644
  		WINDRES=windres
  		WINDMC=windmc
  	else
--- 
-2.22.0.657.g960e92d24f-goog
-
