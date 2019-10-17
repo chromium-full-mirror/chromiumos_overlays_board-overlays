@@ -14,7 +14,7 @@ common_config: &common_config
       coreboot: "{{$fw-build-name}}"
       ec: "{{$fw-build-name}}"
       ec_extras: [ "kukui_scp" ]
-      depthcharge: "{{$fw-build-name}}"
+      depthcharge: "jacuzzi"
       libpayload: "jacuzzi"
     no-firmware: true
   firmware-signing:
