@@ -19,7 +19,7 @@
             <Limit name="size" min="64x64" max="2048x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="1542240" />
+            <Limit name="blocks-per-second" min="1" max="1248480" />
             <Limit name="bitrate" range="1-60000000" />
             <Limit name="concurrent-instances" max="4" />
             <Feature name="adaptive-playback" />
@@ -28,7 +28,7 @@
             <Limit name="size" min="64x64" max="2048x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="1542240" />
+            <Limit name="blocks-per-second" min="1" max="1248480" />
             <Limit name="bitrate" range="1-60000000" />
             <Limit name="concurrent-instances" max="4" />
             <Feature name="adaptive-playback" />
