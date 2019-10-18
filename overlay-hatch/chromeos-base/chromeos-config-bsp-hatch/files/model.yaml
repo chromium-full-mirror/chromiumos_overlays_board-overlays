@@ -39,6 +39,10 @@ base-config: &base_config
       60.0
       100.0
     keyboard-backlight-user-steps: "{{$keyboard-backlight-user-steps}}"
+    $keyboard-backlight-als-steps: |-
+      40.0 -1 20
+      0.0 15 -1
+    keyboard-backlight-als-steps: "{{$keyboard-backlight-als-steps}}"
   audio:
     main:
       $cras_root: "/etc/cras"
@@ -105,6 +109,9 @@ chromeos:
         33.0
         35.0
         38.0
+      $keyboard-backlight-als-steps: |-
+        21.25 -1 30
+        0.0 15 -1
       skus:
         - $sku-id: 1
           config: *base_config
