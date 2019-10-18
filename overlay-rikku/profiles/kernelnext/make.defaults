@@ -23,6 +23,13 @@ USE="${USE} -unibuild"
 # Uncomment this line to activate the serial port.
 #TTY_CONSOLE="ttyS0"
 
+# Enable background blur.
+USE="${USE} background_blur"
+
+# Disable CrOS video decoder on this board because we haven't implement V4L2
+# stateful VideoDecoder.
+USE="${USE} disable_cros_video_decoder"
+
 # Move the kernel to 4.14
 USE="${USE} -kernel-3_14 kernel-4_14"
 

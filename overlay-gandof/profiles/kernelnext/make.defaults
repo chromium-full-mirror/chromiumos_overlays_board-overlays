@@ -23,6 +23,9 @@ USE="${USE} direncryption"
 # unified builds.
 USE="${USE} -unibuild"
 
+# Enable background blur.
+USE="${USE} background_blur"
+
 # Move the kernel forward to 4.14
 USE="${USE} -kernel-3_14 kernel-4_14"
 
