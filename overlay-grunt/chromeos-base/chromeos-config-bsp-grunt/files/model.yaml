@@ -120,6 +120,9 @@ careena-config: &careena-config
       - source: "touch/elan/2fe5_5612.bin"
         destination: "{{$fw_dest}}/2fe5_5612.bin"
         symlink: "{{$fw_root}}/elants_i2c_2fe5.bin"
+      - source: "touch/elan/31a8_5612.bin"
+        destination: "{{$fw_dest}}/31a8_5612.bin"
+        symlink: "{{$fw_root}}/elants_i2c_31a8.bin"
   $wallpaper: "hp_default"
 
 barla-config: &barla-config
