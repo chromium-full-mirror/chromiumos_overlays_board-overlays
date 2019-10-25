@@ -199,3 +199,6 @@ chromeos:
           config: *base_config
         - $sku-id: 22
           config: *base_config
+        - $sku-id: 23
+          $has-keyboard-backlight: 0
+          config: *base_config
