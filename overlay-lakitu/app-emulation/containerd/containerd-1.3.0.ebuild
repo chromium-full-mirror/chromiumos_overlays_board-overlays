@@ -45,6 +45,12 @@ PATCHES=(
 	# 2. set containerd path to /usr/bin/containerd
 	# 3. set OOM score to -999
 	"${FILESDIR}"/1.3.0-customize-containerd-service.patch
+	# lakitu: Use cached state instead of runc state
+	# cherry-pick from upstream patch
+	# 18be6e37140e778dffd91804dab2bc66ba54493f
+	# Solves the problem of high cpu utilization occurred due to
+	# spawning of runc state process for exec operation in containerd.
+	"${FILESDIR}"/1.3.0-cache-runc-state.patch
 )
 
 RESTRICT="test"

@@ -1,0 +1,262 @@
+From 4fc461964277c669e1d4022892e548beb2ae75c2 Mon Sep 17 00:00:00 2001
+From: Lantao Liu <lantaol@google.com>
+Date: Wed, 2 Oct 2019 21:32:36 -0700
+Subject: [PATCH] Use cached state instead of `runc state`.
+
+Signed-off-by: Lantao Liu <lantaol@google.com>
+---
+ pkg/process/deleted_state.go |  4 ++++
+ pkg/process/exec.go          | 14 +-------------
+ pkg/process/exec_state.go    | 13 +++++++++++++
+ pkg/process/init.go          | 28 ++++++++++++++--------------
+ pkg/process/init_state.go    | 28 ++++++++++++++++++++++++++++
+ pkg/process/utils.go         | 15 +++++++++++++++
+ 6 files changed, 75 insertions(+), 27 deletions(-)
+
+diff --git a/pkg/process/deleted_state.go b/pkg/process/deleted_state.go
+index 95ad138e..eb7baf73 100644
+--- a/pkg/process/deleted_state.go
++++ b/pkg/process/deleted_state.go
+@@ -69,3 +69,7 @@ func (s *deletedState) SetExited(status int) {
+ func (s *deletedState) Exec(ctx context.Context, path string, r *ExecConfig) (Process, error) {
+ 	return nil, errors.Errorf("cannot exec in a deleted state")
+ }
++
++func (s *deletedState) Status(ctx context.Context) (string, error) {
++	return "stopped", nil
++}
+diff --git a/pkg/process/exec.go b/pkg/process/exec.go
+index 4175dcd5..e8158434 100644
+--- a/pkg/process/exec.go
++++ b/pkg/process/exec.go
+@@ -261,17 +261,5 @@ func (e *execProcess) Status(ctx context.Context) (string, error) {
+ 	}
+ 	e.mu.Lock()
+ 	defer e.mu.Unlock()
+-	// if we don't have a pid(pid=0) then the exec process has just been created
+-	if e.pid.get() == 0 {
+-		return "created", nil
+-	}
+-	if e.pid.get() == StoppedPID {
+-		return "stopped", nil
+-	}
+-	// if we have a pid and it can be signaled, the process is running
+-	if err := unix.Kill(e.pid.get(), 0); err == nil {
+-		return "running", nil
+-	}
+-	// else if we have a pid but it can nolonger be signaled, it has stopped
+-	return "stopped", nil
++	return e.execState.Status(ctx)
+ }
+diff --git a/pkg/process/exec_state.go b/pkg/process/exec_state.go
+index a8b44bb8..c97b4001 100644
+--- a/pkg/process/exec_state.go
++++ b/pkg/process/exec_state.go
+@@ -31,6 +31,7 @@ type execState interface {
+ 	Delete(context.Context) error
+ 	Kill(context.Context, uint32, bool) error
+ 	SetExited(int)
++	Status(context.Context) (string, error)
+ }
+ 
+ type execCreatedState struct {
+@@ -82,6 +83,10 @@ func (s *execCreatedState) SetExited(status int) {
+ 	}
+ }
+ 
++func (s *execCreatedState) Status(ctx context.Context) (string, error) {
++	return "created", nil
++}
++
+ type execRunningState struct {
+ 	p *execProcess
+ }
+@@ -120,6 +125,10 @@ func (s *execRunningState) SetExited(status int) {
+ 	}
+ }
+ 
++func (s *execRunningState) Status(ctx context.Context) (string, error) {
++	return "running", nil
++}
++
+ type execStoppedState struct {
+ 	p *execProcess
+ }
+@@ -157,3 +166,7 @@ func (s *execStoppedState) Kill(ctx context.Context, sig uint32, all bool) error
+ func (s *execStoppedState) SetExited(status int) {
+ 	// no op
+ }
++
++func (s *execStoppedState) Status(ctx context.Context) (string, error) {
++	return "stopped", nil
++}
+diff --git a/pkg/process/init.go b/pkg/process/init.go
+index 7861bdd8..539f9c24 100644
+--- a/pkg/process/init.go
++++ b/pkg/process/init.go
+@@ -56,12 +56,14 @@ type Init struct {
+ 
+ 	WorkDir string
+ 
+-	id           string
+-	Bundle       string
+-	console      console.Console
+-	Platform     stdio.Platform
+-	io           *processIO
+-	runtime      *runc.Runc
++	id       string
++	Bundle   string
++	console  console.Console
++	Platform stdio.Platform
++	io       *processIO
++	runtime  *runc.Runc
++	// pausing preserves the pausing state.
++	pausing      *atomicBool
+ 	status       int
+ 	exited       time.Time
+ 	pid          safePid
+@@ -97,6 +99,7 @@ func New(id string, runtime *runc.Runc, stdio stdio.Stdio) *Init {
+ 	p := &Init{
+ 		id:        id,
+ 		runtime:   runtime,
++		pausing:   new(atomicBool),
+ 		stdio:     stdio,
+ 		status:    0,
+ 		waitBlock: make(chan struct{}),
+@@ -237,17 +240,14 @@ func (p *Init) ExitedAt() time.Time {
+ 
+ // Status of the process
+ func (p *Init) Status(ctx context.Context) (string, error) {
++	if p.pausing.get() {
++		return "pausing", nil
++	}
++
+ 	p.mu.Lock()
+ 	defer p.mu.Unlock()
+ 
+-	c, err := p.runtime.State(ctx, p.id)
+-	if err != nil {
+-		if strings.Contains(err.Error(), "does not exist") {
+-			return "stopped", nil
+-		}
+-		return "", p.runtimeError(err, "OCI runtime state failed")
+-	}
+-	return c.Status, nil
++	return p.initState.Status(ctx)
+ }
+ 
+ // Start the init process
+diff --git a/pkg/process/init_state.go b/pkg/process/init_state.go
+index 9ec1d17b..115d8c9f 100644
+--- a/pkg/process/init_state.go
++++ b/pkg/process/init_state.go
+@@ -37,6 +37,7 @@ type initState interface {
+ 	Exec(context.Context, string, *ExecConfig) (Process, error)
+ 	Kill(context.Context, uint32, bool) error
+ 	SetExited(int)
++	Status(context.Context) (string, error)
+ }
+ 
+ type createdState struct {
+@@ -103,6 +104,10 @@ func (s *createdState) Exec(ctx context.Context, path string, r *ExecConfig) (Pr
+ 	return s.p.exec(ctx, path, r)
+ }
+ 
++func (s *createdState) Status(ctx context.Context) (string, error) {
++	return "created", nil
++}
++
+ type createdCheckpointState struct {
+ 	p    *Init
+ 	opts *runc.RestoreOpts
+@@ -211,6 +216,10 @@ func (s *createdCheckpointState) Exec(ctx context.Context, path string, r *ExecC
+ 	return nil, errors.Errorf("cannot exec in a created state")
+ }
+ 
++func (s *createdCheckpointState) Status(ctx context.Context) (string, error) {
++	return "created", nil
++}
++
+ type runningState struct {
+ 	p *Init
+ }
+@@ -228,6 +237,13 @@ func (s *runningState) transition(name string) error {
+ }
+ 
+ func (s *runningState) Pause(ctx context.Context) error {
++	s.p.pausing.set(true)
++	// NOTE "pausing" will be returned in the short window
++	// after `transition("paused")`, before `pausing` is reset
++	// to false. That doesn't break the state machine, just
++	// delays the "paused" state a little bit.
++	defer s.p.pausing.set(false)
++
+ 	if err := s.p.runtime.Pause(ctx, s.p.id); err != nil {
+ 		return s.p.runtimeError(err, "OCI runtime pause failed")
+ 	}
+@@ -271,6 +287,10 @@ func (s *runningState) Exec(ctx context.Context, path string, r *ExecConfig) (Pr
+ 	return s.p.exec(ctx, path, r)
+ }
+ 
++func (s *runningState) Status(ctx context.Context) (string, error) {
++	return "running", nil
++}
++
+ type pausedState struct {
+ 	p *Init
+ }
+@@ -335,6 +355,10 @@ func (s *pausedState) Exec(ctx context.Context, path string, r *ExecConfig) (Pro
+ 	return nil, errors.Errorf("cannot exec in a paused state")
+ }
+ 
++func (s *pausedState) Status(ctx context.Context) (string, error) {
++	return "paused", nil
++}
++
+ type stoppedState struct {
+ 	p *Init
+ }
+@@ -387,3 +411,7 @@ func (s *stoppedState) SetExited(status int) {
+ func (s *stoppedState) Exec(ctx context.Context, path string, r *ExecConfig) (Process, error) {
+ 	return nil, errors.Errorf("cannot exec in a stopped state")
+ }
++
++func (s *stoppedState) Status(ctx context.Context) (string, error) {
++	return "stopped", nil
++}
+diff --git a/pkg/process/utils.go b/pkg/process/utils.go
+index 6de2f7a1..34335594 100644
+--- a/pkg/process/utils.go
++++ b/pkg/process/utils.go
+@@ -27,6 +27,7 @@ import (
+ 	"path/filepath"
+ 	"strings"
+ 	"sync"
++	"sync/atomic"
+ 	"time"
+ 
+ 	"github.com/containerd/containerd/errdefs"
+@@ -62,6 +63,20 @@ func (s *safePid) set(pid int) {
+ 	s.Unlock()
+ }
+ 
++type atomicBool int32
++
++func (ab *atomicBool) set(b bool) {
++	if b {
++		atomic.StoreInt32((*int32)(ab), 1)
++	} else {
++		atomic.StoreInt32((*int32)(ab), 0)
++	}
++}
++
++func (ab *atomicBool) get() bool {
++	return atomic.LoadInt32((*int32)(ab)) == 1
++}
++
+ // TODO(mlaventure): move to runc package?
+ func getLastRuntimeError(r *runc.Runc) (string, error) {
+ 	if r.Log == "" {
+-- 
+2.24.0.rc0.303.g954a862665-goog
+
