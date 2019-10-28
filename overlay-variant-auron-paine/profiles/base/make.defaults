@@ -14,3 +14,8 @@ USE="${USE} allow_consumer_kiosk"
 
 # Use ext4 crypto
 USE="${USE} direncryption"
+
+# Move the kernel to 4.14
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"

@@ -25,3 +25,7 @@ USE="${USE} -unibuild"
 
 # Enable background blur.
 USE="${USE} background_blur"
+
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"

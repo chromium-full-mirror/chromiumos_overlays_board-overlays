@@ -40,3 +40,7 @@ USE="${USE} disable_cros_video_decoder"
 
 # Non Chromebook device, smart dim is disabled.
 USE="${USE} -smartdim"
+# Move the kernel to 4.14
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"
