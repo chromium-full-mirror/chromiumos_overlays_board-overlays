@@ -297,11 +297,21 @@ chromeos:
           config: *clamshell_wl_config
         - $sku-id-val: 34
           $has-keyboard-backlight: 1
-          config: *clamshell_wl_config
+          config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 35
           config: *clamshell_wl_config
         - $sku-id-val: 36
+          config: *clamshell_touchscreen_wl_config
+        - $sku-id-val: 37
           config: *clamshell_wl_config
+        - $sku-id-val: 38
+          config: *clamshell_touchscreen_wl_config
+        - $sku-id-val: 39
+          $has-keyboard-backlight: 1
+          config: *clamshell_wl_config
+        - $sku-id-val: 40
+          $has-keyboard-backlight: 1
+          config: *clamshell_touchscreen_wl_config
     - $device-name: "blorb"
       $fw-name: "Bobba"
       $num-mic-locations: 1
