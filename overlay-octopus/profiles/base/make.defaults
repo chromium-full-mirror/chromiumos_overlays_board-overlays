@@ -32,3 +32,7 @@ INPUT_DEVICES="wacom"
 INPUT_DEVICES="${INPUT_DEVICES} weida"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
+# Include the g2touch firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+# Include the emright firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} emright"
