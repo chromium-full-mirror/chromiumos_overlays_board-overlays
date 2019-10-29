@@ -181,6 +181,12 @@ chromeos:
               $has-ambient-light-sensor: "0"
               $internal-backlight-no-als-battery-brightness: "56.25"
               set-wifi-transmit-power-for-tablet-mode: "1"
+    - $device-name: "helios_diskswap"
+      $fw-name: "Helios_Diskswap"
+      skus:
+        - $sku-id: 255
+          config:
+            <<: *base_config
     - $device-name: "unprovisioned_akemi"
       skus:
         - $sku-id: 255
