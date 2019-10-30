@@ -1,0 +1,83 @@
+diff --git a/vendor/github.com/containerd/cri/pkg/config/config.go b/vendor/github.com/containerd/cri/pkg/config/config.go
+index c80aed59..9a4021f0 100644
+--- a/vendor/github.com/containerd/cri/pkg/config/config.go
++++ b/vendor/github.com/containerd/cri/pkg/config/config.go
+@@ -30,6 +30,10 @@ type Runtime struct {
+ 	// This only works for runtime type "io.containerd.runtime.v1.linux".
+ 	// DEPRECATED: use Options instead. Remove when shim v1 is deprecated.
+ 	Engine string `toml:"runtime_engine" json:"runtimeEngine"`
++	// PodAnnotations is list of pod annotations passed to both pod sandbox as well as
++	// PodAnnotations is a list of pod annotations passed to both pod sandbox as well as
++	// container OCI annotations.
++	PodAnnotations []string `toml:"pod_annotations" json:"PodAnnotations"`
+ 	// Root is the directory used by containerd for runtime state.
+ 	// DEPRECATED: use Options instead. Remove when shim v1 is deprecated.
+ 	// This only works for runtime type "io.containerd.runtime.v1.linux".
+diff --git a/vendor/github.com/containerd/cri/pkg/server/container_create.go b/vendor/github.com/containerd/cri/pkg/server/container_create.go
+index a477245b..21a35101 100644
+--- a/vendor/github.com/containerd/cri/pkg/server/container_create.go
++++ b/vendor/github.com/containerd/cri/pkg/server/container_create.go
+@@ -170,6 +170,18 @@ func (c *criService) CreateContainer(ctx context.Context, r *runtime.CreateConta
+ 		return nil, errors.Wrapf(err, "failed to generate container %q spec", id)
+ 	}
+ 
++	ociRuntime, err := c.getSandboxRuntime(sandboxConfig, sandbox.Metadata.RuntimeHandler)
++	if err != nil {
++		return nil, errors.Wrap(err, "failed to get sandbox runtime")
++	}
++	logrus.Debugf("Use OCI %+v for sandbox %q and container %q", ociRuntime, sandboxID, id)
++
++	g := newSpecGenerator(spec)
++	for pKey, pValue := range getPassthroughAnnotations(sandboxConfig.Annotations, ociRuntime.PodAnnotations) {
++		g.AddAnnotation(pKey, pValue)
++	}
++	spec = g.Config
++
+ 	logrus.Debugf("Container %q spec: %#+v", id, spew.NewFormatter(spec))
+ 
+ 	// Set snapshotter before any other options.
+diff --git a/vendor/github.com/containerd/cri/pkg/server/helpers.go b/vendor/github.com/containerd/cri/pkg/server/helpers.go
+index 5c06f426..a74d6f2e 100644
+--- a/vendor/github.com/containerd/cri/pkg/server/helpers.go
++++ b/vendor/github.com/containerd/cri/pkg/server/helpers.go
+@@ -585,3 +585,22 @@ func unknownSandboxStatus() sandboxstore.Status {
+ 		State: sandboxstore.StateUnknown,
+ 	}
+ }
++
++// getPassthroughAnnotations filters requested pod annotations by comparing
++// against permitted annotations for the given runtime.
++func getPassthroughAnnotations(podAnnotations map[string]string,
++	runtimePodAnnotations []string) (passthroughAnnotations map[string]string) {
++	passthroughAnnotations = make(map[string]string)
++
++	for podAnnotationKey, podAnnotationValue := range podAnnotations {
++		for _, pattern := range runtimePodAnnotations {
++			// Use path.Match instead of filepath.Match here.
++			// filepath.Match treated `\\` as path separator
++			// on windows, which is not what we want.
++			if ok, _ := path.Match(pattern, podAnnotationKey); ok {
++				passthroughAnnotations[podAnnotationKey] = podAnnotationValue
++			}
++		}
++	}
++	return passthroughAnnotations
++}
+diff --git a/vendor/github.com/containerd/cri/pkg/server/sandbox_run.go b/vendor/github.com/containerd/cri/pkg/server/sandbox_run.go
+index cf450623..660cf88d 100644
+--- a/vendor/github.com/containerd/cri/pkg/server/sandbox_run.go
++++ b/vendor/github.com/containerd/cri/pkg/server/sandbox_run.go
+@@ -150,6 +150,13 @@ func (c *criService) RunPodSandbox(ctx context.Context, r *runtime.RunPodSandbox
+ 	if err != nil {
+ 		return nil, errors.Wrap(err, "failed to generate sandbox container spec")
+ 	}
++
++	g := newSpecGenerator(spec)
++	for pKey, pValue := range getPassthroughAnnotations(config.Annotations, ociRuntime.PodAnnotations) {
++		g.AddAnnotation(pKey, pValue)
++	}
++	spec = g.Config
++
+ 	logrus.Debugf("Sandbox container %q spec: %#+v", id, spew.NewFormatter(spec))
+ 
+ 	var specOpts []oci.SpecOpts
