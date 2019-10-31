@@ -47,6 +47,12 @@ base-config: &base_config
     als-smoothing-constant: "{{$als-smoothing-constant}}"
     $set-wifi-transmit-power-for-tablet-mode: "0"
     set-wifi-transmit-power-for-tablet-mode: "{{$set-wifi-transmit-power-for-tablet-mode}}"
+    $set-cellular-transmit-power-for-tablet-mode: "0"
+    set-cellular-transmit-power-for-tablet-mode: "{{$set-cellular-transmit-power-for-tablet-mode}}"
+    $set-cellular-transmit-power-for-proximity: "0"
+    set-cellular-transmit-power-for-proximity: "{{$set-cellular-transmit-power-for-proximity}}"
+    $set-cellular-transmit-power-dpr-gpio: "0"
+    set-cellular-transmit-power-dpr-gpio: "{{$set-cellular-transmit-power-dpr-gpio}}"
   audio:
     main:
       $cras_root: "/etc/cras"
@@ -232,6 +238,8 @@ chromeos:
           $has-keyboard-backlight: 0
           config: *base_config
     - $device-name: "unprovisioned_jinlon"
+      $set-cellular-transmit-power-for-tablet-mode: "1"
+      $set-cellular-transmit-power-dpr-gpio: "471"
       skus:
         - $sku-id: 255
           $fw-name: "Jinlon"
