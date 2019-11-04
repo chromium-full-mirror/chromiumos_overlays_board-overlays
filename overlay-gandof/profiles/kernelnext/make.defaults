@@ -1,16 +1,19 @@
 # Copyright 2017 The Chromium OS Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file.
+# Distributed under the terms of the GNU General Public License v2
 
-# Initial value just for style purposes.
+# Uncomment this line to activate the serial port.
+#TTY_CONSOLE="ttyS0"
+
 USE=""
-LINUX_FIRMWARE=""
 
-USE="${USE} ac_only -internal_mic -internal_speaker rikku"
+USE="${USE} has_keyboard_backlight gandof"
 
 # Allow consumer kiosk.
 # NOTE: Deprecating feature. New board should NOT have it.
 USE="${USE} allow_consumer_kiosk"
+
+# Use ext4 crypto
+USE="${USE} direncryption"
 
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
@@ -20,12 +23,10 @@ USE="${USE} allow_consumer_kiosk"
 # unified builds.
 USE="${USE} -unibuild"
 
-# Uncomment this line to activate the serial port.
-#TTY_CONSOLE="ttyS0"
-
 # Enable background blur.
 USE="${USE} background_blur"
 
-# Disable CrOS video decoder on this board because we haven't implement V4L2
-# stateful VideoDecoder.
-USE="${USE} disable_cros_video_decoder"
+# Move the kernel forward to 4.14
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"

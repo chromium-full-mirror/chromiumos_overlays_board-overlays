@@ -5,6 +5,9 @@
 # Initial value just for style purposes.
 USE=""
 
+# Allow for highdpi assets when using scaled resolutions.
+USE="${USE} highdpi"
+
 # Mark this build as a variant, to delineate from a generic base build.
 USE="${USE} variant_build"
 
@@ -14,3 +17,10 @@ USE="${USE} allow_consumer_kiosk"
 
 # Use ext4 crypto
 USE="${USE} direncryption"
+
+AFDO_PROFILE_SOURCE='broadwell'
+
+# Move the kernel to 4.14
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"

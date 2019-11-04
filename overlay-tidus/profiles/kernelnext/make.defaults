@@ -6,7 +6,7 @@
 USE=""
 LINUX_FIRMWARE=""
 
-USE="${USE} ac_only -internal_mic -internal_speaker rikku"
+USE="${USE} ac_only -internal_mic -internal_speaker tidus"
 
 # Allow consumer kiosk.
 # NOTE: Deprecating feature. New board should NOT have it.
@@ -26,6 +26,6 @@ USE="${USE} -unibuild"
 # Enable background blur.
 USE="${USE} background_blur"
 
-# Disable CrOS video decoder on this board because we haven't implement V4L2
-# stateful VideoDecoder.
-USE="${USE} disable_cros_video_decoder"
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"

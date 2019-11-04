@@ -4,13 +4,16 @@
 
 # Initial value just for style purposes.
 USE=""
-LINUX_FIRMWARE=""
 
-USE="${USE} ac_only -internal_mic -internal_speaker rikku"
+USE="${USE} has_keyboard_backlight lulu"
 
 # Allow consumer kiosk.
 # NOTE: Deprecating feature. New board should NOT have it.
 USE="${USE} allow_consumer_kiosk"
+
+USE="${USE} containers"
+
+USE="${USE} direncryption"
 
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
@@ -26,6 +29,7 @@ USE="${USE} -unibuild"
 # Enable background blur.
 USE="${USE} background_blur"
 
-# Disable CrOS video decoder on this board because we haven't implement V4L2
-# stateful VideoDecoder.
-USE="${USE} disable_cros_video_decoder"
+# Move the kernel to 4.14
+USE="${USE} -kernel-3_14 kernel-4_14"
+
+USE="${USE} kernelnext"
