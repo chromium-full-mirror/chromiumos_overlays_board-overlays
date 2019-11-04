@@ -30,9 +30,9 @@ dptf_get_override() {
   case "${cpu_dram}" in
     m3-K4-8)  dptf_file="0987_8765.bin" ;;
     m3-MT-8)  dptf_file="1098_0987.bin" ;;
-    i5-K4-8)  dptf_file="1098_9876.bin" ;;
+    i5-K4-8)  dptf_file="0987_9876.bin" ;;
     i5-MT-8)  dptf_file="1098_0987.bin" ;;
-    i5-K4-16) dptf_file="1098_0987.bin" ;;
+    i5-K4-16) dptf_file="0987_9876.bin" ;;
     i5-MT-16) dptf_file="1199_0886.bin" ;;
     i7-K4-16) dptf_file="1199_0886.bin" ;;
     i7-MT-16) dptf_file="1199_1098.bin" ;;
