@@ -9,6 +9,7 @@ ExecStart=/usr/bin/docker run \
     --rm --pid=host \
     --network="${NETWORK_NAME}" \
     --name="${MONITORING_AGENT_NAME}" \
+    -v /:/hostfs:ro \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /etc/stackdriver/monitoring.config.d/:/etc/collectd/collectd.d/ \
     --env=METADATA_AGENT_HOSTNAME="${METADATA_AGENT_NAME}" \
