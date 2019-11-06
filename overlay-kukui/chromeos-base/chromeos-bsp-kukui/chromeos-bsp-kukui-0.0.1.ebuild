@@ -32,6 +32,9 @@ src_install() {
 	# Install a rule tagging keyboard as internal
 	udev_dorules "${FILESDIR}/91-hammer-keyboard.rules"
 
+	# Install hammerd udev rules and override for chromeos-base/hammerd.
+	udev_dorules "${FILESDIR}/99-hammerd.rules"
+
 	# Install audio config
 	unibuild_install_audio_files
 
