@@ -43,6 +43,8 @@ base-config: &base_config
       40.0 -1 20
       0.0 15 -1
     keyboard-backlight-als-steps: "{{$keyboard-backlight-als-steps}}"
+    $als-smoothing-constant: "1"
+    als-smoothing-constant: "{{$als-smoothing-constant}}"
   audio:
     main:
       $cras_root: "/etc/cras"
@@ -99,8 +101,15 @@ chromeos:
       $cras_card_config: "kohaku"
       $cras_dsp_config: "kohaku"
       $internal-backlight-als-steps: |-
-        80.0 47.62 -1 400
-        100.0 80.0 100 -1
+        19.88 19.88 -1 15
+        29.48 29.48 8 40
+        37.59 37.59 25 100
+        47.62 47.62 70 250
+        60.57 60.57 180 360
+        71.65 71.65 250 500
+        85.83 85.83 350 1700
+        93.27 93.27 1100 6750
+        100.0 100.0 5250 -1
       $has-ambient-light-sensor: "2"
       $keyboard-backlight-user-steps: |-
         0.0
@@ -112,6 +121,7 @@ chromeos:
       $keyboard-backlight-als-steps: |-
         21.25 -1 30
         0.0 15 -1
+      $als-smoothing-constant: "0.3"
       skus:
         - $sku-id: 1
           config: *base_config
