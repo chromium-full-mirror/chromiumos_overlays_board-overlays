@@ -231,3 +231,8 @@ chromeos:
         - $sku-id: 23
           $has-keyboard-backlight: 0
           config: *base_config
+    - $device-name: "unprovisioned_jinlon"
+      skus:
+        - $sku-id: 255
+          $fw-name: "Jinlon"
+          config: *base_config
