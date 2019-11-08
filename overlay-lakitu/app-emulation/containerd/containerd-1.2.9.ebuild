@@ -56,6 +56,11 @@ PATCHES=(
 	# lakitu: cherry-pick https://github.com/containerd/cri/pull/1084 to
 	# containerd v1.2.
 	"${FILESDIR}"/1.2.9-improve-sandbox-emptydir-performance.patch
+	# lakitu: Use cached state instead of runc state
+	# cherry-pick from upstream patch (18be6e37140e778dffd91804dab2bc66ba54493f)
+	# Solves the problem of high cpu utilization occurred due to
+	# spawning of runc state process for exec operation in containerd.
+	"${FILESDIR}"/1.2.8-cache-runc-state.patch
 )
 
 RESTRICT="test"
