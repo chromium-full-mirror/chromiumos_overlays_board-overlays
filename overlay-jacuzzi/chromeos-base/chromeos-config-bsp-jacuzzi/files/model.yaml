@@ -61,6 +61,22 @@ juniper-config: &juniper_config
   identity:
     <<: *identity
 
+kappa-config: &kappa_config
+  <<: *common_config
+  $fw-name: "google,kappa"
+  $fw-build-name: "kappa"
+  $key-id: "KAPPA"
+  identity:
+    <<: *identity
+
+damu-config: &damu_config
+  <<: *common_config
+  $fw-name: "google,damu"
+  $fw-build-name: "damu"
+  $key-id: "DAMU"
+  identity:
+    <<: *identity
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -69,3 +85,9 @@ chromeos:
     - $device-name: "juniper"
       skus:
         - config: *juniper_config
+    - $device-name: "kappa"
+      skus:
+        - config: *kappa_config
+    - $device-name: "damu"
+      skus:
+        - config: *damu_config
