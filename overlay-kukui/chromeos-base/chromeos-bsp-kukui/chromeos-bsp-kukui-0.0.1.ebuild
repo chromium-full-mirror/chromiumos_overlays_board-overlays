@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit appid cros-unibuild
+inherit appid cros-unibuild udev
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
