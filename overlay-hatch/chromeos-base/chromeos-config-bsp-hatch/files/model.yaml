@@ -45,6 +45,8 @@ base-config: &base_config
     keyboard-backlight-als-steps: "{{$keyboard-backlight-als-steps}}"
     $als-smoothing-constant: "1"
     als-smoothing-constant: "{{$als-smoothing-constant}}"
+    $set-wifi-transmit-power-for-tablet-mode: "0"
+    set-wifi-transmit-power-for-tablet-mode: "{{$set-wifi-transmit-power-for-tablet-mode}}"
   audio:
     main:
       $cras_root: "/etc/cras"
@@ -217,6 +219,7 @@ chromeos:
     - $device-name: "dragonair"
       $fw-name: "Dratini"
       $has-ambient-light-sensor: "0"
+      $set-wifi-transmit-power-for-tablet-mode: 1
       skus:
         - $sku-id: 21
           $has-keyboard-backlight: 0
