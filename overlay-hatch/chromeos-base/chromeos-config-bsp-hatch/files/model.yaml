@@ -59,8 +59,10 @@ base-config: &base_config
       $alsa_card: "sof-sof_rt5682"
       $cras_card_config: "common"
       $cras_dsp_config: "common"
+      $sub_cras_config: ""
+      $cras-source-config-dir: "cras-config{{$sub_cras_config}}"
       # Variables passed to adhd/init/cras.sh for starting CRAS
-      cras-config-dir: "{{$device-name}}"
+      cras-config-dir: "{{$device-name}}{{$sub_cras_config}}"
       files:
         # ALSA module config
         - source: "common/audio/alsa-module-config/alsa-hatch.conf"
@@ -71,10 +73,10 @@ base-config: &base_config
         - source: "common/audio/ucm-config/{{$alsa_card}}/HiFi.conf"
           destination: "{{$ucm_root}}/{{$alsa_card}}/HiFi.conf"
         # CRAS card config (Volume Curve)
-        - source: "{{$cras_card_config}}/audio/cras-config/card_settings"
+        - source: "{{$cras_card_config}}/audio/{{$cras-source-config-dir}}/card_settings"
           destination: "{{$cras_root}}/{{cras-config-dir}}/{{$alsa_card}}"
         # EQ/DRC DSP config
-        - source: "{{$cras_dsp_config}}/audio/cras-config/dsp.ini"
+        - source: "{{$cras_dsp_config}}/audio/{{$cras-source-config-dir}}/dsp.ini"
           destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
         # Board specific settings
         - source: "{{$cras_dsp_config}}/audio/{{$cras-source-config-dir}}/board.ini"
