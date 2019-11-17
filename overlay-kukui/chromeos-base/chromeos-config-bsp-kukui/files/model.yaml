@@ -91,6 +91,16 @@ krane-config: &krane_config
     charging-ports: |
       CROS_USBPD_CHARGER0 RIGHT
     min-visible-backlight-level: "12"
+    $internal-backlight-als-steps: |-
+      14.5 -1 15
+      40.88 8 95
+      65.88 80 630
+      79.52 550 1200
+      92.92 880 3000
+      100.0 2000 -1
+    internal-backlight-als-steps: "{{$internal-backlight-als-steps}}"
+    $internal-backlight-no-als-battery-brightness: "70.62"
+    internal-backlight-no-als-battery-brightness: "{{$internal-backlight-no-als-battery-brightness}}"
   audio: *krane_audio_config
 
 kodama-config: &kodama_config
