@@ -1,1 +1,0 @@
-kubernetes-1.16.0.ebuild
