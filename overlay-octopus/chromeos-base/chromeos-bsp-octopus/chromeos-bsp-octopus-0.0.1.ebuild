@@ -32,13 +32,14 @@ src_install() {
 	insinto /etc/bluetooth
 	doins "${FILESDIR}"/main.conf
 
-	# Projects might support multiple panels with the same Wacom digitizer
+	# Projects might support multiple panels with the same Wacom/Emright digitizer
 	# chip but have different firmwares for fine-tuned performance.
 	# As a result, we need a way to identify the correct firmware to update.
 	# The solution is to probe VID_PID from eDP panel's EDID as a identifier
 	# to search files names of firmware blobs.
 	exeinto "/opt/google/touch/scripts"
 	doexe "${FILESDIR}"/get_board_specific_wacom_hwid.sh
+	doexe "${FILESDIR}"/get_board_specific_emright_hwid.sh
 
 	unibuild_install_audio_files
 	unibuild_install_thermal_files
