@@ -135,6 +135,7 @@ chromeos:
         21.25 -1 30
         0.0 15 -1
       $als-smoothing-constant: "0.3"
+      $set-wifi-transmit-power-for-tablet-mode: "1"
       skus:
         - $sku-id: 1
           config: *base_config
