@@ -16,7 +16,7 @@ eval set -- "${FLAGS_ARGV}"
 set -e
 
 main() {
-  local enabled_device=(bloog blooguard meep mimrock)
+  local enabled_device=(ampton apel bloog blooguard meep mimrock)
   local device=''
 
   device="\b$(cros_config / name)\b"
