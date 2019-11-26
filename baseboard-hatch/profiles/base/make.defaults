@@ -16,8 +16,8 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt-hw ibt_ax201"
 LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 # Build kernel with serial driver
-USE="${USE} pcserial"
-USE="${USE} tty_console_ttyS0"
+# USE="${USE} pcserial"
+# USE="${USE} tty_console_ttyS0"
 
 # Add EC logging
 USE="${USE} eclog"
@@ -26,7 +26,7 @@ USE="${USE} eclog"
 USE="${USE} -acpi_ac"
 
 # Enable serial console
-TTY_CONSOLE="ttyS0"
+# TTY_CONSOLE="ttyS0"
 
 # Allow Chrome to use Tablet mode
 USE="${USE} touchview"
