@@ -248,3 +248,8 @@ chromeos:
         - $sku-id: 255
           $fw-name: "Jinlon"
           config: *base_config
+      $device-name: "unprovisioned_stryke"
+      skus:
+        - $sku-id: 255
+          $fw-name: "Stryke"
+          config: *base_config
