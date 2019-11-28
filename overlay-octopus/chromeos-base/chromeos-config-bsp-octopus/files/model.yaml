@@ -565,7 +565,7 @@ chromeos:
         - $whitelabel-tag: "ctl"
       skus:
         - $sku-id-val: 37
-          $stylus-category: "internal"
+          $stylus-category: "external"
           $num-mic-locations: 1
           config: *convertible_wl_config
         - $sku-id-val: 38
