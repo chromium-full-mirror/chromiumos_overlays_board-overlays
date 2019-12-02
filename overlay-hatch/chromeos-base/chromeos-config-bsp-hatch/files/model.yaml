@@ -86,6 +86,9 @@ base-config: &base_config
         # EQ/DRC DSP config
         - source: "{{$cras_dsp_config}}/audio/{{$cras-source-config-dir}}/dsp.ini"
           destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
+        # Board specific settings
+        - source: "{{$cras_dsp_config}}/audio/{{$cras-source-config-dir}}/board.ini"
+          destination: "{{$cras_root}}/{{cras-config-dir}}/board.ini"
 
 chromeos:
   devices:
