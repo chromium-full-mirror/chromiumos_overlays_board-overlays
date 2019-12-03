@@ -17,23 +17,23 @@
 <MediaCodecs>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="2995-2995" />
-            <Limit name="measured-frame-rate-720x480" range="2546-2546" />
-            <Limit name="measured-frame-rate-1280x720" range="1616-1616" />
-            <Limit name="measured-frame-rate-1920x1088" range="703-703" />
+            <Limit name="measured-frame-rate-320x240" range="2380-2380" />
+            <Limit name="measured-frame-rate-720x480" range="1920-1920" />
+            <Limit name="measured-frame-rate-1280x720" range="1253-1253" />
+            <Limit name="measured-frame-rate-1920x1088" range="710-710" />
         </MediaCodec>
         <MediaCodec name="c2.vda.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="3086-3242" />
-            <Limit name="measured-frame-rate-640x360" range="2727-2727" />
-            <Limit name="measured-frame-rate-1280x720" range="1550-1558" />
-            <Limit name="measured-frame-rate-1920x1080" range="674-674" />
+            <Limit name="measured-frame-rate-320x180" range="2358-2432" />
+            <Limit name="measured-frame-rate-640x360" range="2268-2268" />
+            <Limit name="measured-frame-rate-1280x720" range="1293-1302" />
+            <Limit name="measured-frame-rate-1920x1080" range="659-659" />
         </MediaCodec>
         <MediaCodec name="c2.vda.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="2912-2912" />
-            <Limit name="measured-frame-rate-640x360" range="2680-2699" />
-            <Limit name="measured-frame-rate-1280x720" range="1476-1476" />
-            <Limit name="measured-frame-rate-1920x1080" range="887-901" />
-            <Limit name="measured-frame-rate-3840x2160" range="201-202" />
+            <Limit name="measured-frame-rate-320x180" range="2581-2581" />
+            <Limit name="measured-frame-rate-640x360" range="2083-2086" />
+            <Limit name="measured-frame-rate-1280x720" range="1272-1280" />
+            <Limit name="measured-frame-rate-1920x1080" range="836-854" />
+            <Limit name="measured-frame-rate-3840x2160" range="203-203" />
         </MediaCodec>
     </Decoders>
 </MediaCodecs>
