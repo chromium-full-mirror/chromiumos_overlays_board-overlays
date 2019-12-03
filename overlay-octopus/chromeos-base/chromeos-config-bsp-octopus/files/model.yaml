@@ -280,3 +280,11 @@ chromeos:
         - $sku-id-val: 255
           $fw-name: "Lick"
           config: *unprovisioned_config
+    # This is a temporary model with SKU ID - 255 which is expected to be
+    # provisioned with correct SKU ID in the factory flow. And HWID verification
+    # will also catch the DUT still with 255 and report error.
+    - $device-name: "unprovisioned_foob"
+      skus:
+        - $sku-id-val: 255
+          $fw-name: "Foob"
+          config: *unprovisioned_config
