@@ -161,6 +161,7 @@ chromeos:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "dopefish"
         - $whitelabel-tag: "laser-r"
+        - $whitelabel-tag: "dopefish-r"
       skus:
         - $sku-id-val: 2
           $num-mic-locations: 1
