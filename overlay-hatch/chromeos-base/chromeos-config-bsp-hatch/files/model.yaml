@@ -209,6 +209,10 @@ chromeos:
           config: *base_config
         - $sku-id: 2
           config: *base_config
+        - $sku-id: 3
+          config: *base_config
+        - $sku-id: 4
+          config: *base_config
     - $device-name: "unprovisioned_dratini"
       skus:
         - $sku-id: 255
