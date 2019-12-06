@@ -81,7 +81,7 @@ kukui-config: &kukui_config
   <<: *common_config
   $fw-name: "google,kukui"
   $fw-build-name: "kukui"
-  $key-id: "KUKUI"
+  $key-id: "DEFAULT"
   $fw-base-build-name: ""
   identity:
     <<: *identity
@@ -119,7 +119,7 @@ kodama-config: &kodama_config
   <<: *common_config
   $fw-name: "google,kodama"
   $fw-build-name: "kodama"
-  $key-id: "KODAMA"
+  $key-id: "DEFAULT"
   $fw-base-build-name: "magnemite"
   audio: *audio_config
   power:
