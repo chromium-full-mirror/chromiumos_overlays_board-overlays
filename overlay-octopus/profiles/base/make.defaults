@@ -28,6 +28,8 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 # Include the g2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
 
 # Enable background blur.
 USE="${USE} background_blur"
