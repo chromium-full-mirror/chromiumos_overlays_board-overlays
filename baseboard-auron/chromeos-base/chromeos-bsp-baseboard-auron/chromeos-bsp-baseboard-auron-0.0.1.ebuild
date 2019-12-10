@@ -17,3 +17,9 @@ S="${WORKDIR}"
 RDEPEND="
 "
 DEPEND="${RDEPEND}"
+
+src_install() {
+	# Override default CPU clock speed governor
+	insinto "/etc"
+	doins "${FILESDIR}"/cpufreq-config/cpufreq.conf
+}
