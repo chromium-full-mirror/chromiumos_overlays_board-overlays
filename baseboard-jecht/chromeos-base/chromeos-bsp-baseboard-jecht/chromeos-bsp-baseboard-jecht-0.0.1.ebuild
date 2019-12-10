@@ -22,4 +22,9 @@ src_install() {
 	# Workaround for popping noise on external speaker:
 	# http://crbug.com/775486
 	udev_dorules "${FILESDIR}"/99-powerknobs-jecht.rules
+
+
+	# Override default CPU clock speed governor
+	insinto "/etc"
+	doins "${FILESDIR}"/cpufreq-config/cpufreq.conf
 }
