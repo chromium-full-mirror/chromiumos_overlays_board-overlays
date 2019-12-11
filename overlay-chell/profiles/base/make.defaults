@@ -9,7 +9,7 @@ USE="${USE} containers"
 
 USE="${USE} direncryption"
 
-USE="${USE} chell cros_ec has_keyboard_backlight pd_sync"
+USE="${USE} chell has_keyboard_backlight"
 
 # Allow consumer kiosk.
 # NOTE: Deprecating feature. New board should NOT have it.
