@@ -55,8 +55,4 @@ src_install() {
 		local audio_config_dir="${FILESDIR}/audio-config"
 		install_audio_configs samus "${audio_config_dir}"
 	fi
-
-	# Override default CPU clock speed governor
-	insinto "/etc"
-	doins "${FILESDIR}"/kernelnext-cpufreq-config/cpufreq.conf
 }
