@@ -1,7 +1,7 @@
 # Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 
 inherit appid cros-audio-configs
 
@@ -48,11 +48,6 @@ src_install() {
 	doins "${FILESDIR}"/main.conf
 
 	# Install audio config files
-	if use samus-kernelnext; then
-		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
-		install_audio_configs samus "${audio_config_dir}"
-	else
-		local audio_config_dir="${FILESDIR}/audio-config"
-		install_audio_configs samus "${audio_config_dir}"
-	fi
+	local audio_config_dir="${FILESDIR}/audio-config"
+	install_audio_configs samus "${audio_config_dir}"
 }
