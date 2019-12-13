@@ -248,6 +248,26 @@ chromeos:
         - $sku-id: 255
           $fw-name: "Jinlon"
           config: *base_config
+    - $device-name: "jinlon"
+      $fw-name: "Jinlon"
+      $has-ambient-light-sensor: "0"
+      $set-wifi-transmit-power-for-tablet-mode: 1
+      skus:
+        - $sku-id: 1
+          config: *base_config
+        - $sku-id: 2
+          config: *base_config
+    - $device-name: "jinlonlte"
+      $fw-name: "Jinlon"
+      $has-ambient-light-sensor: "0"
+      $set-wifi-transmit-power-for-tablet-mode: 1
+      $set-cellular-transmit-power-for-tablet-mode: "1"
+      $set-cellular-transmit-power-dpr-gpio: "471"
+      skus:
+        - $sku-id: 21
+          config: *base_config
+        - $sku-id: 22
+          config: *base_config
     - $device-name: "unprovisioned_stryke"
       skus:
         - $sku-id: 255
