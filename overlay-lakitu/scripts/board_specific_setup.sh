@@ -99,4 +99,8 @@ board_finalize_base_image() {
   sudo cp "${script_root}"/dbx/* "${esp_fs_dir}"/efi/Google/GSetup/dbx
   sudo chmod -R 755 "${esp_fs_dir}"/efi/Google/GSetup/dbx
   info "Successfully populated dbx"
+
+  if [[ -e "${root_fs_dir}/usr/bin/python" ]]; then
+    sudo env ROOT="${root_fs_dir}" eselect python set python2.7
+  fi
 }
