@@ -15,6 +15,14 @@
 -->
 
 <MediaCodecs>
+    <Encoders>
+        <MediaCodec name="c2.vea.avc.encoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="336-738" />
+            <Limit name="measured-frame-rate-720x480" range="258-567" />
+            <Limit name="measured-frame-rate-1280x720" range="118-259" />
+            <Limit name="measured-frame-rate-1920x1080" range="37-80" />
+        </MediaCodec>
+    </Encoders>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="1232-2709" />

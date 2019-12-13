@@ -14,6 +14,18 @@
      limitations under the License.
 -->
 <MediaCodecs>
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="4" />
+    </Settings>
+    <Encoders>
+        <MediaCodec name="c2.vea.avc.encoder" type="video/avc">
+            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" range="1-244800" />
+            <Limit name="bitrate" range="1-40000000" />
+        </MediaCodec>
+    </Encoders>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" >
             <Limit name="size" min="16x16" max="4096x4096" />
