@@ -23,8 +23,6 @@ USE="${USE} touch_centric_device"
 
 USE="${USE} shelf-hotseat"
 
-USE="${USE} webui-tab-strip"
-
 EC_FIRMWARE="kukui"
 
 # Include the goodix firmware updating tool
