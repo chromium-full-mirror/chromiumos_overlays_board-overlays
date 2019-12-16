@@ -22,6 +22,8 @@ base-config: &base_config
     touchpad-wakeup: "1"
     $has-keyboard-backlight: "1"
     has-keyboard-backlight: "{{$has-keyboard-backlight}}"
+    $keyboard-backlight-no-als-brightness: "40.0"
+    keyboard-backlight-no-als-brightness: "{{$keyboard-backlight-no-als-brightness}}"
     $has-ambient-light-sensor: "1"
     has-ambient-light-sensor: "{{$has-ambient-light-sensor}}"
     $internal-backlight-als-steps: |-
@@ -191,6 +193,7 @@ chromeos:
               $has-ambient-light-sensor: "0"
               $internal-backlight-no-als-battery-brightness: "56.25"
               set-wifi-transmit-power-for-tablet-mode: "1"
+              $keyboard-backlight-no-als-brightness: "0.0"
     - $device-name: "helios_diskswap"
       $fw-name: "Helios_Diskswap"
       skus:
