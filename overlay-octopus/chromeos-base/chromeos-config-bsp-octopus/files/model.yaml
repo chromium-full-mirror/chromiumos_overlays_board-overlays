@@ -655,3 +655,9 @@ chromeos:
         - $sku-id-val: 255
           $fw-name: "Lick"
           config: *unprovisioned_convertible_config
+    - $device-name: "lick"
+      $fw-name: "Lick"
+      $num-mic-locations: 1
+      skus:
+        - $sku-id-val: 1
+          config: *clamshell_config
