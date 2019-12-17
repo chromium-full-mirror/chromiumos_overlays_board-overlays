@@ -194,9 +194,8 @@ chromeos:
     - $device-name: "helios_diskswap"
       $fw-name: "Helios_Diskswap"
       skus:
-        - $sku-id: 255
-          config:
-            <<: *base_config
+        - $sku-id: 1
+          config: *base_config
     - $device-name: "unprovisioned_akemi"
       skus:
         - $sku-id: 255
