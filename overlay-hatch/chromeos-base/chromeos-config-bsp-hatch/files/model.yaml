@@ -223,6 +223,8 @@ chromeos:
     - $device-name: "dratini"
       $fw-name: "Dratini"
       $has-ambient-light-sensor: "0"
+      $cras_dsp_config: "dratini"
+      $cras_card_config: "dratini"
       skus:
         - $sku-id: 1
           $has-keyboard-backlight: 0
@@ -238,6 +240,8 @@ chromeos:
       $fw-name: "Dratini"
       $has-ambient-light-sensor: "0"
       $set-wifi-transmit-power-for-tablet-mode: 1
+      $cras_dsp_config: "dragonair"
+      $cras_card_config: "dragonair"
       skus:
         - $sku-id: 21
           $has-keyboard-backlight: 0
