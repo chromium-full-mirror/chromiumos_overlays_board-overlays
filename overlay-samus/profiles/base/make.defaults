@@ -66,4 +66,4 @@ USE="${USE} -kernel-3_14"
 USE="${USE} kernel-4_14"
 
 # Enable VMs
-USE="${USE} kvm_host"
+USE="${USE} kvm_host crosvm-gpu virtio_gpu"
