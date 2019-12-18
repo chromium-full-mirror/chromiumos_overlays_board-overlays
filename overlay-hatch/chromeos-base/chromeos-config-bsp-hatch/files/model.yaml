@@ -292,3 +292,8 @@ chromeos:
         - $sku-id: 255
           $fw-name: "Stryke"
           config: *base_config
+    - $device-name: "stryke"
+      skus:
+        - $sku-id: 1
+          $fw-name: "Stryke"
+          config: *base_config
