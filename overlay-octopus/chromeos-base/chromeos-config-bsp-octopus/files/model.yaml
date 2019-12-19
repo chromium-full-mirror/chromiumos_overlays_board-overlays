@@ -294,3 +294,13 @@ chromeos:
         - $sku-id-val: 255
           $fw-name: "Foob"
           config: *unprovisioned_config
+    - $device-name: "foob"
+      $fw-name: "Foob"
+      # TODO: need update sku-id later
+      skus:
+        - $sku-id-val: 1
+          $num-mic-locations: 1
+          config: *device_config
+        - $sku-id-val: 9
+          $num-mic-locations: 2
+          config: *device_config
