@@ -81,6 +81,7 @@ device-config: &device_config
   power:
     low-battery-shutdown-percent: "4.0"
     suspend-to-idle: "1"
+    set-wifi-transmit-power-for-tablet-mode: "1"
     $touchpad-wakeup: "1"
     touchpad-wakeup: "{{$touchpad-wakeup}}"
     # At least one panel requires 5% PWM for correct function.
@@ -138,8 +139,6 @@ convertible-config: &convertible_config
     has-touchscreen: True
     $stylus-category: "none"
     stylus-category: "{{$stylus-category}}"
-  power:
-    set-wifi-transmit-power-for-tablet-mode: "1"
 
 clamshell-wl-config: &clamshell_wl_config
   <<: *clamshell_config
