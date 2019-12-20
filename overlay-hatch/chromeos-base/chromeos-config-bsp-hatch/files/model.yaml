@@ -236,6 +236,16 @@ chromeos:
         - $sku-id: 4
           $has-keyboard-backlight: 0
           config: *base_config
+        - $sku-id: 5
+          config: *base_config
+        - $sku-id: 6
+          $has-keyboard-backlight: 0
+          config: *base_config
+        - $sku-id: 7
+          $has-keyboard-backlight: 0
+          config: *base_config
+        - $sku-id: 8
+          config: *base_config
     - $device-name: "dragonair"
       $fw-name: "Dratini"
       $has-ambient-light-sensor: "0"
@@ -250,6 +260,8 @@ chromeos:
           config: *base_config
         - $sku-id: 23
           $has-keyboard-backlight: 0
+          config: *base_config
+        - $sku-id: 24
           config: *base_config
     - $device-name: "unprovisioned_jinlon"
       $set-cellular-transmit-power-for-tablet-mode: "1"
