@@ -1,2 +1,2 @@
 # Disable since Crostini and TPM 2.0 are not supported.
-chromeos-base/libchromeos-use-flags -arc_adb_sideloading
+chromeos-base/libchromeos-use-flags arc_adb_sideloading

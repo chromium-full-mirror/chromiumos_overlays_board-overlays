@@ -1,2 +1,2 @@
 # Disable since TPM 2.0 is not supported.
-chromeos-base/libchromeos-use-flags -arc_adb_sideloading
+chromeos-base/libchromeos-use-flags arc_adb_sideloading
