@@ -103,6 +103,16 @@ kodama-config: &kodama_config
     <<: *power_common
     has-ambient-light-sensor : 0
 
+kakadu-config: &kakadu_config
+  <<: *common_config
+  $fw-name: "google,kakadu"
+  $fw-build-name: "kakadu"
+  $key-id: "DEFAULT"
+  $fw-base-build-name: ""
+  audio: *audio_config
+  power:
+    <<: *power_common
+
 chromeos:
   devices:
     - $device-name: "kukui"
@@ -114,3 +124,6 @@ chromeos:
     - $device-name: "kodama"
       skus:
         - config: *kodama_config
+    - $device-name: "kakadu"
+      skus:
+        - config: *kakadu_config
