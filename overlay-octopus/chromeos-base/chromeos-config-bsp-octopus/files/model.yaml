@@ -342,14 +342,18 @@ chromeos:
         - $sku-id-val: 36
           config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 37
+          $sub_cras_config: ".droid_lte"
           config: *clamshell_wl_config
         - $sku-id-val: 38
+          $sub_cras_config: ".droid_lte"
           config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 39
           $has-keyboard-backlight: 1
+          $sub_cras_config: ".droid_lte"
           config: *clamshell_wl_config
         - $sku-id-val: 40
           $has-keyboard-backlight: 1
+          $sub_cras_config: ".droid_lte"
           config: *clamshell_touchscreen_wl_config
     - $device-name: "blorb"
       $fw-name: "Bobba"
