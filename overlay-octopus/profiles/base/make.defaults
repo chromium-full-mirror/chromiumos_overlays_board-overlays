@@ -17,6 +17,9 @@ USE="${USE} octopus cros_ec touchview"
 # TODO(furquan): uncomment, once octopus board name is added
 # EC_FIRMWARE="octopus"
 
+# Building servo firmware in servo firmware branch
+EC_FIRMWARE_EXTRA="servo_micro servo_v4 sweetberry tigertail"
+
 # Avoid inhibiting the keyboard (which reports events from side buttons).
 USE="${USE} keyboard_includes_side_buttons"
 
