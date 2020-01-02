@@ -116,9 +116,9 @@ kodama-config: &kodama_config
 
 kakadu-config: &kakadu_config
   <<: *common_config
-  $fw-name: "google,kukui"
-  $fw-build-name: "kukui"
-  $key-id: "KUKUI"
+  $fw-name: "google,kakadu"
+  $fw-build-name: "kakadu"
+  $key-id: "DEFAULT"
   $fw-base-build-name: ""
   audio: *audio_config
   power:
