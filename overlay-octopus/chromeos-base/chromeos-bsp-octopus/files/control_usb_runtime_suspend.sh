@@ -16,15 +16,7 @@ eval set -- "${FLAGS_ARGV}"
 set -e
 
 main() {
-  local enabled_device=(ampton apel bloog blooguard meep mimrock)
-  local device=''
-
-  device="\b$(cros_config / name)\b"
   control=/sys/"${FLAGS_dev}/power/control"
-
-  if [[ ! "${enabled_device[*]}" =~ ${device} ]]; then
-    exit 0
-  fi
 
   if [ ! -f "$control" ]; then
     exit 1
