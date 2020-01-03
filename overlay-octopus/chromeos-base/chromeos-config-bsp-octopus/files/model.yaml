@@ -618,6 +618,10 @@ chromeos:
           config: *clamshell_wl_config
         - $sku-id-val: 18
           config: *clamshell_wl_config
+        - $sku-id-val: 19
+          config: *clamshell_wl_config
+        - $sku-id-val: 20
+          config: *clamshell_wl_config
     - $device-name: "garg360"
       $fw-name: "Garg"
       products:
