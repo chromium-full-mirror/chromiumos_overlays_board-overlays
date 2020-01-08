@@ -55,6 +55,8 @@ base-config: &base_config
     set-cellular-transmit-power-for-proximity: "{{$set-cellular-transmit-power-for-proximity}}"
     $set-cellular-transmit-power-dpr-gpio: "0"
     set-cellular-transmit-power-dpr-gpio: "{{$set-cellular-transmit-power-dpr-gpio}}"
+    $allow-ambient-eq: "0"
+    allow-ambient-eq: "{{$allow-ambient-eq}}"
   audio:
     main:
       $cras_root: "/etc/cras"
@@ -138,6 +140,7 @@ chromeos:
         0.0 15 -1
       $als-smoothing-constant: "0.3"
       $set-wifi-transmit-power-for-tablet-mode: "1"
+      $allow-ambient-eq: "1"
       skus:
         - $sku-id: 1
           config: *base_config
