@@ -51,7 +51,7 @@ tar_kernel_source() {
 
 write_toolchain_env() {
 	# Write the compiler info used for kernel compilation
-	# in toolchain_env
+	# in toolchain_env.
 	local toolchain_env_dir=etc
 	# Example for toolchain_env content:
 	# CC=x86_64-cros-linux-gnu-gcc
@@ -61,18 +61,43 @@ write_toolchain_env() {
 	echo "CXX=${CXX}" >> "${D}/${toolchain_env_dir}/toolchain_env"
 }
 
+write_kernel_info() {
+	# Write kernel information used for building kernel.
+	local kernel_info_dir=etc
+	# Example for kernel_info content:
+	# URL=https://chromium.googlesource.com/chromiumos/third_party/kernel
+	echo "URL=${CROS_GIT_HOST_URL}/${CROS_WORKON_PROJECT}" > "${D}/${kernel_info_dir}/kernel_info"
+}
+
+get_kernel_commit_id() {
+	# Provide kernel commit id
+	# VCSID variable is unconditionally set by the cros-workon eclass, and
+	# is in the form of "<ebuild_revision>-<sha1>".
+	echo "${VCSID##*-}"
+}
+
+write_kernel_commit() {
+	# Write kernel commit information used for building kernel.
+	local kernel_commit_dir=etc
+	# Example for kernel_commit content:
+	# c7ad6ff415b5a1e87f8333e2a63c7209e6efc1b2
+	get_kernel_commit_id > "${D}/${kernel_commit_dir}/kernel_commit"
+}
+
 src_install() {
 	cros-kernel2_src_install
 
-	# VCSID variable is unconditionally set by the cros-workon eclass, and
-	# is in the form of "<ebuild_revision>-<sha1>".
-	do_osrelease_field "KERNEL_COMMIT_ID" "${VCSID##*-}"
+	do_osrelease_field "KERNEL_COMMIT_ID" "$(get_kernel_commit_id)"
 
 	# Install kernel source tarball so it can be exported as an
 	# artifact later.
 	tar_kernel_source
 	# Install kernel compiler information
 	write_toolchain_env
+	# Install kernel source information
+	write_kernel_info
+	# Install kernel commit information
+	write_kernel_commit
 }
 
 # Change the following (commented out) number to the next prime number
