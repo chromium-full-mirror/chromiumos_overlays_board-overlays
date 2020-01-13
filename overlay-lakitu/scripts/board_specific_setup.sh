@@ -69,6 +69,44 @@ write_toolchain_env() {
   fi
 }
 
+write_kernel_info() {
+  # Create kernel_info file in BUILD_DIR so that it can be exported
+  # as an artifact.
+  local build_artifact="${BUILD_DIR}/kernel_info"
+
+  # File from which kernel information will be copied.
+  # This file is deleted after copying content to artifact.
+  local kernel_info_file="${root_fs_dir}/etc/kernel_info"
+
+  # Copy kernel_info to BUILD artifact.
+  if [[ -f "${kernel_info_file}" ]]; then
+    cp "${kernel_info_file}" "${build_artifact}"
+    # Remove kernel_info file from image.
+    sudo rm "${kernel_info_file}"
+  else
+    touch "${build_artifact}"
+  fi
+}
+
+write_kernel_commit() {
+  # Create kernel_commit file in BUILD_DIR so that it can be exported
+  # as an artifact.
+  local build_artifact="${BUILD_DIR}/kernel_commit"
+
+  # File from which kernel commit will be copied.
+  # This file is deleted after copying content to artifact.
+  local kernel_commit_file="${root_fs_dir}/etc/kernel_commit"
+
+  # Copy kernel_commit to BUILD artifact.
+  if [[ -f "${kernel_commit_file}" ]]; then
+    cp "${kernel_commit_file}" "${build_artifact}"
+    # Remove kernel_commit file from image.
+    sudo rm "${kernel_commit_file}"
+  else
+    touch "${build_artifact}"
+  fi
+}
+
 # board_finalize_base_image() gets invoked by the build scripts at the
 # end of building base image.
 board_finalize_base_image() {
@@ -76,6 +114,8 @@ board_finalize_base_image() {
   write_toolchain_path
   move_kernel_source
   write_toolchain_env
+  write_kernel_info
+  write_kernel_commit
 
   # /etc/machine-id gets installed by sys-apps/dbus and is a symlink.
   # This conflicts with systemd's machine-id generation mechanism,
