@@ -7,6 +7,7 @@ Before=sysinit.target
 
 [Service]
 Type=oneshot
+StandardOutput=journal+console
 ExecStart=/usr/share/cloud/resize-stateful
 
 [Install]
