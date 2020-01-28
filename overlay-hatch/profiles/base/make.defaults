@@ -11,9 +11,8 @@ USE="${USE} hatch"
 # Enable unibuild
 USE="${USE} unibuild"
 
-# TODO: Bring in the diagnostics package, which includes the diagnostics
-# daemon and diagnostics processor.
-#USE="${USE} diagnostics"
+# Enable diagnostics for cros_healthd
+USE="${USE} diagnostics"
 
 # Enable Ambient Light Sensor
 USE="${USE} als"
