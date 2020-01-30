@@ -37,7 +37,7 @@
     </Encoders>
     <Decoders>
         <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="502-1103" />
+            <Limit name="measured-frame-rate-176x144" range="400-880" />
         </MediaCodec>
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="204-448" />
@@ -52,7 +52,7 @@
             <Limit name="measured-frame-rate-1280x720" range="49-107" />
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="612-1345" />
+            <Limit name="measured-frame-rate-176x144" range="480-1056" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="409-899" />
