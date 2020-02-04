@@ -898,12 +898,12 @@ chromeos:
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
-          $num-mic-locations: 1
+          $num-mic-locations: 2
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 38
-          $num-mic-locations: 1
+          $num-mic-locations: 2
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
