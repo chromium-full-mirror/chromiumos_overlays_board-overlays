@@ -644,10 +644,10 @@ chromeos:
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
-          $num-mic-locations: 1
+          $num-mic-locations: 2
           config: *convertible_wl_config
         - $sku-id-val: 38
-          $num-mic-locations: 1
+          $num-mic-locations: 2
           config: *convertible_wl_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
