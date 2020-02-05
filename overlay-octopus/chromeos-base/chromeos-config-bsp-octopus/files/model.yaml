@@ -520,6 +520,11 @@ chromeos:
           config: *convertible_config
         - $sku-id-val: 52
           config: *convertible_config
+        - $sku-id-val: 53
+          config: *convertible_config
+        - $sku-id-val: 54
+          $has-keyboard-backlight: 1
+          config: *convertible_config
     - $device-name: "blooglet"
       $fw-name: "Bloog"
       $num-mic-locations: 1
