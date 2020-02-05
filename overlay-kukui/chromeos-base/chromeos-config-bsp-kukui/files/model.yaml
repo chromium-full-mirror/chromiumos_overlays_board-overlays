@@ -124,7 +124,7 @@ kodama-config: &kodama_config
   <<: *common_config
   $fw-name: "google,kodama"
   $fw-build-name: "kodama"
-  $key-id: "DEFAULT"
+  $key-id: "KRANE"
   $fw-base-build-name: "magnemite"
   audio: *audio_config
   power:
