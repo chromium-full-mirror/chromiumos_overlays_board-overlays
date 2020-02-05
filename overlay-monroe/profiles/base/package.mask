@@ -1,0 +1,2 @@
+# Monroe is going to be EOL in M83. We don't want to update the driver.
+>media-libs/mesa-19.0-r99
