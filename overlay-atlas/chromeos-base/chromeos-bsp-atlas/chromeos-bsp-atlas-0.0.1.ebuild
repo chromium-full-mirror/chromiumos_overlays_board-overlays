@@ -22,7 +22,9 @@ DEPEND="
 	chromeos-base/chromeos-bsp-baseboard-krabbylake
 "
 
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	chromeos-base/chromeos-psr-init-atlas
+"
 
 src_install() {
 	if use atlas-kvm; then
