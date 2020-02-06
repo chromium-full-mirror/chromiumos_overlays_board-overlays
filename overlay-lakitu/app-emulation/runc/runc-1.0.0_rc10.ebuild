@@ -2,16 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
+inherit eutils toolchain-funcs linux-info
 
-inherit eutils toolchain-funcs
-
+CONFIG_CHECK="~USER_NS"
 EGO_PN="github.com/opencontainers/${PN}"
 
 if [[ ${PV} == *9999 ]]; then
 	inherit golang-build golang-vcs
 else
 	MY_PV="${PV/_/-}"
-	RUNC_COMMIT="425e105d5a03fabd737a126ad93d62a9eeede87f" # Change this when you update the ebuild
+	# Change this when you update the ebuild
+	RUNC_COMMIT=dc9208a3303feef5b3839f4323d9beb36df0a9dd
 	SRC_URI="https://${EGO_PN}/archive/${RUNC_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	inherit golang-build golang-vcs-snapshot
@@ -32,11 +33,8 @@ RDEPEND="
 
 src_prepare() {
 	pushd "src/${EGO_PN}" || die
-	eapply "${FILESDIR}/1.0.0_rc6-Use-GO-cross-compiler.patch"
+	eapply "${FILESDIR}/1.0.0_rc10-Use-GO-cross-compiler.patch"
 	eapply "${FILESDIR}/1.0.0_rc8-Do-not-clone-proc-self-exe-in-case-of-lakitu.patch"
-	# cherry-pick from upstream commit
-	# https://github.com/opencontainers/runc/pull/2117/commits/518c855833c4920f9901f47f2a520425a33cceb4
-	eapply "${FILESDIR}/1.0.0_rc8-Remove-libcontainer-detection-for-systemd-features.patch"
 	default
 	sed -i -e "/^GIT_BRANCH/d"\
 		-e "/^GIT_BRANCH_CLEAN/d"\
@@ -63,7 +61,7 @@ src_compile() {
 		$(usex kmem '' 'nokmem')
 	)
 
-	GOPATH="${S}" emake BUILDTAGS="${options[*]}" -C src/${EGO_PN}
+	GOPATH="${S}" emake GO="${GO}" BUILDTAGS="${options[*]}" -C src/${EGO_PN}
 }
 
 src_install() {
