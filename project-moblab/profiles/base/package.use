@@ -4,7 +4,7 @@
 net-misc/dhcp server -client
 
 # For ft2232_spi support in flashrom.
-sys-apps/flashrom ft2232_spi
+3sys-apps/flashrom ft2232_spi
 
 # To reduce the size of the image - take out text to speach
 chromeos-base/common-assets -tts
@@ -12,7 +12,7 @@ chromeos-base/common-assets -tts
 app-emulation/lxc selinux etcconfigdir
 sys-process/criu selinux
 
-app-emulation/docker -aufs -device-mapper overlay
+app-emulation/docker -aufs -btrfs -device-mapper hardened
 
 app-emulation/containerd -btrfs
 

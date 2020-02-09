@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,8 +11,9 @@ if [[ ${PV} = *9999* ]]; then
 	EGIT_CHECKOUT_DIR="${WORKDIR}/${P}/src/${EGO_PN}"
 	inherit git-r3
 else
-	DOCKER_GITCOMMIT="4d60db4"
-	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	DOCKER_GITCOMMIT="633a0ea"
+	MY_PV=${PV/_/-}
+	SRC_URI="https://${EGO_PN}/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	[ "$DOCKER_GITCOMMIT" ] || die "DOCKER_GITCOMMIT must be added manually for each bump!"
 	inherit golang-vcs-snapshot
@@ -23,10 +24,10 @@ DESCRIPTION="The core functions you need to create Docker images and run Docker 
 HOMEPAGE="https://dockerproject.org"
 LICENSE="Apache-2.0"
 SLOT="0"
-IUSE="apparmor aufs btrfs +container-init device-mapper hardened overlay pkcs11 seccomp"
+IUSE="apparmor aufs btrfs +container-init device-mapper hardened +overlay seccomp"
 
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#build-dependencies
-CDEPEND="
+COMMON_DEPEND="
 	>=dev-db/sqlite-3.7.9:3
 	device-mapper? (
 		>=sys-fs/lvm2-2.02.89[thin]
@@ -36,9 +37,8 @@ CDEPEND="
 "
 
 DEPEND="
-	${CDEPEND}
-
-
+	${COMMON_DEPEND}
+	>=dev-lang/go-1.12
 	btrfs? (
 		>=sys-fs/btrfs-progs-3.16.1
 	)
@@ -47,15 +47,16 @@ DEPEND="
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#optional-dependencies
 RDEPEND="
-	${CDEPEND}
+	${COMMON_DEPEND}
+	!sys-apps/systemd[-cgroup-hybrid(+)]
 	>=net-firewall/iptables-1.4
 	sys-process/procps
 	>=dev-vcs/git-1.7
 	>=app-arch/xz-utils-4.9
 	dev-libs/libltdl
-	~app-emulation/containerd-1.1.2
-	~app-emulation/runc-1.0.0_rc5_p20180509[apparmor?,seccomp?]
-	~app-emulation/docker-proxy-0.8.0_p20180907
+	~app-emulation/containerd-1.2.10
+	~app-emulation/runc-1.0.0_rc9[apparmor?,seccomp?]
+	~app-emulation/docker-proxy-0.8.0_p20191011
 	container-init? ( >=sys-process/tini-0.18.0[static] )
 "
 
@@ -67,13 +68,7 @@ S="${WORKDIR}/${P}/src/${EGO_PN}"
 # directories that are hard coded into docker frm /etc/docker
 # to /var/run/docker as /etc/docker is a read only partition
 # on moblab.
-PATCHES=(
-	"${FILESDIR}"/bsc1073877-docker-apparmor-add-signal-r2.patch
-	"${FILESDIR}"/rootdir.patch
-)
-
-
-
+PATCHES=("${FILESDIR}"/config_dir.patch)
 
 # see "contrib/check-config.sh" from upstream's sources
 CONFIG_CHECK="
@@ -81,9 +76,9 @@ CONFIG_CHECK="
 	~CGROUPS ~CGROUP_CPUACCT ~CGROUP_DEVICE ~CGROUP_FREEZER ~CGROUP_SCHED ~CPUSETS ~MEMCG
 	~KEYS
 	~VETH ~BRIDGE ~BRIDGE_NETFILTER
-	~NF_NAT_IPV4 ~IP_NF_FILTER ~IP_NF_TARGET_MASQUERADE
+	~IP_NF_FILTER ~IP_NF_TARGET_MASQUERADE
 	~NETFILTER_XT_MATCH_ADDRTYPE ~NETFILTER_XT_MATCH_CONNTRACK ~NETFILTER_XT_MATCH_IPVS
-	~IP_NF_NAT ~NF_NAT ~NF_NAT_NEEDED
+	~IP_NF_NAT ~NF_NAT
 	~POSIX_MQUEUE
 
 	~USER_NS
@@ -91,7 +86,7 @@ CONFIG_CHECK="
 	~CGROUP_PIDS
 	~MEMCG_SWAP ~MEMCG_SWAP_ENABLED
 
-	~BLK_CGROUP ~BLK_DEV_THROTTLING ~IOSCHED_CFQ ~CFQ_GROUP_IOSCHED
+	~BLK_CGROUP ~BLK_DEV_THROTTLING
 	~CGROUP_PERF
 	~CGROUP_HUGETLB
 	~NET_CLS_CGROUP
@@ -114,6 +109,12 @@ ERROR_CGROUP_PERF="CONFIG_CGROUP_PERF: is optional for container statistics gath
 ERROR_CFS_BANDWIDTH="CONFIG_CFS_BANDWIDTH: is optional for container statistics gathering"
 ERROR_XFRM_ALGO="CONFIG_XFRM_ALGO: is optional for secure networks"
 ERROR_XFRM_USER="CONFIG_XFRM_USER: is optional for secure networks"
+
+
+pkg_preinst() {
+	enewgroup docker
+}
+
 
 pkg_setup() {
 	if kernel_is lt 3 10; then
@@ -151,6 +152,20 @@ pkg_setup() {
 		"
 	fi
 
+	if kernel_is lt 5 1; then
+		CONFIG_CHECK+="
+			~NF_NAT_IPV4
+			~IOSCHED_CFQ
+			~CFQ_GROUP_IOSCHED
+		"
+	fi
+
+	if kernel_is lt 5 2; then
+		CONFIG_CHECK+="
+			~NF_NAT_NEEDED
+		"
+	fi
+
 	if use aufs; then
 		CONFIG_CHECK+="
 			~AUFS_FS
@@ -179,9 +194,6 @@ pkg_setup() {
 	fi
 
 	linux-info_pkg_setup
-
-	# create docker group for the code checking for it in /etc/group
-	enewgroup docker
 }
 
 src_compile() {
@@ -193,7 +205,7 @@ src_compile() {
 	export CGO_LDFLAGS="-L${ROOT}/usr/$(get_libdir)"
 
 	# if we're building from a tarball, we need the GITCOMMIT value
-	[ "$DOCKER_GITCOMMIT" ] && export DOCKER_GITCOMMIT
+	[[ ${DOCKER_GITCOMMIT} ]] && export DOCKER_GITCOMMIT
 
 	# fake golang layout
 	ln -s docker-ce/components/engine ../docker || die
@@ -207,7 +219,7 @@ src_compile() {
 		fi
 	done
 
-	for tag in apparmor pkcs11 seccomp; do
+	for tag in apparmor seccomp; do
 		if use $tag; then
 			DOCKER_BUILDTAGS+=" $tag"
 		fi
@@ -237,7 +249,7 @@ src_compile() {
 		VERSION="$(cat ../../VERSION)" \
 		GITCOMMIT="${DOCKER_GITCOMMIT}" \
 		DISABLE_WARN_OUTSIDE_CONTAINER=1 \
-		dynbinary || die
+		dynbinary
 
 	# build man pages
 	#go build -o gen-manpages github.com/docker/cli/man || die
@@ -250,13 +262,19 @@ src_compile() {
 }
 
 src_install() {
+
+	# The docker file system driver overlay2 causes the
+	# security hardening to reject file access attempts.
+	insinto /usr/share/cros/startup
+	echo "1" | newins - disable_stateful_security_hardening
+
 	dosym containerd /usr/bin/docker-containerd
 	dosym containerd-shim /usr/bin/docker-containerd-shim
 	dosym runc /usr/bin/docker-runc
 	use container-init && dosym tini /usr/bin/docker-init
 
 	pushd components/engine || die
-	newbin "$(readlink -f bundles/latest/dynbinary-daemon/dockerd)" dockerd
+	newbin bundles/dynbinary-daemon/dockerd-${PV} dockerd
 
 	newinitd contrib/init/openrc/docker.initd docker
 	newconfd contrib/init/openrc/docker.confd docker
@@ -266,11 +284,13 @@ src_install() {
 	udev_dorules contrib/udev/*.rules
 
 	dodoc AUTHORS CONTRIBUTING.md CHANGELOG.md NOTICE README.md
-	dodoc -r docs/*
+        # On moblab there will be no editing / building of docker files so no need to 
+        # install the vim syntax files or documentation.
+	# dodoc -r docs/*
 
-	insinto /usr/share/vim/vimfiles
-	doins -r contrib/syntax/vim/ftdetect
-	doins -r contrib/syntax/vim/syntax
+	# insinto /usr/share/vim/vimfiles
+	# doins -r contrib/syntax/vim/ftdetect
+	# doins -r contrib/syntax/vim/syntax
 
 	# note: intentionally not using "doins" so that we preserve +x bits
 	dodir /usr/share/${PN}/contrib
@@ -281,17 +301,16 @@ src_install() {
 
 	newbin build/docker-* docker
 
-	#doman man/man*/*
+        # Man pages are not required and they avoid having to depend on dev-go/go-md2man
+        # package in the build.
+	# doman man/man*/*
 
-	dobashcomp contrib/completion/bash/*
-	insinto /usr/share/fish/vendor_completions.d/
-	doins contrib/completion/fish/docker.fish
-	insinto /usr/share/zsh/site-functions
-	doins contrib/completion/zsh/_*
+	# dobashcomp contrib/completion/bash/*
+	# insinto /usr/share/fish/vendor_completions.d/
+	# doins contrib/completion/fish/docker.fish
+	# insinto /usr/share/zsh/site-functions
+	# doins contrib/completion/zsh/_*
 	popd || die # components/cli
-
-	insinto /etc/docker
-	echo "{ \"storage-driver\": \"overlay\"  }" | newins - daemon.json
 }
 
 pkg_postinst() {

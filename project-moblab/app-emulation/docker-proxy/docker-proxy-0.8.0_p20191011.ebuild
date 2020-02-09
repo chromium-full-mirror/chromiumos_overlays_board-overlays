@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,7 +7,7 @@ EGO_PN="github.com/docker/libnetwork"
 if [[ ${PV} == *9999 ]]; then
 	inherit golang-vcs
 else
-	EGIT_COMMIT="6da50d1978302f04c3e2089e29112ea24812f05b"
+	EGIT_COMMIT="3eb39382bfa6a3c42f83674ab080ae13b0e34e5d"
 	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	inherit golang-vcs-snapshot
@@ -22,8 +22,6 @@ IUSE=""
 
 S=${WORKDIR}/${P}/src/${EGO_PN}
 
-RDEPEND="!<app-emulation/docker-1.13.0_rc1"
-
 RESTRICT="test" # needs dockerd
 
 src_compile() {
@@ -31,6 +29,6 @@ src_compile() {
 }
 
 src_install() {
-	dodoc ROADMAP.md README.md CHANGELOG.md
+	dodoc README.md CHANGELOG.md
 	dobin bin/docker-proxy
 }

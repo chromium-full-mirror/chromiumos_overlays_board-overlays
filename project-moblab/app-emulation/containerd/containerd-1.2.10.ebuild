@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,14 +11,14 @@ if [[ ${PV} == *9999 ]]; then
 else
 	MY_PV="${PV/_rc/-rc.}"
 	EGIT_COMMIT="v${MY_PV}"
-	CONTAINERD_COMMIT="468a545b9edcd5932818eb9de8e72413e616e86e"
+	CONTAINERD_COMMIT="b34a5c8af56e510852c35414db4c1f4fa6172339"
 	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	inherit golang-vcs-snapshot
 fi
 
 DESCRIPTION="A daemon to control runC"
-HOMEPAGE="https://containerd.tools"
+HOMEPAGE="https://containerd.io/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -26,8 +26,7 @@ IUSE="apparmor +btrfs +cri hardened +seccomp"
 
 DEPEND="btrfs? ( sys-fs/btrfs-progs )
 	seccomp? ( sys-libs/libseccomp )"
-RDEPEND="|| ( >=app-emulation/docker-runc-1.0.0_rc4
-	>=app-emulation/runc-1.0.0_rc4 )
+RDEPEND=">=app-emulation/runc-1.0.0_rc8
 	seccomp? ( sys-libs/libseccomp )"
 
 S=${WORKDIR}/${P}/src/${EGO_PN}
@@ -51,5 +50,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin bin/containerd{-shim,-stress,} bin/ctr
+	newinitd "${FILESDIR}"/${PN}.initd ${PN}
+	keepdir /var/lib/containerd
+	dobin bin/*
 }
