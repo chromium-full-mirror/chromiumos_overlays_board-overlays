@@ -297,3 +297,9 @@ chromeos:
         - $sku-id: 1
           $fw-name: "Stryke"
           config: *base_config
+    - $device-name: "nightfury"
+      $fw-name: "Nightfury"
+      $set-wifi-transmit-power-for-tablet-mode: "1"
+      skus:
+        - $sku-id: 1
+          config: *base_config
