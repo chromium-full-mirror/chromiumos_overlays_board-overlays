@@ -1,0 +1,50 @@
+From 41a305c3b87e959db833afa4a4c7643cd1600106 Mon Sep 17 00:00:00 2001
+From: Dexter Rivera <riverade@google.com>
+Date: Fri, 21 Feb 2020 16:31:52 -0800
+Subject: [PATCH] Write keys to the stateful partition
+
+---
+ .../instance_setup/instance_setup.py           | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/packages/python-google-compute-engine/google_compute_engine/instance_setup/instance_setup.py b/packages/python-google-compute-engine/google_compute_engine/instance_setup/instance_setup.py
+index cb1a2a6..42c242f 100755
+--- a/packages/python-google-compute-engine/google_compute_engine/instance_setup/instance_setup.py
++++ b/packages/python-google-compute-engine/google_compute_engine/instance_setup/instance_setup.py
+@@ -207,11 +207,19 @@ class InstanceSetup(object):
+     """
+     section = 'Instance'
+     instance_id = self._GetInstanceId()
+-    if instance_id != self.instance_config.GetOptionString(
+-        section, 'instance_id'):
++    prev_instance_id = None
++
++    instance_id_file = '/mnt/stateful_partition/.instance_id'
++    if os.path.isfile(instance_id_file):
++      with open(instance_id_file, 'rb') as f:
++        prev_instance_id = f.read().strip()
++
++    if not prev_instance_id or prev_instance_id != instance_id:
+       self.logger.info('Generating SSH host keys for instance %s.', instance_id)
+       file_regex = re.compile(r'ssh_host_(?P<type>[a-z0-9]*)_key\Z')
+-      key_dir = '/etc/ssh'
++      key_dir = '/mnt/stateful_partition/etc/ssh'
++      if not os.path.isdir(key_dir):
++        os.makedirs(key_dir)
+       key_files = [f for f in os.listdir(key_dir) if file_regex.match(f)]
+       key_types = host_key_types.split(',') if host_key_types else []
+       key_types_files = ['ssh_host_%s_key' % key_type for key_type in key_types]
+@@ -224,6 +232,10 @@ class InstanceSetup(object):
+       self._StartSshd()
+       self.instance_config.SetOption(section, 'instance_id', str(instance_id))
+ 
++      # Write the instance_id to the stateful partition
++      with open(instance_id_file, 'wb') as f:
++        f.write(instance_id)
++
+   def _GetNumericProjectId(self):
+     """Get the numeric project ID.
+ 
+-- 
+2.25.0.265.gbab2e86ba0-goog
+

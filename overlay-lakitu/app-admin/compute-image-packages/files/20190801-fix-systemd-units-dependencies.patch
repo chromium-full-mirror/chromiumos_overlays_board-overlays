@@ -1,30 +1,14 @@
-From f87b65f54e2a01a0be5e723289419b06870a8faf Mon Sep 17 00:00:00 2001
-From: Daniel Wang <wonderfly@google.com>
-Date: Wed, 28 Aug 2019 13:24:20 -0700
+From c3703674dc73b19cabd9388c828931dc52b13232 Mon Sep 17 00:00:00 2001
+From: Dexter Rivera <riverade@google.com>
+Date: Wed, 19 Feb 2020 13:45:23 -0800
 Subject: [PATCH] Fix systemd units dependencies
 
-The unit definitions from upstream don't work for COS very well.
 ---
- .../src/lib/systemd/system/google-instance-setup.service      | 4 ++--
- .../src/lib/systemd/system/google-network-daemon.service      | 3 ++-
- .../src/lib/systemd/system/google-shutdown-scripts.service    | 3 ++-
- .../src/lib/systemd/system/google-startup-scripts.service     | 3 ++-
- 4 files changed, 8 insertions(+), 5 deletions(-)
+ .../src/lib/systemd/system/google-network-daemon.service       | 3 ++-
+ .../src/lib/systemd/system/google-shutdown-scripts.service     | 3 ++-
+ .../src/lib/systemd/system/google-startup-scripts.service      | 3 ++-
+ 3 files changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/packages/google-compute-engine/src/lib/systemd/system/google-instance-setup.service b/packages/google-compute-engine/src/lib/systemd/system/google-instance-setup.service
-index ee987b2..5069b41 100644
---- a/packages/google-compute-engine/src/lib/systemd/system/google-instance-setup.service
-+++ b/packages/google-compute-engine/src/lib/systemd/system/google-instance-setup.service
-@@ -1,7 +1,7 @@
- [Unit]
- Description=Google Compute Engine Instance Setup
--After=network-online.target network.target rsyslog.service
--Before=sshd.service
-+After=network-online.target
-+Wants=network-online.target
- 
- [Service]
- Type=oneshot
 diff --git a/packages/google-compute-engine/src/lib/systemd/system/google-network-daemon.service b/packages/google-compute-engine/src/lib/systemd/system/google-network-daemon.service
 index 71745d4..b4dd4bc 100644
 --- a/packages/google-compute-engine/src/lib/systemd/system/google-network-daemon.service
@@ -68,5 +52,5 @@ index 233298a..68af491 100644
  [Service]
  ExecStart=/usr/bin/google_metadata_script_runner --script-type startup
 -- 
-2.23.0.187.g17f5b7556c-goog
+2.25.0.265.gbab2e86ba0-goog
 
