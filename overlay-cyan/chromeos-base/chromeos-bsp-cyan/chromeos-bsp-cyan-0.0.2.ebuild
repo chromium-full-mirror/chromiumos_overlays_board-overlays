@@ -24,8 +24,6 @@ DEPEND="${RDEPEND}"
 src_install() {
 	if use cyan-cheets; then
 		doappid "{EB589AF1-65F1-8B8B-8BBB-80450CA30620}" "CHROMEBOOK"
-	elif use cyan-kernelnext; then
-		doappid "{687C05C2-CF93-11E9-B871-CF217F7B16BF}" "CHROMEBOOK"
 	else
 		doappid "{11130F0B-738A-C024-7A78-CF72D93B77AF}" "CHROMEBOOK"
 	fi
@@ -35,11 +33,7 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	# Install audio configs.
-	if use cyan-kernelnext; then
-		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
-	else
-		local audio_config_dir="${FILESDIR}/audio-config"
-	fi
+	local audio_config_dir="${FILESDIR}/audio-config"
 	install_audio_configs cyan "${audio_config_dir}"
 
 	# Install Bluetooth ID override.

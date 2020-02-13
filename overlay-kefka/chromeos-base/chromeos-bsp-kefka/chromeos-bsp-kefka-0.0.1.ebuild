@@ -21,22 +21,14 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	if use kefka-kernelnext; then
-		doappid "{33D387DA-99F8-11E9-A838-7B9E2880DE80}" "CHROMEBOOK"
-	else
-		doappid "{2EDF7C6D-6586-D292-0B61-4A33B62E3BF6}" "CHROMEBOOK"
-	fi
+	doappid "{2EDF7C6D-6586-D292-0B61-4A33B62E3BF6}" "CHROMEBOOK"
 
 	# Install platform specific config files for power_manager.
 	insinto "/usr/share/power_manager/board_specific"
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	# Install audio config files
-	if use kefka-kernelnext; then
-		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
-	else
-		local audio_config_dir="${FILESDIR}/audio-config"
-	fi
+	local audio_config_dir="${FILESDIR}/audio-config"
 	install_audio_configs kefka "${audio_config_dir}"
 
 	# Install Bluetooth ID override.
