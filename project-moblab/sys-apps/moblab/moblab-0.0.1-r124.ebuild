@@ -1,18 +1,17 @@
 # Copyright 2019 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2.
 
-EAPI=7
+EAPI=6
 
-CROS_WORKON_COMMIT="8dd391b37e4bb3f12fe55b71030e208f256cf3b1"
-CROS_WORKON_TREE="95ddea3449682519a2f398a4fc6ee0ee18e44f75"
+CROS_WORKON_COMMIT="649afc166fbfd61c3553c5da402c3a9aa6525ad6"
+CROS_WORKON_TREE="3e12d060bb42cb962c5c50351da60924b211a81c"
+CROS_WORKON_INCREMENTAL_BUILD=1
+CROS_WORKON_OUTOFTREE_BUILD=1
 CROS_WORKON_PROJECT="chromiumos/platform/moblab"
 CROS_WORKON_LOCALNAME="../platform/moblab"
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} pypy pypy3 )
+inherit cros-workon
 
-inherit cros-workon distutils-r1
-
-IUSE="docker"
 DESCRIPTION="Install moblab, a test scheduling infrastructure"
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform/moblab/+/master/src/"
 
@@ -20,8 +19,8 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 
-RDEPEND="dev-python/future[${PYTHON_USEDEP}]"
+RDEPEND=" "
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		${RDEPEND}"
+DEPEND="${RDEPEND}
+"
 
