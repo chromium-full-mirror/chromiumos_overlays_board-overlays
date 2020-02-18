@@ -201,6 +201,11 @@ src_prepare() {
 			"${FILESDIR}"/239-change-paths-for-udev-rules-init-reboot.patch
 			# Disable LMNR and MDNS since COS does not support multicast.
 			"${FILESDIR}"/239-resolved-conf-in.patch
+			# Fix a bug where DHCP was not restarted as expected (b/149344651).
+			# Those patches are from
+			# https://github.com/systemd/systemd/pull/9832, and
+			# should be dropped after systemd upgrade to v240.
+			"${FILESDIR}"/239-networkd-fixes.patch
 	)
 	default
 }
