@@ -199,6 +199,11 @@ src_prepare() {
 			# TODO(vaibhavrustagi): Need to check to use default paths provided
 			# by systemd or not
 			"${FILESDIR}"/239-change-paths-for-udev-rules-init-reboot.patch
+			# Fix a bug where DHCP was not restarted as expected (b/149344651).
+			# Those patches are from
+			# https://github.com/systemd/systemd/pull/9832, and
+			# should be dropped after systemd upgrade to v240.
+			"${FILESDIR}"/239-networkd-fixes.patch
 	)
 
 	default
