@@ -44,3 +44,6 @@ USE="${USE} wpa_supplicant_next"
 
 # Intel HrP2 wifi firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-QuZ"
+
+# Enable Display port DPCD driver
+USE="${USE} drm_dp_aux_chardev"
