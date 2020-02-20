@@ -5,9 +5,18 @@
 # found in the LICENSE file.
 
 modify_kernel_command_line() {
+ {
   # Disable USB 3.0 LPM for Huddly Go
-  echo "usbcore.quirks=2bd9:0011:k" >> "$1"
+  quirks="2bd9:0011:k"
+  # Disable USB 3.0 LPM for Huddly IQ in Boxfish mode
+  quirks+=",2bd9:0021:k"
+  # Disable USB 3.0 LPM for Huddly IQ in Clownfish mode
+  quirks+=",2bd9:0031:k"
+  # Aggregate and export
+  echo "usbcore.quirks=${quirks}"
+
   # Force tpm_tis
-  echo "tpm_tis.force=1" >> "$1"
-  echo "tpm_tis.interrupts=0" >> "$1"
+  echo "tpm_tis.force=1"
+  echo "tpm_tis.interrupts=0"
+ } >> "$1"
 }
