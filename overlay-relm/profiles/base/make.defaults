@@ -17,10 +17,3 @@ USE="${USE} -unibuild"
 
 # Enable background blur.
 USE="${USE} background_blur"
-
-USE="${USE} -kernel-3_18"
-USE="${USE} kernel-4_19"
-
-USE="${USE} kernelnext"
-
-USE="${USE} drm_atomic"
