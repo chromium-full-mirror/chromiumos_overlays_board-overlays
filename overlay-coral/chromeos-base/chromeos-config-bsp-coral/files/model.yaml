@@ -126,6 +126,7 @@ chromeos:
         - $whitelabel-tag: "gsa"
         - $whitelabel-tag: "positivo"
         - $whitelabel-tag: "lanix"
+        - $whitelabel-tag: "sns"
         # Workaround to make it compatible with "ctl"
         - $whitelabel-tag: "to-be-determined-bt-loem1"
       skus:
@@ -143,6 +144,8 @@ chromeos:
         - $whitelabel-tag: "xma"
         - $whitelabel-tag: "positivo"
         - $whitelabel-tag: "lanix"
+        - $whitelabel-tag: "sns"
+        - $whitelabel-tag: "pixart"
         # Workaround to make it compatible with "ctl"
         - $whitelabel-tag: "to-be-determined-bt-loem1"
       skus:
