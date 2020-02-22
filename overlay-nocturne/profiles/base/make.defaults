@@ -31,3 +31,7 @@ USE="${USE} hammerd"
 
 # Allow the option to use QCA Wifi and BT
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174 qca-bt"
+
+# Enable legacy and alt firmwares
+# See crbug.com/1013032
+USE="${USE} altfw tianocore u-boot"
