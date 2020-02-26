@@ -16,7 +16,7 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="c2.vea.avc.encoder" type="video/avc">
-            <Limit name="size" min="96x96" max="1920x1088" />
+            <Limit name="size" min="160x128" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" range="1-244800" />
