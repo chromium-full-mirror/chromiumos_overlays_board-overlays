@@ -39,8 +39,7 @@ python_prepare_all() {
 	epatch "${FILESDIR}/20190304-homedir-uid-fix.patch"
 	epatch "${FILESDIR}/20190801-no-boto.patch"
 	epatch "${FILESDIR}/20190801-fix-systemd-units-dependencies.patch"
-	epatch "${FILESDIR}/20190801-write-hostkeys-to-stateful-partition.patch"
-	popd || return
+	popd
 	distutils-r1_python_prepare_all
 }
 
@@ -63,7 +62,7 @@ python_install_all() {
 	# Backports the get-metadata-value script from older version of this
 	# package (1.3.3).
 	exeinto /usr/share/google/
-	newexe "${FILESDIR}/1.3.3-get_metadata_value" get_metadata_value
+	newexe ${FILESDIR}/1.3.3-get_metadata_value get_metadata_value
 
 	# Install distro specific default configuration.
 	insinto /etc/default/
