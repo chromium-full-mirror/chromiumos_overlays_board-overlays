@@ -637,17 +637,24 @@ chromeos:
       skus:
         - $sku-id-val: 255
           $fw-name: "Foob"
-          config: *unprovisioned_config
+          config: *unprovisioned_convertible_config
     - $device-name: "foob"
       $fw-name: "Foob"
-      # TODO: need update sku-id later
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "ctl"
+        - $whitelabel-tag: "poin2"
       skus:
         - $sku-id-val: 1
           $num-mic-locations: 1
-          config: *device_config
+          config: *clamshell_wl_config
     - $device-name: "foob360"
       $fw-name: "Foob"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "ctl"
+        - $whitelabel-tag: "poin2"
       skus:
         - $sku-id-val: 9
           $num-mic-locations: 2
-          config: *device_config
+          config: *convertible_wl_config
