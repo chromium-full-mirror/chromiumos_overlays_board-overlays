@@ -43,8 +43,8 @@ src_configure() {
 
 # Change for EAPI=6
 src_prepare() {
-        default
-        cros-kernel2_src_prepare
+	default
+	cros-kernel2_src_prepare
 }
 
 tar_kernel_source() {
