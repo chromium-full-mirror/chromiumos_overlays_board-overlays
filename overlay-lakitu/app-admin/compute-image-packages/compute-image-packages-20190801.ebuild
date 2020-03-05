@@ -39,7 +39,8 @@ python_prepare_all() {
 	epatch "${FILESDIR}/20190304-homedir-uid-fix.patch"
 	epatch "${FILESDIR}/20190801-no-boto.patch"
 	epatch "${FILESDIR}/20190801-fix-systemd-units-dependencies.patch"
-	popd
+	epatch "${FILESDIR}/20190801-publish-hostkeys-from-stateful-partition.patch"
+	popd || die
 	distutils-r1_python_prepare_all
 }
 
