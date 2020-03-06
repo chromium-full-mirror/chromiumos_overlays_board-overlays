@@ -214,6 +214,7 @@ chromeos:
           config: *base_config
     - $device-name: "akemi"
       $fw-name: "Akemi"
+      $has-ambient-light-sensor: "0"
       skus:
         - $sku-id: 1
           config: *base_config
