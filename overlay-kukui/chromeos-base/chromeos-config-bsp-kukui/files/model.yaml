@@ -108,7 +108,7 @@ kakadu-config: &kakadu_config
   $fw-name: "google,kakadu"
   $fw-build-name: "kakadu"
   $key-id: "DEFAULT"
-  $fw-base-build-name: ""
+  $fw-base-build-name: "moonball"
   audio: *audio_config
   power:
     <<: *power_common
