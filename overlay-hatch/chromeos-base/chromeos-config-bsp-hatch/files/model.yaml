@@ -211,8 +211,6 @@ chromeos:
           config: *base_config
     - $device-name: "akemi"
       $fw-name: "Akemi"
-      $cras_dsp_config: "akemi"
-      $cras_card_config: "akemi"
       skus:
         - $sku-id: 1
           config: *base_config
