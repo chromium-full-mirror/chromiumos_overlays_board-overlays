@@ -250,6 +250,16 @@ treeya360-config: &treeya360-config
         destination: "{{$fw_dest}}/1A23_0.0.3046708.bin"
         symlink: "{{$fw_root}}/hid-06CB_1A23"
 
+nuwani-config: &nuwani-config
+  <<: *base_config
+  firmware:
+    <<: *firmware_common
+
+nuwani360-config: &nuwani360-config
+  <<: *nuwani-config
+  $audio-config: "nuwani"
+  $firmware-target: "nuwani"
+
 chromeos:
   devices:
     - $device-name: "grunt"
@@ -458,3 +468,23 @@ chromeos:
         - $sku-id: 175
           $num-mic-locations: 2
           config: *treeya360-config
+
+    - $device-name: "nuwani"
+      products:
+        - $brand-code: "ZZCR"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 208
+          config: *nuwani-config
+
+    - $device-name: "nuwani360"
+      products:
+        - $brand-code: "ZZCR"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 216
+          $camera-count: 2
+          $num-mic-locations: 2
+          config: *nuwani360-config
