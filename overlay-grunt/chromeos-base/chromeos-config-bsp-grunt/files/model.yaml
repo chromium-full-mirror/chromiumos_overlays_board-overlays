@@ -196,6 +196,16 @@ treeya360-config: &treeya360-config
   $audio-config: "treeya"
   $firmware-target: "treeya"
 
+nuwani-config: &nuwani-config
+  <<: *base_config
+  firmware:
+    <<: *firmware_common
+
+nuwani360-config: &nuwani360-config
+  <<: *nuwani-config
+  $audio-config: "nuwani"
+  $firmware-target: "nuwani"
+
 chromeos:
   devices:
     - $device-name: "grunt"
@@ -381,3 +391,21 @@ chromeos:
 
         - $sku-id: 175
           config: *treeya360-config
+
+    - $device-name: "nuwani"
+      products:
+        - $brand-code: "TBD"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 160
+          config: *nuwani-config
+
+    - $device-name: "nuwani360"
+      products:
+        - $brand-code: "TBD"
+          $marketing-name: "TBD"
+          $key-id: "DEFAULT"
+      skus:
+        - $sku-id: 169
+          config: *nuwani360-config
