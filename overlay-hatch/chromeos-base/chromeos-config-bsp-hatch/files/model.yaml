@@ -14,9 +14,10 @@ base-config: &base_config
     no-firmware: True
   test-label: "{{$device-name}}"
   power: &power_common
-    charging-ports: |
+    $charging-ports: |
       CROS_USBPD_CHARGER0 LEFT
       CROS_USBPD_CHARGER1 RIGHT
+    charging-ports: "{{$charging-ports}}"
     low-battery-shutdown-percent: "4.0"
     suspend-to-idle: "1"
     touchpad-wakeup: "1"
@@ -250,6 +251,9 @@ chromeos:
           config: *base_config
     - $device-name: "dratini"
       $fw-name: "Dratini"
+      $charging-ports: |
+        CROS_USBPD_CHARGER0 RIGHT
+        CROS_USBPD_CHARGER1 LEFT
       $has-ambient-light-sensor: "0"
       $cras_dsp_config: "dratini"
       $cras_card_config: "dratini"
@@ -276,6 +280,9 @@ chromeos:
           config: *base_config
     - $device-name: "dragonair"
       $fw-name: "Dratini"
+      $charging-ports: |
+        CROS_USBPD_CHARGER0 RIGHT
+        CROS_USBPD_CHARGER1 LEFT
       $has-ambient-light-sensor: "0"
       $set-wifi-transmit-power-for-tablet-mode: 1
       $cras_dsp_config: "dragonair"
@@ -300,6 +307,9 @@ chromeos:
           config: *base_config
     - $device-name: "jinlon"
       $fw-name: "Jinlon"
+      $charging-ports: |
+        CROS_USBPD_CHARGER0 RIGHT
+        CROS_USBPD_CHARGER1 LEFT
       $has-ambient-light-sensor: "0"
       $set-wifi-transmit-power-for-tablet-mode: 1
       skus:
