@@ -694,6 +694,7 @@ chromeos:
           config: *unprovisioned_convertible_config
     - $device-name: "foob"
       $fw-name: "Foob"
+      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
@@ -704,6 +705,7 @@ chromeos:
           config: *clamshell_wl_config
     - $device-name: "foob360"
       $fw-name: "Foob"
+      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
