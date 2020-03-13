@@ -6,7 +6,7 @@
 if ! mountpoint -q /etc; then
   ETC=/tmp/etc_overlay
   mkdir ${ETC}
-  if mount -t tmpfs tmpfs ${ETC} -o size=1M,mode=755,nosuid,noexec,nodev ; then
+  if mount -t tmpfs tmpfs ${ETC} -o mode=755,nosuid,noexec,nodev ; then
     mkdir -p ${ETC}/etc ${ETC}/.work
     # Because /etc is read-only at the time systemd boots,
     # systemd saves machine-id in /run and then bind-mounts it
