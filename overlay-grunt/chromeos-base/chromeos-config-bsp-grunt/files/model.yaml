@@ -394,18 +394,20 @@ chromeos:
 
     - $device-name: "nuwani"
       products:
-        - $brand-code: "TBD"
+        - $brand-code: "ZZCR"
           $marketing-name: "TBD"
           $key-id: "DEFAULT"
       skus:
-        - $sku-id: 160
+        - $sku-id: 208
           config: *nuwani-config
 
     - $device-name: "nuwani360"
       products:
-        - $brand-code: "TBD"
+        - $brand-code: "ZZCR"
           $marketing-name: "TBD"
           $key-id: "DEFAULT"
       skus:
-        - $sku-id: 169
+        - $sku-id: 216
+          $camera-count: 2
+          $num-mic-locations: 2
           config: *nuwani360-config
