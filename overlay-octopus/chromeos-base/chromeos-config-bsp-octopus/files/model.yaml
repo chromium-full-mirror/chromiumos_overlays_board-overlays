@@ -609,6 +609,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
+        - $whitelabel-tag: "pixart"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
@@ -627,6 +628,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
+        - $whitelabel-tag: "pixart"
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
