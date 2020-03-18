@@ -97,9 +97,6 @@ USE="${USE} lakitu_kdump kexec_file"
 # Disable audio support as it's not available & doesn't make sense.
 USE="${USE} -alsa -cras -midi"
 
-# Enable Google Virtual Ethernet (gve) driver.
-USE="${USE} google_gve"
-
 # Enable GCP-specific settings.
 USE="${USE} platform_gcp"
 
