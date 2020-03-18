@@ -33,3 +33,6 @@ PD_FIRMWARE="chell_pd"
 
 # Enable background blur.
 USE="${USE} background_blur"
+
+# Move the kernel to 4.19
+USE="${USE} -kernel-3_18 kernel-4_19"

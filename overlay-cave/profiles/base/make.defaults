@@ -34,3 +34,6 @@ AFDO_PROFILE_SOURCE='broadwell'
 
 # Enable background blur.
 USE="${USE} background_blur"
+
+# Move the kernel to 4.19
+USE="${USE} -kernel-3_18 kernel-4_19"
