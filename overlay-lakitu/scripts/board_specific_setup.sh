@@ -42,17 +42,22 @@ write_toolchain_path() {
       sudo tee "${root_fs_dir}/etc/toolchain-path" > /dev/null
 }
 
-move_kernel_source() {
-  # Move kernel source tarball to build dir so it can be exported as an
-  # artifact. If it doesn't exist, create a fake tarball to be exported.
-  local tarball="${root_fs_dir}/opt/google/src/kernel-src.tar.gz"
-  local artifact="${BUILD_DIR}/kernel-src.tar.gz"
-  if [[ -f "$tarball" ]]; then
-    cp "$tarball" "$artifact"
-  else
-    touch "$artifact"
+# Moves the given rootfs_file to the given artifact location. The directory
+# containing the rootfs_file is deleted if it becomes empty after this move.
+# If the rootfs_file doesn't exist, put an empty file at the given artifact
+# location.
+export_image_artifact() {
+  local rootfs_file="$1"
+  local artifact="$2"
+  if [[ ! -f "${rootfs_file}" ]]; then
+    touch "${artifact}"
+    return
   fi
-  sudo rm -rf "${root_fs_dir}/opt/google/src"
+  cp "${rootfs_file}" "${artifact}"
+  sudo rm "${rootfs_file}"
+  if [[ -z "$(ls -A "$(dirname "${rootfs_file}")")" ]]; then
+    sudo rmdir "$(dirname "${rootfs_file}")"
+  fi
 }
 
 write_toolchain_env() {
@@ -76,7 +81,12 @@ write_toolchain_env() {
 board_finalize_base_image() {
   local -r script_root="$(readlink -f "$(dirname "${BASH_SOURCE[0]}")")"
   write_toolchain_path
-  move_kernel_source
+  export_image_artifact \
+    "${root_fs_dir}/opt/google/src/kernel-src.tar.gz" \
+    "${BUILD_DIR}/kernel-src.tar.gz"
+  export_image_artifact \
+    "${root_fs_dir}/opt/google/src/kernel-headers.tgz" \
+    "${BUILD_DIR}/kernel-headers.tgz"
   write_toolchain_env
 
   # /etc/machine-id gets installed by sys-apps/dbus and is a symlink.
