@@ -111,7 +111,7 @@ krane-config: &krane_config
       CROS_USBPD_CHARGER0 RIGHT
     min-visible-backlight-level: "12"
     internal-backlight-als-steps: |-
-      7.07 -1 15
+      18.75 -1 15
       40.88 8 95
       65.88 80 630
       79.52 550 1200
