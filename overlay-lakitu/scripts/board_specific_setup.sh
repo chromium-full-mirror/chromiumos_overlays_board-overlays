@@ -126,6 +126,7 @@ board_finalize_base_image() {
   write_toolchain_env
   write_kernel_info
   write_kernel_commit
+  cp "${BOARD_ROOT}/usr/lib/debug/boot/vmlinux" "${BUILD_DIR}/vmlinux"
 
   # /etc/machine-id gets installed by sys-apps/dbus and is a symlink.
   # This conflicts with systemd's machine-id generation mechanism,
