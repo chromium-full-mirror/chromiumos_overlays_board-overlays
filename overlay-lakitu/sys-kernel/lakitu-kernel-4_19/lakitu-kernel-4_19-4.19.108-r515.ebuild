@@ -62,6 +62,52 @@ tar_kernel_source() {
 	popd || die
 }
 
+tar_kernel_headers() {
+	einfo "Packaging kernel headers"
+	# We do pretty much exactly what scripts/package/builddeb does.
+	pushd "${D}/usr/src/${P}" || die
+	(
+		find . -name Makefile\* -o -name Kconfig\* -o -name \*.pl
+		find arch/*/include include scripts -type f -o -type l
+		find "arch/$(tc-arch-kernel)" -name module.lds -o -name Kbuild.platforms -o -name Platform
+		find "arch/$(tc-arch-kernel)" -name include -o -name scripts -type d | while IFS='' read -r line; do
+			find "${line}" -type f
+		done
+	) > "${T}/hdrsrcfiles"
+	popd || die
+
+	pushd "$(cros-workon_get_build_dir)" || die
+	{
+		if cros_chkconfig_present STACK_VALIDATION; then
+			find tools/objtool -type f -executable
+		fi
+
+		find "arch/$(tc-arch-kernel)/include" Module.symvers include scripts -type f
+
+		if cros_chkconfig_present GCC_PLUGINS; then
+			find scripts/gcc-plugins -name \*.so -o -name gcc-common.h
+		fi
+	} > "${T}/hdrobjfiles"
+	popd || die
+
+	local destdir="${T}/headers_tmp/usr/src/linux-headers-$(kernelrelease)"
+	mkdir -p "${destdir}"
+	tar -c -f - -C "${D}/usr/src/${P}" -T "${T}/hdrsrcfiles" | tar -xf - -C "${destdir}"
+	tar -c -f - -C "$(cros-workon_get_build_dir)" -T "${T}/hdrobjfiles" | tar -xf - -C "${destdir}"
+	rm "${T}/hdrsrcfiles" "${T}/hdrobjfiles"
+
+	cp "$(cros-workon_get_build_dir)/.config" "${destdir}/.config"
+
+	# We don't configure INSTALL_MASK to remove files in /opt, so export the
+	# headers tarball through /opt.
+	local source_dir=opt/google/src
+	dodir "${source_dir}"
+	pushd "${T}/headers_tmp" || die
+	tar -czf "${D}/${source_dir}/kernel-headers.tgz" .
+	popd || die
+	rm -r "${T}/headers_tmp"
+}
+
 write_toolchain_env() {
 	# Write the compiler info used for kernel compilation
 	# in toolchain_env.
@@ -102,9 +148,10 @@ src_install() {
 
 	do_osrelease_field "KERNEL_COMMIT_ID" "$(get_kernel_commit_id)"
 
-	# Install kernel source tarball so it can be exported as an
-	# artifact later.
+	# Install kernel source and headers tarballs so they can be exported as
+	# artifacts later.
 	tar_kernel_source
+	tar_kernel_headers
 	# Install kernel compiler information
 	write_toolchain_env
 	# Install kernel source information
