@@ -71,12 +71,6 @@ USE="${USE} ime_addons"
 # Enable IME native decoder experiment.
 USE="${USE} ime_decoder_alpha"
 
-# Enable Downloadable Content (DLC)
-USE="${USE} dlc"
-
-# Enable Downloadable Content (DLC) Test
-USE="${USE} dlc_test"
-
 BOARD_COMPILER_FLAGS="-march=skylake"
 
 # TODO(b/141724493): Enable CPU zero-copy for Chrome camera stack once image
