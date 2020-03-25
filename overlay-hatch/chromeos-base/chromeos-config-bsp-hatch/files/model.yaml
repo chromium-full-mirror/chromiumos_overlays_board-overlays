@@ -156,6 +156,7 @@ chromeos:
     - $device-name: "kled"
       $fw-name: "Kindred"
       $has-ambient-light-sensor: "0"
+      $set-wifi-transmit-power-for-tablet-mode: "1"
       $cras_dsp_config: "kled"
       $cras_card_config: "kled"
       skus:
