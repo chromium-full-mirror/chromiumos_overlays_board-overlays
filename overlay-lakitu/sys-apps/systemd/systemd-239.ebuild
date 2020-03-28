@@ -206,6 +206,9 @@ src_prepare() {
 			# https://github.com/systemd/systemd/pull/9832, and
 			# should be dropped after systemd upgrade to v240.
 			"${FILESDIR}"/239-networkd-fixes.patch
+			# Invalid mount units shouldn't result in leaked units.
+			# Fixes b/152632012, from https://github.com/systemd/systemd/pull/10980.
+			"${FILESDIR}"/239-mount-don-t-propagate-errors-from-mount_setup_unit-f.patch
 	)
 	default
 }
