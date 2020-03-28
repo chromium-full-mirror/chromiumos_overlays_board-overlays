@@ -209,6 +209,9 @@ src_prepare() {
 		# Lakitu: fix for upstream bug https://github.com/systemd/systemd/issues/7798
 		# https://github.com/systemd/systemd/commit/65d36b49508a53e56bae9609ff00fdc3de340608
 		"${FILESDIR}"/237-core-Fix-edge-case-when-processing-proc-self-mountin.patch
+		# Invalid mount units shouldn't result in leaked units.
+		# Fixes b/152632012, from https://github.com/systemd/systemd/pull/10980.
+		"${FILESDIR}"/239-mount-don-t-propagate-errors-from-mount_setup_unit-f.patch
 	)
 
 	[[ -d "${WORKDIR}"/patches ]] && PATCHES+=( "${WORKDIR}"/patches )
