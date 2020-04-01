@@ -6,9 +6,9 @@
 
 EAPI=6
 
-CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
-CROS_WORKON_PROJECT="chromiumos/third_party/lakitu-kernel"
-CROS_WORKON_EGIT_BRANCH="release-R82-12974.B-lakitu-4.19"
+CROS_WORKON_REPO="https://cos.googlesource.com"
+CROS_WORKON_PROJECT="third_party/kernel"
+CROS_WORKON_EGIT_BRANCH="release-R82-12974.B-cos-4.19"
 CROS_WORKON_COMMIT="8bd983177d60daba1e1df7e90bf02cfd0294e9b9"
 CROS_WORKON_BLACKLIST="1"
 
@@ -125,7 +125,7 @@ write_kernel_info() {
 	local kernel_info_dir=etc
 	# Example for kernel_info content:
 	# URL=https://chromium.googlesource.com/chromiumos/third_party/kernel
-	echo "URL=${CROS_GIT_HOST_URL}/${CROS_WORKON_PROJECT}" > "${D}/${kernel_info_dir}/kernel_info"
+	echo "URL=${CROS_WORKON_REPO}/${CROS_WORKON_PROJECT}" > "${D}/${kernel_info_dir}/kernel_info"
 }
 
 get_kernel_commit_id() {
