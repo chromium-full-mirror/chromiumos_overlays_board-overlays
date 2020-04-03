@@ -14,6 +14,11 @@ common_config: &common_config
     disable-dark-resume: "0"
     min-visible-backlight-level: "1200"
     internal-backlight-no-als-battery-brightness: "52"
+  thermal:
+    dptf-dv: "{{$device-name}}/dptf.dv"
+    files:
+      - source: "{{dptf-dv}}"
+        destination: "/etc/dptf/{{dptf-dv}}"
   audio:
     main:
       # If the generic ucm is not sufficient, the device
