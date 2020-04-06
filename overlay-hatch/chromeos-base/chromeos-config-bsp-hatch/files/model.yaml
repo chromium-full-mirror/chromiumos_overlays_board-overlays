@@ -299,6 +299,9 @@ chromeos:
           config: *base_config
     - $device-name: "nightfury"
       $fw-name: "Nightfury"
+      $alsa_card: "sof-cml_max98390_da7219"
+      $cras_dsp_config: "nightfury"
+      $cras_card_config: "nightfury"
       $set-wifi-transmit-power-for-tablet-mode: "1"
       skus:
         - $sku-id: 1
