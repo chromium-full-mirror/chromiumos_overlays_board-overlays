@@ -476,6 +476,7 @@ chromeos:
           $key-id: "DEFAULT"
       skus:
         - $sku-id: 208
+          $num-mic-locations: 1
           config: *nuwani-config
 
     - $device-name: "nuwani360"
