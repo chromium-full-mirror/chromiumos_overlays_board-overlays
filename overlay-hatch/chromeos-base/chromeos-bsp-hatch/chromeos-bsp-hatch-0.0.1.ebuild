@@ -18,6 +18,7 @@ S="${WORKDIR}"
 RDEPEND="
 	chromeos-base/sof-binary
 	chromeos-base/sof-topology
+	chromeos-base/power-governor-chipset-cml
 "
 DEPEND="
 	${RDEPEND}
