@@ -127,4 +127,5 @@ src_install() {
 
 	systemd_newunit "${FILESDIR}"/chronyd.service-r2 chronyd.service
 	systemd_enable_ntpunit 50-chrony chronyd.service
+	systemd_enable_service multi-user.target chronyd.service
 }
