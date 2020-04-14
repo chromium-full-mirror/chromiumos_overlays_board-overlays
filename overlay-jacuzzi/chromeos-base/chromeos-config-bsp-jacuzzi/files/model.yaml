@@ -31,6 +31,7 @@ common_config: &common_config
   test-label: "{{$device-name}}"
   power:
     usb-min-ac-watts: "10"
+    disable-dark-resume: "0"
   audio:
     main:
       $cras_root: "/etc/cras"
