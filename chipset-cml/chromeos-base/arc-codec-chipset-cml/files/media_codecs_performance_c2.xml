@@ -37,8 +37,14 @@
             <Limit name="measured-frame-rate-1920x1080" range="659-659" />
         </MediaCodec>
         <MediaCodec name="c2.vda.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="2581-2581" />
-            <Limit name="measured-frame-rate-640x360" range="2083-2086" />
+            <!-- (b/153827927): FPS at small resolution differ a lot in different SKUs.
+              FPS of Kohaku is about 2600 and FPS of Kindred is about 1038.
+              We calculate the geometric mean of 1038 and 2600 as "value",
+              and enlarge the range to value/(2.2)^0.5 to value*(2.2)^0.5.
+              Then the real range becomes value/(2.2)^1.5 to value*(2.2)^1.5.
+              (i.e. 503-5360) -->
+            <Limit name="measured-frame-rate-320x180" range="1108-2437" />
+            <Limit name="measured-frame-rate-640x360" range="1108-2437" />
             <Limit name="measured-frame-rate-1280x720" range="1272-1280" />
             <Limit name="measured-frame-rate-1920x1080" range="836-854" />
             <Limit name="measured-frame-rate-3840x2160" range="203-203" />
