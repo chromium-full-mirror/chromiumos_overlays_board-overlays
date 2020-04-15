@@ -564,6 +564,7 @@ chromeos:
         - $whitelabel-tag: "ctl"
         - $whitelabel-tag: "pixart"
         - $whitelabel-tag: "gsa"
+        - $whitelabel-tag: "sector5"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
