@@ -12,7 +12,7 @@ if [[ ${PV} == *9999 ]]; then
 else
 	MY_PV="${PV/_rc/-rc.}"
 	EGIT_COMMIT="v${MY_PV}"
-	CONTAINERD_COMMIT="ff48f57fc83a8c44cf4ad5d672424a98ba37ded6"
+	CONTAINERD_COMMIT="814b7956fafc7a0980ea07e950f983d0837e5578"
 	SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="*"
 	inherit golang-vcs-snapshot
@@ -39,15 +39,12 @@ S=${WORKDIR}/${P}/src/${EGO_PN}
 PATCHES=(
 	# lakitu: uses Go cross compiler in the builder (i.e. ${GO}) rather than
 	# the default go compiler in the builders (i.e. go).
-	"${FILESDIR}"/1.3.2-use-GO-cross-compiler.patch
+	"${FILESDIR}"/1.3.4-use-Go-cross-compiler.patch
 	# lakitu: three changes in containerd.service:
 	# 1. always restart containerd
 	# 2. set containerd path to /usr/bin/containerd
 	# 3. set OOM score to -999
-	# lakitu: Use cached state instead of runc state
-	# cherry-pick from upstream patch
-	# 18be6e37140e778dffd91804dab2bc66ba54493f
-	"${FILESDIR}"/1.3.2-customize-containerd-service.patch
+	"${FILESDIR}"/1.3.4-customize-containerd-service.patch
 )
 
 RESTRICT="test"

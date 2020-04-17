@@ -1,6 +1,6 @@
-From c5c1d3ba404259a6701c40e962c618d2293e1e56 Mon Sep 17 00:00:00 2001
-From: Dexter Rivera <riverade@google.com>
-Date: Tue, 3 Dec 2019 17:31:32 -0800
+From 938d5549a669ceb93e54b1b6f57f56c4ebff7c4e Mon Sep 17 00:00:00 2001
+From: Vaibhav Rustagi <vaibhavrustagi@google.com>
+Date: Fri, 17 Apr 2020 11:44:15 -0700
 Subject: [PATCH] go-cross-compiler-patch
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] go-cross-compiler-patch
  1 file changed, 22 insertions(+), 22 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 6af66683..800ccab7 100644
+index c1ea1dde..335d986d 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -24,9 +24,9 @@ VERSION=$(shell git describe --match 'v[0-9]*' --dirty='.m' --always)
@@ -33,16 +33,16 @@ index 6af66683..800ccab7 100644
  INTEGRATION_PACKAGE=${PKG}
  TEST_REQUIRES_ROOT_PACKAGES=$(filter \
      ${PACKAGES}, \
-@@ -110,7 +110,7 @@ GO_GCFLAGS=$(shell				\
+@@ -115,7 +115,7 @@ GO_GCFLAGS=$(shell				\
  
  BINARIES=$(addprefix bin/,$(COMMANDS))
  
 -# Flags passed to `go test`
 +# Flags passed to `${GO} test`
- TESTFLAGS ?= $(TESTFLAGS_RACE)
+ TESTFLAGS ?= $(TESTFLAGS_RACE) $(EXTRA_TESTFLAGS)
  TESTFLAGS_PARALLEL ?= 8
  
-@@ -130,7 +130,7 @@ AUTHORS: .mailmap .git/HEAD
+@@ -135,7 +135,7 @@ AUTHORS: .mailmap .git/HEAD
  
  generate: protos
  	@echo "$(WHALE) $@"
@@ -51,7 +51,7 @@ index 6af66683..800ccab7 100644
  
  protos: bin/protoc-gen-gogoctrd ## generate protobuf
  	@echo "$(WHALE) $@"
-@@ -155,44 +155,44 @@ proto-fmt: ## check format of proto files
+@@ -160,44 +160,44 @@ proto-fmt: ## check format of proto files
  	@test -z "$$(find . -path ./vendor -prune -o -name '*.proto' -type f -exec grep -Hn "Meta meta = " {} \; | grep -v '(gogoproto.nullable) = false' | tee /dev/stderr)" || \
  		(echo "$(ONI) meta fields in proto files must have option (gogoproto.nullable) = false" && false)
  
@@ -106,21 +106,21 @@ index 6af66683..800ccab7 100644
  
  binaries: $(BINARIES) ## build binaries
  	@echo "$(WHALE) $@"
-@@ -208,11 +208,11 @@ genman: man/containerd.1 man/ctr.1
+@@ -213,11 +213,11 @@ genman: man/containerd.8 man/ctr.8
  
- man/containerd.1: FORCE
+ man/containerd.8: FORCE
  	@echo "$(WHALE) $@"
--	go run cmd/gen-manpages/main.go containerd man/
-+	${GO} run cmd/gen-manpages/main.go containerd man/
+-	go run cmd/gen-manpages/main.go $(@F) $(@D)
++	${GO} run cmd/gen-manpages/main.go $(@F) $(@D)
  
- man/ctr.1: FORCE
+ man/ctr.8: FORCE
  	@echo "$(WHALE) $@"
--	go run cmd/gen-manpages/main.go ctr man/
-+	${GO} run cmd/gen-manpages/main.go ctr man/
+-	go run cmd/gen-manpages/main.go $(@F) $(@D)
++	${GO} run cmd/gen-manpages/main.go $(@F) $(@D)
  
  man/%: docs/man/%.md FORCE
  	@echo "$(WHALE) $@"
-@@ -274,9 +274,9 @@ uninstall:
+@@ -279,9 +279,9 @@ uninstall:
  coverage: ## generate coverprofiles from the unit tests, except tests that require root
  	@echo "$(WHALE) $@"
  	@rm -f coverage.txt
@@ -132,7 +132,7 @@ index 6af66683..800ccab7 100644
  			-cover \
  			-coverprofile=profile.out \
  			-covermode=atomic $$pkg || exit; \
-@@ -288,9 +288,9 @@ coverage: ## generate coverprofiles from the unit tests, except tests that requi
+@@ -293,9 +293,9 @@ coverage: ## generate coverprofiles from the unit tests, except tests that requi
  
  root-coverage: ## generate coverage profiles for unit tests that require root
  	@echo "$(WHALE) $@"
@@ -145,5 +145,5 @@ index 6af66683..800ccab7 100644
  			-coverprofile=profile.out \
  			-covermode=atomic $$pkg -test.root || exit; \
 -- 
-2.24.0.393.g34dc348eaf-goog
+2.26.1.301.g55bc3eb7cb9-goog
 

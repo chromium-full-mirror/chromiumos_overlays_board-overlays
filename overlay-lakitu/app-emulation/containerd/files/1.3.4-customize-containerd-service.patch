@@ -1,6 +1,6 @@
-From 5ac7baf31bee00908b43b643f24a27264b1cfa03 Mon Sep 17 00:00:00 2001
-From: Dexter Rivera <riverade@google.com>
-Date: Tue, 3 Dec 2019 18:02:39 -0800
+From f6d05d79a753bbe1141876bf4e19e0c5014df5f6 Mon Sep 17 00:00:00 2001
+From: Vaibhav Rustagi <vaibhavrustagi@google.com>
+Date: Fri, 17 Apr 2020 12:10:40 -0700
 Subject: [PATCH] customize-containerd-service
 
 ---
@@ -8,16 +8,17 @@ Subject: [PATCH] customize-containerd-service
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/containerd.service b/containerd.service
-index 5452ea1f..854a6126 100644
+index cae30ec7..f345d4f2 100644
 --- a/containerd.service
 +++ b/containerd.service
-@@ -5,11 +5,13 @@ After=network.target local-fs.target
+@@ -5,12 +5,14 @@ After=network.target local-fs.target
  
  [Service]
  ExecStartPre=-/sbin/modprobe overlay
 -ExecStart=/usr/local/bin/containerd
 +ExecStart=/usr/bin/containerd
  
+ Type=notify
  Delegate=yes
  KillMode=process
 +OOMScoreAdjust=-999
@@ -27,5 +28,5 @@ index 5452ea1f..854a6126 100644
  # in the kernel. We recommend using cgroups to do container-local accounting.
  LimitNPROC=infinity
 -- 
-2.24.0.393.g34dc348eaf-goog
+2.26.1.301.g55bc3eb7cb9-goog
 
