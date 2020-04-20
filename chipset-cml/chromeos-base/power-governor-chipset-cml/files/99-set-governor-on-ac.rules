@@ -1,4 +1,4 @@
-# If AC is plugged in, change the scaling_governor to performance.
-# If AC is unplugged, change the scaling_governor to powersave.
+# If battery is charging, change the scaling_governor to performance.
+# If battery is discharging, change the scaling_governor to powersave.
 #
 ACTION=="change", SUBSYSTEM=="power_supply", RUN+="/usr/bin/cpufreq_config"
