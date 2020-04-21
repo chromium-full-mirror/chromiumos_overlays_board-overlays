@@ -55,6 +55,9 @@ main() {
       # Return empty string if the sensor id is not 10
       product_id=""
     fi
+  elif [ "${chassis_id}" = "KRANE" ] && [ "${product_id}" = "0E0C" ]; then
+      # Correct the wrong PID 0E0C to the 0E30
+      product_id="0E30"
   fi
   echo "${product_id}"
 }
