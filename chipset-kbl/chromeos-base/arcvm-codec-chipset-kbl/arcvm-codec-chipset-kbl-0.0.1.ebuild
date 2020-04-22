@@ -18,6 +18,6 @@ S="${WORKDIR}"
 
 src_install() {
 	arc-build-constants-configure
-	insinto "${ARC_VENDOR_DIR}/etc/"
+	insinto "${ARC_VM_VENDOR_DIR}/etc"
 	doins "${FILESDIR}"/*
 }
