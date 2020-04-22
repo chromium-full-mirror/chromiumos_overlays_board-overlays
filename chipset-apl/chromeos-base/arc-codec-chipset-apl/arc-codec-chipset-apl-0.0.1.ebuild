@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cros-constants
+inherit arc-build-constants
 
 DESCRIPTION="Install codec configuration for ARC++"
 
@@ -15,7 +15,8 @@ S="${WORKDIR}"
 RDEPEND="!chromeos-base/arc-codec-software"
 
 src_install() {
-	insinto "${ARC_VENDOR_DIR}/etc/"
+	arc-build-constants-configure
+	insinto "${ARC_CONTAINER_VENDOR_DIR}/etc"
 
 	if use android-container-nyc; then
 		ARC_CODEC_DIR="${FILESDIR}/nyc"
