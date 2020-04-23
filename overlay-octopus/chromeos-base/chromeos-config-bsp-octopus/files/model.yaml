@@ -899,11 +899,15 @@ chromeos:
         - $sku-id-val: 37
           $stylus-category: "external"
           $num-mic-locations: 2
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 38
           $num-mic-locations: 2
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
