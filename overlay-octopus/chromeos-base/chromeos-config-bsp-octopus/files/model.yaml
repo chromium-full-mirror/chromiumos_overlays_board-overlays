@@ -699,9 +699,13 @@ chromeos:
         - $sku-id-val: 37
           $stylus-category: "external"
           $num-mic-locations: 2
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
           config: *convertible_wl_config
         - $sku-id-val: 38
           $num-mic-locations: 2
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
           config: *convertible_wl_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
