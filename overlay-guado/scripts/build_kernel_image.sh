@@ -14,9 +14,5 @@ modify_kernel_command_line() {
   quirks+=",2bd9:0031:k"
   # Aggregate and export
   echo "usbcore.quirks=${quirks}"
-
-  # Force tpm_tis
-  echo "tpm_tis.force=1"
-  echo "tpm_tis.interrupts=0"
  } >> "$1"
 }
