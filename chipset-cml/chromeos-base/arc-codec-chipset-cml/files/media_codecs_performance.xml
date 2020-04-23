@@ -23,7 +23,8 @@
             <Limit name="measured-frame-rate-320x240" range="791-791" />
             <Limit name="measured-frame-rate-720x480" range="227-230" />
             <Limit name="measured-frame-rate-1280x720" range="125-126" />
-            <Limit name="measured-frame-rate-1920x1080" range="64-65" />
+            <!-- Set wider ranges to cover SKU variance: b/154660894 -->
+            <Limit name="measured-frame-rate-1920x1080" range="30-65" />
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="1457-1518" />
