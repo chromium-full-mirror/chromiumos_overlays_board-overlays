@@ -23,6 +23,7 @@ RDEPEND="
 	dev-lang/python:3.6
 	dev-python/grpcio
 	dev-python/protobuf-python
+	dev-python/netifaces
 "
 
 DEPEND="${RDEPEND}
