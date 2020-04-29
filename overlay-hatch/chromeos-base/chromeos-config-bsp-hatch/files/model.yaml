@@ -216,7 +216,6 @@ chromeos:
           config: *base_config
     - $device-name: "akemi"
       $fw-name: "Akemi"
-      $alsa_card: "sof-sof_rt5682b"
       $cras_dsp_config: "akemi"
       $cras_card_config: "akemi"
       $has-ambient-light-sensor: "0"
