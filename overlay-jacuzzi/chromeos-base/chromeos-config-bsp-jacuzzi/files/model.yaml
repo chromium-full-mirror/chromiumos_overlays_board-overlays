@@ -69,7 +69,7 @@ common_config: &common_config
   $ucm-source: "{{cras-config-dir}}/audio/ucm-config{{$ucm-source-suffix}}"
   name: "{{$device-name}}"
   identity: &identity
-    platform-name: "Jacuzzi"
+    platform-name: "Kukui"
     device-tree-compatible-match: "{{$fw-name}}"
   firmware:
     build-targets:
