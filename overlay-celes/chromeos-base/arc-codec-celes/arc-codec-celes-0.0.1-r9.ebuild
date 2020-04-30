@@ -1,1 +1,0 @@
-arc-codec-celes-0.0.1.ebuild
