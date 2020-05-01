@@ -59,6 +59,7 @@ LAKITU_RDEPEND="
 		sys-apps/apparmor
 		sec-policy/apparmor-profiles
 	)
+	sys-apps/acl
 	sys-apps/cloud-disk-resize
 	sys-apps/dbus
 	sys-apps/ethtool
