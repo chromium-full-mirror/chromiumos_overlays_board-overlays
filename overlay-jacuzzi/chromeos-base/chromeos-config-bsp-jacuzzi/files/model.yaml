@@ -109,7 +109,7 @@ damu-config: &damu_config
   $key-id: "DAMU"
   identity:
     <<: *identity
-  audio: *ts3a227e_audio_config
+  audio: *da7219_audio_config
 
 chromeos:
   devices:
