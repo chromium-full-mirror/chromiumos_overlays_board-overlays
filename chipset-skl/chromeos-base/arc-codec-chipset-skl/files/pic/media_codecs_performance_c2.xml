@@ -25,13 +25,15 @@
     </Encoders>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="710-719" />
+            <!-- b/155707252: Enlarge range for small resolution, geometric mean: 719 -->
+            <Limit name="measured-frame-rate-320x240" range="485-1066" />
             <Limit name="measured-frame-rate-720x480" range="604-613" />
             <Limit name="measured-frame-rate-1280x720" range="530-531" />
             <Limit name="measured-frame-rate-1920x1088" range="351-354" />
         </MediaCodec>
         <MediaCodec name="c2.vda.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="693-697" />
+            <!-- b/155707252: Enlarge range for small resolution, geometric mean: 697 -->
+            <Limit name="measured-frame-rate-320x180" range="470-1034" />
             <Limit name="measured-frame-rate-640x360" range="668-673" />
             <Limit name="measured-frame-rate-1280x720" range="543-554" />
             <Limit name="measured-frame-rate-1920x1080" range="343-347" />
