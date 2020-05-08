@@ -30,6 +30,7 @@ common_config: &common_config
     signature-id: "{{$device-name}}"
   test-label: "{{$device-name}}"
   power:
+    low-battery-shutdown-percent: "4.0"
     usb-min-ac-watts: "10"
     disable-dark-resume: "0"
   audio:
