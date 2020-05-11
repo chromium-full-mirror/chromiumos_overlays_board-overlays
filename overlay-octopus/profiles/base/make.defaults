@@ -32,6 +32,8 @@ INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
 # Include the emright firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} emright"
+# Include the elan_i2chid firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 
 # Enable background blur.
 USE="${USE} background_blur"
