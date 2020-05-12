@@ -25,6 +25,7 @@ RDEPEND="
 		app-emulation/docker
 		dev-python/cherrypy
 		dev-python/futures
+		dev-python/google-api-core
 		dev-python/google-cloud-storage
 		dev-python/grpcio
 		dev-python/parallel-ssh
