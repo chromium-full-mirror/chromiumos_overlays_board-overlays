@@ -373,6 +373,7 @@ chromeos:
         - $sku-id: 1
           config: *base_config
         - $sku-id: 2
+          $internal-backlight-no-als-battery-brightness: "52.0"
           config: *base_config
         - $sku-id: 21
           $set-cellular-transmit-power-for-tablet-mode: "1"
@@ -384,6 +385,7 @@ chromeos:
         - $sku-id: 22
           $set-cellular-transmit-power-for-tablet-mode: "1"
           $set-cellular-transmit-power-dpr-gpio: "471"
+          $internal-backlight-no-als-battery-brightness: "52.0"
           config:
             <<: *base_config
             modem:
