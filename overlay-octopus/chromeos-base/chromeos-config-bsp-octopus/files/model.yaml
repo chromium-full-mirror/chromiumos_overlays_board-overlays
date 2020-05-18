@@ -582,12 +582,14 @@ chromeos:
           $stylus-category: "external"
           config: *convertible_config
         - $sku-id-val: 53
+          $sub_cras_config: ".bipship"
           config:
             <<: *convertible_config
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
         - $sku-id-val: 54
+          $sub_cras_config: ".bipship"
           $has-keyboard-backlight: "1"
           $keyboard-backlight-no-als-brightness: "20"
           config:
@@ -596,6 +598,7 @@ chromeos:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
         - $sku-id-val: 55
+          $sub_cras_config: ".bipship"
           config:
             <<: *convertible_config
             wifi:
@@ -622,6 +625,7 @@ chromeos:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
         - $sku-id-val: 56
+          $sub_cras_config: ".bipship"
           $has-keyboard-backlight: "1"
           $keyboard-backlight-no-als-brightness: "20"
           config:
