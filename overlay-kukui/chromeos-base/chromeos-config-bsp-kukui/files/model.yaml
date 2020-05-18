@@ -63,7 +63,7 @@ common_config: &common_config
     build-targets:
       coreboot: "{{$fw-build-name}}"
       ec: "{{$fw-build-name}}"
-      ec_extras: [ "kukui_scp", "{{$fw-base-build-name}}" ]
+      ec_extras: [ "kukui_scp" ]
       depthcharge: "kukui"
       libpayload: "kukui"
     no-firmware: true
@@ -88,7 +88,6 @@ kukui-config: &kukui_config
   $fw-name: "google,kukui"
   $fw-build-name: "kukui"
   $key-id: "DEFAULT"
-  $fw-base-build-name: ""
   identity:
     <<: *identity
     sku-id: 0
@@ -103,7 +102,6 @@ krane-config: &krane_config
   $fw-name: "google,krane"
   $fw-build-name: "krane"
   $key-id: "KRANE"
-  $fw-base-build-name: "masterball"
   power:
     <<: *power_common
     $has-ambient-light-sensor: "1"
@@ -125,7 +123,6 @@ kodama-config: &kodama_config
   $fw-name: "google,kodama"
   $fw-build-name: "kodama"
   $key-id: "KRANE"
-  $fw-base-build-name: "magnemite"
   audio: *audio_config
   power:
     <<: *power_common
@@ -135,7 +132,6 @@ kakadu-config: &kakadu_config
   $fw-name: "google,kakadu"
   $fw-build-name: "kakadu"
   $key-id: "DEFAULT"
-  $fw-base-build-name: "moonball"
   audio: *audio_config
   power:
     <<: *power_common
