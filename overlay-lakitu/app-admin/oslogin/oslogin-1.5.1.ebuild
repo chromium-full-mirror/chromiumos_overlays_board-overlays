@@ -26,6 +26,10 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/compute-image-packages-${CIP_PV}/packages/google-compute-engine-oslogin"
 
+src_prepare() {
+	epatch "${FILESDIR}/0001-fix-oslogin-CVEs.patch"
+}
+
 src_compile() {
 	emake JSON_INCLUDE_PATH="${SYSROOT}/usr/include/json-c"
 }
