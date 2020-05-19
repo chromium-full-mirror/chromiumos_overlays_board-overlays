@@ -10,5 +10,5 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 
-DEPEND="chromeos-base/chromeos-config-bsp-zork"
+DEPEND=""
 RDEPEND="${DEPEND}"
