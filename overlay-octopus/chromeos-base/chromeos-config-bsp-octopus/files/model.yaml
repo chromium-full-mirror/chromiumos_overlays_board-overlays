@@ -351,14 +351,23 @@ chromeos:
           config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 37
           $sub_cras_config: ".droid_lte"
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 38
           $sub_cras_config: ".droid_lte"
-          config: *clamshell_touchscreen_wl_config
+          config:
+            <<: *clamshell_touchscreen_wl_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 39
           $has-keyboard-backlight: "1"
           $sub_cras_config: ".droid_lte"
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 40
           $has-keyboard-backlight: "1"
           $sub_cras_config: ".droid_lte"
@@ -703,9 +712,15 @@ chromeos:
         - $sku-id-val: 9
           config: *clamshell_wl_config
         - $sku-id-val: 17
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 18
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 19
           config: *clamshell_wl_config
         - $sku-id-val: 20
@@ -761,7 +776,10 @@ chromeos:
           config: *convertible_config
         - $sku-id-val: 3
           $num-mic-locations: 2
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            modem:
+              firmware-variant: "{{$device-name}}"
         - $sku-id-val: 4
           $num-mic-locations: 2
           config: *convertible_config
