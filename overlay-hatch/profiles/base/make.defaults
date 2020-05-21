@@ -58,3 +58,6 @@ USE="${USE} has-kernelnext"
 
 # Inidicates that this board has an internal stylus.
 USE="${USE} internal_stylus"
+
+# Enable support for modem firmware updates
+USE="${USE} modemfwd"
