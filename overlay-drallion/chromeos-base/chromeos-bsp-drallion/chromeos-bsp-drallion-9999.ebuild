@@ -17,9 +17,7 @@ LICENSE="BSD-Google"
 KEYWORDS="-* ~amd64 ~x86"
 
 # Add dependencies on other ebuilds from within this board overlay
-RDEPEND="
-	chromeos-base/power-governor-chipset-cml
-"
+RDEPEND=""
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
