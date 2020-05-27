@@ -21,3 +21,9 @@ USE="${USE} arc"
 
 # Ability to run guest VMs.
 USE="${USE} kvm_host -crosvm-wl-dmabuf"
+
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
+# Include the elan_i2chid firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
