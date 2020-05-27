@@ -7,8 +7,6 @@ USE=""
 
 USE="${USE} kukui"
 
-USE="${USE} bootimage"
-
 USE="${USE} detachable_ui"
 
 USE="${USE} als"
@@ -16,8 +14,8 @@ USE="${USE} als"
 # Enable unibuild
 USE="${USE} unibuild"
 
-# Building EC
-USE="${USE} cros_ec"
+# Disable firmware and ec build.
+USE="${USE} -bootimage -cros_ec"
 
 USE="${USE} touch_centric_device"
 
