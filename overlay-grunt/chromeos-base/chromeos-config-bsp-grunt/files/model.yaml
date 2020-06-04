@@ -52,7 +52,7 @@ base-config: &base_config
     $camera-count: 1
     count: "{{$camera-count}}"
   name: "{{$device-name}}"
-  identity:
+  identity: &base_identity
     platform-name: "Grunt"
     smbios-name-match: "Grunt"
     sku-id: "{{$sku-id}}"
@@ -238,6 +238,10 @@ treeya360-config: &treeya360_config
   <<: [ *treeya_config, *convertible_base_config ]
   $audio-config: "treeya"
   $firmware-target: "treeya"
+  $key-id: "LIARA"
+  identity:
+    <<: *base_identity
+    whitelabel-tag: "{{$whitelabel-tag}}"
   touch:
     <<: *touch_common
     files:
@@ -467,7 +471,10 @@ chromeos:
       products:
         - $brand-code: "XFUX"
           $marketing-name: "TBD"
-          $key-id: "LIARA"
+          $whitelabel-tag: ""
+        - $brand-code: "TZIV"
+          $marketing-name: "TBD"
+          $whitelabel-tag: "miranda"
       skus:
         - $sku-id: 168
           $num-mic-locations: 1
