@@ -51,7 +51,7 @@ base_config: &base_config
     main: *audio_common
   brand-code: "{{$brand-code}}"
   name: "{{$device-name}}"
-  identity:
+  identity: &base_identity
     platform-name: "Grunt"
     smbios-name-match: "Grunt"
     sku-id: "{{$sku-id}}"
@@ -227,6 +227,10 @@ treeya360-config: &treeya360-config
   $audio-config: "treeya"
   firmware:
     $firmware-target: "treeya"
+  $key-id: "LIARA"
+  identity:
+    <<: *base_identity
+    whitelabel-tag: "{{$whitelabel-tag}}"
   touch:
     <<: *touch_common
     $touch_present: "yes"
@@ -451,7 +455,10 @@ chromeos:
       products:
         - $brand-code: "XFUX"
           $marketing-name: "TBD"
-          $key-id: "DEFAULT"
+          $whitelabel-tag: ""
+        - $brand-code: "TZIV"
+          $marketing-name: "TBD"
+          $whitelabel-tag: "miranda"
       skus:
         - $sku-id: 168
           $num-mic-locations: 1
