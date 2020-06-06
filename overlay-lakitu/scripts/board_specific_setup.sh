@@ -112,6 +112,16 @@ write_kernel_commit() {
   fi
 }
 
+# Export default GPU driver version file as an artifact.
+export_gpu_default_version() {
+  local -r script_root="$1"
+  local -r default_driver_file="${script_root}/gpu_default_version"
+  local -r default_driver_artifact="${BUILD_DIR}/gpu_default_version"
+
+  # Copy scripts/gpu_default_version to BUILD artifact
+  cp "${default_driver_file}" "${default_driver_artifact}"
+}
+
 # board_finalize_base_image() gets invoked by the build scripts at the
 # end of building base image.
 board_finalize_base_image() {
@@ -127,6 +137,7 @@ board_finalize_base_image() {
   write_kernel_info
   write_kernel_commit
   cp "${BOARD_ROOT}/usr/lib/debug/boot/vmlinux" "${BUILD_DIR}/vmlinux"
+  export_gpu_default_version "${script_root}"
 
   # /etc/machine-id gets installed by sys-apps/dbus and is a symlink.
   # This conflicts with systemd's machine-id generation mechanism,
