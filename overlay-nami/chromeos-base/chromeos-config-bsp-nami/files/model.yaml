@@ -141,6 +141,18 @@ chromeos:
           config: *device_config
         - $sku-id: 0x3ae3
           config: *device_config
+    - $device-name: "sylas"
+      $internal-backlight-no-als-battery-brightness: "63.0"
+      products:
+        - $marketing-name: "TBD"
+          $brand-code: "HFRG"
+# TODO (change key-id once the key is available)
+          $key-id: "NAMI"
+      skus:
+        - $sku-id: 0x39e2
+          config: *device_config
+        - $sku-id: 0x39e3
+          config: *device_config
     - $device-name: "syndra"
       $internal-backlight-no-als-battery-brightness: "63.0"
       products:
