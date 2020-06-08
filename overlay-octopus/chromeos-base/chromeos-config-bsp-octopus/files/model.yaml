@@ -600,8 +600,10 @@ chromeos:
         - $whitelabel-tag: ""
       skus:
         - $sku-id-val: 49
-          config: *clamshell_wl_config
+          config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 50
+          config: *clamshell_wl_config
+        - $sku-id-val: 51
           config: *clamshell_wl_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
