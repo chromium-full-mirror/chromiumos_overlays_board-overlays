@@ -14,5 +14,8 @@ modify_kernel_command_line() {
 
   # Check for S0ix failures and show warnings on failures
   echo "intel_pmc_core.warn_on_s0ix_failures=1"
+
+  # Disable ucsi_acpi driver
+  echo "modprobe.blacklist=ucsi_acpi"
  } >> "$1"
 }
