@@ -38,19 +38,8 @@ read_fuses() {
     return 1
   fi
 
-  # Copy the fuse contents into a separate file since the
-  # nvmem file is not seekable.
-  tmpfuse="${RMTFS_DIR}/fuses.txt"
-  if cat "${fuse_path}" >"${tmpfuse}" ; then
-    # TODO(evgreen): This offset will likely change from the RFC
-    # driver this was tested on.
-    fsg_fuse_hash="$(dd if="${tmpfuse}" bs=1 skip=$((0x750)) count=32 \
+  fsg_fuse_hash="$(dd if="${fuse_path}" bs=1 skip=$((0x750)) count=32 \
                      status=none | od -tx1 -vAn | tr -d ' \n')"
-  else
-    logerr "Failed to read fuses."
-  fi
-
-  rm "${tmpfuse}"
 }
 
 # Compare the FSG hash to what's in the fuses.
