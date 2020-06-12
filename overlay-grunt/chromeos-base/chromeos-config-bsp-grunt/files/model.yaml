@@ -208,6 +208,10 @@ liara-config: &liara-config
 
 treeya-config: &treeya-config
   <<: *base_config
+  $key-id: "LIARA"
+  identity:
+    <<: *base_identity
+    whitelabel-tag: "{{$whitelabel-tag}}"
   firmware:
     <<: *firmware_common
   touch:
@@ -446,7 +450,10 @@ chromeos:
       products:
         - $brand-code: "BAUA"
           $marketing-name: "TBD"
-          $key-id: "DEFAULT"
+          $whitelabel-tag: ""
+        - $brand-code: "QCDF"
+          $marketing-name: "TBD"
+          $whitelabel-tag: "treeyac"
       skus:
         - $sku-id: 160
           config: *treeya-config
