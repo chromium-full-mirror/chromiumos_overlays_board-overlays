@@ -1,1 +1,0 @@
-chromeos-bsp-baseboard-trogdor-0.0.1.ebuild
