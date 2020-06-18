@@ -35,8 +35,8 @@ RDEPEND+="
 	$(for v in "${IUSE_KERNEL_VERS[@]}"; do echo "!${v}? ( !sys-kernel/lakitu-${v} )"; done)
 "
 
-# Default to the 4.19 kernel if none has been selected.
-RDEPEND_DEFAULT="sys-kernel/lakitu-kernel-4_19"
+# Default to the 5.4 kernel if none has been selected.
+RDEPEND_DEFAULT="sys-kernel/lakitu-kernel-5_4"
 
 # Here be dragons!
 RDEPEND+="

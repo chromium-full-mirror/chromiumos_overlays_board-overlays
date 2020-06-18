@@ -18,7 +18,8 @@ USE="${USE} cros_embedded"
 USE="${USE} pam"
 
 # Kernel specific use flags.
-USE="${USE} kernel_sources kernel-4_19"
+USE="${USE} kernel_sources kernel-5_4"
+
 # Disable some kernel options.
 USE="${USE} -fbconsole -firmware_install -mbim -vlan"
 
