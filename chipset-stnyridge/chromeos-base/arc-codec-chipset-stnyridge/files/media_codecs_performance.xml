@@ -54,16 +54,17 @@
         <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="668-853" />
         </MediaCodec>
+        <!-- The lowerbounds are from Liara and the upperbounds are from Aleena. -->
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="408-531" />
-            <Limit name="measured-frame-rate-640x360" range="142-170" />
-            <Limit name="measured-frame-rate-1920x1080" range="12-14" />
+            <Limit name="measured-frame-rate-320x180" range="408-728" />
+            <Limit name="measured-frame-rate-640x360" range="142-257" />
+            <Limit name="measured-frame-rate-1920x1080" range="12-26" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="357-357" />
-            <Limit name="measured-frame-rate-640x360" range="119-119" />
-            <Limit name="measured-frame-rate-1280x720" range="47-47" />
-            <Limit name="measured-frame-rate-1920x1080" range="28-28" />
+            <Limit name="measured-frame-rate-320x180" range="357-603" />
+            <Limit name="measured-frame-rate-640x360" range="119-255" />
+            <Limit name="measured-frame-rate-1280x720" range="47-80" />
+            <Limit name="measured-frame-rate-1920x1080" range="28-46" />
         </MediaCodec>
     </Decoders>
 </MediaCodecs>
