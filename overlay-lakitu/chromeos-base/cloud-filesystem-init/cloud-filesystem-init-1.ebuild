@@ -36,4 +36,8 @@ src_install() {
 	systemd_dounit "${FILESDIR}"/var-lib-docker.mount
 	systemd_dounit "${FILESDIR}"/var-lib-docker-remount.service
 	systemd_enable_service local-fs.target var-lib-docker.mount
+
+	systemd_dounit "${FILESDIR}"/var-lib-containerd.mount
+	systemd_dounit "${FILESDIR}"/var-lib-containerd-remount.service
+	systemd_enable_service local-fs.target var-lib-containerd.mount
 }
