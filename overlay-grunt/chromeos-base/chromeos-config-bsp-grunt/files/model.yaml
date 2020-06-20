@@ -284,6 +284,12 @@ nuwani-config: &nuwani_config
   <<: *base_config
   firmware:
     <<: *firmware_common
+  touch:
+    <<: *touch_common
+    files:
+      - source: "touch/pixart/1004_0002.bin"
+        destination: "{{$fw_dest}}/1004_0002.bin"
+        symlink: "{{$fw_root}}/pix_tp2xxx_1004.bin"
 
 nuwani360-config: &nuwani360_config
   <<: [ *nuwani_config, *convertible_base_config ]
