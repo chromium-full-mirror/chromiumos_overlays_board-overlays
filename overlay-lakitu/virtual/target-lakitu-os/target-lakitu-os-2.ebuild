@@ -54,6 +54,7 @@ LAKITU_RDEPEND="
 	net-fs/autofs
 	net-misc/bridge-utils
 	net-misc/chrony
+	net-misc/rsync
 	net-misc/wget
 	apparmor? (
 		sys-apps/apparmor
