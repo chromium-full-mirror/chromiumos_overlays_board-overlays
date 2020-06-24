@@ -32,9 +32,9 @@ krane_audio_config: &krane_audio_config
       - source: "{{$ucm-source}}/{{$card}}.conf"
         destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
       - source: "{{$ucm-source}}/Lenovo USB-C TO 3.5mm Adapter/HiFi.conf"
-        destination: "{{$ucm-dest}}/Lenovo USB-C TO 3.5mm Adapter/HiFi.conf"
+        destination: "{{$ucm_root}}/Lenovo USB-C TO 3.5mm Adapter/HiFi.conf"
       - source: "{{$ucm-source}}/Lenovo USB-C TO 3.5mm Adapter/Lenovo USB-C TO 3.5mm Adapter.conf"
-        destination: "{{$ucm-dest}}/Lenovo USB-C TO 3.5mm Adapter/Lenovo USB-C TO 3.5mm Adapter.conf"
+        destination: "{{$ucm_root}}/Lenovo USB-C TO 3.5mm Adapter/Lenovo USB-C TO 3.5mm Adapter.conf"
       - source: "{{$cras-source}}/Lenovo USB-C TO 3.5mm Adapter"
         destination: "{{$cras-dest}}/Lenovo USB-C TO 3.5mm Adapter"
 
