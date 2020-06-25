@@ -18,6 +18,7 @@ SERVICES="
 	google-accounts-daemon.service
 	google-clock-skew-daemon.service
 	google-network-daemon.service
+	google-osconfig-agent.service
 	metrics-daemon.service
 	update-engine.service
 "
