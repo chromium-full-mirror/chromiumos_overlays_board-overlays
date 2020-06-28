@@ -295,6 +295,12 @@ nuwani360-config: &nuwani360_config
   <<: [ *nuwani_config, *convertible_base_config ]
   $audio-config: "nuwani"
   $firmware-target: "nuwani"
+  touch:
+    <<: *touch_common
+    files:
+      - source: "touch/elan/1d02_6421.bin"
+        destination: "{{$fw_dest}}/1d02_6421.bin"
+        symlink: "{{$fw_root}}/elants_i2chid_1d02.bin"
 
 chromeos:
   devices:
