@@ -159,6 +159,21 @@ chromeos:
               $has-keyboard-backlight: "0"
         - $sku-id: 0x3ae3
           config: *convertible_device_config
+    - $device-name: "sylas"
+      $bluetooth-device: "{{$device-name}}"
+      $internal-backlight-no-als-battery-brightness: "63.0"
+      $fw-name: "Sylas"
+      products:
+        - $key-id: "NAMI"
+      skus:
+        - $sku-id: 0x39e2
+          config:
+            <<: *convertible_device_config
+            power:
+              <<: *power_common
+              $has-keyboard-backlight: "0"
+        - $sku-id: 0x39e3
+          config: *convertible_device_config
     - $device-name: "syndra"
       $touchpad-wakeup: "1"
       $internal-backlight-no-als-battery-brightness: "63.0"
