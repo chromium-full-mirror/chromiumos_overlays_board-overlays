@@ -3,7 +3,7 @@
   "wf_sensor_flip": 0,
   "wf_sensor_tuning_module_id": 0,
   "wf_sensor_eeprom": "/sys/bus/nvmem/devices/2-00580/nvmem",
-  "wf_sensor_orientation": 90,
+  "wf_sensor_orientation": 0,
   "wf_sensor_minFocusDistance": 20,
   "uf_sensor_mirror": 0,
   "uf_sensor_flip": 0,
