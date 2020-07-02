@@ -105,4 +105,4 @@
 [Headphone]
   volume_curve = simple_step
   volume_step = 50
-  max_volume = -800
+  max_volume = -60
