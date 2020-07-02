@@ -37,7 +37,8 @@ USE="${USE} unibuild"
 USE="${USE} arc"
 
 # Ability to run guest VMs.
-USE="${USE} kvm_host -crosvm-wl-dmabuf crosvm-gpu virtio_gpu"
+# TODO(crbug.com/1086063) Re-enable virtio_gpu once fixed
+USE="${USE} kvm_host -crosvm-wl-dmabuf crosvm-gpu"
 
 # Add ec firmware.
 USE="${USE} cros_ec"
