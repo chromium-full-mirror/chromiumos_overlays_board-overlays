@@ -13,8 +13,7 @@ readonly DUMPFILE_LN="/var/kdump"
 readonly ESP_PARTITION="/dev/sda12"
 readonly KDUMP_KERNEL="/boot/kdump/vmlinuz"
 readonly PROG_NAME="$(basename ${0})"
-readonly CRASHKERNEL_SIZE="0M-8G:64M,8G-32G:128M,32G-128G:256M,128G-:512M"
-
+readonly CRASHKERNEL_SIZE="0M-8G:64M,8G-128G:256M,128G-:512M"
 
 #
 # usage <exit_code>
