@@ -746,6 +746,8 @@ chromeos:
       $fw-name: "Garg"
       $disable-dark-resume: "0"
       $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       products:
         - $whitelabel-tag: ""
       skus:
