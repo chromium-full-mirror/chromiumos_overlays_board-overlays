@@ -921,6 +921,8 @@ chromeos:
     - $device-name: "garfour"
       $fw-name: "Garg"
       $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
