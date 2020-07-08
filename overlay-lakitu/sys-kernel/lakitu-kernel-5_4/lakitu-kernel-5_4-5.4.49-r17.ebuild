@@ -8,7 +8,7 @@ EAPI=6
 
 CROS_WORKON_REPO="https://cos.googlesource.com"
 CROS_WORKON_PROJECT="third_party/kernel"
-CROS_WORKON_EGIT_BRANCH="release-R85-13310.B-cos-5.4"
+CROS_WORKON_EGIT_BRANCH="cos-5.4"
 CROS_WORKON_COMMIT="43149c67d9eab8c02ce6958ec7867caba58b0af8"
 CROS_WORKON_BLACKLIST="1"
 
@@ -23,7 +23,7 @@ STRIP_MASK+=" *.ko"
 DESCRIPTION="COS Linux Kernel 5.4"
 HOMEPAGE="https://cloud.google.com/container-optimized-os"
 KEYWORDS="*"
-IUSE="module_sign gpu"
+IUSE="module_sign lockdown gpu"
 
 src_configure() {
 	if use module_sign ; then

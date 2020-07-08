@@ -10,7 +10,7 @@ HOMEPAGE="http://dev.chromium.org/"
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-IUSE="bootchart +crash_reporting +pam readahead systemd watchdog apparmor criu uefi_bootloaders stackdriver_alpha module_sign lakitu_kdump"
+IUSE="bootchart +crash_reporting +pam readahead systemd watchdog apparmor criu uefi_bootloaders stackdriver_alpha module_sign lockdown lakitu_kdump"
 
 LAKITU_RDEPEND="
 	bootchart? ( app-benchmarks/bootchart )

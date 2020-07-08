@@ -82,7 +82,7 @@ USE="${USE} stackdriver_alpha"
 USE="${USE} include_vmlinuz"
 
 # Enable kernel module signing
-USE="${USE} module_sign"
+USE="${USE} module_sign lockdown"
 
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this

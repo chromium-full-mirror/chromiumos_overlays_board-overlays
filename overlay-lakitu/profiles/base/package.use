@@ -59,8 +59,8 @@ net-misc/openssh -hpn
 # Disable oobe_config to avoid surprising users (b/112722312).
 chromeos-base/chromeos-installer -oobe_config
 
-# Disable kernel module signing for dump capture kernel.
-sys-kernel/dump-capture-kernel -module_sign
+# Disable kernel module signing and lockdown for dump capture kernel.
+sys-kernel/dump-capture-kernel -module_sign -lockdown
 
 # Enable full lvm2 install.
 sys-fs/lvm2 -device-mapper-only

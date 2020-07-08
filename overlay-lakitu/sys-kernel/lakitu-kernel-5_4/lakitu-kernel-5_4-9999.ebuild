@@ -22,7 +22,7 @@ STRIP_MASK+=" *.ko"
 DESCRIPTION="COS Linux Kernel 5.4"
 HOMEPAGE="https://cloud.google.com/container-optimized-os"
 KEYWORDS="~*"
-IUSE="module_sign gpu"
+IUSE="module_sign lockdown gpu"
 
 src_configure() {
 	if use module_sign ; then
