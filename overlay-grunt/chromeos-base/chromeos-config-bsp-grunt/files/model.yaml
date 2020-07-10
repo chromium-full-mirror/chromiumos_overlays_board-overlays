@@ -204,6 +204,10 @@ kasumi360-config: &kasumi360_config
       - source: "touch/elan/1d8e_5612.bin"
         destination: "{{$fw_dest}}/1d8e_5612.bin"
         symlink: "{{$fw_root}}/elants_i2c_1d8e.bin"
+  ui:
+    side-volume-button:
+      region: keyboard
+      side: right
 
 liara-config: &liara_config
   <<: *base_config
