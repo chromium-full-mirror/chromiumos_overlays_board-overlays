@@ -225,8 +225,8 @@ treeya-config: &treeya-config
         destination: "{{$fw_dest}}/7CA1_1.1.3104979.bin"
         symlink: "{{$fw_root}}/hid-06CB_7CA1"
 
-treeyac-config: &treeyac_config
-  <<: *treeya_config
+treeyac-config: &treeyac-config
+  <<: *treeya-config
   $brand-code: "QCDF"
   $sub_cras_config: ".refresh"
 
@@ -459,7 +459,7 @@ chromeos:
         - $sku-id: 160
           config: *treeya-config
         - $sku-id: 165
-          config: *treeyac_config
+          config: *treeyac-config
 
     - $device-name: "treeya360"
       products:
