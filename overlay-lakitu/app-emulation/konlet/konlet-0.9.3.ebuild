@@ -6,8 +6,7 @@ EAPI=5
 
 DESCRIPTION="GCE Containers Startup"
 HOMEPAGE="https://github.com/GoogleCloudPlatform/konlet"
-SRC_URI="https://github.com/GoogleCloudPlatform/konlet/archive/v.${PV}.tar.gz"
-RESTRICT="mirror"
+SRC_URI="https://github.com/GoogleCloudPlatform/konlet/archive/v.${PV}.tar.gz -> konlet-${PV}.tar.gz"
 
 inherit eutils systemd
 
