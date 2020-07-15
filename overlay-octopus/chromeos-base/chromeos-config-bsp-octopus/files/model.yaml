@@ -598,6 +598,7 @@ chromeos:
       $num-mic-locations: 1
       products:
         - $whitelabel-tag: ""
+        - $whitelabel-tag: "ctl"
       skus:
         - $sku-id-val: 49
           config: *clamshell_touchscreen_wl_config
