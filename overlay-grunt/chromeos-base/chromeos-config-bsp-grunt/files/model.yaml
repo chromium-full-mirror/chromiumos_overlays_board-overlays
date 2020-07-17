@@ -249,7 +249,6 @@ treeya-config: &treeya_config
 
 treeyac-config: &treeyac_config
   <<: *treeya_config
-  $brand-code: "QCDF"
   $sub_cras_config: ".refresh"
 
 treeya360-config: &treeya360_config
@@ -493,6 +492,9 @@ chromeos:
         - $brand-code: "BAUA"
           $marketing-name: "TBD"
           $whitelabel-tag: ""
+        - $brand-code: "QCDF"
+          $marketing-name: "TBD"
+          $whitelabel-tag: "treeyac"
       skus:
         - $sku-id: 160
           config: *treeya_config
