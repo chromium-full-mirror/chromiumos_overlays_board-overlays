@@ -135,6 +135,13 @@ krane-config: &krane_config
       92.92 880 3000
       100.0 2000 -1
     internal-backlight-no-als-battery-brightness: "70.62"
+  ui:
+    power-button:
+      edge: right
+      position: "0.32"
+    side-volume-button:
+      region: screen
+      side: right
   audio: *krane_audio_config
 
 kodama-config: &kodama_config
@@ -145,6 +152,14 @@ kodama-config: &kodama_config
   audio: *audio_config
   power:
     <<: *power_common
+  ui:
+    power-button:
+      edge: right
+      position: "0.1"
+    # Kodama has side volume buttons, but side-volume-button has been
+    # left unpopulated as they are physically labelled with '+' and
+    # '-', and it would be confusing if the behavior adjusted based on
+    # screen orientation.
 
 kakadu-config: &kakadu_config
   <<: *common_config
@@ -154,6 +169,13 @@ kakadu-config: &kakadu_config
   audio: *kakadu_audio_config
   power:
     <<: *power_common
+  ui:
+    power-button:
+      edge: right
+      position: "0.1"
+    side-volume-button:
+      region: screen
+      side: top
 
 chromeos:
   devices:
