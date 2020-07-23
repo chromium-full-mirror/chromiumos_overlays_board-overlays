@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=7
 
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
@@ -27,4 +27,7 @@ src_install() {
 
 	# Install audio config
 	unibuild_install_audio_files
+
+	# Install udev rules for proximity sensor.
+	udev_dorules "${FILESDIR}"/udev/*.rules
 }
