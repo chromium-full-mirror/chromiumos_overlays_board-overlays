@@ -1,0 +1,7 @@
+# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# udev rules to start firmware update on the PS175 i2c device.
+SUBSYSTEM=="i2c", ACTION=="add", ATTR{name}=="1AF80175:00", \
+  RUN+="/sbin/initctl emit fwupdtool-update PLUGIN=flashrom_i2c GUID=e10f90bc-1100-5965-8aac-d1b14e1dedb3"
