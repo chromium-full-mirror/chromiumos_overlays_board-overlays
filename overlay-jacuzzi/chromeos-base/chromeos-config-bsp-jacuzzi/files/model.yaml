@@ -4,6 +4,22 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+rt1015_audio_config: &rt1015_audio_config
+  $card: "mt8183_da7219_rt1015"
+  $ucm-dest: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}"
+  main:
+    cras-config-dir: "{{$device-name}}"
+    ucm-suffix: "{{$device-name}}"
+    files:
+      - source: "{{$cras-source}}/{{$card}}"
+        destination: "{{$cras-dest}}/{{$card}}"
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+      - source: "{{$ucm-source}}/HiFi.conf"
+        destination: "{{$ucm-dest}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card}}.conf"
+        destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
+
 common_config: &common_config
   name: "{{$device-name}}"
   identity: &identity
@@ -93,6 +109,24 @@ burnet-config: &burnet_config
   identity:
     <<: *identity
 
+cerise-config: &cerise_config
+  <<: *common_config
+  $fw-name: "google,cerise"
+  $fw-build-name: "cerise"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+  audio: *rt1015_audio_config
+
+stern-config: &stern_config
+  <<: *common_config
+  $fw-name: "google,stern"
+  $fw-build-name: "cerise"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+  audio: *rt1015_audio_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -113,3 +147,9 @@ chromeos:
     - $device-name: "burnet"
       skus:
         - config: *burnet_config
+    - $device-name: "cerise"
+      skus:
+        - config: *cerise_config
+    - $device-name: "stern"
+      skus:
+        - config: *stern_config
