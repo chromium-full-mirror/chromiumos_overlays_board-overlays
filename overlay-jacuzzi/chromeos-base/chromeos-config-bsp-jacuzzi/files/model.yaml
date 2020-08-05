@@ -145,6 +145,24 @@ stern-config: &stern_config
     <<: *identity
   audio: *rt1015_audio_config
 
+fennel-config: &fennel_config
+  <<: *common_config
+  $fw-name: "google,fennel"
+  $fw-build-name: "fennel"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+  audio: *rt1015_audio_config
+
+fennel14-config: &fennel14_config
+  <<: *common_config
+  $fw-name: "google,fennel14"
+  $fw-build-name: "fennel"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+  audio: *rt1015_audio_config
+
 willow-config: &willow_config
   <<: *common_config
   $fw-name: "google,willow"
@@ -174,6 +192,12 @@ chromeos:
     - $device-name: "stern"
       skus:
         - config: *stern_config
+    - $device-name: "fennel"
+      skus:
+        - config: *fennel_config
+    - $device-name: "fennel14"
+      skus:
+        - config: *fennel14_config
     - $device-name: "willow"
       skus:
         - config: *willow_config
