@@ -97,7 +97,7 @@ kappa-config: &kappa_config
   <<: *common_config
   $fw-name: "google,kappa"
   $fw-build-name: "kappa"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIB"
   identity:
     <<: *identity
   audio: *ts3a227e_audio_config
