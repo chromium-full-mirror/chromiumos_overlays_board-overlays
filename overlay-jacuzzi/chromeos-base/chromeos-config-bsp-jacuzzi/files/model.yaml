@@ -145,6 +145,15 @@ stern-config: &stern_config
     <<: *identity
   audio: *rt1015_audio_config
 
+willow-config: &willow_config
+  <<: *common_config
+  $fw-name: "google,willow"
+  $fw-build-name: "willow"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+  audio: *da7219_audio_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -165,3 +174,7 @@ chromeos:
     - $device-name: "stern"
       skus:
         - config: *stern_config
+    - $device-name: "willow"
+      skus:
+        - config: *willow_config
+
