@@ -125,6 +125,14 @@ fennel14-config: &fennel14_config
   identity:
     <<: *identity
 
+willow-config: &willow_config
+  <<: *common_config
+  $fw-name: "google,willow"
+  $fw-build-name: "willow"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -157,3 +165,7 @@ chromeos:
     - $device-name: "fennel14"
       skus:
         - config: *fennel14_config
+    - $device-name: "willow"
+      skus:
+        - config: *willow_config
+
