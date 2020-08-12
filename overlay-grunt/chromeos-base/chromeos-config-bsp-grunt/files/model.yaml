@@ -243,6 +243,9 @@ liara-config: &liara_config
       - source: "touch/raydium/raydium_0xa2221840_1.3.bin"
         destination: "{{$fw_dest}}/raydium_0xa2221840_1.3.bin"
         symlink: "{{$fw_root}}/raydium_0xa2221840.fw"
+      - source: "touch/elan/34d7_5711.bin"
+        destination: "{{$fw_dest}}/34d7_5711.bin"
+        symlink: "{{$fw_root}}/elants_i2c_34d7.bin"
 
 treeya-config: &treeya_config
   <<: *base_config
