@@ -19,7 +19,7 @@
         <Setting name="max-video-encoder-input-buffers" value="4" />
     </Settings>
     <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_google_video_cros.xml" />
     <Include href="media_codecs_cheets.xml" />
     <Include href="media_codecs_cheets_board_specific.xml" />
 </MediaCodecs>

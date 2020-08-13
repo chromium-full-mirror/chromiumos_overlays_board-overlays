@@ -19,7 +19,7 @@
         <Setting name="max-video-encoder-input-buffers" value="4" />
     </Settings>
     <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_google_video_cros.xml" />
     <Include href="media_codecs_cheets.xml" />
     <Decoders>
         <!-- Overwrites the decode limit to 1080p (1920x1088) 30fps (b/157450023). -->
