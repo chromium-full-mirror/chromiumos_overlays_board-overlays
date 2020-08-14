@@ -566,6 +566,7 @@ chromeos:
         - $whitelabel-tag: "gsa"
         - $whitelabel-tag: "sector5"
         - $whitelabel-tag: "sns"
+        - $whitelabel-tag: "poin2"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
@@ -587,6 +588,7 @@ chromeos:
         - $whitelabel-tag: "pixart"
         - $whitelabel-tag: "gsa"
         - $whitelabel-tag: "sns"
+        - $whitelabel-tag: "poin2"
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
