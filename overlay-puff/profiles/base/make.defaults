@@ -25,6 +25,9 @@ USE="${USE} physical_presence_recovery"
 # Enable firmware menu ui (experimental)
 USE="${USE} menu_ui"
 
+# Enable MiniDiag in firmware (experimental)
+USE="${USE} minidiag"
+
 # Enable Downloadable Content (DLC)
 USE="${USE} dlc"
 
