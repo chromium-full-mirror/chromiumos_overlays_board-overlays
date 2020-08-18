@@ -38,3 +38,6 @@ AFDO_PROFILE_SOURCE='airmont'
 
 # Enable background blur.
 USE="${USE} background_blur"
+
+# Add g2touch firmware update tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
