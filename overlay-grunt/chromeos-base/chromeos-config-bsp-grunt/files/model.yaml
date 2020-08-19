@@ -159,6 +159,9 @@ careena-config: &careena_config
       - source: "touch/g2touch/PID_A802_R00.02.14132.bin"
         destination: "{{$fw_dest}}/PID_A802_R00.02.14132.bin"
         symlink: "{{$fw_root}}/g2touch_A802.bin"
+      - source: "touch/g2touch/PID_A804_R00.12.14366.bin"
+        destination: "{{$fw_dest}}/PID_A804_R00.12.14366.bin"
+        symlink: "{{$fw_root}}/g2touch_A804.bin"
   $wallpaper: "hp_default"
 
 barla-config: &barla_config
