@@ -109,10 +109,11 @@ chromeos-board-reef: &reef_board_config
 chromeos-board-pyro: &pyro_board_config
   devices:
     - $device-name: pyro
+      $brand-code: LEAN
+      $chassis: PYRO
       products:
-        - $brand-code: LEAN
-          $chassis: PYRO
-          $loem: NEWTON2
+        - $loem: NEWTON2
+        - $loem: LENOVO
       skus:
         - config: *pyro_config
 
