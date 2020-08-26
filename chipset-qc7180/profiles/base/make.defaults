@@ -24,3 +24,6 @@ USE="${USE} v4l2_codec"
 
 # Enable vulkan, but only for cros (see package.use)
 USE="${USE} vulkan"
+
+# Enable CPU zero-copy for Chrome camera stack.
+USE="${USE} video_capture_use_gpu_memory_buffer"
