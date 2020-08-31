@@ -72,6 +72,9 @@ chromeos:
           config: *convertible_config
         - $sku-id: 1
           config: *convertible_config
+        - $sku-id: 2
+          config: *convertible_config
+          $has-keyboard-backlight: "1"
     - $device-name: "pompom"
       $fw-name: "google,pompom"
       skus:
