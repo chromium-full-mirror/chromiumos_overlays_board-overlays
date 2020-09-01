@@ -1,0 +1,56 @@
+#
+# Copyright 2020 The Chromium OS Authors. All rights reserved.
+#
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+audio_config: &audio_config
+  $cras_root: "/etc/cras"
+  $ucm_root: "/usr/share/alsa/ucm"
+  $card: "sc7180-snd-card"
+  $cras-source: "{{cras-config-dir}}/audio/cras-config"
+  $cras-dest: "{{$cras_root}}/{{cras-config-dir}}"
+  $ucm-source: "{{cras-config-dir}}/audio/ucm-config"
+  $ucm-dest: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}"
+  main:
+    cras-config-dir: "{{$device-name}}"
+    ucm-suffix: "{{$device-name}}"
+    files:
+      - source: "{{$cras-source}}/{{$card}}"
+        destination: "{{$cras-dest}}/{{$card}}"
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+      - source: "{{$ucm-source}}/{{$card}}/HiFi.conf"
+        destination: "{{$ucm-dest}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card}}/{{$card}}.conf"
+        destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
+
+base-config: &base_config
+  name: "{{$device-name}}"
+  identity:
+    platform-name: "Strongbad"
+    device-tree-compatible-match: "{{$fw-name}}"
+    sku-id: "{{$sku-id}}"
+  firmware:
+    no-firmware: True
+  test-label: "{{$device-name}}"
+  power: &power_common
+    low-battery-shutdown-percent: "4.0"
+    $internal-backlight-no-als-brightness: "55"
+    internal-backlight-no-als-battery-brightness: "{{$internal-backlight-no-als-brightness}}"
+    internal-backlight-no-als-ac-brightness: "{{$internal-backlight-no-als-brightness}}"
+    disable-dark-resume: "0"
+  audio: *audio_config
+
+detachable-config: &detachable_config
+  <<: *base_config
+  hardware-properties:
+    has-touchscreen: True
+
+chromeos:
+  devices:
+    - $device-name: "coachz"
+      $fw-name: "google,coachz"
+      skus:
+        - $sku-id: 0
+          config: *detachable_config
