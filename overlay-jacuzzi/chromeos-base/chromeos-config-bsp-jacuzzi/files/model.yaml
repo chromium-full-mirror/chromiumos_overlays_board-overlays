@@ -60,11 +60,6 @@ rt1015_audio_config: &rt1015_audio_config
       - source: "{{$ucm-source}}/{{$card}}.conf"
         destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
 
-identity-sku-config: &identity_sku_config
-  platform-name: "Kukui"
-  device-tree-compatible-match: "{{$fw-name}}"
-  sku-id: "{{$sku-id}}"
-
 common_config: &common_config
   $cras_root: "/etc/cras"
   $ucm_root: "/usr/share/alsa/ucm"
@@ -95,6 +90,10 @@ common_config: &common_config
   bluetooth:
     config: *bluetooth_config
     flags: *bluetooth_flags
+
+identity-sku-config: &identity_sku_config
+  <<: *identity
+  sku-id: "{{$sku-id}}"
 
 jacuzzi-config: &jacuzzi_config
   <<: *common_config
@@ -141,14 +140,6 @@ esche-config: &esche_config
     <<: *identity
   audio: *ts3a227e_audio_config
 
-burnet-config: &burnet_config
-  <<: *common_config
-  $fw-name: "google,burnet"
-  $fw-build-name: "burnet"
-  $key-id: "DEFAULT"
-  identity:
-    <<: *identity
-  audio: *ts3a227e_audio_config
 
 cerise-config: &cerise_config
   <<: *common_config
@@ -186,6 +177,15 @@ fennel14-config: &fennel14_config
     <<: *identity_sku_config
   audio: *rt1015_audio_config
 
+burnet-config: &burnet_config
+  <<: *common_config
+  $fw-name: "google,burnet"
+  $fw-build-name: "burnet"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+  audio: *ts3a227e_audio_config
+
 willow-config: &willow_config
   <<: *common_config
   $fw-name: "google,willow"
@@ -209,12 +209,14 @@ chromeos:
     - $device-name: "damu"
       skus:
         - config: *damu_config
-    - $device-name: "esche"
-      skus:
-        - config: *esche_config
     - $device-name: "burnet"
       skus:
-        - config: *burnet_config
+        - $sku-id: 17
+          config: *burnet_config
+    - $device-name: "esche"
+      skus:
+        - $sku-id: 16
+          config: *burnet_config
     - $device-name: "cerise"
       skus:
         - config: *cerise_config
