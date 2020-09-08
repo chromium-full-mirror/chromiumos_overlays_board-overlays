@@ -45,6 +45,10 @@ common_config: &common_config
         - source: "{{$ucm-source}}/{{$card}}.conf"
           destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
 
+identity-sku-config: &identity_sku_config
+  <<: *identity
+  sku-id: "{{$sku-id}}"
+
 jacuzzi-config: &jacuzzi_config
   <<: *common_config
   $fw-name: "google,jacuzzi"
@@ -91,7 +95,7 @@ burnet-config: &burnet_config
   $fw-build-name: "burnet"
   $key-id: "DEFAULT"
   identity:
-    <<: *identity
+    <<: *identity_sku_config
 
 cerise-config: &cerise_config
   <<: *common_config
@@ -147,12 +151,14 @@ chromeos:
     - $device-name: "damu"
       skus:
         - config: *damu_config
-    - $device-name: "esche"
-      skus:
-        - config: *esche_config
     - $device-name: "burnet"
       skus:
-        - config: *burnet_config
+        - $sku-id: 17
+          config: *burnet_config
+    - $device-name: "esche"
+      skus:
+        - $sku-id: 16
+          config: *burnet_config
     - $device-name: "cerise"
       skus:
         - config: *cerise_config
