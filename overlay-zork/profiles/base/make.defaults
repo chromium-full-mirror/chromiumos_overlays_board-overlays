@@ -63,3 +63,6 @@ USE="${USE} keyboard_includes_side_buttons"
 
 # This board has a -borealis overlay
 USE="${USE} has-borealis"
+
+# Enable MiniDiag in firmware (experimental)
+USE="${USE} minidiag"
