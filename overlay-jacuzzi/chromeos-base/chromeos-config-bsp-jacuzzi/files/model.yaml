@@ -60,6 +60,22 @@ rt1015_audio_config: &rt1015_audio_config
       - source: "{{$ucm-source}}/{{$card}}.conf"
         destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
 
+rt1015p_audio_config: &rt1015p_audio_config
+  $card: "mt8183_da7219_rt1015p"
+  $ucm-dest: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}"
+  main:
+    cras-config-dir: "{{$device-name}}"
+    ucm-suffix: "{{$device-name}}"
+    files:
+      - source: "{{$cras-source}}/{{$card}}"
+        destination: "{{$cras-dest}}/{{$card}}"
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+      - source: "{{$ucm-source}}/HiFi.conf"
+        destination: "{{$ucm-dest}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card}}.conf"
+        destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
+
 common_config: &common_config
   $cras_root: "/etc/cras"
   $ucm_root: "/usr/share/alsa/ucm"
@@ -156,7 +172,8 @@ fennel-config: &fennel_config
   $key-id: "DEFAULT"
   identity:
     <<: *identity_sku_config
-  audio: *rt1015_audio_config
+  audio: *rt1015p_audio_config
+
 
 fennel14-config: &fennel14_config
   <<: *common_config
@@ -165,7 +182,7 @@ fennel14-config: &fennel14_config
   $key-id: "DEFAULT"
   identity:
     <<: *identity_sku_config
-  audio: *rt1015_audio_config
+  audio: *rt1015p_audio_config
 
 burnet-config: &burnet_config
   <<: *common_config
