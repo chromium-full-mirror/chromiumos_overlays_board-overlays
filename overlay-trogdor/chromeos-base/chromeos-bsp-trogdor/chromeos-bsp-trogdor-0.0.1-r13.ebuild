@@ -32,6 +32,9 @@ src_install() {
 	insinto "/etc/init"
 	doins "${FILESDIR}/hack-a-mac.conf"
 
+	insinto "/etc/init"
+	doins "${FILESDIR}/preload-qcom-network-drivers.conf"
+
 	# Install audio config
 	unibuild_install_audio_files
 }
