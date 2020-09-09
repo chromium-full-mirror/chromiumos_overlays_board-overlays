@@ -55,6 +55,18 @@ convertible-config: &convertible_config
     has-base-magnetometer: False
     has-touchscreen: True
 
+clamshell-config: &clamshell_config
+  <<: *base_config
+  hardware-properties:
+    is-lid-convertible: False
+    has-lid-accelerometer: False
+    has-base-accelerometer: False
+    has-base-gyroscope: False
+    has-lid-magnetometer: False
+    has-base-magnetometer: False
+    $has-touchscreen: False
+    has-touchscreen: "{{$has-touchscreen}}"
+
 chromeos:
   devices:
     - $device-name: "trogdor"
@@ -75,6 +87,14 @@ chromeos:
         - $sku-id: 2
           config: *convertible_config
           $has-keyboard-backlight: "1"
+    - $device-name: "limozeen"
+      $fw-name: "google,lazor"
+      skus:
+        - $sku-id: 4
+          $has-touchscreen: True
+          config: *clamshell_config
+        - $sku-id: 5
+          config: *clamshell_config
     - $device-name: "pompom"
       $fw-name: "google,pompom"
       skus:
