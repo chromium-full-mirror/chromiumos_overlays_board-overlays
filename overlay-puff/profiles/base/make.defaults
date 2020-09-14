@@ -5,7 +5,6 @@
 # Initial value just for style purposes.
 USE=""
 
-USE="${USE} cros_ec"
 USE="${USE} puff"
 
 # Enable unibuild
