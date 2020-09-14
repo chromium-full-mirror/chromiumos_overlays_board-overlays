@@ -23,3 +23,6 @@ USE="${USE} keyboard_includes_side_buttons"
 
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
+
+# Include the elan firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
