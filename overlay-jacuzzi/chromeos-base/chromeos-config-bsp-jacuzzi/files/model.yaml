@@ -131,16 +131,6 @@ damu-config: &damu_config
     <<: *identity
   audio: *da7219_audio_config
 
-esche-config: &esche_config
-  <<: *common_config
-  $fw-name: "google,esche"
-  $fw-build-name: "esche"
-  $key-id: "DEFAULT"
-  identity:
-    <<: *identity
-  audio: *ts3a227e_audio_config
-
-
 cerise-config: &cerise_config
   <<: *common_config
   $fw-name: "google,cerise"
@@ -234,3 +224,4 @@ chromeos:
     - $device-name: "willow"
       skus:
         - config: *willow_config
+
