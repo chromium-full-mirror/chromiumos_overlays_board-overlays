@@ -29,6 +29,9 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
+# Add g2touch firmware update tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+
 # Use ext4 crypto
 # USE="${USE} direncryption"
 
