@@ -15,19 +15,36 @@
 -->
 
 <MediaCodecs>
-    <Decoders>
-        <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="2303-2303" />
-            <Limit name="measured-frame-rate-720x480" range="1525-1525" />
-            <Limit name="measured-frame-rate-1280x720" range="631-631" />
-            <Limit name="measured-frame-rate-1920x1088" range="271-271" />
+     <Encoders>
+	<MediaCodec name="c2.vea.avc.encoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="626-636" /> <!-- N=64 v97%=1.2 -->
+            <Limit name="measured-frame-rate-720x480" range="347-350" /> <!-- N=64 v97%=1.2 -->
+            <Limit name="measured-frame-rate-1280x720" range="181-194" /> <!-- N=66 v97%=1.2 -->
+            <!-- measured 97%:88-122 med:92 SLOW -->
+            <Limit name="measured-frame-rate-1920x1080" range="92-104" /> <!-- N=64 v97%=1.2 -->
+        </MediaCodec>
+     </Encoders>
+     <Decoders>
+	     <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="853-853" /> <!-- N=66 v97%=1.1 -->
+            <Limit name="measured-frame-rate-720x480" range="661-661" /> <!-- N=34 v93%=1.1 -->
+            <!-- measured 93%:307-446 med:310 SLOW -->
+            <Limit name="measured-frame-rate-1280x720" range="310-370" /> <!-- N=32 v93%=1.2 -->
+            <Limit name="measured-frame-rate-1920x1088" range="194-194" /> <!-- N=32 v93%=1.5 -->
+        </MediaCodec>
+        <MediaCodec name="c2.vda.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="822-822" /> <!-- N=66 v97%=1.2 -->
+            <Limit name="measured-frame-rate-640x360" range="713-713" /> <!-- N=66 v97%=1.2 -->
+            <Limit name="measured-frame-rate-1280x720" range="305-308" /> <!-- N=66 v97%=1.0 -->
+            <Limit name="measured-frame-rate-1920x1080" range="136-140" /> <!-- N=66 v97%=1.1 -->
         </MediaCodec>
         <MediaCodec name="c2.vda.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="2192-2192" />
-            <Limit name="measured-frame-rate-640x360" range="1750-1750" />
-            <Limit name="measured-frame-rate-1280x720" range="798-798" />
-            <Limit name="measured-frame-rate-1920x1080" range="353-354" />
-            <Limit name="measured-frame-rate-3840x2160" range="86-87" />
+            <Limit name="measured-frame-rate-320x180" range="809-809" /> <!-- N=66 v97%=1.1 -->
+            <Limit name="measured-frame-rate-640x360" range="657-657" /> <!-- N=34 v93%=1.1 -->
+            <Limit name="measured-frame-rate-1280x720" range="412-412" /> <!-- N=32 v93%=1.0 -->
+            <Limit name="measured-frame-rate-1920x1080" range="278-278" /> <!-- N=32 v93%=1.0 -->
+            <!-- measured 93%:66-73 med:72 FLAKY(mn=26.5 < 35 - 140) -->
+            <Limit name="measured-frame-rate-3840x2160" range="70-70" /> <!-- N=32 v93%=1.0 -->
         </MediaCodec>
     </Decoders>
 </MediaCodecs>
