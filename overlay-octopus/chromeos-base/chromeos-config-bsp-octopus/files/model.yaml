@@ -206,6 +206,8 @@ chromeos:
         - $sku-id-val: 3
           config: *clamshell_touchscreen_config
         - $sku-id-val: 4
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}.2mic"
           config:
             <<: *clamshell_config
             modem:
