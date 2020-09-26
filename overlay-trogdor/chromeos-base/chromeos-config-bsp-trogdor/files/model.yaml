@@ -38,7 +38,8 @@ base-config: &base_config
     low-battery-shutdown-percent: "4.0"
     $has-keyboard-backlight: "0"
     has-keyboard-backlight: "{{$has-keyboard-backlight}}"
-    internal-backlight-no-als-battery-brightness: "63"
+    $internal-backlight-no-als-battery-brightness: "63"
+    internal-backlight-no-als-battery-brightness: "{{$internal-backlight-no-als-battery-brightness}}"
     internal-backlight-no-als-ac-brightness: "80"
     disable-dark-resume: "0"
     suspend-to-idle: "1"
@@ -78,6 +79,7 @@ chromeos:
           config: *convertible_config
     - $device-name: "lazor"
       $fw-name: "google,lazor"
+      $internal-backlight-no-als-battery-brightness: "43"
       skus:
         - $sku-id: 0
           $has-keyboard-backlight: "1"
