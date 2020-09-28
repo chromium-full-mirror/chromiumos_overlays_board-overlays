@@ -14,17 +14,6 @@
      limitations under the License.
 -->
 <MediaCodecs>
-    <Encoders>
-        <MediaCodec name="c2.vea.avc.encoder" type="video/avc">
-            <Limit name="size" min="96x96" max="1920x1088" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" range="1-489600" />
-            <Limit name="bitrate" range="10000-12000000" />
-            <!-- Artificial limit of GpuArcVideoEncodeAccelerator -->
-            <Limit name="concurrent-instances" max="8" />
-        </MediaCodec>
-    </Encoders>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" >
             <Limit name="size" min="64x64" max="4096x2160" />
