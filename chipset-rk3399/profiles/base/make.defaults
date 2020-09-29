@@ -27,3 +27,6 @@ USE="${USE} force_breakpad"
 
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
+
+# Disable CrOS video decoder because it's not yet ready for Rockchip.
+USE="${USE} disable_cros_video_decoder"
