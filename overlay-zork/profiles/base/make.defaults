@@ -66,3 +66,8 @@ USE="${USE} keyboard_includes_side_buttons"
 
 # This board has a -borealis overlay
 USE="${USE} has-borealis"
+
+# GPU buffers are not cleared on creation, so ensure the fast ink buffer is
+# cleared to avoid artifacts (b/168735625).
+# TODO: Remove this when/if buffer clearing is moved to GPU service.
+USE="${USE} clear_fast_ink_buffer"
