@@ -30,3 +30,6 @@ USE="${USE} dlc"
 
 # Enable Downloadable Content (DLC) Test
 USE="${USE} dlc_test"
+
+# Enable fwupd flashrom_i2c plugin
+USE="${USE} flashrom_i2c"
