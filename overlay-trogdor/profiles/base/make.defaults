@@ -21,6 +21,9 @@ USE="${USE} qmi qrtr"
 # Enable Firmware Build
 USE="${USE} bootimage"
 
+# Enable Cellular SAR hack on trogdor
+USE="${USE} trogdor_sar_hack"
+
 # All firmwares to build from the EC code base
 EC_FIRMWARE="trogdor"
 

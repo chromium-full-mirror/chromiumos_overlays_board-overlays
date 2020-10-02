@@ -42,6 +42,10 @@ base-config: &base_config
     internal-backlight-no-als-battery-brightness: "{{$internal-backlight-no-als-battery-brightness}}"
     internal-backlight-no-als-ac-brightness: "80"
     disable-dark-resume: "0"
+    $set-cellular-transmit-power-for-tablet-mode: "0"
+    set-cellular-transmit-power-for-tablet-mode: "{{$set-cellular-transmit-power-for-tablet-mode}}"
+    $set-cellular-transmit-power-for-proximity: "0"
+    set-cellular-transmit-power-for-proximity: "{{$set-cellular-transmit-power-for-proximity}}"
     suspend-to-idle: "1"
     wake-on-dp: "1"
   audio: *audio_config
@@ -83,6 +87,7 @@ chromeos:
       $internal-backlight-no-als-battery-brightness: "43"
       skus:
         - $sku-id: 0
+          $set-cellular-transmit-power-for-tablet-mode: "1"
           $has-keyboard-backlight: "1"
           config: *convertible_config
         - $sku-id: 1
