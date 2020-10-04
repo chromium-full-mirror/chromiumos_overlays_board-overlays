@@ -739,6 +739,9 @@ chromeos:
         - $whitelabel-tag: "sector5"
         - $whitelabel-tag: "sns"
         - $whitelabel-tag: "poin2"
+        - $whitelabel-tag: "baicells"
+        - $whitelabel-tag: "wsuniforms"
+        - $whitelabel-tag: "multilaser"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
@@ -768,6 +771,10 @@ chromeos:
         - $whitelabel-tag: "gsa"
         - $whitelabel-tag: "sns"
         - $whitelabel-tag: "poin2"
+        - $whitelabel-tag: "poin2ascon"
+        - $whitelabel-tag: "baicells"
+        - $whitelabel-tag: "wsuniforms"
+        - $whitelabel-tag: "multilaser"
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
