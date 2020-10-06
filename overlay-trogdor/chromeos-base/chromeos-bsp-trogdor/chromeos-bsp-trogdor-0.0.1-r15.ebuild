@@ -4,7 +4,7 @@ EAPI=7
 
 CROS_WORKON_COMMIT="3a01873e59ec25ecb10d1b07ff9816e69f3bbfee"
 CROS_WORKON_TREE="8ce164efd78fcb4a68e898d8c92c7579657a49b1"
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
@@ -29,4 +29,7 @@ src_install() {
 
 	# Install audio config
 	unibuild_install_audio_files
+
+	# Install udev rules for proximity sensor.
+	udev_dorules "${FILESDIR}"/udev/*.rules
 }
