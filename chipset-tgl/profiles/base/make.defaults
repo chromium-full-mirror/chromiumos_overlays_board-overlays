@@ -37,3 +37,6 @@ USE="${USE} builtin_fw_guc_tgl builtin_fw_huc_tgl"
 
 # Enable GpuMemoryBuffers backed by dma-bufs.
 USE="${USE} native_gpu_memory_buffers"
+
+# Enable CPU zero-copy for Chrome camera stack.
+USE="${USE} video_capture_use_gpu_memory_buffer"
