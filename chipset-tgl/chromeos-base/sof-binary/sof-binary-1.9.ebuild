@@ -10,6 +10,11 @@ LICENSE="SOF"
 SLOT="0"
 KEYWORDS="*"
 
+RDEPEND="
+	media-libs/tgl-dsm-param
+"
+DEPEND="${RDEPEND}"
+
 S=${WORKDIR}/${PN}-tgl-${PV}
 
 src_install() {
