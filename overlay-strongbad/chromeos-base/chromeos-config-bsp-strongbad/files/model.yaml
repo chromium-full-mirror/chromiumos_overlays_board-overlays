@@ -28,7 +28,7 @@ audio_config: &audio_config
 base-config: &base_config
   name: "{{$device-name}}"
   identity:
-    platform-name: "Strongbad"
+    platform-name: "Trogdor"
     device-tree-compatible-match: "{{$fw-name}}"
     sku-id: "{{$sku-id}}"
   firmware:
