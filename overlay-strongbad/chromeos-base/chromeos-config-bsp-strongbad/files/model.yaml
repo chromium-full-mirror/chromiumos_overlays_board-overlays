@@ -54,3 +54,5 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *detachable_config
+        - $sku-id: 1
+          config: *detachable_config
