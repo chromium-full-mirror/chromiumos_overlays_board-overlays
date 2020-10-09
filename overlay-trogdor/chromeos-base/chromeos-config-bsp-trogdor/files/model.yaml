@@ -73,6 +73,20 @@ clamshell-config: &clamshell_config
     $has-touchscreen: False
     has-touchscreen: "{{$has-touchscreen}}"
 
+p-sensor-20mm-lazor-config: &p_sensor_20mm_lazor_config
+  $set-cellular-transmit-power-for-proximity: "1"
+  proximity-sensor:
+    lte:
+      channel: "1"
+      hardwaregain: "8"
+      sampling-frequency: "33.333333"
+      thresh-rising: "112"
+      thresh-falling: "112"
+      thresh-falling-period: "2"
+      thresh-rising-period: "2"
+      thresh-falling-hysteresis: "0"
+      thresh-rising-hysteresis: "0"
+
 chromeos:
   devices:
     - $device-name: "trogdor"
@@ -89,7 +103,8 @@ chromeos:
         - $sku-id: 0
           $set-cellular-transmit-power-for-tablet-mode: "1"
           $has-keyboard-backlight: "1"
-          config: *convertible_config
+          config:
+            <<: [ *convertible_config, *p_sensor_20mm_lazor_config ]
         - $sku-id: 1
           config: *convertible_config
         - $sku-id: 2
