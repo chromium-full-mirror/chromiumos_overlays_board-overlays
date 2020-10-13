@@ -158,27 +158,9 @@ cerise-config: &cerise_config
     <<: *identity_sku_config
   audio: *rt1015p_audio_config
 
-stern-config: &stern_config
-  <<: *common_config
-  $fw-name: "google,stern"
-  $fw-build-name: "cerise"
-  $key-id: "DEFAULT"
-  identity:
-    <<: *identity_sku_config
-  audio: *rt1015p_audio_config
-
 fennel-config: &fennel_config
   <<: *common_config
   $fw-name: "google,fennel"
-  $fw-build-name: "fennel"
-  $key-id: "DEFAULT"
-  identity:
-    <<: *identity_sku_config
-  audio: *rt1015p_audio_config
-
-fennel14-config: &fennel14_config
-  <<: *common_config
-  $fw-name: "google,fennel14"
   $fw-build-name: "fennel"
   $key-id: "DEFAULT"
   identity:
