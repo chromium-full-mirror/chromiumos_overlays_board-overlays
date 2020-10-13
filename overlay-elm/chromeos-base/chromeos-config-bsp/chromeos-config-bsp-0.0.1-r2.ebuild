@@ -25,12 +25,6 @@ src_install() {
 	insinto "${UNIBOARD_YAML_DIR}"
 	doins "${FILESDIR}/model.yaml"
 
-	# The 4.19 kernel uses a new non linear backlight scale.
-	# To match the battery default backlight level we change the
-	# target % using file internal_backlight_no_als_battery_brightness.
-	# Note the intention is to have the same resulting real world brightness.
-	# b/149870759
-	# This should be moved to the main value after kernelnext is merged back.
 	if use elm-kernelnext; then
 		# This installed with z- prefix so that it gets merged last.
 		newins "${FILESDIR}/kernelnext-model.yaml" "z-kernelnext-model.yaml"

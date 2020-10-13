@@ -47,6 +47,9 @@ src_install() {
 	# target % using file internal_backlight_no_als_battery_brightness.
 	# Note the intention is to have the same resulting real world brightness.
 	# b/149870759
+	# Also the default brightness for level 1/16 is too dim, and on some skus the
+	# backlight is not even on at that level.
+	# So that is also made brighter with min_visible_backlight_level.
 	# This should be moved to the main value after kernelnext is merged back.
 	if use hana-kernelnext; then
 		doins "${FILESDIR}"/powerd_prefs_kernelnext/*
