@@ -22,6 +22,7 @@ KEYWORDS="-* amd64 x86"
 RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	sys-firmware/parade-ps175-firmware:=
 "
 DEPEND="
 	${RDEPEND}
