@@ -12,7 +12,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE=""
+IUSE="rammus-arc-r"
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
@@ -23,7 +23,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{625849FA-56A0-4E67-9163-B89BE0C2A6AE}" "CHROMEBOOK"
+	if use rammus-arc-r; then
+		doappid "{89C62AB3-0C43-4833-8609-CEB56274747A}" "CHROMEBOOK"
+	else
+		doappid "{625849FA-56A0-4E67-9163-B89BE0C2A6AE}" "CHROMEBOOK"
+	fi
 
 	unibuild_install_files audio-files
 	unibuild_install_files thermal-files

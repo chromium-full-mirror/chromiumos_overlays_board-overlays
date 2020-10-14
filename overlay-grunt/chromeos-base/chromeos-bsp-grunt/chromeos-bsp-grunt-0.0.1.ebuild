@@ -12,7 +12,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="grunt-kernelnext"
+IUSE="grunt-arc-r grunt-kernelnext"
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
@@ -24,7 +24,9 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	if use grunt-kernelnext; then
+	if use grunt-arc-r; then
+		doappid "{602B22F1-BA1A-443E-9C4B-389E513DF9C0}" "CHROMEBOOK"
+	elif use grunt-kernelnext; then
 		doappid "{F7007D90-E551-11E9-B865-1F6941885301}" "CHROMEBOOK"
 	else
 		doappid "{9496CDE8-85E6-4118-960F-E26DC0C69FD6}" "CHROMEBOOK"

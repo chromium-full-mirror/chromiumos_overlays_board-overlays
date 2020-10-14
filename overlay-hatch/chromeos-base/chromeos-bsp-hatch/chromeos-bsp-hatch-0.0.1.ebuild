@@ -11,7 +11,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="hatch-borealis hatch-diskswap hatch-kvm hatch-kernelnext hatch-blueznext"
+IUSE="hatch-arc-r hatch-borealis hatch-diskswap hatch-kvm hatch-kernelnext hatch-blueznext"
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
@@ -26,7 +26,9 @@ DEPEND="
 "
 
 src_install() {
-	if use hatch-borealis; then
+	if use hatch-arc-r; then
+		doappid "{CB69812A-95B6-4A60-A5D1-AE50E1FC5882}" "CHROMEBOOK"
+	elif use hatch-borealis; then
 		doappid "{8CD2059E-B678-11EA-BEA0-BFD4C54FEC76}" "CHROMEBOOK"
 	elif use hatch-diskswap; then
 		doappid "{6FBDA804-5618-89BA-5D6E-F3804BDE0EF3}" "CHROMEBOOK"
