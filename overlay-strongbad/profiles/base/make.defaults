@@ -20,6 +20,9 @@ USE="${USE} qmi qrtr"
 # Enable detachable UI
 USE="${USE} detachable menu_ui"
 
+# Enable Firmware Build
+USE="${USE} bootimage"
+
 # All firmwares to build from the EC code base
 EC_FIRMWARE="strongbad"
 

@@ -18,6 +18,9 @@ USE="${USE} direncryption"
 # Enable QMI support in ModemManager
 USE="${USE} qmi qrtr"
 
+# Enable Firmware Build
+USE="${USE} bootimage"
+
 # All firmwares to build from the EC code base
 EC_FIRMWARE="trogdor"
 
