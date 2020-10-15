@@ -40,6 +40,8 @@ base-config: &base_config
     internal-backlight-no-als-battery-brightness: "{{$internal-backlight-no-als-brightness}}"
     internal-backlight-no-als-ac-brightness: "{{$internal-backlight-no-als-brightness}}"
     disable-dark-resume: "0"
+    suspend-to-idle: "1"
+    wake-on-dp: "1"
   audio: *audio_config
 
 detachable-config: &detachable_config
