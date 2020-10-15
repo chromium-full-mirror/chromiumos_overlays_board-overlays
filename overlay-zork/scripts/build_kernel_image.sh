@@ -12,7 +12,6 @@
 # See crrev.com/i/216896 as an example.
 
 modify_kernel_command_line() {
-  echo "8250_core.nr_uarts=2" >> "$1"
   echo "amdgpu.abmlevel=4" >> "$1"
   echo "amdgpu.dcfeaturemask=0x8" >> "$1"
 
