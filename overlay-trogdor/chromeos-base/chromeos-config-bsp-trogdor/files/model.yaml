@@ -43,6 +43,7 @@ base-config: &base_config
     internal-backlight-no-als-ac-brightness: "80"
     disable-dark-resume: "0"
     suspend-to-idle: "1"
+    wake-on-dp: "1"
   audio: *audio_config
 
 convertible-config: &convertible_config
