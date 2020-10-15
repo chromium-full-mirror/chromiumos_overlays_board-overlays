@@ -43,3 +43,5 @@ INPUT_DEVICES="${INPUT_DEVICES} goodix"
 # Include g2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 
+# Enable slow boot notification during firmware updates
+USE="${USE} enable_slow_boot_notify"
