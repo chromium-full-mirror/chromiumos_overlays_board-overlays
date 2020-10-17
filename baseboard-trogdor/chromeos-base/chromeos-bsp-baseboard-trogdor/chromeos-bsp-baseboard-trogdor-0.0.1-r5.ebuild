@@ -37,6 +37,8 @@ src_install() {
 	if use cheets; then
 		insinto "/opt/google/containers/android/vendor/etc/init/"
 		doins "${FILESDIR}/init.cpusets.rc"
+		# See b/161399876:
+		doins "${FILESDIR}/arc-sf-config.rc"
 	fi
 
 	# udev rules for codecs
