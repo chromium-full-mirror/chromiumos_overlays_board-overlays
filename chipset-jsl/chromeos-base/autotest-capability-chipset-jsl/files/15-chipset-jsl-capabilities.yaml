@@ -28,10 +28,18 @@
 - hw_enc_vp9_2160_30
 - hw_enc_jpeg
 
-# camera details derived from the latest avtest_label_detect binary
-# CL Details: https://chromium-review.googlesource.com/c/chromiumos/platform2/+/2045918
-- builtin_mipi_camera
-- builtin_camera
-- builtin_or_vivid_camera
-- no builtin_usb_camera
-- no vivid_camera
+# camera
+- detector: usb_camera
+  match:
+  - usb_camera
+  capabilities:
+  - builtin_usb_camera
+  - builtin_camera
+  - builtin_or_vivid_camera
+- detector: mipi_camera
+  match:
+  - mipi_camera
+  capabilities:
+  - builtin_mipi_camera
+  - builtin_camera
+  - builtin_or_vivid_camera

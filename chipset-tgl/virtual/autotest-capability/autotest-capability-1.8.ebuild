@@ -9,4 +9,7 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 
-RDEPEND="chromeos-base/autotest-capability-chipset-tgl"
+RDEPEND="
+	!chromeos-base/autotest-capability-volteer
+	chromeos-base/autotest-capability-chipset-tgl
+"
