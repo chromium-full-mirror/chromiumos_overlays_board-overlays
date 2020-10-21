@@ -1,0 +1,10 @@
+ACTION!="add|change", GOTO="autosuspend_end"
+SUBSYSTEM!="platform", GOTO="autosuspend_end"
+
+KERNEL=="88e3000.phy", ATTR{power/control}="auto"
+KERNEL=="88e9000.phy-wrapper", ATTR{power/control}="auto"
+KERNEL=="a600000.dwc3", ATTR{power/control}="auto"
+KERNEL=="a6f8800.usb", ATTR{power/control}="auto"
+KERNEL=="xhci-hcd*", ATTR{power/control}="auto"
+
+LABEL="autosuspend_end"
