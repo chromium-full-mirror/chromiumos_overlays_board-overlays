@@ -210,6 +210,13 @@ chromeos:
             <<: *clamshell_config
             modem:
               firmware-variant: "{{$device-name}}"
+        - $sku-id-val: 5
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}.2mic"
+          config:
+            <<: *clamshell_touchscreen_config
+            modem:
+              firmware-variant: "{{$device-name}}"
     - $device-name: "grabbiter"
       $fw-name: "Fleex"
       skus:
