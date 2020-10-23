@@ -46,6 +46,9 @@ src_install() {
 	doins "${FILESDIR}/udev-trigger-codec.conf"
 	udev_dorules "${FILESDIR}/50-media.rules"
 
+	# udev rules for platform specific autosuspend settings
+	udev_dorules "${FILESDIR}/98-platform-autosuspend.rules"
+
 	# udev rules to enable USB wakeup
 	udev_dorules "${FILESDIR}/99-usb-wakeup.rules"
 
