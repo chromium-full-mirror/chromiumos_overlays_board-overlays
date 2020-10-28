@@ -22,6 +22,9 @@ USE="${USE} qc7180"
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
 
+# ARC should use VideoDecoder interface
+USE="${USE} arc_uses_cros_video_decoder"
+
 # Enable vulkan, but only for cros (see package.use)
 USE="${USE} vulkan"
 
