@@ -2,6 +2,9 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+# The sc7180 flags don't work for 64-bit.  See b/171915898
+BOARD_COMPILER_FLAGS="-march=armv8-a+crc -ftree-vectorize"
+
 # Initial value just for style purposes.
 USE=""
 
