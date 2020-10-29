@@ -27,7 +27,4 @@ modify_kernel_command_line() {
 
   # Load GuC and HuC firmware
   echo "i915.enable_guc=2" >> "$1"
-
-  # Force DRM to use PCI device ID 9a49
-  echo "i915.force_probe=9a49" >> "$1"
 }
