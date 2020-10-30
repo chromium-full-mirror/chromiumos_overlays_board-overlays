@@ -103,7 +103,7 @@ reload_fsg() {
     load_old_fsg_size
   fi
 
-  # Wifi-only SKUs will land here.
+  # Wifi-only SKUs will land here the first time through.
   if [ "${fsg_size}" -eq 0 ]; then
     logit "No LTE FSG found."
     return 1
@@ -129,10 +129,24 @@ reload_fsg() {
 }
 
 verify_fsg() {
+  local retval
+
   # Check the FSG hash against the fuses. Reload from the eMMC boot
   # partition if it fails.
-  if check_fsg_hash; then
+  check_fsg_hash
+  retval=$?
+  if [ "${retval}" -eq 0 ]; then
     return
+  elif [ "${retval}" -eq 2 ]; then
+    # For WiFi SKUs, the first factory run, or for certain pre-production
+    # devices), the FSG hash is not set. Allow it to continue with the FSG
+    # tarball pre-populated in the boot partition.
+    logit "Fuses are unprogrammed."
+
+    # If the FSG already exists no need to copy it again; bail out.
+    if [ -f "${FSG_PATH}" ]; then
+      return
+    fi
   fi
 
   if ! reload_fsg; then
@@ -141,21 +155,16 @@ verify_fsg() {
   fi
 
   check_fsg_hash
-  local retval=$?
+  retval=$?
   if [ "${retval}" -eq 0 ]; then
     # Delete all EFS images in case they got corrupted and that
     # causes the modem to crash or hang rather than turning to the FSG.
     # Only do this if the hash now agrees, otherwise developers with
     # unprogrammed fuses will be constantly fighting this deletion.
     rm -f "${RMTFS_BOOT_DIR}"/modem_fs[c12]
-  else
-    # For the first factory run, the fuses are not set. Allow it to
-    # continue with the FSG tarball pre-populated in the boot partition.
-    if [ "${retval}" -eq 2 ]; then
-      logwarn "Fuses are unprogrammed. LTE will need developer assistance."
-
+  elif [ "${retval}" -ne 2 ]; then
     # Allow a hash mismatch in dev/test images.
-    elif crossystem "cros_debug?1" ; then
+    if crossystem "cros_debug?1" ; then
       logwarn "FSG hash check failed, forgiven in developer mode."
 
     # For other errors, blank out the FSG in case the eMMC boot partition
