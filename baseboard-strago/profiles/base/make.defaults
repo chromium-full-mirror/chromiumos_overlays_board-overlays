@@ -18,4 +18,4 @@ USE="${USE} tpm_slb9655"
 USE="${USE} kvm_host crosvm-gpu virtio_gpu"
 
 # WiFi and BT driver firmware
-LINUX_FIRMWARE="iwlwifi-7265D ibt-hw fw_sst"
+LINUX_FIRMWARE="iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst"
