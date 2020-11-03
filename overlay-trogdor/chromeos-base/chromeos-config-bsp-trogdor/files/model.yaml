@@ -4,6 +4,35 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+
+camera_config_1: &camera_config_1
+  camera:
+    count: 1
+    devices:
+      - interface: "{{$ufc-interface}}"
+        facing: "front"
+        orientation: 0
+        flags:
+          support-autofocus : "{{$ufc-autofocus}}"
+          support-1080p: "{{$ufc-1080p}}"
+
+camera_config_2: &camera_config_2
+  camera:
+    count: 2
+    devices:
+      - interface: "{{$ufc-interface}}"
+        facing: "front"
+        orientation: 0
+        flags:
+          support-autofocus : "{{$ufc-autofocus}}"
+          support-1080p: "{{$ufc-1080p}}"
+      - interface: "{{$wfc-interface}}"
+        facing: "back"
+        orientation: 0
+        flags:
+          support-autofocus : "{{$wfc-autofocus}}"
+          support-1080p: "{{$wfc-1080p}}"
+
 audio_config: &audio_config
   $cras_root: "/etc/cras"
   $ucm_root: "/usr/share/alsa/ucm"
@@ -120,8 +149,16 @@ chromeos:
           config: *clamshell_config
     - $device-name: "pompom"
       $fw-name: "google,pompom"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
+      $wfc-interface: "usb"
+      $wfc-autofocus: True
+      $wfc-1080p: True
       skus:
         - $sku-id: 0
-          config: *convertible_config
+          config:
+            <<: [ *convertible_config, *camera_config_2 ]
         - $sku-id: 1
-          config: *convertible_config
+          config:
+            <<: [ *convertible_config, *camera_config_2 ]
