@@ -467,6 +467,8 @@ chromeos:
           config: *clamshell_touchscreen_config
     - $device-name: "vortininja"
       $fw-name: "Meep"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 49
           $stylus-category: "external"
