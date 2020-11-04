@@ -29,3 +29,6 @@ USE="${USE} dlc"
 
 # Enable Downloadable Content (DLC) Test
 USE="${USE} dlc_test"
+
+# Include the weida firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} weida"
