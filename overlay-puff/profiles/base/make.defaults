@@ -32,3 +32,6 @@ USE="${USE} dlc_test"
 
 # Include the weida firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} weida"
+
+# Allow Chrome to use Tablet mode
+USE="${USE} touchview"
