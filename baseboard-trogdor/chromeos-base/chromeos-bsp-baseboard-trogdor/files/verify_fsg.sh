@@ -152,6 +152,10 @@ verify_fsg() {
     if [ "${retval}" -eq 2 ]; then
       logwarn "Fuses are unprogrammed. LTE will need developer assistance."
 
+    # Allow a hash mismatch in dev/test images.
+    elif crossystem cros_debug?1 ; then
+      logwarn "FSG hash check failed, forgiven in developer mode."
+
     # For other errors, blank out the FSG in case the eMMC boot partition
     # was compromised.
     else
