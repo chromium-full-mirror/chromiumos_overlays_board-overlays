@@ -768,6 +768,11 @@ chromeos:
           $ucm_src_root: "{{$device-name}}"
           $ucm_extra_suffix: "{{$device-name}}"
           config: *convertible_wl_config
+        - $sku-id-val: 39
+          $num-mic-locations: 2
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
+          config: *convertible_wl_config
     - $device-name: "garfour"
       $fw-name: "Garg"
       $disable-dark-resume: "0"
