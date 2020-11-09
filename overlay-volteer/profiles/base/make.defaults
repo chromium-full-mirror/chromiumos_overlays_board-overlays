@@ -29,3 +29,6 @@ INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
 
 # Include the melfas firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} melfas"
+
+# Include the G2touch firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
