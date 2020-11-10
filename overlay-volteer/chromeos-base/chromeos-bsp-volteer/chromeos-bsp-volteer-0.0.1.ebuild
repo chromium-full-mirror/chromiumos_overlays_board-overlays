@@ -30,9 +30,9 @@ DEPEND="
 
 src_install() {
 	if use volteer-kernelnext; then
-		doappid "{716105F8-A2C3-11EA-A044-33E3EAAD1A23}" "REFERENCE"
+		doappid "{716105F8-A2C3-11EA-A044-33E3EAAD1A23}" "CHROMEBOOK"
 	else
-		doappid "{77BE25D7-AFB8-4E3C-A7D2-1FACE1B186E3}" "REFERENCE"
+		doappid "{77BE25D7-AFB8-4E3C-A7D2-1FACE1B186E3}" "CHROMEBOOK"
 	fi
 
 	# Install platform-specific internal keyboard keymap.
