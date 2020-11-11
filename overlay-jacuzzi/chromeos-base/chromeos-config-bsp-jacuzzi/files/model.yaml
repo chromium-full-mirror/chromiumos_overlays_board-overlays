@@ -180,7 +180,7 @@ willow-config: &willow_config
   <<: *common_config
   $fw-name: "google,willow"
   $fw-build-name: "willow"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIA"
   identity:
     <<: *identity
   audio: *da7219_audio_config
