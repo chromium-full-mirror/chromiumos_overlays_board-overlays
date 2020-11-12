@@ -177,8 +177,7 @@ willow-config: &willow_config
   $fw-build-name: "willow"
   $key-id: "DEFAULT"
   identity:
-    <<: *identity
-  audio: *da7219_audio_config
+    <<: *identity_sku_config
 
 chromeos:
   devices:
@@ -226,5 +225,12 @@ chromeos:
           config: *fennel_config
     - $device-name: "willow"
       skus:
-        - config: *willow_config
-
+        - $sku-id: 0
+          config:
+            <<: *willow_config
+            audio: *da7219_audio_config
+        - $sku-id: 1
+          $ucm-source-suffix: "_ts3a227"
+          config:
+            <<: *willow_config
+            audio: *ts3a227e_audio_config
