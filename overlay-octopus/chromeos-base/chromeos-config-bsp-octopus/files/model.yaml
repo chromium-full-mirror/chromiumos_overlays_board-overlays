@@ -459,6 +459,8 @@ chromeos:
     - $device-name: "dorp"
       $fw-name: "Meep"
       $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 33
           config: *clamshell_config
@@ -492,6 +494,8 @@ chromeos:
     - $device-name: "vorticon"
       $fw-name: "Meep"
       $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 65
           config: *clamshell_config
