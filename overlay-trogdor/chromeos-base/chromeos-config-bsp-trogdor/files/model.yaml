@@ -165,6 +165,8 @@ chromeos:
           config: *clamshell_config
         - $sku-id: 5
           config: *clamshell_config
+        - $sku-id: 6
+          config: *clamshell_config
     - $device-name: "pompom"
       $fw-name: "google,pompom"
       $ufc-interface: "usb"
