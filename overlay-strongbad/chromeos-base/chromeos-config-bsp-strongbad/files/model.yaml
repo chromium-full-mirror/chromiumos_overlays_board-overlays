@@ -7,7 +7,6 @@
 audio_config: &audio_config
   $cras_root: "/etc/cras"
   $ucm_root: "/usr/share/alsa/ucm"
-  $card: "sc7180-snd-card"
   $cras-source: "{{cras-config-dir}}/audio/cras-config"
   $cras-dest: "{{$cras_root}}/{{cras-config-dir}}"
   $ucm-source: "{{cras-config-dir}}/audio/ucm-config"
@@ -53,6 +52,7 @@ chromeos:
   devices:
     - $device-name: "coachz"
       $fw-name: "google,coachz"
+      $card: "sc7180-adau7002-max98357a"
       skus:
         - $sku-id: 0
           config: *detachable_config
