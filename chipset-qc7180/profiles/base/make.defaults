@@ -27,6 +27,3 @@ USE="${USE} arc_uses_cros_video_decoder"
 
 # Enable vulkan, but only for cros (see package.use)
 USE="${USE} vulkan"
-
-# Enable CPU zero-copy for Chrome camera stack.
-USE="${USE} video_capture_use_gpu_memory_buffer"
