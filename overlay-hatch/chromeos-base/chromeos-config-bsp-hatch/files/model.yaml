@@ -409,8 +409,15 @@ chromeos:
       $internal-backlight-als-steps: |-
         80.0 49.2 -1 -1
       $keyboard-backlight-als-steps: |-
-        40.0 -1 30
+        70.0 -1 30
         0.0 15 -1
+      $keyboard-backlight-user-steps: |-
+        0.0
+        30.0
+        32.0
+        34.0
+        35.0
+        36.0
       skus:
         - $sku-id: 1
           config:
