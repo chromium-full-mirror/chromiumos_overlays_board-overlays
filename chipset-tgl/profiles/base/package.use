@@ -1,1 +1,2 @@
 chromeos-base/chromeos-chrome goma_thinlto
+media-libs/arc-mesa-iris -vulkan
