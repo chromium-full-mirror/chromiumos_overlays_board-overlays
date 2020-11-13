@@ -45,4 +45,8 @@ src_install() {
 		insinto "/opt/google/containers/android/vendor/etc/init"
 		newins "${FILESDIR}/init.cpusets-${soc}-${kernel}.rc" init.cpusets.rc
 	fi
+
+	# Kernel module configuration
+	insinto "/etc/modprobe.d"
+	doins "${FILESDIR}"/etc/modprobe.d/*.conf
 }
