@@ -22,6 +22,7 @@ KEYWORDS="-* amd64 x86"
 RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	chromeos-base/touch_updater:=
 "
 DEPEND="
 	${RDEPEND}
