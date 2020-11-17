@@ -25,9 +25,6 @@ DEPEND="${RDEPEND}"
 src_install() {
 	doappid "{9023C063-08D6-4A4F-908C-BCF97DE8BA69}" "CHROMEBOOK"
 
-	insinto "/etc/init"
-	doins "${FILESDIR}/preload-qcom-network-drivers.conf"
-
 	# Install audio config
 	unibuild_install_files audio-files
 }
