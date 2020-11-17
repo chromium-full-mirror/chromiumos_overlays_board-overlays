@@ -63,9 +63,6 @@ USE="${USE} -video_cards_i965 video_cards_iHD"
 # Add IME addons for some optional IME features.
 USE="${USE} ime_addons"
 
-# Enable IME native decoder experiment.
-USE="${USE} ime_decoder_alpha"
-
 # Enable Downloadable Content (DLC)
 USE="${USE} dlc"
 
