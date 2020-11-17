@@ -12,8 +12,9 @@
 # the image from the eMMC boot partition upon mismatch.
 
 JOB="verify_fsg"
-RMTFS_DIR=/var/lib/rmtfs/boot
-FSG_PATH="${RMTFS_DIR}/modem_fsg"
+RMTFS_DIR=/var/lib/rmtfs
+RMTFS_BOOT_DIR="${RMTFS_DIR}/boot"
+FSG_PATH="${RMTFS_BOOT_DIR}/modem_fsg"
 FSG_SOURCE="$(echo /dev/mmcblk*boot0)"
 
 logit() {
@@ -113,7 +114,8 @@ reload_fsg() {
     logwarn "Warning: FSG size invalid. LTE will not work."
   fi
 
-  mkdir -p "${RMTFS_DIR}"
+  mkdir -m 0700 "${RMTFS_DIR}"
+  mkdir -m 0700 "${RMTFS_BOOT_DIR}"
   rm -f "${FSG_PATH}"
   # Copying a byte at a time is too slow. Copy blocks then bytes.
   dd if="${FSG_SOURCE}" of="${FSG_PATH}" bs=512 skip=1 \
@@ -145,7 +147,7 @@ verify_fsg() {
     # causes the modem to crash or hang rather than turning to the FSG.
     # Only do this if the hash now agrees, otherwise developers with
     # unprogrammed fuses will be constantly fighting this deletion.
-    rm -f "${RMTFS_DIR}"/modem_fs[c12]
+    rm -f "${RMTFS_BOOT_DIR}"/modem_fs[c12]
   else
     # For the first factory run, the fuses are not set. Allow it to
     # continue with the FSG tarball pre-populated in the boot partition.
