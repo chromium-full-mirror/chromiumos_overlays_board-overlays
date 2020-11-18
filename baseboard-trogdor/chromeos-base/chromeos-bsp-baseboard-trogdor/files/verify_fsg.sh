@@ -114,8 +114,8 @@ reload_fsg() {
     logwarn "Warning: FSG size invalid. LTE will not work."
   fi
 
-  mkdir -m 0700 "${RMTFS_DIR}"
-  mkdir -m 0700 "${RMTFS_BOOT_DIR}"
+  mkdir -p "${RMTFS_BOOT_DIR}"
+  chmod 0700 "${RMTFS_BOOT_DIR}" "${RMTFS_DIR}"
   rm -f "${FSG_PATH}"
   # Copying a byte at a time is too slow. Copy blocks then bytes.
   dd if="${FSG_SOURCE}" of="${FSG_PATH}" bs=512 skip=1 \
