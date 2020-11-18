@@ -39,44 +39,73 @@ bluetooth-stop-on-suspend: &bluetooth_stop_on_suspend
     <<: *bluetooth_flags
     stop-on-suspend: true
 
+audio-main-common: &audio_main_common
+  # If the generic 1 or 2 mic locations configuration is not sufficient, the
+  # device should override the generic source by setting
+  #
+  #   /* 1 is for front camera only and 2 is for front + rear cameras. */
+  #   $num-mic-locations: 2
+  #   $ucm_src_root: "{{$device-name}}"
+  #   $ucm_extra_suffix: "{{$device-name}}"
+  #
+  # If a device has cases of 1 mic and 2 mics in a mic location based on SKU
+  # ID, then please override the $ucm_extra_suffix in this way:
+  #
+  #   $ucm_extra_suffix: "{{$device-name}}.[1|2|3|4]mic"
+  $cras_root: "/etc/cras"
+  $ucm_src_root: "common"
+  $ucm_extra_suffix: ""
+  $ucm_root: "/usr/share/alsa/ucm"
+  $card: "sof-glkda7219max"
+  $sub_cras_config: ""
+  $cras-source-config-dir: "cras-config{{$sub_cras_config}}"
+  cras-config-dir: "{{$device-name}}{{$sub_cras_config}}"
+  ucm-suffix: "{{$num-mic-locations}}loc{{$ucm_extra_suffix}}"
+
+audio-main-files:
+  # Volume Curve
+  files-map-card_settings: &files_map_card_settings
+    source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/card_settings"
+    destination: "{{$cras_root}}/{{cras-config-dir}}/{{$card}}"
+  # EQ/DRC DSP configuration
+  files-map-dsp-ini: &files_map_dsp_ini
+    source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/dsp.ini"
+    destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
+  # ALSA UCM configuration file
+  files-map-card-conf: &files_map_card_conf
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/{{$card}}.conf"
+    destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
+  # ALSA UCM SectionUseCase configuration (defined in UCM conf file)
+  files-map-HiFi-conf: &files_map_HiFi_conf
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/HiFi.conf"
+    destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+  # the board.ini file
+  files-map-board-ini: &files_map_board_ini
+    source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/board.ini"
+    destination: "{{$cras_root}}/{{cras-config-dir}}/board.ini"
+
+audio-boardini-setting: &audio_boardini_setting
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings
+        - *files_map_dsp_ini
+        - *files_map_card_conf
+        - *files_map_HiFi_conf
+        - *files_map_board_ini
+
 device-config: &device_config
   <<: *unprovisioned_config
   audio:
     main:
-      # If the generic 1 or 2 mic locations configuration is not sufficient, the
-      # device should override the generic source by setting
-      #
-      #   /* 1 is for front camera only and 2 is for front + rear cameras. */
-      #   $num-mic-locations: 2
-      #   $ucm_src_root: "{{$device-name}}"
-      #   $ucm_extra_suffix: "{{$device-name}}"
-      #
-      # If a device has cases of 1 mic and 2 mics in a mic location based on SKU
-      # ID, then please override the $ucm_extra_suffix in this way:
-      #
-      #   $ucm_extra_suffix: "{{$device-name}}.[1|2|3|4]mic"
-      $cras_root: "/etc/cras"
-      $ucm_src_root: "common"
-      $ucm_extra_suffix: ""
-      $ucm_root: "/usr/share/alsa/ucm"
-      $card: "sof-glkda7219max"
-      $sub_cras_config: ""
-      $cras-source-config-dir: "cras-config{{$sub_cras_config}}"
-      cras-config-dir: "{{$device-name}}{{$sub_cras_config}}"
-      ucm-suffix: "{{$num-mic-locations}}loc{{$ucm_extra_suffix}}"
+      <<: *audio_main_common
       files:
-        # Volume Curve
-        - source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/card_settings"
-          destination: "{{$cras_root}}/{{cras-config-dir}}/{{$card}}"
-        # EQ/DRC DSP configuration
-        - source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/dsp.ini"
-          destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
-        # ALSA UCM configuration file
-        - source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/{{$card}}.conf"
-          destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
-        # ALSA UCM SectionUseCase configuration (defined in UCM conf file)
-        - source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/HiFi.conf"
-          destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+        - *files_map_card_settings
+        - *files_map_dsp_ini
+        - *files_map_card_conf
+        - *files_map_HiFi_conf
+
   bluetooth: *bluetooth_default
   camera:
     $camera-clock: "monotonic"
@@ -717,20 +746,24 @@ chromeos:
           $keyboard-backlight-no-als-brightness: "20"
           config:
             <<: *clamshell_touchscreen_config
+            <<: *audio_boardini_setting
             bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 66
           config:
             <<: *clamshell_touchscreen_config
+            <<: *audio_boardini_setting
             bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 67
           $has-keyboard-backlight: "1"
           $keyboard-backlight-no-als-brightness: "20"
           config:
             <<: *clamshell_config
+            <<: *audio_boardini_setting
             bluetooth: *bluetooth_stop_on_suspend
         - $sku-id-val: 68
           config:
             <<: *clamshell_config
+            <<: *audio_boardini_setting
             bluetooth: *bluetooth_stop_on_suspend
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
