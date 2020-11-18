@@ -35,3 +35,6 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 
 # Allow Chrome to use Tablet mode
 USE="${USE} touchview"
+
+# Enable Ambient Light Sensor
+USE="${USE} als"
