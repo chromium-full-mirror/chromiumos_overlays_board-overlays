@@ -52,5 +52,8 @@ USE="${USE} unibuild"
 # Enable Portrait Mode camera feature.
 USE="${USE} camera_feature_portrait_mode"
 
+# Enable Google Keyboard decoder
+USE="${USE} gboard_decoder"
+
 # Use AFDO profiles from big core
 AFDO_PROFILE_SOURCE="bigcore"

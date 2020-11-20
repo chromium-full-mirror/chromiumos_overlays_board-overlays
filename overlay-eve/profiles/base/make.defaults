@@ -63,6 +63,9 @@ USE="${USE} -video_cards_i965 video_cards_iHD"
 # Add IME addons for some optional IME features.
 USE="${USE} ime_addons"
 
+# Enable Google Keyboard decoder
+USE="${USE} gboard_decoder"
+
 # Enable Downloadable Content (DLC)
 USE="${USE} dlc"
 

@@ -45,3 +45,6 @@ USE="${USE} ondevice_handwriting"
 
 # Enable fs-verity support
 USE="${USE} fsverity"
+
+# Enable Google Keyboard decoder
+USE="${USE} gboard_decoder"

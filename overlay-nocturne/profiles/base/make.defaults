@@ -50,6 +50,9 @@ USE="${USE} hammerd"
 # Add IME addons for some optional IME features.
 USE="${USE} ime_addons"
 
+# Enable Google Keyboard decoder
+USE="${USE} gboard_decoder"
+
 # Enable Intel wifi and bt firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-7265D ibt-hw"
 
