@@ -184,7 +184,6 @@ burnet-config: &burnet_config
   <<: *common_config
   $fw-name: "google,burnet"
   $fw-build-name: "burnet"
-  $key-id: "DEFAULT"
   identity:
     <<: *identity_sku_config
   audio: *ts3a227e_audio_config
@@ -214,10 +213,12 @@ chromeos:
     - $device-name: "burnet"
       skus:
         - $sku-id: 17
+          $key-id: "JACUZZID"
           config: *burnet_config
     - $device-name: "esche"
       skus:
         - $sku-id: 16
+          $key-id: "JACUZZIE"
           config: *burnet_config
     - $device-name: "cerise"
       skus:
