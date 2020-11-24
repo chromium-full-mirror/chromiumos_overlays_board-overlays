@@ -1,11 +1,9 @@
-#
 # Copyright 2019 The Chromium OS Authors. All rights reserved.
 #
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-
-camera_config_1: &camera_config_1
+camera_config_ufc: &camera_config_ufc
   camera:
     count: 1
     devices:
@@ -16,7 +14,7 @@ camera_config_1: &camera_config_1
           support-autofocus : "{{$ufc-autofocus}}"
           support-1080p: "{{$ufc-1080p}}"
 
-camera_config_2: &camera_config_2
+camera_config_ufc_wfc: &camera_config_ufc_wfc
   camera:
     count: 2
     devices:
@@ -131,42 +129,56 @@ chromeos:
     - $device-name: "trogdor"
       $fw-name: "google,trogdor"
       $card: "sc7180-rt5682-max98357a-1mic"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
       skus:
         - $sku-id: 0
-          config: *convertible_config
+          config:
+            <<: [ *convertible_config, *camera_config_ufc ]
         - $sku-id: 1
-          config: *convertible_config
+          config:
+            <<: [ *convertible_config, *camera_config_ufc ]
     - $device-name: "lazor"
       $fw-name: "google,lazor"
       $internal-backlight-no-als-battery-brightness: "43"
       $card: "sc7180-rt5682-max98357a-1mic"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
       skus:
         - $sku-id: 0
           $set-cellular-transmit-power-for-tablet-mode: "1"
           $has-keyboard-backlight: "1"
           config:
-            <<: [ *convertible_config, *p_sensor_20mm_lazor_config ]
+            <<: [ *convertible_config, *p_sensor_20mm_lazor_config, *camera_config_ufc ]
             wifi: *wifi_sar_table
         - $sku-id: 1
           config:
-            <<: *convertible_config
+            <<: [ *convertible_config, *camera_config_ufc ]
             wifi: *wifi_sar_table
         - $sku-id: 2
           config:
-            <<: *convertible_config
+            <<: [ *convertible_config, *camera_config_ufc ]
             wifi: *wifi_sar_table
           $has-keyboard-backlight: "1"
     - $device-name: "limozeen"
       $fw-name: "google,lazor"
       $card: "sc7180-rt5682-max98357a-1mic"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
       skus:
         - $sku-id: 4
           $has-touchscreen: True
-          config: *clamshell_config
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
         - $sku-id: 5
-          config: *clamshell_config
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
         - $sku-id: 6
-          config: *clamshell_config
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
     - $device-name: "pompom"
       $fw-name: "google,pompom"
       $ufc-interface: "usb"
@@ -179,7 +191,7 @@ chromeos:
       skus:
         - $sku-id: 0
           config:
-            <<: [ *convertible_config, *camera_config_2 ]
+            <<: [ *convertible_config, *camera_config_ufc_wfc ]
         - $sku-id: 1
           config:
-            <<: [ *convertible_config, *camera_config_2 ]
+            <<: [ *convertible_config, *camera_config_ufc_wfc ]
