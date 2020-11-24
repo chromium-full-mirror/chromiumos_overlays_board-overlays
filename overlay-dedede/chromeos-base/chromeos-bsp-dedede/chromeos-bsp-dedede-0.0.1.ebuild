@@ -28,4 +28,8 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install the WP script for older revs that can't take a RO FW update.
+	insinto /etc/init
+	doins "${FILESDIR}/common/dedede-force-wp.conf"
 }
