@@ -27,9 +27,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	# Override default CPU clock speed governor.
 	insinto "/etc"
+	# Override default CPU clock speed governor.
 	doins "${FILESDIR}/cpufreq.conf"
+	# Use 'step_wise' governor for GPU thermal zones.
+	doins "${FILESDIR}/thermal_zone.conf"
 
 	# Install cpuset adjustments.
 	insinto "/etc/init"
