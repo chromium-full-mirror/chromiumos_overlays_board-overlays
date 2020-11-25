@@ -1,1 +1,4 @@
 TTY_CONSOLE="ttyS0"
+
+# Include the g2touch touchscreen firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
