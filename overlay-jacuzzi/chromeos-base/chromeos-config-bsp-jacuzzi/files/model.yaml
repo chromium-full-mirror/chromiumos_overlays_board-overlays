@@ -221,8 +221,6 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *fennel_config
-        - $sku-id: 4
-          config: *fennel_config
     - $device-name: "willow"
       skus:
         - $sku-id: 0
