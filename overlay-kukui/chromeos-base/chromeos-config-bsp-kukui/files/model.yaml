@@ -42,9 +42,11 @@ kakadu_audio_config: &kakadu_audio_config
   $card1: "mt8183_mt6358_ts3a227_max98357"
   $card2: "mt8183_da7219_max98357"
   $card3: "mt8183_da7219_rt1015"
+  $card4: "mt8183_da7219_rt1015p"
   $ucm-dest1: "{{$ucm_root}}/{{$card1}}.{{ucm-suffix}}"
   $ucm-dest2: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}"
   $ucm-dest3: "{{$ucm_root}}/{{$card3}}.{{ucm-suffix}}"
+  $ucm-dest4: "{{$ucm_root}}/{{$card4}}.{{ucm-suffix}}"
   main:
     cras-config-dir: "{{$device-name}}"
     ucm-suffix: "{{$device-name}}"
@@ -69,6 +71,12 @@ kakadu_audio_config: &kakadu_audio_config
         destination: "{{$ucm-dest3}}/HiFi.conf"
       - source: "{{$ucm-source}}/{{$card3}}.conf"
         destination: "{{$ucm-dest3}}/{{$card3}}.{{ucm-suffix}}.conf"
+      - source: "{{$cras-source}}/{{$card4}}"
+        destination: "{{$cras-dest}}/{{$card4}}"
+      - source: "{{$ucm-source}}/HiFi_rt1015p.conf"
+        destination: "{{$ucm-dest4}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card4}}.conf"
+        destination: "{{$ucm-dest4}}/{{$card4}}.{{ucm-suffix}}.conf"
 
 bluetooth-flags: &bluetooth_flags
   enable-suspend-management: true
