@@ -12,6 +12,7 @@ KEYWORDS="*"
 
 RDEPEND="
 	media-libs/tgl-dsm-param
+	media-libs/tgl-hotword-support
 "
 DEPEND="${RDEPEND}"
 
