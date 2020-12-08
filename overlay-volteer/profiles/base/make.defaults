@@ -6,7 +6,7 @@
 USE=""
 INPUT_DEVICES=""
 
-USE="${USE} cros_ec"
+#USE="${USE} cros_ec"
 USE="${USE} volteer"
 
 # Enable unibuild
