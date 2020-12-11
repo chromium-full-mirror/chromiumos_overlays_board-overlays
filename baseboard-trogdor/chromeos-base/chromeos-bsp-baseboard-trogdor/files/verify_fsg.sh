@@ -11,22 +11,24 @@
 # image in the stateful partition against the device fuses, and reloads
 # the image from the eMMC boot partition upon mismatch.
 
-JOB="verify_fsg"
+JOB="verify_fsg.sh"
 RMTFS_DIR=/var/lib/rmtfs
 RMTFS_BOOT_DIR="${RMTFS_DIR}/boot"
 FSG_PATH="${RMTFS_BOOT_DIR}/modem_fsg"
 FSG_SOURCE="$(echo /dev/mmcblk*boot0)"
 
+# Logging messages go directly to /dev/kmsg because we run before
+# syslog is available.
 logit() {
-  logger -t "${JOB}" "$@"
+  echo "<6>${JOB}:" "$@" > /dev/kmsg
 }
 
 logwarn() {
-  logit -p warn "$*"
+  echo "<4>${JOB}:" "$@" > /dev/kmsg
 }
 
 logerr() {
-  logit -p error "$*"
+  echo "<3>${JOB}:" "$@" > /dev/kmsg
 }
 
 # Read the FSG fuse hash, and store the result into
