@@ -1,1 +1,0 @@
-intel-ipu6se-libs-bin-2020.11.25.ebuild
