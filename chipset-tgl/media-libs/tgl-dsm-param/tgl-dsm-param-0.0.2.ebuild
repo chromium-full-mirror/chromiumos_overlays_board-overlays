@@ -14,5 +14,5 @@ S="${WORKDIR}"
 
 src_install() {
 	insinto /opt/google/dsm
-	doins dsmparam.bin
+	doins *.bin
 }
