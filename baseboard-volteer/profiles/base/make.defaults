@@ -7,7 +7,7 @@ LINUX_FIRMWARE=""
 USE=""
 
 # Use Intel HrP2 WiFi firmware.
-LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-Qu-c0 iwlwifi-QuZ"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-QuZ"
 
 # Use Intel BT driver
 #LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt-hw ibt_ax201"
