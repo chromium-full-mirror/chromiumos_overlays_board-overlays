@@ -3,6 +3,25 @@
 # found in the LICENSE file.
 #
 
+on early-init
+    ######################################################################
+    # For ARC on 5.4 devices, schedtune does not exist. Instead uclamp
+    # mechanism is used from upstream. To avoid requiring Android changes,
+    # Just mount the CPU control group in the stune path so Android can add
+    # tasks to it. If the device does have schedtune, the mount of that will
+    # take over.
+    # TODO: Temporary moved from ARC to here, See b/157022340#comment32
+    mkdir /dev/stune
+    mount cgroup none /dev/stune nodev noexec nosuid cpu
+    mkdir /dev/stune/top-app
+
+    write /dev/stune/cpu.uclamp.min 100
+    write /dev/stune/top-app/cpu.uclamp.min 20
+    write /dev/stune/top-app/cpu.uclamp.latency_sensitive 1
+
+    write /dev/stune/top-app/schedtune.boost 20
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+
 on early-boot
     # TODO: the below doesnt' do anything because trogdor is running
     # on kernel 5.4 and we don't have schedtune.  It's comment out until
