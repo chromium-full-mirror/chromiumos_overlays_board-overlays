@@ -34,6 +34,22 @@ krane_audio_config: &krane_audio_config
       - source: "{{$cras-source}}/Realtek USB2.0 Audio"
         destination: "{{$cras-dest}}/Realtek USB2.0 Audio"
 
+katsu_audio_config: &katsu_audio_config
+  $card1: "mt8183_da7219_rt1015p"
+  $ucm-dest1: "{{$ucm_root}}/{{$card1}}.{{ucm-suffix}}"
+  main:
+    cras-config-dir: "{{$device-name}}"
+    ucm-suffix: "{{$device-name}}"
+    files:
+      - source: "{{$cras-source}}/{{$card1}}"
+        destination: "{{$cras-dest}}/{{$card1}}"
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+      - source: "{{$ucm-source}}/HiFi_rt1015p.conf"
+        destination: "{{$ucm-dest1}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card1}}.conf"
+        destination: "{{$ucm-dest1}}/{{$card1}}.{{ucm-suffix}}.conf"
+
 common_config: &common_config
   $cras_root: "/etc/cras"
   $ucm_root: "/usr/share/alsa/ucm"
@@ -113,6 +129,22 @@ kakadu-config: &kakadu_config
   power:
     <<: *power_common
 
+katsu-config: &katsu_config
+  <<: *common_config
+  $fw-name: "google,katsu"
+  $fw-build-name: "katsu"
+  $key-id: "DEFAULT"
+  audio: *katsu_audio_config
+  power:
+    <<: *power_common
+  ui:
+    power-button:
+      edge: right
+      position: "0.1"
+    side-volume-button:
+      region: screen
+      side: top
+
 chromeos:
   devices:
     - $device-name: "kukui"
@@ -127,3 +159,6 @@ chromeos:
     - $device-name: "kakadu"
       skus:
         - config: *kakadu_config
+    - $device-name: "katsu"
+      skus:
+        - config: *katsu_config
