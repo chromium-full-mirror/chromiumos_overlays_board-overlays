@@ -1,19 +1,19 @@
 [Speaker]
   volume_curve = explicit
-  db_at_100 = -400
-  db_at_99 = -400
-  db_at_98 = -400
+  db_at_100 = -550
+  db_at_99 = -550
+  db_at_98 = -550
   db_at_97 = -550
-  db_at_96 = -550
-  db_at_95 = -550
-  db_at_94 = -550
-  db_at_93 = -550
-  db_at_92 = -550
+  db_at_96 = -600
+  db_at_95 = -600
+  db_at_94 = -600
+  db_at_93 = -700
+  db_at_92 = -700
   db_at_91 = -700
   db_at_90 = -700
-  db_at_89 = -700
-  db_at_88 = -700
-  db_at_87 = -700
+  db_at_89 = -800
+  db_at_88 = -800
+  db_at_87 = -800
   db_at_86 = -850
   db_at_85 = -850
   db_at_84 = -850
@@ -103,5 +103,5 @@
   db_at_0 = -7750
 [Headphone]
   volume_curve = simple_step
-  volume_step = 100
+  volume_step = 60
   max_volume = -600
