@@ -568,17 +568,25 @@ chromeos:
         - $sku-id-val: 49
           $stylus-category: "external"
           $num-mic-locations: 2
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 50
           $stylus-category: "external"
           $num-mic-locations: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 51
           $num-mic-locations: 2
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 52
           $num-mic-locations: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
     - $device-name: "vorticon"
       $fw-name: "Meep"
       $num-mic-locations: 1
@@ -586,9 +594,13 @@ chromeos:
       $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 65
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 66
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_setting
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
