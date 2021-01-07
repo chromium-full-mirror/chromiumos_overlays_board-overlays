@@ -170,7 +170,7 @@ kakadu-config: &kakadu_config
   <<: *common_config
   $fw-name: "google,kakadu"
   $fw-build-name: "kakadu"
-  $key-id: "DEFAULT"
+  $key-id: "KUKUIB"
   audio: *kakadu_audio_config
   power:
     <<: *power_common
