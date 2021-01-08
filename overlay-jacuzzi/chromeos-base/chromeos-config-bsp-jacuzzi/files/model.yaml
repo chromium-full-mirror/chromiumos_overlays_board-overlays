@@ -139,7 +139,7 @@ damu-config: &damu_config
   <<: *common_config
   $fw-name: "google,damu"
   $fw-build-name: "damu"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIC"
   identity:
     <<: *identity
   audio: *da7219_audio_config
