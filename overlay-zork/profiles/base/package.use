@@ -1,3 +1,4 @@
 media-libs/mesa egl gles2 shared-glapi
 media-libs/mesa-amd gallium-va
 sys-kernel/chromeos-kernel-4_19 -clang -lld
+sys-boot/chromeos-bootimage tianocore
