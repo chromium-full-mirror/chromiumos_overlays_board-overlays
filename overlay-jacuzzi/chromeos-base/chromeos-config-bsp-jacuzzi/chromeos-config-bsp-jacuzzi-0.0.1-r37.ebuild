@@ -1,1 +1,0 @@
-chromeos-config-bsp-jacuzzi-0.0.1.ebuild
