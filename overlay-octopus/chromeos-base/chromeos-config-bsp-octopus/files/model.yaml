@@ -420,34 +420,54 @@ chromeos:
             <<: *audio_two_cards_setting
     - $device-name: "sparky"
       $fw-name: "Bobba"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 17
           $num-mic-locations: 2
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 18
           $num-mic-locations: 2
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 19
           $num-mic-locations: 1
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 20
           $num-mic-locations: 1
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_setting
     - $device-name: "sparky360"
       $fw-name: "Bobba"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       $num-mic-locations: 2
       skus:
         - $sku-id-val: 25
           $stylus-category: "internal"
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 26
           $stylus-category: "internal"
           $camera-clock: "boottime"
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 27
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
     - $device-name: "droid"
       $fw-name: "Bobba"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "droid-pb"
@@ -455,24 +475,32 @@ chromeos:
       skus:
         - $sku-id-val: 33
           $has-keyboard-backlight: "1"
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 34
           $has-keyboard-backlight: "1"
-          config: *clamshell_touchscreen_wl_config
+          config:
+            <<: *clamshell_touchscreen_wl_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 35
           config: *clamshell_wl_config
         - $sku-id-val: 36
-          config: *clamshell_touchscreen_wl_config
+          config:
+            <<: *clamshell_touchscreen_wl_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 37
-          $sub_cras_config: ".droid_lte"
+          $c: ".droid_lte"
           config:
             <<: *clamshell_wl_config
+            <<: *audio_two_cards_setting
             modem:
               firmware-variant: "{{$device-name}}"
         - $sku-id-val: 38
           $sub_cras_config: ".droid_lte"
           config:
             <<: *clamshell_touchscreen_wl_config
+            <<: *audio_two_cards_setting
             modem:
               firmware-variant: "{{$device-name}}"
         - $sku-id-val: 39
@@ -480,26 +508,39 @@ chromeos:
           $sub_cras_config: ".droid_lte"
           config:
             <<: *clamshell_wl_config
+            <<: *audio_two_cards_setting
             modem:
               firmware-variant: "{{$device-name}}"
         - $sku-id-val: 40
           $has-keyboard-backlight: "1"
           $sub_cras_config: ".droid_lte"
-          config: *clamshell_touchscreen_wl_config
+          config:
+            <<: *clamshell_touchscreen_wl_config
+            <<: *audio_two_cards_setting
     - $device-name: "blorb"
       $fw-name: "Bobba"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       $num-mic-locations: 1
       skus:
         - $sku-id-val: 41
           $has-keyboard-backlight: "1"
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 42
           $has-keyboard-backlight: "1"
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 43
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 44
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
