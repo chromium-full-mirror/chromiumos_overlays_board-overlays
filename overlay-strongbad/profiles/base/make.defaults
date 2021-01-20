@@ -17,6 +17,9 @@ USE="${USE} direncryption"
 # Enable QMI support in ModemManager
 USE="${USE} qmi qrtr"
 
+# Enable Cellular SAR hack
+USE="${USE} trogdor_sar_hack"
+
 # Enable detachable UI
 USE="${USE} detachable menu_ui"
 
