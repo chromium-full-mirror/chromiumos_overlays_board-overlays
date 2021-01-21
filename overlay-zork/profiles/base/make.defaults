@@ -43,10 +43,6 @@ USE="${USE} kvm_host -crosvm-wl-dmabuf crosvm-gpu"
 # Add ec firmware.
 USE="${USE} cros_ec"
 
-# Add MiniOs.
-# TODO(b/169261043): Remove this after migrating to NBR compatible board.
-USE="${USE} minios"
-
 # Add EC logging
 USE="${USE} eclog"
 
