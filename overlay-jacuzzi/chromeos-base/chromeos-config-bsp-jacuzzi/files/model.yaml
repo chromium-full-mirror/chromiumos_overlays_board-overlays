@@ -147,7 +147,7 @@ cerise-config: &cerise_config
   <<: *common_config
   $fw-name: "google,cerise"
   $fw-build-name: "cerise"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIC"
   identity:
     <<: *identity_sku_config
   audio: *rt1015p_audio_config
