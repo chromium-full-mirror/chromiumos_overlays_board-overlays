@@ -157,7 +157,7 @@ fennel-config: &fennel_config
   <<: *common_config
   $fw-name: "google,fennel"
   $fw-build-name: "fennel"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIF"
   identity:
     <<: *identity_sku_config
   audio: *rt1015p_audio_config
