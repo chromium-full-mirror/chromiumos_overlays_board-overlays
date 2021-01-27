@@ -13,34 +13,32 @@ on early-init
     # TODO: Temporary moved from ARC to here, See b/157022340#comment32
     mkdir /dev/stune
     mount cgroup none /dev/stune nodev noexec nosuid cpu
-    mkdir /dev/stune/top-app
 
-    write /dev/stune/cpu.uclamp.min 100
+    write /dev/stune/cpu.uclamp.min 20
+    write /dev/stune/cpu.rt_period_us 1000000
+    write /dev/stune/cpu.rt_runtime_us 200000
+
+    mkdir /dev/stune/rt
+    write /dev/stune/rt/cpu.rt_period_us 1000000
+    write /dev/stune/rt/cpu.rt_runtime_us 20000
+
+    mkdir /dev/stune/top-app
+    write /dev/stune/top-app/cpu.rt_period_us 1000000
+    write /dev/stune/top-app/cpu.rt_runtime_us 20000
+
     write /dev/stune/top-app/cpu.uclamp.min 20
     write /dev/stune/top-app/cpu.uclamp.latency_sensitive 1
 
     write /dev/stune/top-app/schedtune.boost 20
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
-on early-boot
-    # TODO: the below doesnt' do anything because trogdor is running
-    # on kernel 5.4 and we don't have schedtune.  It's comment out until
-    # we know what to do.  See https://crbug.com/1041117#c45
+    mkdir /dev/stune/foreground
+    write /dev/stune/foreground/cpu.rt_period_us 1000000
+    write /dev/stune/foreground/cpu.rt_runtime_us 150000
 
-    # # Mount SchedTune controller and create tuning groups.
-    # mkdir /dev/stune
-    # mount cgroup none /dev/stune schedtune
-    # mkdir /dev/stune/foreground
-    # chown system system /dev/stune
-    # chown system system /dev/stune/foreground
-    # chown system system /dev/stune/tasks
-    # chown system system /dev/stune/foreground/tasks
-    # chmod 0664 /dev/stune/tasks
-    # chmod 0664 /dev/stune/foreground/tasks
-
-    # # Foreground tasks get schedule boost
-    # write /dev/stune/foreground/schedtune.boost 20
-    # write /dev/stune/foreground/schedtune.prefer_idle 1
+    mkdir /dev/stune/background
+    write /dev/stune/background/cpu.rt_period_us 1000000
+    write /dev/stune/background/cpu.rt_runtime_us 10000
 
 on property:sys.boot_completed=1
     # Allow foreground apps to have all CPUs.  Restrict background apps to
