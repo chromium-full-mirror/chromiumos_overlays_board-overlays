@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2020 The Android Open Source Project
+<!-- Copyright 2021 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,24 +17,24 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="c2.vea.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="860-860" />
-            <Limit name="measured-frame-rate-720x480" range="531-531" />
-            <Limit name="measured-frame-rate-1280x720" range="251-251" />
-            <Limit name="measured-frame-rate-1920x1080" range="132-132" />
+            <Limit name="measured-frame-rate-320x240" range="888-888" />
+            <Limit name="measured-frame-rate-720x480" range="581-581" />
+            <Limit name="measured-frame-rate-1280x720" range="273-273" />
+            <Limit name="measured-frame-rate-1920x1080" range="145-145" />
         </MediaCodec>
     </Encoders>
     <Decoders>
         <MediaCodec name="c2.vda.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="999-1505" />
-            <Limit name="measured-frame-rate-720x480" range="980-1343" />
-            <Limit name="measured-frame-rate-1280x720" range="665-933" />
-            <Limit name="measured-frame-rate-1920x1088" range="406-406" />
+            <Limit name="measured-frame-rate-320x240" range="2132-3312" />
+            <Limit name="measured-frame-rate-720x480" range="1934-1938" />
+            <Limit name="measured-frame-rate-1280x720" range="1200-1200" />
+            <Limit name="measured-frame-rate-1920x1088" range="722-722" />
         </MediaCodec>
         <MediaCodec name="c2.vda.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="1004-1501" />
-            <Limit name="measured-frame-rate-640x360" range="1016-1534" />
-            <Limit name="measured-frame-rate-1280x720" range="884-1237" />
-            <Limit name="measured-frame-rate-1920x1080" range="796-796" />
+            <Limit name="measured-frame-rate-320x180" range="2044-3145" />
+            <Limit name="measured-frame-rate-640x360" range="1976-2273" />
+            <Limit name="measured-frame-rate-1280x720" range="1345-1345" />
+            <Limit name="measured-frame-rate-1920x1080" range="904-904" />
             <Limit name="measured-frame-rate-3840x2160" range="249-250" />
         </MediaCodec>
     </Decoders>
