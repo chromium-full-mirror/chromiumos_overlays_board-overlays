@@ -27,7 +27,6 @@ RDEPEND="
 	media-libs/cros-camera-libcamera_v4l2_device
 	media-libs/cros-camera-libcbm
 	media-libs/libsync
-	media-libs/mtk-hal-config
 	media-libs/mtk-isp-3a-libs-bin
 	media-libs/mtk-sensor-metadata
 	media-libs/mtk-tuning-libs-bin"

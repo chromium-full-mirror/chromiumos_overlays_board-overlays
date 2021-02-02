@@ -9,6 +9,8 @@ LICENSE="LICENCE.mediatek"
 SLOT="0"
 KEYWORDS="-* arm arm64"
 
+RDEPEND="!media-libs/mtk-hal-config"
+
 S="${WORKDIR}"
 
 src_install() {
