@@ -484,13 +484,15 @@ chromeos:
             <<: *clamshell_touchscreen_wl_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 35
-          config: *clamshell_wl_config
+          config:
+            <<: *clamshell_wl_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 36
           config:
             <<: *clamshell_touchscreen_wl_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 37
-          $c: ".droid_lte"
+          $sub_cras_config: ".droid_lte"
           config:
             <<: *clamshell_wl_config
             <<: *audio_two_cards_setting
