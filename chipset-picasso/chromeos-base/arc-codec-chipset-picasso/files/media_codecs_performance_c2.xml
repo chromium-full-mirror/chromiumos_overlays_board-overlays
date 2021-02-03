@@ -38,7 +38,7 @@
         <MediaCodec name="c2.vea.avc.encoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="371-371" />
             <Limit name="measured-frame-rate-720x480" range="94-170" />
-            <Limit name="measured-frame-rate-1280x720" range="52-88" />
+            <Limit name="measured-frame-rate-1280x720" range="52-114" />
             <Limit name="measured-frame-rate-1920x1080" range="28-60" />
         </MediaCodec>
     </Encoders>
