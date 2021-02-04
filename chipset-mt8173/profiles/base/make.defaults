@@ -16,14 +16,9 @@ USE=""
 # MT8173 VPU firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} mt8173-vpu"
 
-USE="${USE} device_tree -dt_compression hardfp kernel-3_18"
+USE="${USE} device_tree -dt_compression hardfp kernel-4_19"
 USE="${USE} mosys_eventlog neon -opengl opengles"
 USE="${USE} watchdog"
-
-# The https://chromium-review.googlesource.com/q/Iaaac2021d7c8b68afce59856f0aaf0a156fdd43d
-# kernel patch interferes with crashpad. Continue using breakpad on boards
-# with that patch.
-USE="${USE} force_breakpad"
 
 # Disable CrOS video decoder on this board because we haven't implement V4L2
 # stateful VideoDecoder.
@@ -40,3 +35,6 @@ USE="${USE} legacy_firmware_ui"
 
 # Disabled because MT8173 hasn't been migrated to HALv3 stack (b/168422427)
 USE="${USE} -video_capture_use_gpu_memory_buffer"
+
+# for chromeos-kernel-4.19
+USE="${USE} drm_atomic"
