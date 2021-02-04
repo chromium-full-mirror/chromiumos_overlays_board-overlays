@@ -30,8 +30,20 @@ device-config: &device_config
       /sys/class/rtc/rtc0/device
       /sys/bus/sdio/drivers/mwifiex_sdio/mmc2:0001:1
     disable-dark-resume: '1'
-    internal-backlight-no-als-battery-brightness: '36.36'
     low-battery-shutdown-percent: '4.0'
+
+    # Changed during 3.18 to 4.19 kernel uprev
+    # 4.19 uses a new non linear backlight scale.
+    # To match the battery default backlight level we change the
+    # target % using file internal_backlight_no_als_battery_brightness.
+    # Note the intention is to have the same resulting real world brightness.
+    # b/149870759
+    # Also the default brightness for level 1/16 is too dim, and on some skus the
+    # backlight is not even on at that level.
+    # So that is also made brighter with min_visible_backlight_level.
+    internal-backlight-no-als-battery-brightness: '67.27'
+    min-visible-backlight-level: '300'
+
     power-supply-full-factor: '0.95'
   ui:
     side-volume-button:
