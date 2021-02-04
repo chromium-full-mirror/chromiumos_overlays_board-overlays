@@ -41,3 +41,26 @@ USE="${USE} background_blur"
 
 # Use AFDO profiles from big core
 AFDO_PROFILE_SOURCE="bigcore"
+
+# Caroline use 4_19. To be removed once we switch chipset-skl to 4_19
+USE="${USE} -kernel-3_18"
+USE="${USE} kernel-4_19"
+
+# Temporarily disabling as quickfix for b/162500057
+#USE="${USE} drm_atomic"
+
+# Enable VMs
+USE="${USE} kvm_host crosvm-gpu virtio_gpu"
+
+# Require enable-experimental-kernel-vm-support experiment flag in order to
+# enable crostini
+USE="${USE} kvm_transition"
+
+# Enable Downloadable Content (DLC)
+USE="${USE} dlc"
+
+# Enable Downloadable Content (DLC) Test
+USE="${USE} dlc_test"
+
+# No more firmware build from ToT. Use the firmware branch instead.
+USE="${USE} -bootimage"
