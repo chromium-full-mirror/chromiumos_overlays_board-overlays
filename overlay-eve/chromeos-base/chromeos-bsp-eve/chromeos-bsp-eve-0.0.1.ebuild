@@ -49,12 +49,7 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	# Install audio config files
-	if use eve-kernelnext; then
-		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
-	else
-		local audio_config_dir="${FILESDIR}/audio-config"
-	fi
-	install_audio_configs eve "${audio_config_dir}"
+	install_audio_configs eve "${FILESDIR}/audio-config"
 
 	# Install platform-specific internal keyboard keymap.
 	# It should probbaly go into /lib/udev/hwdb.d but

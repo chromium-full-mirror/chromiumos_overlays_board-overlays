@@ -4,24 +4,18 @@
 EAPI=5
 
 DESCRIPTION="Topology binary files used to support/configure LPE Audio"
-
-LICENSE="LICENCE.IntcSST2"
+LICENSE="LICENCE.adsp_sst"
 SLOT="0"
-KEYWORDS="*"
+SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-eve-${PV}.tbz2"
+KEYWORDS="-* x86 amd64"
 
 RDEPEND="
 	media-libs/kbl-tuning-support
 	media-libs/kbl-dsm-param
 "
-DEPEND="${RDEPEND}"
 
-S=${WORKDIR}
-
-src_compile() {
-	alsatplg -c "${FILESDIR}"/kbl/eve/kbl_i2s_chrome.conf -o dfw_sst.bin || die
-}
 
 src_install() {
-	insinto /lib/firmware
-	doins "${WORKDIR}"/dfw_sst.bin
+	insinto /
+	doins -r ./*
 }

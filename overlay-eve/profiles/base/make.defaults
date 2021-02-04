@@ -94,3 +94,9 @@ AFDO_PROFILE_SOURCE="bigcore"
 
 # Enable heuristic palm rejection
 USE="${USE} enable_heuristic_palm_detection_filter"
+
+# Enable ML benchmarking for testing.
+USE="${USE} ml_benchmark_drivers"
+
+USE="${USE} -kernel-4_4"
+USE="${USE} kernel-5_4"

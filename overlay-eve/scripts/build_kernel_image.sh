@@ -12,10 +12,12 @@
 # See crrev.com/i/216896 as an example.
 
 modify_kernel_command_line() {
-  # Don't disable the ability to run VMs.
-  echo "disablevmx=off" >> "$1"
-
-  # Enable GuC/HuC
-  echo "i915.enable_guc_loading=1" >> "$1"
-  echo "i915.enable_guc_submission=0" >> "$1"
+    {
+        echo "disablevmx=off";
+        echo "kvm-intel.vmentry_l1d_flush=always";
+        echo "i915.enable_dpcd_backlight=1";
+        echo "i915.enable_dbc=1";
+        echo "i915.enable_guc_loading=1";
+        echo "i915.enable_guc_submission=0";
+    } >> "$1"
 }
