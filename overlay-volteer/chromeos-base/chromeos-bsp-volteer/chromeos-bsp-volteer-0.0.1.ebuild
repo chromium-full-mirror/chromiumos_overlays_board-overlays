@@ -22,7 +22,6 @@ RDEPEND="
 	!<chromeos-base/chromeos-bsp-volteer-private-0.0.2
 	media-libs/ipu6-firmware
 	chromeos-base/touch_updater
-	media-sound/sound_card_init
 "
 DEPEND="
 	${RDEPEND}
