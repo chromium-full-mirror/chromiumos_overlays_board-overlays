@@ -26,3 +26,6 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 
 # Include the G2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+
+# Enable DSP hotword detection
+USE="${USE} enable_dsp_hotword"
