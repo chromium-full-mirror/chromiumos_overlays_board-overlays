@@ -19,14 +19,8 @@ HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform2/+/master/chrome
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-IUSE="elm-kernelnext"
 
 src_install() {
 	insinto "${UNIBOARD_YAML_DIR}"
 	doins "${FILESDIR}/model.yaml"
-
-	if use elm-kernelnext; then
-		# This installed with z- prefix so that it gets merged last.
-		newins "${FILESDIR}/kernelnext-model.yaml" "z-kernelnext-model.yaml"
-	fi
 }
