@@ -173,12 +173,15 @@ chromeos:
           $has-touchscreen: True
           config:
             <<: [ *clamshell_config, *camera_config_ufc ]
+            wifi: *wifi_sar_table
         - $sku-id: 5
           config:
             <<: [ *clamshell_config, *camera_config_ufc ]
+            wifi: *wifi_sar_table
         - $sku-id: 6
           config:
             <<: [ *clamshell_config, *camera_config_ufc ]
+            wifi: *wifi_sar_table
     - $device-name: "pompom"
       $fw-name: "google,pompom"
       $ufc-interface: "usb"
