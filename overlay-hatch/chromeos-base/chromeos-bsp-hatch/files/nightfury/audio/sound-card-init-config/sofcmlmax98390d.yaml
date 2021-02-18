@@ -1,26 +1,13 @@
 amp_calibrations:
-  - amp:
-      rdc_ctrl: "Left DSM Rdc"
-      temp_ctrl: "Left DSM Ambient Temp"
-      calib_ctrl: "Left DSM Calibration"
-      volume_ctrl: "Left Digital Volume"
-      volume_high_limit: 148
-      volume_low_limit: 138
-      temp_upper_limit: 1638
-      temp_lower_limit: 0
-    rdc_vpd: "dsm_calib_r0_0"
-    temp_vpd: "dsm_calib_temp_0"
-    calib_file: "calib_0"
-  - amp:
-      rdc_ctrl: "Right DSM Rdc"
-      temp_ctrl: "Right DSM Ambient Temp"
-      calib_ctrl: "Right DSM Calibration"
-      volume_ctrl: "Right Digital Volume"
-      volume_high_limit: 148
-      volume_low_limit: 138
-      temp_upper_limit: 1638
-      temp_lower_limit: 0
-    rdc_vpd: "dsm_calib_r0_1"
-    temp_vpd: "dsm_calib_temp_1"
-    calib_file: "calib_1"
-dsm_param: "/lib/firmware/dsm_param_Google_Nightfury.bin"
+  dsm_param: "/lib/firmware/dsm_param_Google_Nightfury.bin"
+  controls:
+    -
+        rdc_ctrl: "Left DSM Rdc"
+        temp_ctrl: "Left DSM Ambient Temp"
+        calib_ctrl: "Left DSM Calibration"
+        volume_ctrl: "Left Digital Volume"
+    -
+        rdc_ctrl: "Right DSM Rdc"
+        temp_ctrl: "Right DSM Ambient Temp"
+        calib_ctrl: "Right DSM Calibration"
+        volume_ctrl: "Right Digital Volume"
