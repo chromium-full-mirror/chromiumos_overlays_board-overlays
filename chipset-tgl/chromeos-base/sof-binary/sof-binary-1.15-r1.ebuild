@@ -1,1 +1,0 @@
-sof-binary-1.15.ebuild
