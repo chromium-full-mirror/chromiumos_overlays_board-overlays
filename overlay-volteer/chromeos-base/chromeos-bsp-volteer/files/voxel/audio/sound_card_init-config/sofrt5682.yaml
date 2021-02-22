@@ -3,4 +3,4 @@ amp_calibrations:
   dsm_param_read_ctrl: "SMART_AMP1.0 Smart_amp Model_Get_params"
   dsm_param_write_ctrl: "SMART_AMP1.0 Smart_amp Model"
   temp_ctrl: ["Left ADC TEMP", "Right ADC TEMP"]
-  dsm_param: "/opt/google/dsm/dsmparam.bin"
+  dsm_param: "/opt/google/dsm/dsmparam.voxel.bin"
