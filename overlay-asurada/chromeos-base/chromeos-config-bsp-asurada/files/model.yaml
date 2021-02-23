@@ -67,6 +67,19 @@ hayato-config: &hayato_config
   identity:
     <<: *identity
   audio: *audio_config
+  wifi:
+    non-tablet-mode-power-table-rtw:
+      limit-2g: 108
+      limit-5g-1: 88
+      limit-5g-3: 92
+      limit-5g-4: 80
+    tablet-mode-power-table-rtw:
+      limit-2g: 112
+      limit-5g-1: 76
+      limit-5g-3: 80
+      limit-5g-4: 80
+  power:
+    set-wifi-transmit-power-for-tablet-mode: "1"
 
 identity-sku-config: &identity_sku_config
   <<: *identity
