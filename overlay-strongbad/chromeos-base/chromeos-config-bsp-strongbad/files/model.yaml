@@ -62,3 +62,10 @@ chromeos:
           $set-cellular-transmit-power-for-proximity: "1"
         - $sku-id: 1
           config: *detachable_config
+    - $device-name: "homestar"
+      $fw-name: "google,homestar"
+      $card: "sc7180-alc5682i-max98360"
+      skus:
+        - $sku-id: 0
+          config: *detachable_config
+
