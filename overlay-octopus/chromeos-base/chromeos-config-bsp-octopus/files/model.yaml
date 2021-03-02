@@ -908,6 +908,7 @@ chromeos:
         - $whitelabel-tag: "wsuniforms"
         - $whitelabel-tag: "multilaser"
         - $whitelabel-tag: "positivo"
+        - $whitelabel-tag: "advan"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
@@ -942,6 +943,7 @@ chromeos:
         - $whitelabel-tag: "wsuniforms"
         - $whitelabel-tag: "multilaser"
         - $whitelabel-tag: "positivo"
+        - $whitelabel-tag: "advan"
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
