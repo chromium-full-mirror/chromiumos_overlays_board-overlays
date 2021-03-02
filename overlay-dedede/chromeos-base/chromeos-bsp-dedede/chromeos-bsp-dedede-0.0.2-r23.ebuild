@@ -6,7 +6,7 @@ EAPI=7
 
 CROS_WORKON_COMMIT="3a01873e59ec25ecb10d1b07ff9816e69f3bbfee"
 CROS_WORKON_TREE="8ce164efd78fcb4a68e898d8c92c7579657a49b1"
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
@@ -36,4 +36,6 @@ src_install() {
 	# Install the WP script for older revs that can't take a RO FW update.
 	insinto /etc/init
 	doins "${FILESDIR}/common/dedede-force-wp.conf"
+
+	udev_dorules "${FILESDIR}"/boten/udev/*.rules
 }
