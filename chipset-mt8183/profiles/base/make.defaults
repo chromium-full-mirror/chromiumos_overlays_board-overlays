@@ -46,6 +46,10 @@ VIDEO_CARDS="mediatek"
 # MT8183 minigbm
 USE="${USE} minigbm_platform_mt8183"
 
+# Disable CrOS video decoder on this board because we haven't supported
+# ImageProcessor at CrOS video decoder now.
+USE="${USE} disable_cros_video_decoder"
+
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
 
