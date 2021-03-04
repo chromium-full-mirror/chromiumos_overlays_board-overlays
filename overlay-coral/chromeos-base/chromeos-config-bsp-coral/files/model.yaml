@@ -104,21 +104,27 @@ chromeos:
       $ucm-device: "babymega"
       $ucm-target-suffix: "Babymega"
       $help-content-id: "BABYMEGA"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "kitefin"
       skus:
         - $sku-id: 52
-          config: *device_config
+          config: *wl_device_config
         - $sku-id: 53
-          config: *device_config
+          config: *wl_device_config
     - $device-name: "babytiger"
       $ucm-device: "babytiger"
       $ucm-target-suffix: "Babytiger"
       $ucm: "2mic"
       $help-content-id: "BABYTIGER"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "longfin"
       skus:
         - $sku-id: 30
-          config: *device_config
+          config: *wl_device_config
         - $sku-id: 33
-          config: *device_config
+          config: *wl_device_config
     - $device-name: "blacktip"
       $dptf-device: "astronaut"
       products:
@@ -285,26 +291,26 @@ chromeos:
           config: *device_config
     - $device-name: "rabbid"
       $help-content-id: "RABBID"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "sailfin"
       skus:
         - $sku-id: 28
-          config:
-            <<: *device_config
-            $cras: "rabbid_rugged"
-            $ucm-device: "rabbid_rugged"
-            $ucm: "2mic"
-            $ucm-target-suffix: "Rabbid_rugged"
+          $cras: "rabbid_rugged"
+          $ucm-device: "rabbid_rugged"
+          $ucm: "2mic"
+          $ucm-target-suffix: "Rabbid_rugged"
+          config: *wl_device_config
         - $sku-id: 31
-          config:
-            <<: *device_config
-            $ucm-device: "rabbid"
-            $ucm: "2mic"
-            $ucm-target-suffix: "Rabbid"
+          $ucm-device: "rabbid"
+          $ucm: "2mic"
+          $ucm-target-suffix: "Rabbid"
+          config: *wl_device_config
         - $sku-id: 32
-          config:
-            <<: *device_config
-            $ucm-device: "rabbid"
-            $ucm: "2mic"
-            $ucm-target-suffix: "Rabbid"
+          $ucm-device: "rabbid"
+          $ucm: "2mic"
+          $ucm-target-suffix: "Rabbid"
+          config: *wl_device_config
     - $device-name: "robo"
       $help-content-id: "ROBO"
       skus:
