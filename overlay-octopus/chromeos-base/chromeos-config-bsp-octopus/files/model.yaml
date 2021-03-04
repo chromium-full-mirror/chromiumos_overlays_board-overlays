@@ -551,15 +551,23 @@ chromeos:
       $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 33
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 34
           $has-keyboard-backlight: "1"
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 35
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 36
           $has-keyboard-backlight: "1"
-          config: *clamshell_touchscreen_config
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_setting
     - $device-name: "vortininja"
       $fw-name: "Meep"
       $ucm_src_root: "{{$device-name}}"
