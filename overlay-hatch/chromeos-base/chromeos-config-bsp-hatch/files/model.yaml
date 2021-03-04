@@ -99,10 +99,12 @@ base-config: &base_config
       $ucm_root: "/usr/share/alsa/ucm"
       $ucm_name: "{{$alsa_card}}.{{$ucm_config_suffix}}"
       $cras-source-config-dir: "cras-config{{$sub_cras_config}}"
-      $sound-card-init-config: "sound-card-init-config"
+      $sound-card-init-source-config-dir: "sound-card-init-config"
+      $sound_card_init_conf: "{{$device-name}}.yaml"
       # Variables passed to adhd/init/cras.sh for starting CRAS. Do not override.
       cras-config-dir: "{{$device-name}}{{$sub_cras_config}}"
       ucm-suffix: "{{$ucm_config_suffix}}"
+      sound-card-init-conf: "{{$sound_card_init_conf}}"
       files: &audio_files
         # ALSA module config
         - source: "common/audio/alsa-module-config/alsa-hatch.conf"
@@ -135,8 +137,8 @@ audio_files: &audio_files_with_sound_card_init
   - source: "{{$cras_dsp_config}}/audio/{{$cras-source-config-dir}}/dsp.ini"
     destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
    # sound_card_init config
-  - source: "{{$cras_dsp_config}}/audio/{{$sound-card-init-config}}/{{$alsa_card_id}}.yaml"
-    destination: "{{$sound_card_init_root}}/{{$alsa_card_id}}.yaml"
+  - source: "{{$cras_dsp_config}}/audio/{{$sound-card-init-source-config-dir}}/{{$alsa_card_id}}.yaml"
+    destination: "{{$sound_card_init_root}}/{{$sound_card_init_conf}}"
 
 autobrightness: &autobrightness
   config-file:
