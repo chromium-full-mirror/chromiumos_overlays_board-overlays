@@ -64,7 +64,9 @@ kakadu_audio_config: &kakadu_audio_config
 
 katsu_audio_config: &katsu_audio_config
   $card1: "mt8183_da7219_rt1015p"
+  $card2: "mt8183_mt6358_ts3a227_rt1015p"
   $ucm-dest1: "{{$ucm_root}}/{{$card1}}.{{ucm-suffix}}"
+  $ucm-dest2: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}"
   main:
     cras-config-dir: "{{$device-name}}"
     ucm-suffix: "{{$device-name}}"
@@ -77,6 +79,12 @@ katsu_audio_config: &katsu_audio_config
         destination: "{{$ucm-dest1}}/HiFi.conf"
       - source: "{{$ucm-source}}/{{$card1}}.conf"
         destination: "{{$ucm-dest1}}/{{$card1}}.{{ucm-suffix}}.conf"
+      - source: "{{$cras-source}}/{{$card2}}"
+        destination: "{{$cras-dest}}/{{$card2}}"
+      - source: "{{$ucm-source}}/HiFi_mt6358.conf"
+        destination: "{{$ucm-dest2}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card2}}.conf"
+        destination: "{{$ucm-dest2}}/{{$card2}}.{{ucm-suffix}}.conf"
 
 bluetooth-flags: &bluetooth_flags
   enable-suspend-management: true
