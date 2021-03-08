@@ -26,7 +26,7 @@ src_install() {
 	doappid "{9023C063-08D6-4A4F-908C-BCF97DE8BA69}" "CHROMEBOOK"
 
 	# Install audio config
-	unibuild_install_audio_files
+	unibuild_install_files audio-files
 
 	# Install udev rules for proximity sensor.
 	udev_dorules "${FILESDIR}"/udev/*.rules
