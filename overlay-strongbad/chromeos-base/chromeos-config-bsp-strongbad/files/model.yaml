@@ -49,6 +49,12 @@ base-config: &base_config
 detachable-config: &detachable_config
   <<: *base_config
   hardware-properties:
+    is-lid-convertible: False
+    has-lid-accelerometer: False
+    has-base-accelerometer: True
+    has-base-gyroscope: True
+    has-lid-magnetometer: False
+    has-base-magnetometer: False
     has-touchscreen: True
 
 chromeos:
