@@ -184,6 +184,15 @@ willow-config: &willow_config
   identity:
     <<: *identity_sku_config
 
+makomo-config: &makomo_config
+  <<: *common_config
+  $fw-name: "google,makomo"
+  $fw-build-name: "makomo"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+  audio: *rt1015p_audio_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -242,4 +251,9 @@ chromeos:
       skus:
         - $sku-id: 17
           config: *juniper_config
+    - $device-name: "makomo"
+      skus:
+        - $sku-id: 0
+          $has-keyboard-backlight: "0"
+          config: *makomo_config
 
