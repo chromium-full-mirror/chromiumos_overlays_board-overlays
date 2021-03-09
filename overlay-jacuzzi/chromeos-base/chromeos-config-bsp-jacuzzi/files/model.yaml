@@ -145,6 +145,14 @@ cozmo-config: &cozmo_config
   identity:
     <<: *identity_sku_config
 
+makomo-config: &makomo_config
+  <<: *common_config
+  $fw-name: "google,makomo"
+  $fw-build-name: "makomo"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -186,3 +194,7 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *cozmo_config
+    - $device-name: "makomo"
+      skus:
+        - $sku-id: 0
+          config: *makomo_config
