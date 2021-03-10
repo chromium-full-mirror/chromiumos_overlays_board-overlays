@@ -33,3 +33,6 @@ USE="${USE} dlc"
 
 # Enable Downloadable Content (DLC) Test
 USE="${USE} dlc_test"
+
+# Enable detachable UI in recovery mode.
+USE="${USE} detachable"
