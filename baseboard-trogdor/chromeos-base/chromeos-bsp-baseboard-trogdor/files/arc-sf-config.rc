@@ -4,3 +4,4 @@
 
 on early-init
     setprop ro.arc.sf.maxacquired 3
+    setprop ro.arc.wayland.use_cropped_buffer_size true
