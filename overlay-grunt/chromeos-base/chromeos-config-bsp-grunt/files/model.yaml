@@ -180,6 +180,12 @@ mordin-config: &mordin_config
   $brand-code: "ZKJH"
   $sub_cras_config: ".refresh"
 
+barla-alc5682-config: &barla_alc5682_config
+  <<: *barla_config
+  $brand-code: "ZKJH"
+  $sub_cras_config: ".alc5682refresh"
+  $card: "acpr5682m98357"
+
 aleena-config: &aleena_config
   <<: *base_config
   firmware:
@@ -418,6 +424,18 @@ chromeos:
 
         - $sku-id: 43
           config: *mordin_config
+
+        - $sku-id: 44
+          config: *barla_alc5682_config
+
+        - $sku-id: 45
+          config: *barla_alc5682_config
+
+        - $sku-id: 46
+          config: *barla_alc5682_config
+
+        - $sku-id: 47
+          config: *barla_alc5682_config
 
     - $device-name: "aleena"
       $num-mic-locations: 1
