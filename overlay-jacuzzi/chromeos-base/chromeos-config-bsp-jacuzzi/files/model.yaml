@@ -217,6 +217,15 @@ makomo-config: &makomo_config
     <<: *identity_sku_config
   audio: *rt1015p_audio_config
 
+cozmo-config: &cozmo_config
+  <<: *common_config
+  $fw-name: "google,cozmo"
+  $fw-build-name: "cozmo"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+  audio: *ts3a227e_audio_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -284,4 +293,7 @@ chromeos:
         - $sku-id: 0
           $has-keyboard-backlight: "0"
           config: *makomo_config
-
+    - $device-name: "cozmo"
+      skus:
+        - $sku-id: 0
+          config: *cozmo_config
