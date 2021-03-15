@@ -137,6 +137,14 @@ willow-config: &willow_config
   identity:
     <<: *identity
 
+cozmo-config: &cozmo_config
+  <<: *common_config
+  $fw-name: "google,cozmo"
+  $fw-build-name: "cozmo"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -174,4 +182,7 @@ chromeos:
     - $device-name: "willow"
       skus:
         - config: *willow_config
-
+    - $device-name: "cozmo"
+      skus:
+        - $sku-id: 0
+          config: *cozmo_config
