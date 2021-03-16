@@ -791,6 +791,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
+        - $whitelabel-tag: "tekno"
       skus:
         - $sku-id-val: 49
           config: *clamshell_touchscreen_wl_config
