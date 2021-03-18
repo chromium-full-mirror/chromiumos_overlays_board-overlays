@@ -18,7 +18,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* arm64 arm"
-IUSE="hana-arc64 hana-kernelnext"
+IUSE="hana-arc64 hana-kernelnext kernel-3_18"
 
 # Add dependencies on other ebuilds from within this board overlay
 DEPEND=""
@@ -43,6 +43,7 @@ src_install() {
 
 	# Install platform specific config files for power_manager.
 	insinto "/usr/share/power_manager/board_specific"
+	doins "${FILESDIR}"/powerd_prefs/*
 	# Changed internal_backlight_no_als_battery_brightness, min_visible_backlight_level
 	# during 3.18 to 4.19 kernel uprev
 	# 4.19 uses a new non linear backlight scale.
@@ -53,7 +54,11 @@ src_install() {
 	# Also the default brightness for level 1/16 is too dim, and on some skus the
 	# backlight is not even on at that level.
 	# So that is also made brighter with min_visible_backlight_level.
-	doins "${FILESDIR}"/powerd_prefs/*
+	# This should be moved to the main value after kernelnext is merged back.
+	# TODO(b/182509318): do this kernel version-independently instead
+	if ! use kernel-3_18; then
+		doins "${FILESDIR}"/powerd_prefs_kernelnext/*
+	fi
 
 	# Install rules to enable WoWLAN on startup.
 	udev_dorules "${FILESDIR}/99-mwifiex-wowlan.rules"
