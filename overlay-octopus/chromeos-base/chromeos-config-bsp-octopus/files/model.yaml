@@ -921,6 +921,7 @@ chromeos:
         - $whitelabel-tag: "zyrex"
         - $whitelabel-tag: "ptsupertone"
         - $whitelabel-tag: "axioo"
+        - $whitelabel-tag: "tekno"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
@@ -960,6 +961,7 @@ chromeos:
         - $whitelabel-tag: "zyrex"
         - $whitelabel-tag: "ptsupertone"
         - $whitelabel-tag: "axioo"
+        - $whitelabel-tag: "tekno"
       skus:
         - $sku-id-val: 37
           $stylus-category: "external"
