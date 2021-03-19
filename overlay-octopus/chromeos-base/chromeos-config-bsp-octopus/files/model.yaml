@@ -159,8 +159,7 @@ device-config: &device_config
     $low-battery-shutdown-percent: "4.0"
     low-battery-shutdown-percent: "{{$low-battery-shutdown-percent}}"
     suspend-to-idle: "1"
-    $disable-dark-resume: "1"
-    disable-dark-resume: "{{$disable-dark-resume}}"
+    disable-dark-resume: "0"
     # At least one panel requires 5% PWM for correct function.
     # Max brightness is 19200, as reported by
     # /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight/max_brightness
@@ -326,7 +325,6 @@ chromeos:
       $ucm_src_root: "{{$device-name}}"
       $ucm_extra_suffix: "{{$device-name}}{{$num-mics}}"
       $low-battery-shutdown-percent: "6.0"
-      $disable-dark-resume: "0"
       $smart-discharge-to-zero-hr: "2880"
       $cutoff-power-ua: "65"
       $hibernate-power-ua: "1150"
@@ -366,7 +364,6 @@ chromeos:
       $ucm_src_root: "{{$device-name}}"
       $ucm_extra_suffix: "{{$device-name}}"
       $low-battery-shutdown-percent: "6.0"
-      $disable-dark-resume: "0"
       $smart-discharge-to-zero-hr: "2880"
       $cutoff-power-ua: "65"
       $hibernate-power-ua: "1150"
@@ -391,7 +388,6 @@ chromeos:
       $fw-name: "Fleex"
       $num-mic-locations: 1
       $low-battery-shutdown-percent: "6.0"
-      $disable-dark-resume: "0"
       $smart-discharge-to-zero-hr: "2880"
       $cutoff-power-ua: "65"
       $hibernate-power-ua: "1150"
@@ -952,7 +948,6 @@ chromeos:
     - $device-name: "garg"
       $fw-name: "Garg"
       $num-mic-locations: 1
-      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
@@ -992,7 +987,6 @@ chromeos:
           config: *clamshell_wl_config
     - $device-name: "garg360"
       $fw-name: "Garg"
-      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
@@ -1038,7 +1032,6 @@ chromeos:
               firmware-variant: "{{$device-name}}"
     - $device-name: "garfour"
       $fw-name: "Garg"
-      $disable-dark-resume: "0"
       $num-mic-locations: 1
       $ucm_src_root: "{{$device-name}}"
       $ucm_extra_suffix: "{{$device-name}}"
@@ -1113,7 +1106,6 @@ chromeos:
           config: *unprovisioned_convertible_config
     - $device-name: "foob"
       $fw-name: "Foob"
-      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
@@ -1125,7 +1117,6 @@ chromeos:
           config: *clamshell_wl_config
     - $device-name: "foob360"
       $fw-name: "Foob"
-      $disable-dark-resume: "0"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
