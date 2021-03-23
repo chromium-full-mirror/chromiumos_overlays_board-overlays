@@ -21,5 +21,7 @@ S="${WORKDIR}"/"${PN}-volteer-${PV}"
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins *.tplg
+	insinto /lib/firmware/intel/sof-tplg/pdm1
+	doins pdm1/*.tplg
 	dodoc README
 }
