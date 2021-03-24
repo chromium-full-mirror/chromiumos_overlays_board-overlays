@@ -23,6 +23,7 @@ RDEPEND="
 	chromeos-base/sof-topology:=
 	sys-firmware/parade-ps175-firmware:=
 	chromeos-base/touch_updater:=
+	chromeos-base/chromeos-accelerometer-init
 "
 DEPEND="
 	${RDEPEND}
