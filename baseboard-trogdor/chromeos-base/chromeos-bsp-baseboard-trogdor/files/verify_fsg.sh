@@ -89,6 +89,7 @@ load_old_fsg_size() {
 reload_fsg() {
   local fsg_header
   local fsg_size=0
+  local fsg_tmp_path="${FSG_PATH}.tmp"
 
   # Get the 3 byte header, which is "FSG".
   fsg_header="$(dd if="${FSG_SOURCE}" bs=3 skip=0 count=1 status=none)"
@@ -118,16 +119,25 @@ reload_fsg() {
 
   mkdir -p "${RMTFS_BOOT_DIR}"
   chmod 0700 "${RMTFS_BOOT_DIR}" "${RMTFS_DIR}"
-  rm -f "${FSG_PATH}"
-  # Copying a byte at a time is too slow. Copy blocks then bytes.
-  dd if="${FSG_SOURCE}" of="${FSG_PATH}" bs=512 skip=1 \
-    count="$((fsg_size / 512))" status=none
+  rm -f "${FSG_PATH}" "${fsg_tmp_path}"
 
-  if [ "$((fsg_size % 512))" -ne 0 ]; then
-    local offset="$((fsg_size / 512 * 512))"
-    dd if="${FSG_SOURCE}" of="${FSG_PATH}" bs=1 skip="$((offset + 512))" \
-      seek="${offset}" count="$((fsg_size % 512))" status=none
+  # Copy to a temporary file and rename to avoid ending up with a
+  # partially loaded file in case of power loss.
+  # Ensure the dd succeeded.
+  if ! dd if="${FSG_SOURCE}" of="${fsg_tmp_path}" bs=1M \
+        iflag=count_bytes,skip_bytes count="${fsg_size}" \
+        skip=512 status=none; then
+
+    logerr "Error: Failed to read FSG."
+    return 1
   fi
+
+  # Sync to ensure the temporary file is fully written to disk. Then
+  # move the final file into place as an atomic op.
+  # This sync could be slow, but FSG reloading is also rare.
+  sync
+  mv "${fsg_tmp_path}" "${FSG_PATH}"
+  sync
 }
 
 verify_fsg() {
