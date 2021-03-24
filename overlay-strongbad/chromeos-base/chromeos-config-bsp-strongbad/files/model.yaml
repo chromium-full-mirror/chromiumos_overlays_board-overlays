@@ -24,6 +24,17 @@ audio_config: &audio_config
       - source: "{{$ucm-source}}/{{$card}}/{{$card}}.conf"
         destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
 
+wifi-coachz-sar-table: &wifi_coachz_sar_table
+  $set-wifi-transmit-power-for-proximity: "1"
+  $set-wifi-transmit-power-for-activity-proximity: "1"
+  wifi:
+    non-tablet-mode-power-table-ath10k:
+      limit-2g: 72
+      limit-5g: 72
+    tablet-mode-power-table-ath10k:
+      limit-2g: 56
+      limit-5g: 48
+
 base-config: &base_config
   name: "{{$device-name}}"
   identity:
@@ -41,7 +52,10 @@ base-config: &base_config
     disable-dark-resume: "0"
     $set-cellular-transmit-power-for-proximity: "0"
     set-cellular-transmit-power-for-proximity: "{{$set-cellular-transmit-power-for-proximity}}"
-    set-wifi-transmit-power-for-proximity: "1"
+    $set-wifi-transmit-power-for-proximity: "0"
+    set-wifi-transmit-power-for-proximity: "{{$set-wifi-transmit-power-for-proximity}}"
+    $set-wifi-transmit-power-for-activity-proximity: "0"
+    set-wifi-transmit-power-for-activity-proximity: "{{$set-wifi-transmit-power-for-activity-proximity}}"
     suspend-to-idle: "1"
     wake-on-dp: "1"
   audio: *audio_config
@@ -64,7 +78,9 @@ chromeos:
       $card: "sc7180-adau7002-max98357a"
       skus:
         - $sku-id: 0
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *wifi_coachz_sar_table ]
           $set-cellular-transmit-power-for-proximity: "1"
         - $sku-id: 1
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *wifi_coachz_sar_table ]
