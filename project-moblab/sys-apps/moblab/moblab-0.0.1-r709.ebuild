@@ -24,8 +24,8 @@ RDEPEND="
 	dev-python/grpcio
 	dev-python/protobuf-python
 	dev-python/netifaces
+	dev-libs/libusb-compat
 "
 
 DEPEND="${RDEPEND}
-	dev-libs/libusb-compat
 "
