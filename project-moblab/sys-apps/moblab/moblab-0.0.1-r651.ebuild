@@ -3,8 +3,8 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="a18fb20789fb4ba16cd2e12debd0015983386866"
-CROS_WORKON_TREE="122833c94358abf0f26b6596f100e59b1df70514"
+CROS_WORKON_COMMIT="fcdbeedfdb7a06b63590cd9e529cb0dad39afd67"
+CROS_WORKON_TREE="430353ae8734e773ded55b2b503bdb889133ddf8"
 CROS_WORKON_INCREMENTAL_BUILD=1
 CROS_WORKON_OUTOFTREE_BUILD=1
 CROS_WORKON_PROJECT="chromiumos/platform/moblab"
@@ -24,6 +24,7 @@ RDEPEND="
 	dev-python/grpcio
 	dev-python/protobuf-python
 	dev-python/netifaces
+	dev-libs/libusb-compat
 "
 
 DEPEND="${RDEPEND}
