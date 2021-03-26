@@ -1,16 +1,16 @@
 [Speaker]
   volume_curve = explicit
-  db_at_100 = -550
-  db_at_99 = -550
-  db_at_98 = -550
-  db_at_97 = -550
-  db_at_96 = -600
-  db_at_95 = -600
-  db_at_94 = -600
-  db_at_93 = -700
-  db_at_92 = -700
-  db_at_91 = -700
-  db_at_90 = -700
+  db_at_100 = -450
+  db_at_99 = -450
+  db_at_98 = -450
+  db_at_97 = -450
+  db_at_96 = -550
+  db_at_95 = -550
+  db_at_94 = -550
+  db_at_93 = -550
+  db_at_92 = -600
+  db_at_91 = -600
+  db_at_90 = -600
   db_at_89 = -800
   db_at_88 = -800
   db_at_87 = -800
@@ -105,3 +105,4 @@
   volume_curve = simple_step
   volume_step = 60
   max_volume = -600
+
