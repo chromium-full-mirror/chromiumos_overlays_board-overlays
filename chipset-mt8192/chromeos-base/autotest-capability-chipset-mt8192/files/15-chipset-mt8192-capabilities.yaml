@@ -2,13 +2,15 @@
 - hw_dec_h264_1080_30
 - hw_dec_h264_1080_60
 - hw_dec_h264_2160_30
-- hw_dec_h264_2160_60
+# TODO(b/184964957): enable it after MDP supports 4K 60fps
+- disable hw_dec_h264_2160_60
 - hw_dec_vp8_1080_30
 - hw_dec_vp8_1080_60
 - hw_dec_vp9_1080_30
 - hw_dec_vp9_1080_60
 - hw_dec_vp9_2160_30
-- hw_dec_vp9_2160_60
+# TODO(b/184964957): enable it after MDP supports 4K 60fps
+- disable hw_dec_vp9_2160_60
 
 # HW encoding
 - hw_enc_h264_1080_30
