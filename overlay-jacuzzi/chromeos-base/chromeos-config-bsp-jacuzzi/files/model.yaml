@@ -291,4 +291,7 @@ chromeos:
       skus:
         - $sku-id: 0
           $has-keyboard-backlight: "0"
-          config: *makomo_config
+          config:
+            <<: *makomo_config
+            audio: *cerise_audio_config
+
