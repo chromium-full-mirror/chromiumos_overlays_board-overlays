@@ -46,6 +46,9 @@ VIDEO_CARDS="mediatek"
 # MT8192 minigbm
 USE="${USE} minigbm_platform_mt8192"
 
+# Use V4L2 codec
+USE="${USE} v4l2_codec"
+
 # Enable GpuMemoryBuffers backed by dma-bufs.
 USE="${USE} native_gpu_memory_buffers"
 
