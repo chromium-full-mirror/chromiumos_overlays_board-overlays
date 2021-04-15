@@ -20,12 +20,16 @@ SLOT="0"
 KEYWORDS="-* arm64 arm"
 IUSE=""
 
-RDEPEND="
+DEPEND="
 	chromeos-base/chromeos-bsp-baseboard-herobrine
 "
-DEPEND="
-	${RDEPEND}
-	chromeos-base/chromeos-config
+
+# Remove herobrine BSP since we are giving senor its own bsp
+DEPEND="${DEPEND} !!chromeos-base/chromeos-bsp-herobrine"
+DEPEND="${DEPEND} !!chromeos-base/chromeos-config-bsp-herobrine"
+
+RDEPEND="
+	${DEPEND}
 "
 
 src_install() {
