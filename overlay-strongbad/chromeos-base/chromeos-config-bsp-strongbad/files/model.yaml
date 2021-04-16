@@ -75,6 +75,10 @@ detachable-config: &detachable_config
   camera:
     count: 2
 
+coachz-handwriting-settings: &coachz_handwriting_settings
+  ui:
+    handwriting-recognition-web-platform-api: true
+
 chromeos:
   devices:
     - $device-name: "coachz"
@@ -83,12 +87,12 @@ chromeos:
       skus:
         - $sku-id: 0
           config:
-            <<: [ *detachable_config, *wifi_coachz_sar_table ]
+            <<: [ *detachable_config, *wifi_coachz_sar_table, *coachz_handwriting_settings ]
           $set-cellular-transmit-power-for-proximity: "1"
           $set-cellular-transmit-power-for-activity-proximity: "1"
         - $sku-id: 1
           config:
-            <<: [ *detachable_config, *wifi_coachz_sar_table ]
+            <<: [ *detachable_config, *wifi_coachz_sar_table, *coachz_handwriting_settings ]
 
     - $device-name: "homestar"
       $fw-name: "google,homestar"
