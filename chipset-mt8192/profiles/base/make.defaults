@@ -46,9 +46,6 @@ VIDEO_CARDS="mediatek"
 # MT8192 minigbm
 USE="${USE} minigbm_platform_mt8192"
 
-# TODO(b/159825227) enable direct Video Decoder.
-USE="${USE} disable_cros_video_decoder"
-
 # Use V4L2 codec
 USE="${USE} v4l2_codec"
 
