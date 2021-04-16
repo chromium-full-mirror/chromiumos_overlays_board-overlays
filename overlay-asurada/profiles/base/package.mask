@@ -1,2 +1,0 @@
-# Mask chromiumos-kernel-5_4 from chromiumos-overlay
-sys-kernel/chromeos-kernel-5_4::chromiumos
