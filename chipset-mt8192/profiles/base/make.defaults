@@ -49,6 +49,9 @@ USE="${USE} minigbm_platform_mt8192"
 # Use V4L2 codec
 USE="${USE} v4l2_codec"
 
+# ARC should use VideoDecoder interface
+USE="${USE} arc_uses_cros_video_decoder"
+
 # Enable GpuMemoryBuffers backed by dma-bufs.
 USE="${USE} native_gpu_memory_buffers"
 
