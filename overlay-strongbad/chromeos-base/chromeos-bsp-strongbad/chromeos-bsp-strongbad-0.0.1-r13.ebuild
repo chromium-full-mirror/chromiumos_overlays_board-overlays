@@ -33,6 +33,9 @@ src_install() {
 	# Install hammerd udev rules and override for chromeos-base/hammerd.
 	udev_dorules "${FILESDIR}/99-hammerd.rules"
 
+	# Install udev rule to keep the USB hub always powered during system suspend.
+	udev_dorules "${FILESDIR}/99-usb-hub-power.rules"
+
 	# Install audio config
 	unibuild_install_files audio-files
 }
