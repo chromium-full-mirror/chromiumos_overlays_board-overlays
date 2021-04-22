@@ -42,3 +42,6 @@ USE="${USE} als"
 
 # Enable detachable UI in recovery mode.
 USE="${USE} detachable"
+
+# Let the touchscreen wake the system when it's suspended.
+USE="${USE} touchscreen_wakeup"
