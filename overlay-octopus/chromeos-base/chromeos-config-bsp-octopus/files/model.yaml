@@ -36,7 +36,9 @@ audio-main-common: &audio_main_common
   # If a device has cases of 1 mic and 2 mics in a mic location based on SKU
   # ID, then please override the $ucm_extra_suffix in this way:
   #
-  #   $ucm_extra_suffix: "{{$device-name}}.[1|2|3|4]mic"
+  #   /* .[1|2|3|4]mic */
+  #   $num-mics: ".2mic"
+  #   $ucm_extra_suffix: "{{$device-name}}{{$num-mics}}"
   $cras_root: "/etc/cras"
   $ucm_src_root: "common"
   $ucm_extra_suffix: ""
@@ -46,6 +48,7 @@ audio-main-common: &audio_main_common
   $card2: "sof-glkrt5682max"
   $sub_cras_config: ""
   $cras-source-config-dir: "cras-config{{$sub_cras_config}}"
+  $num-mics: ""
   cras-config-dir: "{{$device-name}}{{$sub_cras_config}}"
   ucm-suffix: "{{$num-mic-locations}}loc{{$ucm_extra_suffix}}"
 
@@ -64,19 +67,19 @@ audio-main-files:
     destination: "{{$cras_root}}/{{cras-config-dir}}/dsp.ini"
   # ALSA UCM configuration file of $card
   files-map-card-conf: &files_map_card_conf
-    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/{{$card}}.conf"
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}/{{$card}}.conf"
     destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
   # ALSA UCM configuration file of $card2
   files-map-card2-conf: &files_map_card2_conf
-    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc/{{$card2}}.conf"
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}/{{$card2}}.conf"
     destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/{{$card2}}.{{ucm-suffix}}.conf"
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card
   files-map-HiFi-conf: &files_map_HiFi_conf
-    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc/HiFi.conf"
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}/HiFi.conf"
     destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card2
   files-map-HiFi-card2-conf: &files_map_HiFi_card2_conf
-    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc/HiFi.conf"
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}/HiFi.conf"
     destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/HiFi.conf"
   # the board.ini file
   files-map-board-ini: &files_map_board_ini
@@ -106,6 +109,20 @@ audio-two-cards-setting: &audio_two_cards_setting
         - *files_map_card2_conf
         - *files_map_HiFi_conf
         - *files_map_HiFi_card2_conf
+
+audio-two-cards-boardini-setting: &audio_two_cards_boardini_setting
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings
+        - *files_map_card2_settings
+        - *files_map_dsp_ini
+        - *files_map_card_conf
+        - *files_map_card2_conf
+        - *files_map_HiFi_conf
+        - *files_map_HiFi_card2_conf
+        - *files_map_board_ini
 
 device-config: &device_config
   <<: *unprovisioned_config
@@ -253,41 +270,60 @@ chromeos:
           config: *unprovisioned_convertible_config
     - $device-name: "fleex"
       $fw-name: "Fleex"
+      $card2: "sof-sof_cs42l42"
       $num-mic-locations: 1
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}{{$num-mics}}"
       skus:
         - $sku-id-val: 1
-          config: *clamshell_config
+          $num-mics: ".1mic"
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 2
-          config: *clamshell_config
+          $num-mics: ".1mic"
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 3
-          config: *clamshell_touchscreen_config
+          $num-mics: ".1mic"
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 4
-          $ucm_src_root: "{{$device-name}}"
-          $ucm_extra_suffix: "{{$device-name}}.2mic"
+          $num-mics: ".2mic"
           config:
             <<: *clamshell_config
             modem:
               firmware-variant: "{{$device-name}}"
         - $sku-id-val: 5
-          $ucm_src_root: "{{$device-name}}"
-          $ucm_extra_suffix: "{{$device-name}}.2mic"
+          $num-mics: ".2mic"
           config:
             <<: *clamshell_touchscreen_config
             modem:
               firmware-variant: "{{$device-name}}"
     - $device-name: "grabbiter"
       $fw-name: "Fleex"
+      $card2: "sof-sof_cs42l42"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 33
           $num-mic-locations: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 34
           $num-mic-locations: 2
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 35
           $num-mic-locations: 2
           $stylus-category: "external"
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
     - $device-name: "orbatrix"
       $fw-name: "Fleex"
       $num-mic-locations: 1
