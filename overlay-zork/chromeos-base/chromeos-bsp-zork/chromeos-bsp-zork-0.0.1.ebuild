@@ -5,6 +5,7 @@ EAPI=6
 
 inherit appid
 inherit cros-unibuild
+inherit udev
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
@@ -35,4 +36,7 @@ src_install() {
 	fi
 
 	unibuild_install_files audio-files
+
+	# Install USB quirks
+	udev_dorules "${FILESDIR}/20-usb-quirks.rules"
 }
