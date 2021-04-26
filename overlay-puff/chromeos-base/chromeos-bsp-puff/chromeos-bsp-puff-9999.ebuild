@@ -8,7 +8,7 @@ EAPI=7
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
 CROS_WORKON_LOCALNAME="empty-project"
 
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
@@ -36,6 +36,10 @@ src_install() {
 	else
 		doappid "{2514829E-8550-4E24-91F2-331AB7A12B03}" "CHROMEBOX"
 	fi
+
+	# Monitor udev event for USB ports to control power of re-driver.
+	dosbin "${FILESDIR}"/control_usb_runtime_suspend.sh
+	udev_dorules "${FILESDIR}/99-chromeos-puff-usb-runtime-suspend.rules"
 
 	unibuild_install_files audio-files
 }
