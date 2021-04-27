@@ -17,7 +17,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="trogdor-kernelnext"
+IUSE="trogdor-kernelnext zephyr_ec"
 
 
 RDEPEND="
@@ -26,7 +26,9 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	if use trogdor-kernelnext; then
+	if use zephyr_ec; then
+		doappid "{486D6593-708E-4878-8CC9-A7E9AF2F5811}" "CHROMEBOOK"
+	elif use trogdor-kernelnext; then
 		doappid "{9F765BCD-AC24-C22B-B39A-467B190B7FEF}" "CHROMEBOOK"
 	else
 		doappid "{9023C063-08D6-4A4F-908C-BCF97DE8BA69}" "CHROMEBOOK"
