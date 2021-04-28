@@ -38,3 +38,6 @@ USE="${USE} physical_presence_recovery"
 
 # Disable instant tethering due to a lack of hardware vendor support.
 USE="${USE} disable_instant_tethering"
+
+# Disabled because kepler has a problem with zero-copy video capture. (b/179444720)
+USE="${USE} -video_capture_use_gpu_memory_buffer"
