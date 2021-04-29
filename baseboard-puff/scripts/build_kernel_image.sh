@@ -20,8 +20,4 @@ modify_kernel_command_line() {
 
   # Check for S0ix failures and show warnings on failures
   echo "intel_pmc_core.warn_on_s0ix_failures=1" >> "$1"
-
-  # Work around for Hard Freeze on Puff platforms: b/180138001
-  # TODO: Revisit once an actual rootcause and a better fix is found
-  echo "intel_idle.max_cstate=1" >> "$1"
 }
