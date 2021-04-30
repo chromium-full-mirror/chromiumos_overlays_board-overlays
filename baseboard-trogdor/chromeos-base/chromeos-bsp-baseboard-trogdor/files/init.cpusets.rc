@@ -14,7 +14,7 @@ on early-init
     mkdir /dev/stune
     mount cgroup none /dev/stune nodev noexec nosuid cpu
 
-    write /dev/stune/cpu.uclamp.min 20
+    write /dev/stune/cpu.uclamp.min 40
     write /dev/stune/cpu.rt_period_us 1000000
     write /dev/stune/cpu.rt_runtime_us 200000
 
@@ -26,10 +26,10 @@ on early-init
     write /dev/stune/top-app/cpu.rt_period_us 1000000
     write /dev/stune/top-app/cpu.rt_runtime_us 20000
 
-    write /dev/stune/top-app/cpu.uclamp.min 20
+    write /dev/stune/top-app/cpu.uclamp.min 40
     write /dev/stune/top-app/cpu.uclamp.latency_sensitive 1
 
-    write /dev/stune/top-app/schedtune.boost 20
+    write /dev/stune/top-app/schedtune.boost 40
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
     mkdir /dev/stune/foreground
