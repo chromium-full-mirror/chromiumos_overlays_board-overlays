@@ -224,10 +224,14 @@ chromeos:
           config: *unprovisioned_convertible_config
     - $device-name: "phaser"
       $fw-name: "Phaser"
+      $ucm_src_root: "{{$device-name}}"
+      $ucm_extra_suffix: "{{$device-name}}"
       $num-mic-locations: 1
       skus:
         - $sku-id-val: 1
-          config: *clamshell_config
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_setting
     - $device-name: "phaser360"
       $fw-name: "Phaser"
       products:
@@ -238,16 +242,37 @@ chromeos:
       skus:
         - $sku-id-val: 2
           $num-mic-locations: 1
-          config: *convertible_wl_config
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
+          config:
+            <<: *convertible_wl_config
+            <<: *audio_two_cards_setting
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 3
           $num-mic-locations: 2
-          config: *convertible_wl_config
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
+          config:
+            <<: *convertible_wl_config
+            <<: *audio_two_cards_setting
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 4
           $num-mic-locations: 2
-          config: *convertible_wl_config
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
+          config:
+            <<: *convertible_wl_config
+            <<: *audio_two_cards_setting
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 5
           $num-mic-locations: 1
-          config: *convertible_wl_config
+          $ucm_src_root: "{{$device-name}}"
+          $ucm_extra_suffix: "{{$device-name}}"
+          $sub_cras_config: ".laser"
+          config:
+            <<: *convertible_wl_config
+            <<: *audio_two_cards_setting
+            $set-wifi-transmit-power-for-tablet-mode: "0"
     - $device-name: "laser14"
       $fw-name: "Phaser"
       products:
