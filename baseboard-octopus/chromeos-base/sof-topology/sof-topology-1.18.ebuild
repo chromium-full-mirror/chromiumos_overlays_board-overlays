@@ -6,7 +6,7 @@ EAPI=5
 
 # Version of the topology package that needs to be downloaded. This should be
 # updated when a new topology is required to be used.
-TARBALL_NAME="${P}-octopus"
+TARBALL_NAME="${PN}-octopus-${PV}"
 
 DESCRIPTION="Topology file needed to run SOF."
 SRC_URI="gs://chromeos-localmirror/distfiles/${TARBALL_NAME}.tar.bz2"
