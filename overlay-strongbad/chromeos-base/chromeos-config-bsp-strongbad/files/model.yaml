@@ -32,8 +32,8 @@ wifi-coachz-sar-table: &wifi_coachz_sar_table
       limit-2g: 72
       limit-5g: 72
     tablet-mode-power-table-ath10k:
-      limit-2g: 56
-      limit-5g: 48
+      limit-2g: 68
+      limit-5g: 60
 
 base-config: &base_config
   name: "{{$device-name}}"
