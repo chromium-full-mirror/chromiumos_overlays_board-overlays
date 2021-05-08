@@ -9,6 +9,7 @@ inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_INT_HOST_URL}"
 
 PROJECTS=(
+    "chronicler"
     "delbin"
     "eldrid"
     "elemi"
@@ -19,6 +20,7 @@ PROJECTS=(
     "mudada"
     "terrador"
     "trondo"
+    "volet"
     "volteer"
     "voxel"
     "zantor"
