@@ -279,17 +279,17 @@ chromeos:
           $num-mics: ".1mic"
           config:
             <<: *clamshell_config
-            <<: *audio_two_cards_boardini_setting
+            <<: *audio_two_cards_setting
         - $sku-id-val: 2
           $num-mics: ".1mic"
           config:
             <<: *clamshell_config
-            <<: *audio_two_cards_boardini_setting
+            <<: *audio_two_cards_setting
         - $sku-id-val: 3
           $num-mics: ".1mic"
           config:
             <<: *clamshell_touchscreen_config
-            <<: *audio_two_cards_boardini_setting
+            <<: *audio_two_cards_setting
         - $sku-id-val: 4
           $num-mics: ".2mic"
           config:
