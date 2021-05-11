@@ -1,6 +1,6 @@
 media-libs/piglit waffle
 media-libs/libv4lplugins rockchip
-chromeos-base/chromeos-chrome goma_thinlto v4lplugin
+chromeos-base/chromeos-chrome goma_thinlto v4lplugin -afdo_use
 sys-apps/flashrom use_os_timer
 sys-kernel/chromeos-kernel-3_14 -kernel_afdo
 sys-kernel/chromeos-kernel-4_19 -kernel_afdo -llvm_ias
