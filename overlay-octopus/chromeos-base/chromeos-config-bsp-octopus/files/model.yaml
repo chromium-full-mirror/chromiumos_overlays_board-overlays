@@ -733,15 +733,23 @@ chromeos:
       $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 33
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 34
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 35
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 36
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
     - $device-name: "blooguard"
       $fw-name: "Bloog"
       $num-mic-locations: 1
@@ -750,24 +758,40 @@ chromeos:
       skus:
         - $sku-id-val: 49
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 50
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 51
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 52
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 53
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 54
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 55
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
         - $sku-id-val: 56
           $has-keyboard-backlight: 1
-          config: *convertible_config
+          config:
+            <<: *convertible_config
+            <<: *audio_two_cards_setting
     - $device-name: "blooglet"
       $fw-name: "Bloog"
       $num-mic-locations: 1
@@ -779,21 +803,21 @@ chromeos:
           $keyboard-backlight-no-als-brightness: 20
           config:
             <<: *clamshell_touchscreen_config
-            <<: *audio_boardini_setting
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 66
           config:
             <<: *clamshell_touchscreen_config
-            <<: *audio_boardini_setting
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 67
           $has-keyboard-backlight: 1
           $keyboard-backlight-no-als-brightness: 20
           config:
             <<: *clamshell_config
-            <<: *audio_boardini_setting
+            <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 68
           config:
             <<: *clamshell_config
-            <<: *audio_boardini_setting
+            <<: *audio_two_cards_boardini_setting
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
