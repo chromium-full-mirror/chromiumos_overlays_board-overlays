@@ -17,7 +17,8 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="391-391" /> <!-- N=66 v97%=1.2 -->
+            <!-- b/187907946: Enlarge range for small resolution, geometric mean: 704 -->
+            <Limit name="measured-frame-rate-176x144" range="474-1044" />
         </MediaCodec>
         <MediaCodec name="OMX.google.h264.encoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="352-352" /> <!-- N=64 v97%=1.3 -->
@@ -26,7 +27,8 @@
             <Limit name="measured-frame-rate-1920x1080" range="41-41" /> <!-- N=64 v97%=1.0 -->
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="411-418" /> <!-- N=66 v97%=1.1 -->
+            <!-- b/187907946: Enlarge range for small resolution, geometric mean: 700 -->
+            <Limit name="measured-frame-rate-176x144" range="472-1039" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="77-77" /> <!-- N=66 v97%=1.1 -->
@@ -37,7 +39,8 @@
     </Encoders>
     <Decoders>
         <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="236-236" /> <!-- N=22 v90%=1.1 -->
+            <!-- b/187907946: Enlarge range for small resolution, geometric mean: 350 -->
+            <Limit name="measured-frame-rate-176x144" range="236-519" />
         </MediaCodec>
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="536-540" /> <!-- N=44 v95%=1.1 -->
@@ -46,7 +49,8 @@
             <Limit name="measured-frame-rate-1920x1080" range="24-25" /> <!-- N=44 v95%=1.0 -->
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="275-275" /> <!-- N=22 v90%=1.1 -->
+            <!-- b/187907946: Enlarge range for small resolution, geometric mean: 407 -->
+            <Limit name="measured-frame-rate-176x144" range="275-605" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="1668-1668" /> <!-- N=22 v90%=1.0 -->
