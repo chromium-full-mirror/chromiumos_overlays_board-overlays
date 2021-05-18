@@ -1,1 +1,0 @@
-sof-binary-1.19.ebuild
