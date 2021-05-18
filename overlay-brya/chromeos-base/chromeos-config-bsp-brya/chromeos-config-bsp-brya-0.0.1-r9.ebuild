@@ -3,8 +3,8 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="412a06c399ff531dfdb9a3604297aacafe575dc2"
-CROS_WORKON_TREE=("185a408c043c8637d0fa37582bce56e7e640569e" "cf9fbe23de1b737679881518a1a653b53bd745db" "36245986bc481fdda4c29e58dffa20c456e6c4ef")
+CROS_WORKON_COMMIT="dfd2a7f37899a3b00535008a73e19827de1fe5c4"
+CROS_WORKON_TREE=("185a408c043c8637d0fa37582bce56e7e640569e" "cf9fbe23de1b737679881518a1a653b53bd745db" "36245986bc481fdda4c29e58dffa20c456e6c4ef" "49b433fd5a3ba8ee688c9d070a45265fe63a443e")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
@@ -12,6 +12,7 @@ PROJECTS=(
 	"brya"
 	"adlrvp"
 	"primus"
+	"redrix"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
