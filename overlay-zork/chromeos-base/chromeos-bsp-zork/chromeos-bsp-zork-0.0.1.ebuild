@@ -43,4 +43,8 @@ src_install() {
 
 	# Install USB quirks
 	udev_dorules "${FILESDIR}/20-usb-quirks.rules"
+	udev_dorules "${FILESDIR}/90-xhci-quirks.rules"
+
+	exeinto "$(get_udevdir)"
+	doexe "${FILESDIR}/xhci-restart.sh"
 }
