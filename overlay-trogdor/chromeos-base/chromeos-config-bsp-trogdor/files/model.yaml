@@ -72,6 +72,10 @@ base-config: &base_config
     set-cellular-transmit-power-for-tablet-mode: "{{$set-cellular-transmit-power-for-tablet-mode}}"
     $set-cellular-transmit-power-for-proximity: "0"
     set-cellular-transmit-power-for-proximity: "{{$set-cellular-transmit-power-for-proximity}}"
+    $use-modemmanager-for-dynamic-sar: "0"
+    use-modemmanager-for-dynamic-sar: "{{$use-modemmanager-for-dynamic-sar}}"
+    $use-multi-power-level-dynamic-sar: "0"
+    use-multi-power-level-dynamic-sar: "{{$use-multi-power-level-dynamic-sar}}"
     suspend-to-idle: "1"
     wake-on-dp: "1"
   audio: *audio_config
@@ -144,6 +148,8 @@ chromeos:
       skus:
         - $sku-id: 0
           $set-cellular-transmit-power-for-tablet-mode: "1"
+          $use-modemmanager-for-dynamic-sar: "1"
+          $use-multi-power-level-dynamic-sar: "1"
           $has-keyboard-backlight: "1"
           config:
             <<: [ *convertible_config, *p_sensor_20mm_lazor_config, *camera_config_ufc ]
