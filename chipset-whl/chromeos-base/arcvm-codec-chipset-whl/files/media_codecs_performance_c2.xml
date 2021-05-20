@@ -51,8 +51,10 @@
     </Encoders>
     <Decoders>
         <MediaCodec name="c2.v4l2.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="459-459" /> <!-- N=108 v98%=1.1 -->
-            <Limit name="measured-frame-rate-720x480" range="451-451" /> <!-- N=28 v90%=1.1 -->
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 680 -->
+            <Limit name="measured-frame-rate-320x240" range="459-1009" />
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 668 -->
+            <Limit name="measured-frame-rate-720x480" range="451-992" />
             <Limit name="measured-frame-rate-1280x720" range="403-404" /> <!-- N=26 v90%=1.1 -->
             <Limit name="measured-frame-rate-1920x1080" range="292-292" /> <!-- N=26 v90%=1.0 -->
         </MediaCodec>
@@ -63,15 +65,19 @@
             <Limit name="measured-frame-rate-1920x1080" range="334-334" /> <!-- N=26 v90%=1.1 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="462-462" /> <!-- N=80 v98%=1.2 -->
-            <Limit name="measured-frame-rate-640x360" range="442-442" /> <!-- N=26 v90%=1.1 -->
-            <Limit name="measured-frame-rate-1280x720" range="400-400" /> <!-- N=26 v90%=1.1 -->
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 685 -->
+            <Limit name="measured-frame-rate-320x180" range="462-1016" />
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 655 -->
+            <Limit name="measured-frame-rate-640x360" range="442-972" />
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 593 -->
+            <Limit name="measured-frame-rate-1280x720" range="400-880" />
             <Limit name="measured-frame-rate-1920x1080" range="333-333" /> <!-- N=26 v90%=1.0 -->
             <!-- measured 90%:34-125 med:122 FLAKY(mn=17.9 < 33 - 132) -->
             <Limit name="measured-frame-rate-3840x2160" range="45-97" /> <!-- N=26 v90%=1.9 -->
         </MediaCodec>
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="726-726" /> <!-- N=26 v90%=1.2 -->
+            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 1076 -->
+            <Limit name="measured-frame-rate-176x144" range="726-1597" />
             <Limit name="measured-frame-rate-352x288" range="686-686" /> <!-- N=26 v90%=1.1 -->
         </MediaCodec>
         <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
