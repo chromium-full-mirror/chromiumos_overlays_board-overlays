@@ -262,14 +262,29 @@ chromeos:
       skus:
         - $sku-id: 1
           $has-keyboard-backlight: "1"
-          config: *fennel_config
+          config:
+            <<: *fennel_config
+            audio: *cerise_audio_config
         - $sku-id: 6
           $has-keyboard-backlight: "0"
-          config: *fennel_config
+          config:
+            <<: *fennel_config
+            audio: *cerise_audio_config
+        - $sku-id: 7
+          $has-keyboard-backlight: "0"
+          config:
+            <<: *fennel_config
+            audio: *cerise_audio_config
     - $device-name: "fennel14"
       skus:
         - $sku-id: 0
-          config: *fennel_config
+          config:
+            <<: *fennel_config
+            audio: *cerise_audio_config
+        - $sku-id: 2
+          config:
+            <<: *fennel_config
+            audio: *cerise_audio_config
     - $device-name: "willow"
       skus:
         - $sku-id: 0
