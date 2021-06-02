@@ -12,6 +12,7 @@
 # See crrev.com/i/216896 as an example.
 
 modify_kernel_command_line() {
+  echo "kvm-intel.vmentry_l1d_flush=always" >> "$1"
   # Enable S0ix validation check in kernel
   echo "intel_idle.slp_s0_check=1" >> "$1"
 
