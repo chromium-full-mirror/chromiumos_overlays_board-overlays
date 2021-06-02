@@ -196,3 +196,13 @@ chromeos:
         - $sku-id: 1
           config:
             <<: [ *convertible_config, *camera_config_ufc_wfc ]
+    - $device-name: "pazquel"
+      $fw-name: "google,pazquel"
+      $card: "sc7180-rt5682-max98357a-1mic"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
+      skus:
+        - $sku-id: 0
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
