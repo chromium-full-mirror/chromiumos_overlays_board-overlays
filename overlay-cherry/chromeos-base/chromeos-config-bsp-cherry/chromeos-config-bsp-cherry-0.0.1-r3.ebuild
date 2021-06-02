@@ -3,7 +3,7 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="88db51e3b3bd272d7679eb1552176d0d7881452f"
+CROS_WORKON_COMMIT="2f728e7ffd7e339715f639c7ba3aeae886a4c332"
 CROS_WORKON_TREE="5ac0054761a94db657d15e8262c4426e439c7d26"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
@@ -22,7 +22,7 @@ CROS_BOARDS=( cherry )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for herobrine"
+DESCRIPTION="Chrome OS Model configuration package for cherry"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
