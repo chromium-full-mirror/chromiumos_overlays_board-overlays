@@ -31,8 +31,12 @@ base-config: &base_config
     platform-name: "Trogdor"
     device-tree-compatible-match: "{{$fw-name}}"
     sku-id: "{{$sku-id}}"
-  firmware:
-    no-firmware: True
+  firmware: &firmware_common
+    build-targets: &firmware_build_targets_common
+      coreboot: "{{$coreboot-build-name}}"
+      ec: "{{$ec-build-name}}"
+      depthcharge: "trogdor"
+      libpayload: "trogdor"
   test-label: "{{$device-name}}"
   power: &power_common
     low-battery-shutdown-percent: "4.0"
@@ -91,37 +95,47 @@ chromeos:
   devices:
     - $device-name: "trogdor"
       $fw-name: "google,trogdor"
+      $coreboot-build-name: "trogdor"
+      $ec-build-name: "trogdor"
       skus:
-        - $sku-id: 0
+        - $sku-id: 0 # LTE+Wifi
           config: *convertible_config
-        - $sku-id: 1
+        - $sku-id: 1 # Wifi-only
           config: *convertible_config
     - $device-name: "lazor"
       $fw-name: "google,lazor"
+      $coreboot-build-name: "lazor"
+      $ec-build-name: "lazor"
       $internal-backlight-no-als-battery-brightness: "43"
       skus:
-        - $sku-id: 0
+        - $sku-id: 0 # LTE+Wifi
           $set-cellular-transmit-power-for-tablet-mode: "1"
           $has-keyboard-backlight: "1"
           config:
             <<: [ *convertible_config, *p_sensor_20mm_lazor_config ]
-        - $sku-id: 1
+        - $sku-id: 1 # Wifi-only
           config: *convertible_config
-        - $sku-id: 2
+        - $sku-id: 2 # Wifi-only
           config: *convertible_config
           $has-keyboard-backlight: "1"
     - $device-name: "limozeen"
       $fw-name: "google,lazor"
+      $coreboot-build-name: "lazor"
+      $ec-build-name: "lazor"
       skus:
-        - $sku-id: 4
+        - $sku-id: 4 # LTE+Wifi
           $has-touchscreen: True
           config: *clamshell_config
-        - $sku-id: 5
+        - $sku-id: 5 # TODO(philipchen) Deprecate sku5 when no one uses it.
+          config: *clamshell_config
+        - $sku-id: 6 # LTE+Wifi
           config: *clamshell_config
     - $device-name: "pompom"
       $fw-name: "google,pompom"
+      $coreboot-build-name: "pompom"
+      $ec-build-name: "pompom"
       skus:
-        - $sku-id: 0
+        - $sku-id: 0 # LTE+Wifi
           config: *convertible_config
-        - $sku-id: 1
+        - $sku-id: 1 # Wifi-only
           config: *convertible_config

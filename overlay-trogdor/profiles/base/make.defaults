@@ -4,6 +4,10 @@
 
 # Initial value just for style purposes.
 USE=""
+
+# Enable unibuild
+USE="${USE} unibuild"
+
 LINUX_FIRMWARE=""
 
 USE="${USE} cros_ec"
