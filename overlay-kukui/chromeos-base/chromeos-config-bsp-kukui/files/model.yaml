@@ -222,7 +222,7 @@ katsu-config: &katsu_config
   <<: *common_config
   $fw-name: "google,katsu"
   $fw-build-name: "katsu"
-  $key-id: "DEFAULT"
+  $key-id: "KUKUIA"
   audio: *katsu_audio_config
   power:
     <<: *power_common
