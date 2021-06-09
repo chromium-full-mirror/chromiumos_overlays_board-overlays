@@ -49,6 +49,9 @@ src_install() {
 	udev_dorules "${FILESDIR}/20-usb-quirks.rules"
 	udev_dorules "${FILESDIR}/90-xhci-quirks.rules"
 
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}"/vilboz/udev/*.rules
+
 	exeinto "$(get_udevdir)"
 	doexe "${FILESDIR}/xhci-restart.sh"
 }
