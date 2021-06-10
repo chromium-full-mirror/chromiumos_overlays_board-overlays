@@ -62,7 +62,7 @@ hayato-config: &hayato_config
   <<: *common_config
   $fw-name: "google,hayato"
   $fw-build-name: "hayato"
-  $key-id: "DEFAULT"
+  $key-id: "ASURADAA"
   $card: "mt8192_mt6359_rt1015p_rt5682"
   identity:
     <<: *identity
