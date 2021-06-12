@@ -321,6 +321,9 @@ treeya360-config: &treeya360_config
       - source: "touch/synaptics/7817_0.0.3209178.bin"
         destination: "{{$fw_dest}}/7817_0.0.3209178.bin"
         symlink: "{{$fw_root}}/hid-06CB_7817"
+      - source: "touch/synaptics/2A34_0.0.3298220.bin"
+        destination: "{{$fw_dest}}/2A34_0.0.3298220.bin"
+        symlink: "{{$fw_root}}/hid-06CB_2A34"
 
 nuwani-config: &nuwani_config
   <<: *base_config
