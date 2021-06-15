@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2021 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -34,8 +34,6 @@ src_install() {
 	doins "${FILESDIR}/thermal_zone.conf"
 
 	# Install cpuset adjustments.
-	insinto "/etc/init"
-	doins "${FILESDIR}/platform-cpusets.conf"
 	if use cheets; then
 		insinto "/opt/google/containers/android/vendor/etc/init/"
 		doins "${FILESDIR}/init.cpusets.rc"
