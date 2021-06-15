@@ -38,4 +38,5 @@ src_install() {
 	doins "${FILESDIR}/common/dedede-force-wp.conf"
 
 	udev_dorules "${FILESDIR}"/boten/udev/*.rules
+	udev_dorules "${FILESDIR}"/storo/udev/*.rules
 }
