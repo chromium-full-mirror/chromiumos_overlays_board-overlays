@@ -28,9 +28,6 @@ USE="${USE} force_breakpad"
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
 
-# ARC uses VideoDecoder interface
-USE="${USE} arc_uses_cros_video_decoder"
-
 # Enable GpuMemoryBuffers backed by dma-bufs.
 USE="${USE} native_gpu_memory_buffers"
 
