@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Copyright 2021 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+log() {
+  logger "[modem]" "$@"
+}
+
+has_modem() {
+  lsusb -d "$1" > /dev/null
+}
+
+shutdown() {
+  local serial_id=$1
+  local vid_pid=$2
+  local command=$3
+
+  if ! has_modem "${vid_pid}"; then
+    return 0
+  fi
+
+  for modem in /dev/serial/by-id/usb-${serial_id}; do
+    log "issue command \"${command}\" to \"${modem}\""
+    printf "\r\n%s\r\n" "${command}" > "${modem}"
+  done
+
+  # Now wait up to 6 seconds to ensure OS sees the modem disconnecting.
+  for i in {1..60}; do
+    if ! has_modem "${vid_pid}"; then
+      log "shutdown succeeded."
+      return 0
+    fi
+    log "[attempt ${i}] modem is still on, wait for another 100ms..."
+    sleep 0.1
+  done
+  log "failed to shutdown within 6 seconds!"
+  return 1
+}
+
+shutdown 'Fibocom_Wireless_Inc._L850-GL_*-if02'                   '2cb7:0007' 'AT+CFUN=0'  || exit 1
+shutdown 'Fibocom_Wireless_Inc._Fibocom_NL668_Modem_*-if02-port0' '2cb7:01a0' 'AT+CPWROFF' || exit 1
