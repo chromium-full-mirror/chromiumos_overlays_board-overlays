@@ -50,10 +50,10 @@
             <Limit name="measured-frame-rate-1920x1088" range="194-194" /> <!-- N=32 v93%=1.5 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="822-822" /> <!-- N=66 v97%=1.2 -->
-            <Limit name="measured-frame-rate-640x360" range="713-713" /> <!-- N=66 v97%=1.2 -->
-            <Limit name="measured-frame-rate-1280x720" range="305-308" /> <!-- N=66 v97%=1.0 -->
-            <Limit name="measured-frame-rate-1920x1080" range="136-140" /> <!-- N=66 v97%=1.1 -->
+            <Limit name="measured-frame-rate-320x180" range="448-548" /> <!-- N=10 v97%=1.2 -->
+            <Limit name="measured-frame-rate-640x360" range="469-540" /> <!-- N=10 v97%=1.2 -->
+            <Limit name="measured-frame-rate-1280x720" range="392-461" /> <!-- N=10 v93%=1.0 -->
+            <Limit name="measured-frame-rate-1920x1080" range="362-432" /> <!-- N=10 v93%=1.1 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
             <Limit name="measured-frame-rate-320x180" range="809-809" /> <!-- N=66 v97%=1.1 -->
