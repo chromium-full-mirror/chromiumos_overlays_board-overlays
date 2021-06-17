@@ -158,6 +158,7 @@ kappa-config: &kappa_config
   $key-id: "JACUZZIB"
   identity:
     <<: *identity
+    whitelabel-tag: "{{$whitelabel-tag}}"
   audio: *ts3a227e_audio_config
 
 damu-config: &damu_config
@@ -231,6 +232,9 @@ chromeos:
         - $sku-id: 16
           config: *juniper_config
     - $device-name: "kappa"
+      products:
+        - $whitelabel-tag: ""
+        - $whitelabel-tag: "giygas"
       skus:
         - config: *kappa_config
     - $device-name: "damu"
