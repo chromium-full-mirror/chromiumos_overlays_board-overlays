@@ -36,10 +36,9 @@
             <Limit name="measured-frame-rate-320x240" range="235-517" /> <!-- N=244 v90%=4.4 -->
             <!-- measured 90%:19-412 med:254 FLAKY(mn=13.0 < 41 - 354 < mx=489.7) RG.VARIANCE:2.7 -->
             <Limit name="measured-frame-rate-720x480" range="81-177" /> <!-- N=174 v90%=4.5 -->
-            <!-- measured 90%:12-200 med:81 FLAKY(mn=6.2 < 20 - 168 < mx=268.1) RG.VARIANCE:2.5 -->
-            <Limit name="measured-frame-rate-1280x720" range="40-84" /> <!-- N=254 v90%=3.9 -->
-            <!-- measured 90%:5-106 med:59 FLAKY(mn=5.2 < 10 - 88 < mx=107.6) RG.VARIANCE:2.7 -->
-            <Limit name="measured-frame-rate-1920x1080" range="20-44" /> <!-- N=180 v90%=4.4 -->
+            <!-- b/190992585 Adjusted to cover all models. Akemi as lowerbound and Jinlon as upperbound -->
+            <Limit name="measured-frame-rate-1280x720" range="76-168" />
+            <Limit name="measured-frame-rate-1920x1080" range="49-109" />
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
             <!-- measured 90%:122-1673 med:1359 FLAKY(mn=116.4 < 176 - 1540 < mx=1766.8) RG.VARIANCE:2.4 -->
@@ -66,9 +65,9 @@
             <Limit name="measured-frame-rate-1920x1080" range="443-443" /> <!-- N=240 v95%=1.6 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <!-- measured 97%:381-1595 med:1389 variance:2.0 -->
-            <Limit name="measured-frame-rate-320x180" range="763-798" /> <!-- N=60 -->
-            <Limit name="measured-frame-rate-640x360" range="753-753" /> <!-- N=60 v97%=2.0 -->
+            <!-- b/190992585 enlarge the range to cover device variance -->
+            <Limit name="measured-frame-rate-320x180" range="763-1678" />
+            <Limit name="measured-frame-rate-640x360" range="753-1656" />
             <Limit name="measured-frame-rate-1280x720" range="653-653" /> <!-- N=60 v97%=1.8 -->
             <Limit name="measured-frame-rate-1920x1080" range="472-472" /> <!-- N=44 v95%=1.4 -->
         </MediaCodec>
