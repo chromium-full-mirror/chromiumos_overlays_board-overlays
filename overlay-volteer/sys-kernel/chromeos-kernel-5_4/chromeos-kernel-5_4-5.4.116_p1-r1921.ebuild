@@ -1,10 +1,10 @@
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2019 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="99035ce7fb9e97b029b884e8a4ce73f88dc4d7f2"
-CROS_WORKON_TREE="0a55123ad2411ed0db3e62f16143e40f51fa573d"
+CROS_WORKON_COMMIT="bc5d2a40463c5dd05a63a925c16d8ac8cfae9754"
+CROS_WORKON_TREE="59da1a535b76babb21ea78a18de6e10b4860d546"
 CROS_WORKON_PROJECT="chromiumos/third_party/kernel"
 CROS_WORKON_LOCALNAME="kernel/v5.4"
 CROS_WORKON_EGIT_BRANCH="chromeos-5.4"
