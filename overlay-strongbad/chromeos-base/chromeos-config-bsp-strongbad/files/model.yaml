@@ -27,6 +27,7 @@ audio_config: &audio_config
 wifi-coachz-sar-table: &wifi_coachz_sar_table
   $set-wifi-transmit-power-for-proximity: "1"
   $set-wifi-transmit-power-for-activity-proximity: "1"
+  $set-transmit-power-prefer-far-for-proximity: "1"
   wifi:
     non-tablet-mode-power-table-ath10k:
       limit-2g: 84
