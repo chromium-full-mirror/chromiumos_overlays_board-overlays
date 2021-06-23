@@ -109,5 +109,10 @@ chromeos:
         - $sku-id: 1
           $has-keyboard-backlight: "1"
           config: *spherion_config
+        - $sku-id: 5
+          $has-keyboard-backlight: "1"
+          config: *spherion_config
         - $sku-id: 6
+          config: *spherion_config
+        - $sku-id: 7
           config: *spherion_config
