@@ -65,6 +65,8 @@ base-config: &base_config
     use-multi-power-level-dynamic-sar: "{{$use-multi-power-level-dynamic-sar}}"
     $set-transmit-power-prefer-far-for-proximity: "0"
     set-transmit-power-prefer-far-for-proximity: "{{$set-transmit-power-prefer-far-for-proximity}}"
+    $set-cellular-transmit-power-level-mapping: ""
+    set-cellular-transmit-power-level-mapping: "{{$set-cellular-transmit-power-level-mapping}}"
     suspend-to-idle: "1"
     wake-on-dp: "1"
   audio: *audio_config
@@ -101,6 +103,9 @@ chromeos:
           $set-cellular-transmit-power-for-activity-proximity: "1"
           $use-modemmanager-for-dynamic-sar: "1"
           $set-transmit-power-prefer-far-for-proximity: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
         - $sku-id: 1
           config:
             <<: [ *detachable_config, *wifi_coachz_sar_table, *coachz_handwriting_settings ]
