@@ -139,3 +139,10 @@ chromeos:
           config: *convertible_config
         - $sku-id: 1 # Wifi-only
           config: *convertible_config
+    - $device-name: "pazquel"
+      $fw-name: "google,pazquel"
+      $coreboot-build-name: "pazquel"
+      $ec-build-name: "pazquel"
+      skus:
+        - $sku-id: 0
+          config: *clamshell_config
