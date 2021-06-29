@@ -31,6 +31,9 @@ USE="${USE} kernel-5_4"
 # needed by drm-tests
 #USE="${USE} vulkan"
 
+# Enable VMs
+USE="${USE} kvm_host crosvm-gpu virtio_gpu"
+
 # Enables WebGL rendering
 USE="${USE} drm_atomic"
 
