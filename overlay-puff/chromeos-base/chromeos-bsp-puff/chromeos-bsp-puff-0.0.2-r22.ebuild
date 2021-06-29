@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="puff-borealis"
+IUSE="iioservice puff-borealis"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -25,7 +25,7 @@ RDEPEND="
 	chromeos-base/sof-topology:=
 	sys-firmware/parade-ps175-firmware:=
 	chromeos-base/touch_updater:=
-	chromeos-base/chromeos-accelerometer-init
+	!iioservice? ( chromeos-base/chromeos-accelerometer-init )
 "
 DEPEND="
 	${RDEPEND}
