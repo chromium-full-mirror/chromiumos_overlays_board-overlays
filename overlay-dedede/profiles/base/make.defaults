@@ -34,5 +34,8 @@ INPUT_DEVICES="${INPUT_DEVICES} goodix"
 # Include g2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 
+# Include pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
 # Enable slow boot notification during firmware updates
 USE="${USE} enable_slow_boot_notify"
