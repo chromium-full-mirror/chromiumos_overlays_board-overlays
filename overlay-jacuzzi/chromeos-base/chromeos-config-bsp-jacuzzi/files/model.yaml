@@ -205,7 +205,7 @@ cozmo-config: &cozmo_config
   <<: *common_config
   $fw-name: "google,cozmo"
   $fw-build-name: "cozmo"
-  $key-id: "DEFAULT"
+  $key-id: "JACUZZIA"
   identity:
     <<: *identity_sku_config
   audio: *ts3a227e_audio_config
