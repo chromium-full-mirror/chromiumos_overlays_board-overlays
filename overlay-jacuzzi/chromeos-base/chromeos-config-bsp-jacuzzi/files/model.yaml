@@ -153,6 +153,14 @@ makomo-config: &makomo_config
   identity:
     <<: *identity_sku_config
 
+munna-config: &munna_config
+  <<: *common_config
+  $fw-name: "google,munna"
+  $fw-build-name: "munna"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -198,3 +206,11 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *makomo_config
+    - $device-name: "munna"
+      skus:
+        - $sku-id: 0
+          config:
+            <<: *munna_config
+        - $sku-id: 1
+          config:
+            <<: *munna_config
