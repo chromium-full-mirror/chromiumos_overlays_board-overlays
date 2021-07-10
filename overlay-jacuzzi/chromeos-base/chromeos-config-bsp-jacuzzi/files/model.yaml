@@ -226,6 +226,14 @@ cozmo-config: &cozmo_config
   identity:
     <<: *identity_sku_config
   audio: *ts3a227e_audio_config
+munna-config: &munna_config
+  <<: *common_config
+  $fw-name: "google,munna"
+  $fw-build-name: "munna"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+  audio: *rt1015p_audio_config
 
 chromeos:
   devices:
@@ -322,4 +330,16 @@ chromeos:
           $has-keyboard-backlight: "0"
           config:
             <<: *makomo_config
+            audio: *cerise_audio_config
+    - $device-name: "munna"
+      skus:
+        - $sku-id: 0
+          $has-keyboard-backlight: "0"
+          config:
+            <<: *munna_config
+            audio: *cerise_audio_config
+        - $sku-id: 1
+          $has-keyboard-backlight: "0"
+          config:
+            <<: *munna_config
             audio: *cerise_audio_config
