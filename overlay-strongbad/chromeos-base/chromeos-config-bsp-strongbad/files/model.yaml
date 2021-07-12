@@ -29,11 +29,11 @@ wifi-coachz-sar-table: &wifi_coachz_sar_table
   $set-wifi-transmit-power-for-activity-proximity: "1"
   wifi:
     non-tablet-mode-power-table-ath10k:
-      limit-2g: 72
-      limit-5g: 72
+      limit-2g: 84
+      limit-5g: 84
     tablet-mode-power-table-ath10k:
-      limit-2g: 68
-      limit-5g: 60
+      limit-2g: 80
+      limit-5g: 72
 
 base-config: &base_config
   name: "{{$device-name}}"
