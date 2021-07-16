@@ -15,8 +15,7 @@ main() {
     return 0
   fi
 
-  local last_boot="$(mosys eventlog list -s type | tail -n1)"
-  if [ "${last_boot}" = 'Hardware watchdog reset' ]; then
+  if mosys eventlog list -s type | tail -n3 | grep -q 'Hardware watchdog reset'; then
     echo "HW watchdog detected in previous boot; preserving to ${DFD_DEST_PATH}"
     mkdir -p "$(dirname "${DFD_DEST_PATH}")"
     dd if="${DFD_SRC}" of="${DFD_DEST_PATH}"
