@@ -27,4 +27,9 @@ src_install() {
 
 	# Install audio config
 	unibuild_install_files audio-files
+
+	# Install DFD scripts
+	dosbin "${FILESDIR}"/dump_dfd
+	insinto /etc/init
+	doins "${FILESDIR}"/dump_dfd.conf
 }

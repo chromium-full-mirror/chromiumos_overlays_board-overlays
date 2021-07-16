@@ -1,0 +1,28 @@
+#!/bin/sh
+# Copyright 2021 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# A script to collect and preserve 'dfd_dump' if hardware watchdog reset was
+# detected.
+
+DFD_SRC="/proc/dfd_dump"
+DFD_DEST_PATH="/var/log/dfd_dump/dfd_dump.$(date +'%Y%m%d.%H%M%S')"
+
+main() {
+  if ! [ -e "${DFD_SRC}" ]; then
+    echo "DFD (${DFD_SRC}) not available on this system."
+    return 0
+  fi
+
+  local last_boot="$(mosys eventlog list -s type | tail -n1)"
+  if [ "${last_boot}" = 'Hardware watchdog reset' ]; then
+    echo "HW watchdog detected in previous boot; preserving to ${DFD_DEST_PATH}"
+    mkdir -p "$(dirname "${DFD_DEST_PATH}")"
+    dd if="${DFD_SRC}" of="${DFD_DEST_PATH}"
+  else
+    echo "No HW watchdog detected."
+  fi
+}
+main "$@"
+
