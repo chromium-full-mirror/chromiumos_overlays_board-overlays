@@ -49,6 +49,9 @@ src_install() {
 	# udev rules to enable USB wakeup
 	udev_dorules "${FILESDIR}/99-usb-wakeup.rules"
 
+	# udev rules for HP USB-C/A Universal Dock G2 Adicora-D
+	udev_dorules "${FILESDIR}/99-hp-usb-c-dock.rules"
+
 	# Install modem FSG verification init script
 	insinto "/etc/init"
 	doins "${FILESDIR}/verify_fsg.conf"
