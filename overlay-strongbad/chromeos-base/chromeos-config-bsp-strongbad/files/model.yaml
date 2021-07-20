@@ -107,3 +107,12 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *detachable_config
+
+    - $device-name: "wormdingler"
+      $fw-name: "google,wormdingler"
+      $card: "sc7180-rt5682-max98357a-1mic"
+      skus:
+        - $sku-id: 0
+          config: *detachable_config
+        - $sku-id: 16
+          config: *detachable_config
