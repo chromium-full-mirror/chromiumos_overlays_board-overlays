@@ -90,7 +90,7 @@ spherion-config: &spherion_config
   <<: *common_config
   $fw-name: "google,spherion"
   $fw-build-name: "spherion"
-  $key-id: "DEFAULT"
+  $key-id: "ASURADAB"
   $card: "mt8192_mt6359_rt1015p_rt5682"
   identity:
     <<: *identity_sku_config
