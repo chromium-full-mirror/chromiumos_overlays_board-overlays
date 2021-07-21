@@ -23,7 +23,6 @@ IUSE="iioservice puff-borealis"
 RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
-	sys-firmware/parade-ps175-firmware:=
 	chromeos-base/touch_updater:=
 	!iioservice? ( chromeos-base/chromeos-accelerometer-init )
 "
