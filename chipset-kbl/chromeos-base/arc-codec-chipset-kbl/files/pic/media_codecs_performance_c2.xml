@@ -17,7 +17,8 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="c2.vea.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="93-204" />
+            <!-- b/189369137i: increased the upperbound for atlas/soraka 5.4 -->
+            <Limit name="measured-frame-rate-320x240" range="111-245" />
             <Limit name="measured-frame-rate-720x480" range="89-195" />
             <Limit name="measured-frame-rate-1280x720" range="65-142" />
             <Limit name="measured-frame-rate-1920x1080" range="50-109" />
