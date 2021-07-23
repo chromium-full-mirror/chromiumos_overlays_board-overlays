@@ -90,6 +90,15 @@ coachz-handwriting-settings: &coachz_handwriting_settings
   ui:
     handwriting-recognition-web-platform-api: true
 
+homestar-button-settings: &homestar_button_settings
+  ui:
+    power-button:
+      edge: left
+      position: "0.88"
+    side-volume-button:
+      region: screen
+      side: top
+
 chromeos:
   devices:
     - $device-name: "coachz"
@@ -115,5 +124,6 @@ chromeos:
       $card: "sc7180-rt5682-max98357a-1mic"
       skus:
         - $sku-id: 0
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *homestar_button_settings ]
 
