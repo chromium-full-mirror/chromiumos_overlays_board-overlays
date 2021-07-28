@@ -1011,6 +1011,7 @@ chromeos:
         - $whitelabel-tag: "ptsupertone"
         - $whitelabel-tag: "axioo"
         - $whitelabel-tag: "tekno"
+        - $whitelabel-tag: "olpc"
       skus:
         - $sku-id-val: 1
           config: *clamshell_wl_config
