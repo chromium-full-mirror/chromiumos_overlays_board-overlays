@@ -153,6 +153,14 @@ makomo-config: &makomo_config
   identity:
     <<: *identity_sku_config
 
+pico-config: &pico_config
+  <<: *common_config
+  $fw-name: "google,pico"
+  $fw-build-name: "pico"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -198,3 +206,7 @@ chromeos:
       skus:
         - $sku-id: 0
           config: *makomo_config
+    - $device-name: "pico"
+      skus:
+        - $sku-id: 1
+          config: *pico_config
