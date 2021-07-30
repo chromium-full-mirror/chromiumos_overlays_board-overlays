@@ -235,6 +235,15 @@ munna-config: &munna_config
     <<: *identity_sku_config
   audio: *rt1015p_audio_config
 
+pico-config: &pico_config
+  <<: *common_config
+  $fw-name: "google,pico"
+  $fw-build-name: "pico"
+  $key-id: "DEFAULT"
+  identity:
+    <<: *identity_sku_config
+  audio: *ts3a227e_audio_config
+
 chromeos:
   devices:
     - $device-name: "jacuzzi"
@@ -343,3 +352,7 @@ chromeos:
           config:
             <<: *munna_config
             audio: *cerise_audio_config
+    - $device-name: "pico"
+      skus:
+        - $sku-id: 1
+          config: *pico_config
