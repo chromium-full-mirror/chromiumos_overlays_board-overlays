@@ -1,30 +1,28 @@
-# Copyright 2021 The Chromium OS Authors. All rights reserved.
+# Copyright 2020 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-CROS_WORKON_COMMIT="edb6b8c9c3a351ce65f43a39060ef685c21cd031"
-CROS_WORKON_TREE=("4cf2872bc013776b7f3190283d0401b5dfe685bc" "d65e1feef46ecd812532dc59e0158f6afa13bffa" "a24844072e240248c774ca819d05d62298686e93")
+CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
+CROS_WORKON_TREE="618b59684f703e54456e27deaf16758083ab6bcf"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"waddledoo2"
-	"lalala"
-	"cappy2"
+	"guybrush"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "keeby/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "guybrush/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( keeby )
+CROS_BOARDS=( guybrush )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for keeby"
+DESCRIPTION="Chrome OS Model configuration package for Majolica"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
@@ -38,7 +36,6 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	platform_json_compile
 }
-
 
 src_install() {
 	platform_json_install

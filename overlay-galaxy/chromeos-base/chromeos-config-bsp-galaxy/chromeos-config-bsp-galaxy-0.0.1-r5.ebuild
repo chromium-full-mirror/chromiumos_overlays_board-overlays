@@ -3,32 +3,26 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="15a943d818a1aaa94bb999846c62444a37be6256"
-CROS_WORKON_TREE=("be40517a1ccb969dde9f46b9feb9cd6732e5c63e" "a525c0da82ee870f6e6447f85e76b2c9f01290e0" "b714cbad29618e11eb22af7aa282e212f56e7e03" "5cb0afe6b82a04405923abc2cb0fcf54962d2cd9" "5944e30613f40f7ae65b12a7ffd80fbc5a31974b" "7bce53dbaa866a9a615066ef829b02956e28c482" "0b1c3b40c86c0a15b21ad4a8459f94a256f93e8f")
+CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
+CROS_WORKON_TREE="8902f3bd659e35740aafd56e83849752eec9acc4"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"dooly"
-    "duffy"
-    "faffy"
-    "kaisa"
-    "noibat"
-    "puff"
-    "wyvern"
+	"milkyway"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "puff/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "galaxy/milkyway/${CONFIG_PATH}" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( puff )
+CROS_BOARDS=( galaxy )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for puff"
+DESCRIPTION="Chrome OS Model configuration package for galaxy"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 

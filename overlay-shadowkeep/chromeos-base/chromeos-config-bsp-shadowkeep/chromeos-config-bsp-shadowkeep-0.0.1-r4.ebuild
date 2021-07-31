@@ -3,26 +3,26 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="15a943d818a1aaa94bb999846c62444a37be6256"
-CROS_WORKON_TREE="9937d995ce93064699953f9053133e856288a01c"
+CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
+CROS_WORKON_TREE="5060601e628199b06863014fedc2b24e6e0d571e"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"milkyway"
+    "shadowkeep"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "galaxy/milkyway/${CONFIG_PATH}" )
+CROS_WORKON_SUBTREE=( "$(printf "shadowkeep/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( galaxy )
+CROS_BOARDS=( shadowkeep )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for galaxy"
+DESCRIPTION="Chrome OS Model configuration package for shadowkeep"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 

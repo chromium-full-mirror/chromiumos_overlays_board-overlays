@@ -1,28 +1,28 @@
-# Copyright 2021 The Chromium OS Authors. All rights reserved.
+# Copyright 2020 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
-CROS_WORKON_COMMIT="d66a9bc436ffae1de4909a8d0a4ed720b8aeac13"
-CROS_WORKON_TREE="d0870be754de177fc38a4d05609e8a15a0ed3c20"
+CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
+CROS_WORKON_TREE="d38a675eabf0f8e4e4d864601670a932f56aeebb"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"brask"
+	"majolica"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "brask/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "majolica/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( brask )
+CROS_BOARDS=( majolica )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for brask"
+DESCRIPTION="Chrome OS Model configuration package for Majolica"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
@@ -36,7 +36,6 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	platform_json_compile
 }
-
 
 src_install() {
 	platform_json_install

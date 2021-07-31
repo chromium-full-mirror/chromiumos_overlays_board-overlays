@@ -1,35 +1,36 @@
 # Copyright 2021 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
-CROS_WORKON_COMMIT="2ff0272750d0c42f6121c32da8f1cf4274f8c328"
-CROS_WORKON_TREE=("40977c85bb61ad19d676c532b96d105a2a81fd77" "9feae0bd1c52cfcf597134767cabf39480ecbf29")
+CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
+CROS_WORKON_TREE=("24b737cd5eb29d6d09a4d0fde3090890aebae1df" "9ccda5b4f549b840da33d480574f98812c9bd6ca" "87ea0199cc450a8d10a7a632a0958067677124c9")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"cherry"
-	"tomato"
+	"waddledoo2"
+	"lalala"
+	"cappy2"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "keeby/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( cherry )
+CROS_BOARDS=( keeby )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for cherry"
+DESCRIPTION="Chrome OS Model configuration package for keeby"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="*"
+KEYWORDS="* amd64 x86"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
