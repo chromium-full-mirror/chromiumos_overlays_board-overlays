@@ -16,7 +16,8 @@ USE="${USE} direncryption"
 USE="${USE} qmi qrtr"
 
 # Enable Firmware Build
-USE="${USE} bootimage"
+# Disable bootimage for factory branch
+# USE="${USE} bootimage"
 
 # Enable Cellular SAR hack on trogdor
 USE="${USE} trogdor_sar_hack"

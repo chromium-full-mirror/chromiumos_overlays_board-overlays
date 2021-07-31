@@ -24,7 +24,8 @@ USE="${USE} trogdor_sar_hack"
 USE="${USE} detachable menu_ui"
 
 # Enable Firmware Build
-USE="${USE} bootimage"
+# Disable bootimage for Factorty Branch
+# USE="${USE} bootimage"
 
 # All firmwares to build from the EC code base
 EC_FIRMWARE="strongbad"
