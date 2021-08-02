@@ -753,12 +753,12 @@ chromeos:
           config: *clamshell_touchscreen_config
         - $sku-id-val: 19
           config: *clamshell_config
-    - $device-name: "apel-e"
+    - $device-name: "apele"
       $fw-name: "Ampton"
       $num-mic-locations: 1
       $card: "sof-glkrt5682max"
-      $ucm_src_root: "apel-e"
-      $ucm_extra_suffix: "apel-e"
+      $ucm_src_root: "apele"
+      $ucm_extra_suffix: "apele"
       skus:
         - $sku-id-val: 49
           config: *clamshell_config
