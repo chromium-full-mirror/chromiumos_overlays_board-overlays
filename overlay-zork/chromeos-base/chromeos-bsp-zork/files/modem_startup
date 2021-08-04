@@ -17,11 +17,7 @@ has_modem() {
 
 has_modem || exit 0
 
-if [[ ! -d ${GPIO_PATH} ]]; then
-  log "export GPIO ${GPIO}"
-  echo ${GPIO} > /sys/class/gpio/export
-  echo out > "${GPIO_PATH}/direction"
+if [[ -d ${GPIO_PATH} ]]; then
+  log "de-assert GPIO ${GPIO}"
+  echo 1 > "${GPIO_PATH}/value"
 fi
-
-log "assert GPIO ${GPIO}"
-echo 0 > "${GPIO_PATH}/value"
