@@ -3,8 +3,8 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="0cc976984e9b7ae0dfd391818550f003acd2273e"
-CROS_WORKON_TREE=("55eef87627503ec03b3df589a3e78fbfeb4ab99b" "8d0c6c94cc90ecbf4e40bdd0eff8f4d45aad0b67" "9ad4a5b6c99089e4f844e601cd60f52287aa1aef" "86c0783d22237b53e8acea468d5b28c5073d5454" "11db6cde4fd4fb81e88322957fdb1e485a197dbb" "b7a9e470f5dcca38ef187651ce7caa5c1373adda" "d14c224e5f9c3e614e26e4624ccd6c30a1f32836" "4a511b7177d3192ea3b3857b3eafd9ae6bafd2be")
+CROS_WORKON_COMMIT="51c899a3f45ce0c25bde610dca6209de1a6824cb"
+CROS_WORKON_TREE=("55eef87627503ec03b3df589a3e78fbfeb4ab99b" "8d0c6c94cc90ecbf4e40bdd0eff8f4d45aad0b67" "9ad4a5b6c99089e4f844e601cd60f52287aa1aef" "86c0783d22237b53e8acea468d5b28c5073d5454" "11db6cde4fd4fb81e88322957fdb1e485a197dbb" "b7a9e470f5dcca38ef187651ce7caa5c1373adda" "d14c224e5f9c3e614e26e4624ccd6c30a1f32836")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
@@ -16,7 +16,6 @@ PROJECTS=(
     "magolor"
     "waddledee"
     "waddledoo"
-    "wheelie"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
