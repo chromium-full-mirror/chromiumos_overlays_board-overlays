@@ -43,6 +43,7 @@ src_install() {
 
 	# Install LTE modem quirks
 	exeinto /usr/sbin
+	doexe "${FILESDIR}/modem_startup"
 	doexe "${FILESDIR}/modem_shutdown"
 
 	# Install USB quirks
