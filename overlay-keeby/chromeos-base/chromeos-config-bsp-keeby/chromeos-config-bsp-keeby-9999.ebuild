@@ -10,6 +10,7 @@ PROJECTS=(
 	"waddledoo2"
 	"lalala"
 	"cappy2"
+	"haboki"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
