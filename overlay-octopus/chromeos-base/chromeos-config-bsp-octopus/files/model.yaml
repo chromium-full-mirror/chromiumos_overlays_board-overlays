@@ -829,8 +829,6 @@ chromeos:
     - $device-name: "garg"
       $fw-name: "Garg"
       $num-mic-locations: 1
-      $ucm_src_root: "{{$device-name}}"
-      $ucm_extra_suffix: "{{$device-name}}"
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
@@ -852,29 +850,17 @@ chromeos:
         - $whitelabel-tag: "olpc"
       skus:
         - $sku-id-val: 1
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 9
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 17
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 18
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 19
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 20
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
     - $device-name: "garg360"
       $fw-name: "Garg"
       products:
@@ -899,21 +885,15 @@ chromeos:
         - $sku-id-val: 37
           $stylus-category: "external"
           $num-mic-locations: 1
-          config:
-            <<: *convertible_wl_config
-            <<: *audio_two_cards_setting
+          config: *convertible_wl_config
         - $sku-id-val: 38
           $num-mic-locations: 1
-          config:
-            <<: *convertible_wl_config
-            <<: *audio_two_cards_setting
+          config: *convertible_wl_config
         - $sku-id-val: 39
           $num-mic-locations: 2
           $ucm_src_root: "{{$device-name}}"
           $ucm_extra_suffix: "{{$device-name}}"
-          config:
-            <<: *convertible_wl_config
-            <<: *audio_two_cards_setting
+          config: *convertible_wl_config
     - $device-name: "garfour"
       $fw-name: "Garg"
       $num-mic-locations: 1
@@ -923,21 +903,13 @@ chromeos:
         - $whitelabel-tag: "tekno"
       skus:
         - $sku-id-val: 49
-          config:
-            <<: *clamshell_touchscreen_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_touchscreen_wl_config
         - $sku-id-val: 50
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 51
-          config:
-            <<: *clamshell_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_wl_config
         - $sku-id-val: 52
-          config:
-            <<: *clamshell_touchscreen_wl_config
-            <<: *audio_two_cards_setting
+          config: *clamshell_touchscreen_wl_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
