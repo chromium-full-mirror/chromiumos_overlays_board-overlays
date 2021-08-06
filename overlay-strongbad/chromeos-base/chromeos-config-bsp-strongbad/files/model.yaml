@@ -101,3 +101,9 @@ chromeos:
         - $sku-id: 0
           config: *detachable_config
 
+    - $device-name: "mrbland"
+      $fw-name: "google,mrbland"
+      $card: "sc7180-rt5682-max98357a-1mic"
+      skus:
+        - $sku-id: 0
+          config: *detachable_config
