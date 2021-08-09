@@ -13,5 +13,6 @@ DEPEND="
 	sys-firmware/parade-ps8751a3-firmware
 	sys-firmware/parade-ps8755a2-firmware
 	sys-firmware/parade-ps8805a2-firmware
+	sys-firmware/parade-ps8805a3-firmware
 	"
 RDEPEND="${DEPEND}"
