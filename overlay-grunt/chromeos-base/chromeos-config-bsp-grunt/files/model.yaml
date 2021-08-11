@@ -303,6 +303,48 @@ treeya360-config: &treeya360-config
         destination: "{{$fw_dest}}/7817_0.0.3209178.bin"
         symlink: "{{$fw_root}}/hid-06CB_7817"
 
+treeya360-alc5682-config: &treeya360-alc5682-config
+  <<: *treeya-config
+  $audio-config: "treeya"
+  $firmware-target: "treeya"
+  $sub_cras_config: ".alc5682"
+  $ucm_extra_suffix: "treeya"
+  $card: "acpr5682m98357"
+  $key-id: "LIARA"
+  identity:
+    <<: *base_identity
+    whitelabel-tag: "{{$whitelabel-tag}}"
+  touch:
+    <<: *touch_common
+    files:
+      - source: "touch/elan/196.0_2.0.bin"
+        destination: "{{$fw_dest}}/196.0_2.0.bin"
+        symlink: "{{$fw_root}}/elan_i2c_196.0.bin"
+      - source: "touch/synaptics/7CA1_1.1.3104979.bin"
+        destination: "{{$fw_dest}}/7CA1_1.1.3104979.bin"
+        symlink: "{{$fw_root}}/hid-06CB_7CA1"
+      - source: "touch/synaptics/1A20_0.0.3046700.bin"
+        destination: "{{$fw_dest}}/1A20_0.0.3046700.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A20"
+      - source: "touch/synaptics/1A21_0.0.3209178.bin"
+        destination: "{{$fw_dest}}/1A21_0.0.3209178.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A21"
+      - source: "touch/synaptics/1A22_0.0.3046704.bin"
+        destination: "{{$fw_dest}}/1A22_0.0.3046704.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A22"
+      - source: "touch/synaptics/1A23_0.0.3209179.bin"
+        destination: "{{$fw_dest}}/1A23_0.0.3209179.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A23"
+      - source: "touch/synaptics/1A24_0.0.3203407.bin"
+        destination: "{{$fw_dest}}/1A24_0.0.3203407.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A24"
+      - source: "touch/synaptics/1A25_0.0.3203408.bin"
+        destination: "{{$fw_dest}}/1A25_0.0.3203408.bin"
+        symlink: "{{$fw_root}}/hid-06CB_1A25"
+      - source: "touch/synaptics/7817_0.0.3209178.bin"
+        destination: "{{$fw_dest}}/7817_0.0.3209178.bin"
+        symlink: "{{$fw_root}}/hid-06CB_7817"
+
 nuwani-config: &nuwani-config
   <<: *base_config
   firmware:
@@ -541,6 +583,15 @@ chromeos:
         - $sku-id: 175
           $num-mic-locations: 2
           config: *treeya360-config
+
+        - $sku-id: 190
+          $num-mic-locations: 1
+          config: *treeya360-alc5682-config
+
+        - $sku-id: 191
+          $camera-count: 2
+          $num-mic-locations: 2
+          config: *treeya360-alc5682-config
 
     - $device-name: "nuwani"
       products:
