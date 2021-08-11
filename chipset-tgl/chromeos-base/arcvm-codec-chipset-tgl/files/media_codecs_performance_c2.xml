@@ -57,8 +57,9 @@
             <Limit name="measured-frame-rate-1920x1080" range="594-594" /> <!-- N=50 v96%=1.3 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="1536-3379"/>
-            <Limit name="measured-frame-rate-640x360" range="1980-2370"/>
+            <!-- b/195867801 lower bound is adjusted for covering Celeron models -->
+            <Limit name="measured-frame-rate-320x180" range="1000-2200"/>
+            <Limit name="measured-frame-rate-640x360" range="1000-2200"/>
             <Limit name="measured-frame-rate-1280x720" range="1176-1176"/>
             <Limit name="measured-frame-rate-1920x1080" range="696-696"/>
         </MediaCodec>
