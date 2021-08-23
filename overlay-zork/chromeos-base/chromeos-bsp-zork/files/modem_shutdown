@@ -17,6 +17,9 @@ has_modem() {
 
 has_modem || exit 0
 
+log "stop modemmanager"
+stop modemmanager
+
 if [[ ! -d ${GPIO_PATH} ]]; then
   log "export GPIO ${GPIO}"
   echo ${GPIO} > /sys/class/gpio/export
