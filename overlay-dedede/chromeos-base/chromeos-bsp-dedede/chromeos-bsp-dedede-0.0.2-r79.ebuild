@@ -25,7 +25,9 @@ RDEPEND="
 	chromeos-base/sof-topology
 	chromeos-base/touch_updater
 "
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	chromeos-base/chromeos-config:=
+"
 
 src_install() {
 	doappid "{E0DD1258-E890-493E-ADA3-0C755240B89C}" "CHROMEBOOK"
