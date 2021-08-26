@@ -59,9 +59,10 @@
             <Limit name="measured-frame-rate-320x180" range="809-809" /> <!-- N=66 v97%=1.1 -->
             <Limit name="measured-frame-rate-640x360" range="657-657" /> <!-- N=34 v93%=1.1 -->
             <Limit name="measured-frame-rate-1280x720" range="412-412" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-1920x1080" range="278-278" /> <!-- N=32 v93%=1.0 -->
-            <!-- measured 93%:66-73 med:72 FLAKY(mn=26.5 < 35 - 140) -->
-            <Limit name="measured-frame-rate-3840x2160" range="70-70" /> <!-- N=32 v93%=1.0 -->
+            <!-- b/197706020: Perf values are bimodal due to the mix of 2-core and 4-core SKUs.
+                 Upperbounds are extended to the geometric mean between the two to cover both. -->
+            <Limit name="measured-frame-rate-1920x1080" range="278-371" />
+            <Limit name="measured-frame-rate-3840x2160" range="70-105" />
         </MediaCodec>
 
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
