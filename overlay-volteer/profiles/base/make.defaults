@@ -30,6 +30,9 @@ INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 # Include the elan i2chid touchpad firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
 
+# Include the melfas firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} melfas"
+
 # Enable MBO
 USE="${USE} mbo"
 
