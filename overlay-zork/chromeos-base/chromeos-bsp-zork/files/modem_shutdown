@@ -15,6 +15,10 @@ has_modem() {
   cros_config /modem firmware-variant > /dev/null
 }
 
+is_modem_alive() {
+  lsusb -d 2cb7: > /dev/null
+}
+
 has_modem || exit 0
 
 log "stop modemmanager"
@@ -28,3 +32,13 @@ fi
 
 log "assert GPIO ${GPIO}"
 echo 0 > "${GPIO_PATH}/value"
+
+# Now wait up to 30 seconds to ensure OS sees the modem disconnecting.
+for i in {1..300}; do
+  if ! is_modem_alive; then
+    log "shutdown succeeded."
+    break
+  fi
+  log "[attempt ${i}] modem is still on, wait for another 100ms..."
+  sleep 0.1
+done
