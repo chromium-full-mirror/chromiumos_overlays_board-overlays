@@ -26,3 +26,6 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 
 # Include the elan i2chid touchpad firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
+
+# Include the melfas firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} melfas"
