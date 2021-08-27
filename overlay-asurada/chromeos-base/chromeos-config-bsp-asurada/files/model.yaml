@@ -105,6 +105,16 @@ spherion-config: &spherion_config
     <<: *identity_sku_config
   audio: *audio_config
 
+spherion-config-sar-mtk: &spherion_config_sar_mtk
+  <<: *spherion_config
+  wifi:
+    non-tablet-mode-power-table-mtk:
+      limit-2g: 58
+      limit-5g-1: 54
+      limit-5g-2: 54
+      limit-5g-3: 50
+      limit-5g-4: 54
+
 chromeos:
   devices:
     - $device-name: "asurada"
@@ -120,11 +130,11 @@ chromeos:
           config: *spherion_config
         - $sku-id: 1
           $has-keyboard-backlight: "1"
-          config: *spherion_config
+          config: *spherion_config_sar_mtk
         - $sku-id: 5
           $has-keyboard-backlight: "1"
-          config: *spherion_config
+          config: *spherion_config_sar_mtk
         - $sku-id: 6
           config: *spherion_config
         - $sku-id: 7
-          config: *spherion_config
+          config: *spherion_config_sar_mtk
