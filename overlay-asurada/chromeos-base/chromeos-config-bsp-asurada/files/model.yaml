@@ -131,6 +131,13 @@ chromeos:
         - $sku-id: 1
           $has-keyboard-backlight: "1"
           config: *spherion_config_sar_mtk
+        - $sku-id: 2
+          config: *spherion_config
+        - $sku-id: 3
+          config: *spherion_config_sar_mtk
+        - $sku-id: 4
+          $has-keyboard-backlight: "1"
+          config: *spherion_config
         - $sku-id: 5
           $has-keyboard-backlight: "1"
           config: *spherion_config_sar_mtk
