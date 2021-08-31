@@ -18,6 +18,7 @@
         <Setting name="max-video-encoder-input-buffers" value="4" />
     </Settings>
     <Encoders>
+        <!-- TODO(b/181514834): enable the encoder after supporting VBR.
         <MediaCodec name="c2.v4l2.avc.encoder" type="video/avc">
             <Limit name="size" min="32x32" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
@@ -27,6 +28,7 @@
             <Limit name="concurrent-instances" max="8" />
             <Limit name="performance-point-1280x720" range="30-30" />
         </MediaCodec>
+        -->
     </Encoders>
     <Decoders>
         <MediaCodec name="c2.v4l2.avc.decoder" type="video/avc" >
