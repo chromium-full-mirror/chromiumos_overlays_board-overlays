@@ -38,9 +38,6 @@ LINUX_FIRMWARE="brcmfmac4354-sdio bcm4354-bt"
 # Disable CrOS video decoder because it's not yet ready for Rockchip.
 USE="${USE} disable_cros_video_decoder"
 
-# ARC uses VideoDecoder interface
-USE="${USE} arc_uses_cros_video_decoder"
-
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
 
