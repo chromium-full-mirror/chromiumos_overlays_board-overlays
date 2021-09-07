@@ -102,6 +102,19 @@ chromeos:
           config: *convertible_config
         - $sku-id: 1 # Wifi-only
           config: *convertible_config
+    - $device-name: "kingoftown"
+      $fw-name: "google,kingoftown"
+      $coreboot-build-name: "kingoftown"
+      $ec-build-name: "kingoftown"
+      $card: "sc7180-adau7002-max98357a"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
+      skus:
+        - $sku-id: 0 # Lte+Wifi
+          $has-touchscreen: True
+          config:
+            <<: [ *clamshell_config ]
     - $device-name: "lazor"
       $fw-name: "google,lazor"
       $coreboot-build-name: "lazor"
