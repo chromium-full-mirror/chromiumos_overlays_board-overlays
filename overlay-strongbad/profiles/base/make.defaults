@@ -44,3 +44,6 @@ USE="${USE} ondevice_handwriting"
 
 # Enable ime add-ons
 USE="${USE} ime_addons"
+
+# chromeos-base/chromeos-config-bsp is located in this overlay.
+USE="${USE} has_chromeos_config_bsp"
