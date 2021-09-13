@@ -4,6 +4,10 @@
 
 # Initial value just for style purposes.
 USE=""
+
+# Enable unibuild
+USE="${USE} unibuild has_chromeos_config_bsp"
+
 LINUX_FIRMWARE=""
 
 USE="${USE} cros_ec"
