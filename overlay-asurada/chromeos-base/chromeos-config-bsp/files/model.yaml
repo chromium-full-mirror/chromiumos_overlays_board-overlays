@@ -114,6 +114,9 @@ spherion-config-sar-mtk: &spherion_config_sar_mtk
       limit-5g-2: 54
       limit-5g-3: 50
       limit-5g-4: 54
+  power:
+    <<: *power_common
+    wifi-transmit-power-mode-for-static-device: "non-tablet"
 
 chromeos:
   devices:
