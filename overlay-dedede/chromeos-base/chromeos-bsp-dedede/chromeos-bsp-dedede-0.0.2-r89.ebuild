@@ -1,4 +1,4 @@
-# Copyright 2021 The Chromium OS Authors. All rights reserved.
+# Copyright 2019-2020 The Chromium OS Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,9 +11,9 @@ inherit appid cros-unibuild cros-workon udev
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
-CROS_WORKON_LOCALNAME="empty-project"
+CROS_WORKON_LOCALNAME="platform/empty-project"
 
-DESCRIPTION="keeby board-specific ebuild that pulls in necessary ebuilds as
+DESCRIPTION="dedede board-specific ebuild that pulls in necessary ebuilds as
 dependencies or portage actions."
 
 LICENSE="BSD-Google"
@@ -25,11 +25,20 @@ RDEPEND="
 	chromeos-base/sof-topology
 	chromeos-base/touch_updater
 "
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	chromeos-base/chromeos-config:=
+"
 
 src_install() {
-	doappid "{C3AEAE91-CD98-3247-57BB-6F8B6C5B7FB1}" "CHROMEBOOK"
+	doappid "{E0DD1258-E890-493E-ADA3-0C755240B89C}" "CHROMEBOOK"
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install the WP script for older revs that can't take a RO FW update.
+	insinto /etc/init
+	doins "${FILESDIR}/common/dedede-force-wp.conf"
+
+	udev_dorules "${FILESDIR}"/boten/udev/*.rules
+	udev_dorules "${FILESDIR}"/storo/udev/*.rules
 }
