@@ -11,6 +11,7 @@ SLOT="0"
 KEYWORDS="*"
 
 RDEPEND="
+	media-libs/tgl-drceq-param
 	media-libs/tgl-dsm-param
 	media-libs/tgl-hotword-support
 "
