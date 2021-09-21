@@ -32,6 +32,8 @@ RDEPEND="
 	virtual/chromeos-bsp
 	virtual/implicit-system
 	virtual/linux-sources
+	media-libs/vulkan-loader
+	dev-util/vulkan-tools
 "
 
 DEPEND="
