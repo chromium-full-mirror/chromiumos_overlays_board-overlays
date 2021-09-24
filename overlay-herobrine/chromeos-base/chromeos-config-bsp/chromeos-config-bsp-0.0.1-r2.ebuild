@@ -3,7 +3,7 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="5ee85e1873fa27cdd2b7181a536f9f04863276e2"
+CROS_WORKON_COMMIT="093b2c6dfc15493113cb3d089b573abe91985e57"
 CROS_WORKON_TREE=("fd698c7a73564d32379b53aa539366d1c0a90b80" "8967a87a1710152556ed04340da7ce064cc4cfe2")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
@@ -11,6 +11,7 @@ CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 PROJECTS=(
 	"herobrine"
 	"piglin"
+	"hoglin"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
