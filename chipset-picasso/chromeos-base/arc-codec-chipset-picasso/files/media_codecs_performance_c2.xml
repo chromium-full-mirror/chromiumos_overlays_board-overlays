@@ -27,7 +27,7 @@
         <MediaCodec name="c2.vda.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
             <!-- Low-resolution performance is very sensitive to small
                  changes. For test stability, set a wider range. -->
-            <Limit name="measured-frame-rate-320x180" range="400-880" />
+            <Limit name="measured-frame-rate-320x180" range="600-1320" />
             <Limit name="measured-frame-rate-640x360" range="400-880" />
             <Limit name="measured-frame-rate-1280x720" range="464-464" />
             <Limit name="measured-frame-rate-1920x1080" range="305-305" />
