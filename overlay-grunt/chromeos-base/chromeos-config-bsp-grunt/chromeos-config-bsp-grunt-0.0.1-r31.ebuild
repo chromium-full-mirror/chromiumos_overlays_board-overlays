@@ -3,8 +3,8 @@
 
 EAPI="6"
 
-CROS_WORKON_COMMIT="764f8f81b34bb15070643e89a4a369d7a170da59"
-CROS_WORKON_TREE="ffcbac743395e79e5cff2fdd27ebebace7ea44bd"
+CROS_WORKON_COMMIT="89f9556f1fbe63d2ca84d46275b9a8c82acb9653"
+CROS_WORKON_TREE="5981e92ea2ea768283a598c82af54d1f115b86d1"
 inherit cros-constants
 
 CROS_WORKON_PROJECT="chromiumos/overlays/board-overlays"
