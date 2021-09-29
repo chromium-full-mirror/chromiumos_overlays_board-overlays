@@ -110,6 +110,13 @@ chromeos:
         - $sku-id: 1536 # AUO Panel
           config: *detachable_config
 
+    - $device-name: "quackingstick"
+      $fw-name: "google,quackingstick"
+      $card: "sc7180-rt5682-max98357a-1mic"
+      skus:
+        - $sku-id: 1536 # AUO Panel
+          config: *detachable_config
+
     - $device-name: "wormdingler"
       $fw-name: "google,wormdingler"
       $card: "sc7180-rt5682-max98357a-1mic"
