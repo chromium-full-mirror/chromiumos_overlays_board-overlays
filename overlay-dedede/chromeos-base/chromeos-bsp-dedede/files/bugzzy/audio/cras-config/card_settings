@@ -1,13 +1,13 @@
 [Speaker]
   volume_curve = explicit
-  db_at_100 = -60
-  db_at_99 = -60
-  db_at_98 = -60
-  db_at_97 = -60
-  db_at_96 = -135
-  db_at_95 = -135
-  db_at_94 = -135
-  db_at_93 = -135
+  db_at_100 = -30
+  db_at_99 = -30
+  db_at_98 = -30
+  db_at_97 = -30
+  db_at_96 = -100
+  db_at_95 = -100
+  db_at_94 = -100
+  db_at_93 = -100
   db_at_92 = -210
   db_at_91 = -210
   db_at_90 = -210
