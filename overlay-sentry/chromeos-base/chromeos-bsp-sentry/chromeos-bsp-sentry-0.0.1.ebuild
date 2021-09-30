@@ -1,7 +1,7 @@
 # Copyright 2015 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=4
 
 inherit appid cros-audio-configs
 
@@ -11,7 +11,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="kernel-4_19"
+IUSE=""
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
@@ -28,10 +28,6 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	# Install audio config files
-	if use kernel-4_19; then
-		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
-	else
-		local audio_config_dir="${FILESDIR}/audio-config"
-	fi
+	local audio_config_dir="${FILESDIR}/audio-config"
 	install_audio_configs sentry "${audio_config_dir}"
 }
