@@ -17,7 +17,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="trogdor64 trogdor-arc-r trogdor-kernelnext zephyr_ec"
+IUSE="trogdor64 trogdor-arc-r trogdor-kernelnext zephyr_ec trogdor-connectivitynext"
 
 
 RDEPEND="
@@ -32,6 +32,8 @@ src_install() {
 		doappid "{A0568F5E-BA81-4BB8-9BDE-81DFF8E050AE}" "CHROMEBOOK"
 	elif use trogdor-arc-r; then
 		doappid "{E2560CEE-5423-4B7D-A6A0-764BBC237C05}" "CHROMEBOOK"
+	elif use trogdor-connectivitynext; then
+		doappid "{7DCFEAA2-E592-49FE-81C3-C27C828CE218}" "CHROMEBOOK"
 	elif use trogdor-kernelnext; then
 		doappid "{9F765BCD-AC24-C22B-B39A-467B190B7FEF}" "CHROMEBOOK"
 	else
