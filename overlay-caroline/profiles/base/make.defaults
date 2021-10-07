@@ -61,3 +61,6 @@ USE="${USE} dlc_test"
 
 # No more firmware build from ToT. Use the firmware branch instead.
 USE="${USE} -bootimage"
+
+# Remove iioservice until light sensor in firmware is updated.
+USE="${USE} -iioservice"
