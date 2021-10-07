@@ -75,3 +75,6 @@ USE="${USE} enable_neural_palm_detection_filter"
 
 # Enable on-device grammar check
 USE="${USE} ondevice_grammar"
+
+# Remove iioservice until light sensor in firmware is updated.
+USE="${USE} -iioservice"
