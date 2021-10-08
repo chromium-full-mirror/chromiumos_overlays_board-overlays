@@ -39,8 +39,3 @@ USE="${USE} detachable"
 
 # Let the touchscreen wake the system when it's suspended.
 USE="${USE} touchscreen_wakeup"
-
-# Some puff devices have rotateable screens making subpixel font
-# rendering behave poorly when the display is rotated.
-# crbug.com/1194230
-USE="${USE} touchview"
