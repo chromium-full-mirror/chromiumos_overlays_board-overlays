@@ -20,7 +20,16 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 RDEPEND="!chromeos-base/chromeos-config-bsp-octopus"
+IUSE="kernel-4_14"
 
 src_install() {
-	install_model_files
+	insinto "${UNIBOARD_YAML_DIR}"
+	doins "${FILESDIR}/model.yaml"
+
+	insinto "${UNIBOARD_YAML_DIR}/include"
+	if use kernel-4_14; then
+		newins "${FILESDIR}/include/kernel-info_kernel_4_14.yaml" "kernel-info.yaml"
+	else
+		doins "${FILESDIR}/include/kernel-info.yaml"
+	fi
 }
