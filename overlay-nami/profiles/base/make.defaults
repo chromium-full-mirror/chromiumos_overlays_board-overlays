@@ -58,7 +58,3 @@ USE="${USE} ondevice_grammar"
 
 # chromeos-base/chromeos-config-bsp is located in this overlay.
 USE="${USE} has_chromeos_config_bsp"
-
-# Enable libunwind
-# FIXME: remove once libunwind is fully deployed (b/199814289)
-BOARD_COMPILER_FLAGS="${BOARD_COMPILER_FLAGS} --unwindlib=libunwind"
