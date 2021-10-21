@@ -14,4 +14,5 @@
 modify_kernel_command_line() {
   echo "kvm-intel.vmentry_l1d_flush=always" >> "$1"
   echo "i915.disable_rps_interactive=1" >> "$1"
+  echo "i915.disable_dualmode_redetection=1" >> "$1"
 }
