@@ -27,4 +27,7 @@ DEPEND="
 
 src_install() {
 	doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
+
+	# Install audio config files
+	unibuild_install_files audio-files
 }
