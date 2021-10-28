@@ -101,6 +101,15 @@ homestar-button-settings: &homestar_button_settings
       region: screen
       side: top
 
+wormdingler-button-settings: &wormdingler_button_settings
+  ui:
+    power-button:
+      edge: left
+      position: "0.88"
+    side-volume-button:
+      region: screen
+      side: top
+
 chromeos:
   devices:
     - $device-name: "coachz"
@@ -150,6 +159,8 @@ chromeos:
       $card: "sc7180-rt5682-max98357a-1mic"
       skus:
         - $sku-id: 0 # INX Panel
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *wormdingler_button_settings ]
         - $sku-id: 1024 # BOE Panel
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *wormdingler_button_settings ]
