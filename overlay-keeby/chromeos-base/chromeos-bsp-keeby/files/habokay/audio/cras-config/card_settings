@@ -97,9 +97,9 @@
   db_at_6 = -3975
   db_at_5 = -4087
   db_at_4 = -4200
-  db_at_3 = -4800
-  db_at_2 = -5400
-  db_at_1 = -6000
+  db_at_3 = -4650
+  db_at_2 = -5250
+  db_at_1 = -5850
   db_at_0 = -6562
 [Headphone]
   volume_curve = explicit
