@@ -88,6 +88,15 @@ homestar-button-settings: &homestar_button_settings
       region: screen
       side: top
 
+mrbland-button-settings: &mrbland_button_settings
+  ui:
+    power-button:
+      edge: right
+      position: "0.65"
+    side-volume-button:
+      region: screen
+      side: right
+
 chromeos:
   devices:
     - $device-name: "coachz"
