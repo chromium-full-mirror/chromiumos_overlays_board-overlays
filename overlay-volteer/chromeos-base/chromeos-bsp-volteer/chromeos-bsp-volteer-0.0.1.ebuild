@@ -35,13 +35,6 @@ src_install() {
 		doappid "{77BE25D7-AFB8-4E3C-A7D2-1FACE1B186E3}" "CHROMEBOOK"
 	fi
 
-	# Install platform-specific internal keyboard keymap.
-	# It should probbaly go into /lib/udev/hwdb.d but
-	# unfortunately udevadm on 64 bit boxes does not check
-	# that directory (it wants to look in /lib64/udev).
-	insinto "${EPREFIX}/etc/udev/hwdb.d"
-	doins "${FILESDIR}/81-halvor-keyboard.hwdb"
-
 	unibuild_install_files audio-files
 
 	udev_dorules "${FILESDIR}"/udev/*.rules

@@ -11,17 +11,11 @@ PROJECTS=(
     "delbin"
     "eldrid"
     "elemi"
-    "halvor"
     "lindar"
-    "lingcod"
-    "malefor"
-    "mudada"
     "terrador"
-    "trondo"
     "volet"
     "volteer"
     "voxel"
-    "zantor"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
