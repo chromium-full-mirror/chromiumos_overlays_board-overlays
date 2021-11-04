@@ -40,6 +40,9 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 # Include the zinitix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} zinitix"
 
+# Include the wacom firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} wacom"
+
 # Enable slow boot notification during firmware updates
 USE="${USE} enable_slow_boot_notify"
 
