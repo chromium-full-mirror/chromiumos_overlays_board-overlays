@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2021 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -49,8 +49,8 @@ src_install() {
 	# udev rules to enable USB wakeup
 	udev_dorules "${FILESDIR}/99-usb-wakeup.rules"
 
-	# udev rules for HP USB-C/A Universal Dock G2 Adicora-D
-	udev_dorules "${FILESDIR}/99-hp-usb-c-dock.rules"
+	# udev rule to enable wakeup for smp2p devices
+	udev_dorules "${FILESDIR}/99-qcom-smp2p-wakeup.rules"
 
 	# Install modem FSG verification init script
 	insinto "/etc/init"
