@@ -1,0 +1,4 @@
+ACTION=="add", SUBSYSTEM=="iio", ATTR{name}=="sx9360", \
+DEVPATH=="*/pci0000:00/0000:00:15.1/*", SYMLINK+="proximity-lte", \
+ATTR{events/in_proximity1_thresh_either_en}="1", \
+GROUP="power"

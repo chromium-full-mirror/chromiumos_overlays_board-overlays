@@ -39,4 +39,5 @@ src_install() {
 
 	udev_dorules "${FILESDIR}"/boten/udev/*.rules
 	udev_dorules "${FILESDIR}"/storo/udev/*.rules
+	udev_dorules "${FILESDIR}"/bugzzy/udev/*.rules
 }
