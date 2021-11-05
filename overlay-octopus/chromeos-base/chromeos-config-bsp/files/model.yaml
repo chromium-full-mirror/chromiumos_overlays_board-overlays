@@ -1204,6 +1204,7 @@ chromeos:
             $set-wifi-transmit-power-for-tablet-mode: "0"
             modem:
               firmware-variant: "{{$device-name}}"
+              attach-apn-required: True
         - $sku-id-val: 4
           $num-mic-locations: 2
           config:
