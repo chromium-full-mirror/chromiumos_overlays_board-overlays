@@ -106,9 +106,14 @@ chromeos:
       $card: "sc7180-rt5682-max98357a-1mic"
       skus:
         - $sku-id: 768 # BOE Panel
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *mrbland_button_settings ]
+        - $sku-id: 1024 # BOE Panel(DVT and after)
+          config:
+            <<: [ *detachable_config, *mrbland_button_settings ]
         - $sku-id: 1536 # AUO Panel
-          config: *detachable_config
+          config:
+            <<: [ *detachable_config, *mrbland_button_settings ]
 
     - $device-name: "quackingstick"
       $fw-name: "google,quackingstick"
