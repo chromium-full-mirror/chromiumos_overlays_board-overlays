@@ -681,6 +681,15 @@ chromeos:
           config: *clamshell_config
         - $sku-id-val: 50
           config: *clamshell_touchscreen_config
+    - $device-name: "amptone"
+      $fw-name: "Ampton"
+      $num-mic-locations: 1
+      $card: "sof-glkrt5682max"
+      $ucm_src_root: "amptone"
+      $ucm_extra_suffix: "amptone"
+      skus:
+        - $sku-id-val: 57
+          config: *convertible_config
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
