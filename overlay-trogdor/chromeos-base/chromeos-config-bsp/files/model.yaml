@@ -142,7 +142,7 @@ chromeos:
       $fw-name: "google,kingoftown"
       $coreboot-build-name: "kingoftown"
       $ec-build-name: "kingoftown"
-      $card: "sc7180-adau7002-max98357a"
+      $card: "sc7180-rt5682-max98357a-1mic"
       $ufc-interface: "usb"
       $ufc-autofocus: True
       $ufc-1080p: False
