@@ -24,6 +24,7 @@ IUSE=""
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-cherry
+	chromeos-base/dfd_collector
 	media-sound/sound_card_init
 "
 DEPEND="
