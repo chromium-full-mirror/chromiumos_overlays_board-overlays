@@ -1,1 +1,0 @@
-intel-ipu6-camera-bins-20211022.ebuild
