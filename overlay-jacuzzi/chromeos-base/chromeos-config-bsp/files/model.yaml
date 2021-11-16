@@ -238,7 +238,6 @@ pico-config: &pico_config
   <<: *common_config
   $fw-name: "google,pico"
   $fw-build-name: "pico"
-  $key-id: "DEFAULT"
   identity:
     <<: *identity_sku_config
   audio: *ts3a227e_audio_config
@@ -367,8 +366,10 @@ chromeos:
     - $device-name: "pico"
       skus:
         - $sku-id: 1
+          $key-id: "JACUZZIA"
           config: *pico_config
     - $device-name: "pico6"
       skus:
         - $sku-id: 2
+          $key-id: "DEFAULT"
           config: *pico_config
