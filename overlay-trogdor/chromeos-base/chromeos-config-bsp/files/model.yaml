@@ -224,6 +224,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "orbic"
+        - $whitelabel-tag: "tsm"
       skus:
         - $sku-id: 0
           config:
