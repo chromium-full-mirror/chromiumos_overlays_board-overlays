@@ -17,7 +17,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE=""
+IUSE="strongbad-kernelnext"
 
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-trogdor
@@ -25,7 +25,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	doappid "{ABD68995-5A83-31CA-9AC6-49D8194EEA52}" "CHROMEBOOK"
+	if use strongbad-kernelnext; then
+		doappid "{CAF7DF76-5722-4B6F-9994-D7D222F191D7}" "CHROMEBOOK"
+	else
+		doappid "{ABD68995-5A83-31CA-9AC6-49D8194EEA52}" "CHROMEBOOK"
+	fi
 
 	# Install a rule tagging keyboard as internal
 	udev_dorules "${FILESDIR}/91-hammer-keyboard.rules"
