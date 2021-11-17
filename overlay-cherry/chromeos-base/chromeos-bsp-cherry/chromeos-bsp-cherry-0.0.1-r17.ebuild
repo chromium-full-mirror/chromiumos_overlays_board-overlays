@@ -19,7 +19,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE=""
+IUSE="cherry64"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -33,7 +33,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{D756EC88-0BC0-4875-ABFC-2B67369526AC}" "CHROMEBOOK"
+	if use cherry64; then
+		doappid "{3A965B03-9B6D-4111-BD71-53C44B38849B}" "CHROMEBOOK"
+	else
+		doappid "{D756EC88-0BC0-4875-ABFC-2B67369526AC}" "CHROMEBOOK"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
