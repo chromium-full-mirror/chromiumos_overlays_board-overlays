@@ -147,8 +147,16 @@ chromeos:
       $ufc-autofocus: True
       $ufc-1080p: False
       skus:
-        - $sku-id: 0 # Lte+Wifi
+        - $sku-id: 0 # LTE+Wifi+non-Touch+PS8640
+          $has-touchscreen: False
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
+        - $sku-id: 2 # LTE+Wifi+Touch+PS8640
           $has-touchscreen: True
+          config:
+            <<: [ *clamshell_config, *camera_config_ufc ]
+        - $sku-id: 4 # LTE+Wifi+non-Touch+Ti-sn65
+          $has-touchscreen: False
           config:
             <<: [ *clamshell_config, *camera_config_ufc ]
     - $device-name: "lazor"
