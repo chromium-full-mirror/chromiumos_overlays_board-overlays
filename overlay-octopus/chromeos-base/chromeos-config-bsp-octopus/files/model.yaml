@@ -57,6 +57,10 @@ audio-main-files:
   files-map-card_settings: &files_map_card_settings
     source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/card_settings"
     destination: "{{$cras_root}}/{{cras-config-dir}}/{{$card}}"
+  # Volume Curve of $card
+  files-map-card_settings_extra_suffix: &files_map_card_settings_extra_suffix
+    source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/card_settings_extra_suffix"
+    destination: "{{$cras_root}}/{{cras-config-dir}}/{{$card}}"
   # Volume Curve of $card2
   files-map-card2_settings: &files_map_card2_settings
     source: "{{$device-name}}/audio/{{$cras-source-config-dir}}/card2_settings"
@@ -69,6 +73,10 @@ audio-main-files:
   files-map-card-conf: &files_map_card_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}/{{$card}}.conf"
     destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
+  # ALSA UCM configuration file of $card
+  files-map-card-conf-extra-suffix: &files_map_card_conf_extra_suffix
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}.{{$ucm_extra_suffix}}/{{$card}}.conf"
+    destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
   # ALSA UCM configuration file of $card2
   files-map-card2-conf: &files_map_card2_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}/{{$card2}}.conf"
@@ -76,6 +84,10 @@ audio-main-files:
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card
   files-map-HiFi-conf: &files_map_HiFi_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}/HiFi.conf"
+    destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+  # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card
+  files-map-HiFi-conf-extra-suffix: &files_map_HiFi_conf_extra_suffix
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}.{{$ucm_extra_suffix}}/HiFi{{$kernel-specific-suffix}}.conf"
     destination: "{{$ucm_root}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card2
   files-map-HiFi-card2-conf: &files_map_HiFi_card2_conf
@@ -134,6 +146,18 @@ device-config: &device_config
         - *files_map_dsp_ini
         - *files_map_card_conf
         - *files_map_HiFi_conf
+
+device-config-extra-suffix: &device_config_extra_suffix
+  <<: *unprovisioned_config
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings_extra_suffix
+        - *files_map_dsp_ini
+        - *files_map_alsa_conf
+        - *files_map_card_conf_extra_suffix
+        - *files_map_HiFi_conf_extra_suffix
 
   camera:
     count: "{{$num-mic-locations}}"
@@ -675,12 +699,23 @@ chromeos:
       $num-mic-locations: 1
       $card: "sof-glkrt5682max"
       $ucm_src_root: "apele"
-      $ucm_extra_suffix: "apele"
       skus:
         - $sku-id-val: 49
+          $ucm_extra_suffix: "apele"
           config: *clamshell_config
         - $sku-id-val: 50
+          $ucm_extra_suffix: "apele"
           config: *clamshell_touchscreen_config
+        - $sku-id-val: 51
+          $ucm_extra_suffix: "apele.vs"
+          config:
+            <<: *clamshell_config
+            <<: *device_config_extra_suffix
+        - $sku-id-val: 52
+          $ucm_extra_suffix: "apele.vs"
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *device_config_extra_suffix
     - $device-name: "amptone"
       $fw-name: "Ampton"
       $num-mic-locations: 1
@@ -721,12 +756,23 @@ chromeos:
       $num-mic-locations: 1
       $card: "sof-glkrt5682max"
       $ucm_src_root: "nospike"
-      $ucm_extra_suffix: "nospike"
       skus:
         - $sku-id-val: 33
+          $ucm_extra_suffix: "nospike"
           config: *clamshell_config
         - $sku-id-val: 34
+          $ucm_extra_suffix: "nospike"
           config: *clamshell_config
+        - $sku-id-val: 35
+          $ucm_extra_suffix: "nospike.vs"
+          config:
+            <<: *clamshell_config
+            <<: *device_config_extra_suffix
+        - $sku-id-val: 36
+          $ucm_extra_suffix: "nospike.vs"
+          config:
+            <<: *clamshell_config
+            <<: *device_config_extra_suffix
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
