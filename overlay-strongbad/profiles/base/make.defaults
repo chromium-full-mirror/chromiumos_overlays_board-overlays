@@ -32,6 +32,9 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
+# Include the nvt_ts firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} nvt_ts"
+
 # Enable hammerd for updating base firmware
 USE="${USE} hammerd"
 
