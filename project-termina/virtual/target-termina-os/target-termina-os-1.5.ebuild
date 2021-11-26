@@ -34,6 +34,7 @@ RDEPEND="
 	virtual/linux-sources
 	media-libs/vulkan-loader
 	dev-util/vulkan-tools
+	net-misc/dhcp
 "
 
 DEPEND="
