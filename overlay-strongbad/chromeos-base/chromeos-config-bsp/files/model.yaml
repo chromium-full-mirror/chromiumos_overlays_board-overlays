@@ -119,6 +119,33 @@ wormdingler-button-settings: &wormdingler_button_settings
       region: screen
       side: top
 
+wormdingler-audio-config: &wormdingler_audio_config
+  $cras_root: "/etc/cras"
+  $ucm_root: "/usr/share/alsa/ucm"
+  $cras-source: "{{cras-config-dir}}/audio/cras-config"
+  $cras-dest: "{{$cras_root}}/{{cras-config-dir}}"
+  $ucm-source: "{{cras-config-dir}}/audio/ucm-config"
+  $ucm-dest1: "{{$ucm_root}}/{{$card1}}.{{ucm-suffix}}"
+  $ucm-dest2: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}"
+  main:
+    cras-config-dir: "{{$device-name}}"
+    ucm-suffix: "{{$device-name}}"
+    files:
+      - source: "{{$cras-source}}/{{$card1}}"
+        destination: "{{$cras-dest}}/{{$card1}}"
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+      - source: "{{$ucm-source}}/{{$card1}}/HiFi.conf"
+        destination: "{{$ucm-dest1}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card1}}/{{$card1}}.conf"
+        destination: "{{$ucm-dest1}}/{{$card1}}.{{ucm-suffix}}.conf"
+      - source: "{{$cras-source}}/{{$card2}}"
+        destination: "{{$cras-dest}}/{{$card2}}"
+      - source: "{{$ucm-source}}/{{$card2}}/HiFi.conf"
+        destination: "{{$ucm-dest2}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card2}}/{{$card2}}.conf"
+        destination: "{{$ucm-dest2}}/{{$card2}}.{{ucm-suffix}}.conf"
+
 chromeos:
   devices:
     - $device-name: "coachz"
@@ -172,11 +199,22 @@ chromeos:
 
     - $device-name: "wormdingler"
       $fw-name: "google,wormdingler"
-      $card: "sc7180-rt5682-max98357a-1mic"
+      $card1: "sc7180-rt5682-max98357a-1mic"
+      $card2: "sc7180-rt5682s-max98357a-1mic"
       skus:
-        - $sku-id: 0 # INX Panel
+        - $sku-id: 0 # INX Panel + rt5682i
           config:
             <<: [ *detachable_config, *wormdingler_button_settings ]
-        - $sku-id: 1024 # BOE Panel
+            audio: *wormdingler_audio_config
+        - $sku-id: 1024 # BOE Panel + rt5682i
           config:
             <<: [ *detachable_config, *wormdingler_button_settings ]
+            audio: *wormdingler_audio_config
+        - $sku-id: 1 # INX Panel + rt5682s
+          config:
+            <<: [ *detachable_config, *wormdingler_button_settings ]
+            audio: *wormdingler_audio_config
+        - $sku-id: 1025 # BOE Panel + rt5682s
+          config:
+            <<: [ *detachable_config, *wormdingler_button_settings ]
+            audio: *wormdingler_audio_config
