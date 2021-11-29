@@ -916,6 +916,7 @@ chromeos:
       $internal-backlight-no-als-battery-brightness: |-
         60 221
         57 233
+        63.0
       skus:
         - $sku-id-val: 33
           $stylus-category: "external"
@@ -953,6 +954,7 @@ chromeos:
         59.5 221
         58.5 231
         58   237
+        63.0
       skus:
         - $sku-id-val: 49
           $has-keyboard-backlight: "1"
