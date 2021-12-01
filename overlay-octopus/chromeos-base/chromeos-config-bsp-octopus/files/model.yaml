@@ -143,19 +143,7 @@ audio-two-cards-boardini-setting: &audio_two_cards_boardini_setting
         - *files_map_HiFi_card2_conf
         - *files_map_board_ini
 
-device-config: &device_config
-  <<: *unprovisioned_config
-  audio:
-    main:
-      <<: *audio_main_common
-      files:
-        - *files_map_card_settings
-        - *files_map_dsp_ini
-        - *files_map_alsa_conf
-        - *files_map_card_conf
-        - *files_map_HiFi_conf
-
-device-config-extra-suffix: &device_config_extra_suffix
+audio-setting-extra-suffix: &audio_setting_extra_suffix
   <<: *unprovisioned_config
   audio:
     main:
@@ -167,6 +155,18 @@ device-config-extra-suffix: &device_config_extra_suffix
         - *files_map_card_conf_extra_suffix
         - *files_map_HiFi_conf_extra_suffix
 
+device-config: &device_config
+  <<: *unprovisioned_config
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings
+        - *files_map_dsp_ini
+        - *files_map_alsa_conf
+        - *files_map_card_conf
+        - *files_map_HiFi_conf
+  bluetooth: *bluetooth_default
   camera:
     count: "{{$num-mic-locations}}"
   power:
@@ -718,12 +718,12 @@ chromeos:
           $ucm_extra_suffix: "apele.vs"
           config:
             <<: *clamshell_config
-            <<: *device_config_extra_suffix
+            <<: *audio_setting_extra_suffix
         - $sku-id-val: 52
           $ucm_extra_suffix: "apele.vs"
           config:
             <<: *clamshell_touchscreen_config
-            <<: *device_config_extra_suffix
+            <<: *audio_setting_extra_suffix
     - $device-name: "amptone"
       $fw-name: "Ampton"
       $num-mic-locations: 1
@@ -775,12 +775,12 @@ chromeos:
           $ucm_extra_suffix: "nospike.vs"
           config:
             <<: *clamshell_config
-            <<: *device_config_extra_suffix
+            <<: *audio_setting_extra_suffix
         - $sku-id-val: 36
           $ucm_extra_suffix: "nospike.vs"
           config:
             <<: *clamshell_config
-            <<: *device_config_extra_suffix
+            <<: *audio_setting_extra_suffix
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
