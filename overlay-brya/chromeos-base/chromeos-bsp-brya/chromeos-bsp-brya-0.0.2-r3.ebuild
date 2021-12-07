@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="brya-manatee adlrvp brya-lvm-stateful"
+IUSE="brya-manatee adlrvp brya-lvm-stateful zephyr_poc"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -39,6 +39,8 @@ src_install() {
 		doappid "{CA89482B-8F28-4ED4-B4E0-14C3FB7FCDF3}" "REFERENCE"
 	elif use brya-lvm-stateful; then
 		doappid "{84BBC912-D9F5-4EF2-89B8-7AED7592AB49}" "REFERENCE"
+	elif use zephyr_poc; then
+		doappid "{4E43EBE7-CAE7-4AF7-A2EA-E37B2C3ECE32}" "REFERENCE"
 	else
 		doappid "{DEB6CEFD-4EEE-462F-AC21-52DF1E17B52F}" "REFERENCE"
 	fi
