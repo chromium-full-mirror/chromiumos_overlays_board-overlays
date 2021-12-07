@@ -981,6 +981,7 @@ chromeos:
         - $whitelabel-tag: ""
         - $whitelabel-tag: "ctl"
         - $whitelabel-tag: "tekno"
+        - $whitelabel-tag: "pixart"
       skus:
         - $sku-id-val: 49
           config:
