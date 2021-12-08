@@ -9,6 +9,6 @@ chromeos-base/libbrillo -device-mapper
 media-libs/mesa drm egl llvm shared-glapi gles2 wayland X
 sys-apps/hwids -net -pci udev -usb
 sys-fs/btrfs-progs -convert
-x11-base/xwayland -glx
+x11-base/xwayland glx
 # Using the ANGLE Vulkan backend
 media-libs/vulkan-loader wayland X

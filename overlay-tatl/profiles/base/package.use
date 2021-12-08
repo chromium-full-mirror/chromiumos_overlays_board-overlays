@@ -1,7 +1,7 @@
-# We really only want Intel Vulkan, but to satisfy some build checks we also
-# build the DRI driver, GBM, EGL, and GLES2.  The last few are overridden
-# at package install with the ANGLE/magma equivalents.
-media-libs/mesa magma vulkan video_cards_intel X wayland -gbm egl gles2 -gallium -gles1 -glx -llvm -video_cards_llvmpipe -video_cards_virgl
+# We want: Intel Vulkan and software GLX, but to satisfy some ebuild checks we also
+# build EGL and GLES2.  The last two are overridden at package install with the
+# ANGLE/magma equivalents.
+media-libs/mesa magma vulkan video_cards_intel video_cards_softpipe X wayland egl gles2 kvm_guest gallium glx -classic -gbm -gles1 -llvm -video_cards_llvmpipe -video_cards_virgl
 media-libs/minigbm magma
 sys-apps/hwids -net -pci udev -usb
 # Fails on tael because CMake doesn't cross compile vkcube
