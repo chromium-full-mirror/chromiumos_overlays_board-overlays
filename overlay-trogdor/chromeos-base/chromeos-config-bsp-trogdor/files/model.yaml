@@ -163,3 +163,5 @@ chromeos:
           config: *clamshell_config
         - $sku-id: 2
           config: *clamshell_config
+        - $sku-id: 4
+          config: *clamshell_config
