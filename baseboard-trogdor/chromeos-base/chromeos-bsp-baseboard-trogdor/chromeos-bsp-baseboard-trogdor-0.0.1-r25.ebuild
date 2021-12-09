@@ -46,6 +46,9 @@ src_install() {
 	doins "${FILESDIR}/udev-trigger-codec.conf"
 	udev_dorules "${FILESDIR}/50-media.rules"
 
+	# Loosen iommu strictness for USB and SD/MMC
+	udev_dorules "${FILESDIR}/98-qcom-nonstrict-iommu.rules"
+
 	# udev rules to enable USB wakeup
 	udev_dorules "${FILESDIR}/99-usb-wakeup.rules"
 
