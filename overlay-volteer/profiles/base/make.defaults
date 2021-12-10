@@ -41,9 +41,3 @@ USE="${USE} enable_dsp_hotword"
 
 # This board has a -borealis overlay
 USE="${USE} has-borealis"
-
-# Enable HDRnet.
-USE="${USE} ipu6 camera_feature_hdrnet"
-
-# Enable face detection for HDRnet.
-USE="${USE} camera_feature_face_detection"
