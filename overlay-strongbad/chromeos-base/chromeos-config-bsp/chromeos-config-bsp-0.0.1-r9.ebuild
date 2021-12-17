@@ -6,8 +6,8 @@ EAPI=7
 
 # cros_workon applies only to ebuild and files directory. Use the
 # canonical empty project.
-CROS_WORKON_COMMIT="e8d0ce9c4326f0e57235f1acead1fcbc1ba2d0b9"
-CROS_WORKON_TREE="f365214c3256d3259d78a5f4516923c79940b702"
+CROS_WORKON_COMMIT="3a01873e59ec25ecb10d1b07ff9816e69f3bbfee"
+CROS_WORKON_TREE="8ce164efd78fcb4a68e898d8c92c7579657a49b1"
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
 CROS_WORKON_LOCALNAME="platform/empty-project"
 
