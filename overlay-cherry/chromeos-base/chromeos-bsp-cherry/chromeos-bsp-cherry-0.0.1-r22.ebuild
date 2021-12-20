@@ -25,6 +25,8 @@ IUSE="cherry64"
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-cherry
 	chromeos-base/dfd_collector
+	chromeos-base/sof-binary
+	chromeos-base/sof-topology
 	media-sound/sound_card_init
 "
 DEPEND="
