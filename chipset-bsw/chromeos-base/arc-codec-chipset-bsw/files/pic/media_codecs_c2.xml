@@ -35,8 +35,8 @@
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" min="1" max="1060800" />
             <Limit name="bitrate" range="1-62500000" />
-            <!-- Restrict to 119fps skip 60fps 2-instance simultaneous test. (b/192307376) -->
-            <Limit name="frame-rate" range="1-119" />
+            <!-- Restrict to 59fps skip 60fps test. (b/208806311) -->
+            <Limit name="frame-rate" range="1-59" />
             <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
@@ -65,8 +65,8 @@
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" min="1" max="1060800" />
             <Limit name="bitrate" range="1-62500000" />
-            <!-- Restrict to 119fps skip 60fps 2-instance simultaneous test. (b/192307376) -->
-            <Limit name="frame-rate" range="1-119" />
+            <!-- Restrict to 59fps skip 60fps test. (b/208806311) -->
+            <Limit name="frame-rate" range="1-59" />
             <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
