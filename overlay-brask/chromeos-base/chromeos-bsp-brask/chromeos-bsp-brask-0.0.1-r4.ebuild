@@ -10,7 +10,7 @@ CROS_WORKON_TREE="f365214c3256d3259d78a5f4516923c79940b702"
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
 CROS_WORKON_LOCALNAME="platform/empty-project"
 
-inherit appid cros-workon
+inherit appid cros-unibuild cros-workon
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
@@ -21,13 +21,18 @@ IUSE=""
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
-	chromeos-base/chromeos-bsp-baseboard-brya
+	chromeos-base/chromeos-bsp-baseboard-brya:=
+	chromeos-base/sof-binary:=
+	chromeos-base/sof-topology:=
 "
 DEPEND="
 	${RDEPEND}
-	chromeos-base/chromeos-config
+	chromeos-base/chromeos-config:=
 "
 
 src_install() {
 	doappid "{94144292-1100-4882-AC53-51E04BB29F9E}" "CHROMEBOX"
+
+	# Install audio config files
+	unibuild_install_files audio-files
 }
