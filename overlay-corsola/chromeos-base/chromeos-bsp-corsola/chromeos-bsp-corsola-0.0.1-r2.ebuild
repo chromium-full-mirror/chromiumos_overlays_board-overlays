@@ -30,7 +30,7 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{D756EC88-0BC0-4875-ABFC-2B67369526AC}" "CHROMEBOOK"
+	doappid "{3C9B1B3B-E594-448D-97A7-B3A2568BCC5C}" "CHROMEBOOK"
 
 	# Install audio config files
 	unibuild_install_files audio-files
