@@ -20,12 +20,13 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="zork-arc-r zork-borealis zork-kernelnext zork-minios zork-connectivitynext"
+IUSE="zork-arc-r zork-borealis zork-kernelnext zork-minios zork-connectivitynext modemfwd"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	chromeos-base/rmi4utils:=
 	chromeos-base/touch_updater:=
+	modemfwd? ( chromeos-base/modemfwd-helpers )
 "
 DEPEND="
 	${RDEPEND}
