@@ -3,7 +3,7 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="5ee85e1873fa27cdd2b7181a536f9f04863276e2"
+CROS_WORKON_COMMIT="a93b4ba8aa05a312d36c5364729fd4fdfab49abf"
 CROS_WORKON_TREE="618b59684f703e54456e27deaf16758083ab6bcf"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
@@ -22,7 +22,7 @@ CROS_BOARDS=( guybrush )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for Majolica"
+DESCRIPTION="Chrome OS Model configuration package"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
