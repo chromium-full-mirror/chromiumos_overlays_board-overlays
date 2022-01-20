@@ -17,6 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
+IUSE="skyrim-chausie"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND=""
