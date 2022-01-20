@@ -26,5 +26,9 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{C5536B34-7D24-4CD3-8710-BD674185325B}" "REFERENCE"
+	if use skyrim-chausie; then
+		doappid "{DFBA47A4-988E-441D-A7C0-6FCA69C62878}" "CHROMEBOOK"
+	else
+		doappid "{C5536B34-7D24-4CD3-8710-BD674185325B}" "REFERENCE"
+	fi
 }
