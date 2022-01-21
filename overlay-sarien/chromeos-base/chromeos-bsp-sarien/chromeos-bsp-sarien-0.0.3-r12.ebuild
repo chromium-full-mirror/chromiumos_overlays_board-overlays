@@ -17,10 +17,12 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="sarien-kvm sarien-kernelnext"
+IUSE="sarien-kvm sarien-kernelnext modemfwd"
 
 # Add dependencies on other ebuilds from within this board overlay
-RDEPEND=""
+RDEPEND="
+	modemfwd? ( chromeos-base/modemfwd-helpers )
+"
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
