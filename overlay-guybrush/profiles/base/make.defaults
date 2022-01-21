@@ -67,3 +67,6 @@ USE="${USE} minios"
 
 # Add support for supplicant next for Wifi 6/6E
 USE="${USE} supplicant-next sae_h2e"
+
+# Include the g2touch firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
