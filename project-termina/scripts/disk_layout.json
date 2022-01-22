@@ -25,8 +25,8 @@
       {
         # ROOT-A
         "num": 3,
-        "size": "150 MiB",
-        "fs_size": "145 MiB",
+        "size": "200 MiB",
+        "fs_size": "195 MiB",
         "fs_format": "squashfs"
       },
       {
