@@ -39,4 +39,9 @@ modify_kernel_command_line() {
 
   # Ensure internal devices are also in their own DMA domain,
   echo "intel_iommu=on" >> "$1"
+
+  # Disable PSR2 with selective fetch feature by default.
+  # When enable_psr2_sel_fetch is set to 0,
+  # Temporary WA until b:216826833 is root caused and fixed
+  echo "i915.enable_psr2_sel_fetch=0" >> "$1"
 }
