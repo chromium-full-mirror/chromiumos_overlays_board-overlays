@@ -47,6 +47,3 @@ USE="${USE} -ondevice_text_suggestions"
 
 # Disable Floss Bluetooth for boards with 2GB rootfs.
 USE="${USE} -floss"
-
-# Use zstd to minify ARC images. (go/arc-zstd)
-USE="${USE} arc_squashfs_zstd"
