@@ -3,11 +3,11 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="99c24d4b64309f4611aa75463acd1441c483ac03"
-CROS_WORKON_TREE="7cb49df103317df3a6df7918111b3ab056d6cfa4"
+CROS_WORKON_COMMIT="73ce06185cee0a013780d75f7d78e3529adb728d"
+CROS_WORKON_TREE="ff3e93b0b65a8af7233f1f43b08bc623ecccb94c"
 CROS_WORKON_PROJECT="chromiumos/third_party/kernel"
-CROS_WORKON_LOCALNAME="kernel/v5.10"
-CROS_WORKON_EGIT_BRANCH="chromeos-5.10"
+CROS_WORKON_LOCALNAME="kernel/v5.10-manatee"
+CROS_WORKON_EGIT_BRANCH="chromeos-5.10-manatee"
 
 # This must be inherited *after* EGIT/CROS_WORKON variables defined
 inherit cros-workon cros-kernel2

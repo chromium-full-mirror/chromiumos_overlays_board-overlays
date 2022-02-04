@@ -1,21 +1,24 @@
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2022 The Chromium OS Authors. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="d467a73156ee6ccc3d378b9cc2a618ca7b1ea014"
-CROS_WORKON_TREE="88391969261e8d4bd63b9161568e4e342edb98a7"
+CROS_WORKON_COMMIT="73ce06185cee0a013780d75f7d78e3529adb728d"
+CROS_WORKON_TREE="ff3e93b0b65a8af7233f1f43b08bc623ecccb94c"
 CROS_WORKON_PROJECT="chromiumos/third_party/kernel"
-CROS_WORKON_LOCALNAME="kernel/v5.10"
-CROS_WORKON_EGIT_BRANCH="chromeos-5.10"
+CROS_WORKON_LOCALNAME="kernel/v5.10-manatee"
+CROS_WORKON_EGIT_BRANCH="chromeos-5.10-manatee"
 
 # This must be inherited *after* EGIT/CROS_WORKON variables defined
 inherit cros-workon cros-kernel2
 
 HOMEPAGE="https://www.chromium.org/chromium-os/chromiumos-design-docs/chromium-os-kernel"
-DESCRIPTION="Chrome OS Linux Kernel 5.10"
+DESCRIPTION="Chrome OS Linux Kernel 5.10 manatee guest"
 KEYWORDS="*"
 
+# This is Manatee specific 5.10 kernel temporarily branched in order to allow
+# development for teamfood. We will undiverge and remove this soon!
+#
 # Change the following (commented out) number to the next prime number
 # when you change "cros-kernel2.eclass" to work around http://crbug.com/220902
 #
