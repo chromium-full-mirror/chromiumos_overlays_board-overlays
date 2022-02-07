@@ -1128,6 +1128,7 @@ chromeos:
         - $whitelabel-tag: "axioo"
         - $whitelabel-tag: "tekno"
         - $whitelabel-tag: "olpc"
+        - $whitelabel-tag: "evercossdikti"
       skus:
         - $sku-id-val: 1
           config:
