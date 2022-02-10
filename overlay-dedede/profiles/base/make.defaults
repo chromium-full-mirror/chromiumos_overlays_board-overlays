@@ -46,5 +46,8 @@ INPUT_DEVICES="${INPUT_DEVICES} zinitix"
 # Include the wacom firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} wacom"
 
+# Include the himax firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} himax"
+
 # Enable slow boot notification during firmware updates
 USE="${USE} enable_slow_boot_notify"
