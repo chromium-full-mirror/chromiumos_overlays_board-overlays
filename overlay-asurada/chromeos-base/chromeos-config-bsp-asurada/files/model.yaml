@@ -113,9 +113,10 @@ spherion-config: &spherion_config
   $fw-build-name: "spherion"
   $key-id: "DEFAULT"
   $card: "mt8192_mt6359_rt1015p_rt5682"
+  $card2: "mt8192_mt6359_rt1015p_rt5682s"
   identity:
     <<: *identity_sku_config
-  audio: *audio_config
+  audio: *audio_config_2cards
 
 spherion-config-sar-mtk: &spherion_config_sar_mtk
   <<: *spherion_config
