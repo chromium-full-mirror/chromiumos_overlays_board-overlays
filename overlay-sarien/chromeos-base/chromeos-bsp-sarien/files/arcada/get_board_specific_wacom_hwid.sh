@@ -46,6 +46,9 @@ main() {
     "ae0d-1382") # ae0d(INO)
       echo "2d1f_4946"  # wacom hardware_id = VID_PID
     ;;
+    "e509-08dd") # e509(BOE)
+      echo "2d1f_4a01"  # wacom hardware_id = VID_PID
+    ;;
     *)
       ## Unknown hardware_id, don't ouput anything.
   esac
