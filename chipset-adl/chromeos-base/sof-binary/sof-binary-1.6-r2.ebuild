@@ -15,6 +15,7 @@ RDEPEND="
 	media-libs/adl-max98390-dsm-param-brya
 	media-libs/adl-dsm-param
 	media-libs/adl-hotword-support
+	media-libs/adl-bandsplit-eq-param
 "
 DEPEND="${RDEPEND}"
 
