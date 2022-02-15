@@ -35,6 +35,7 @@ RDEPEND="
 	media-libs/vulkan-loader
 	dev-util/vulkan-tools
 	net-misc/dhcp
+	media-libs/alsa-lib
 "
 
 DEPEND="

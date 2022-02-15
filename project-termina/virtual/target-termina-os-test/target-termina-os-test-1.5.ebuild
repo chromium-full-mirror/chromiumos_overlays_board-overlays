@@ -18,4 +18,5 @@ RDEPEND="
 	sys-apps/net-tools
 	sys-apps/pciutils
 	sys-apps/usbutils
+	media-sound/alsa-utils
 "
