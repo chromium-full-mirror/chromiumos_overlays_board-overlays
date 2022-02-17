@@ -1,0 +1,25 @@
+amp_calibrations:
+  boot_time_calibration_enabled: true
+  controls:
+    -
+      firmware_file: "/lib/firmware/cs35l41-dsp1-spk-prot.wmfw",
+      tuning_file: "/lib/firmware/cs35l41-dsp1-spk-prot.bin",
+      dsp_booted: "Left DSP Booted",
+      preload_switch: "Left DSP1 Preload Switch",
+      firmware_type: "Left DSP1 Firmware",
+      pcm_source: "Left PCM Source",
+      cal_r: "Left DSP1 Protection cd CAL_R",
+      cal_status: "Left DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "Left DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "Left DSP1 Protection cd CAL_SET_STATUS",
+    -
+      firmware_file: "/lib/firmware/cs35l41-dsp1-spk-prot.wmfw",
+      tuning_file: "/lib/firmware/cs35l41-dsp1-spk-prot.bin",
+      dsp_booted: "Right DSP Booted",
+      preload_switch: "Right DSP1 Preload Switch",
+      firmware_type: "Right DSP1 Firmware",
+      pcm_source: "Right PCM Source",
+      cal_r: "Right DSP1 Protection cd CAL_R",
+      cal_status: "Right DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "Right DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "Right DSP1 Protection cd CAL_SET_STATUS",
