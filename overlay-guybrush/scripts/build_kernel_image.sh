@@ -16,4 +16,7 @@ modify_kernel_command_line() {
 
 	# See b/189856884 - enable PSR
 	echo "amdgpu.dcfeaturemask=0x8" >> "$1"
+
+	# See b/218950907
+	echo "rtc-cmos.use_acpi_alarm=1" >> "$1"
 }
