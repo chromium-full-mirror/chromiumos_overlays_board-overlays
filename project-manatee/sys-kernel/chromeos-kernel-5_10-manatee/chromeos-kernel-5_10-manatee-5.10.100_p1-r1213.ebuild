@@ -22,9 +22,7 @@ DEPEND="
 RDEPEND=""
 
 src_configure() {
-	local cfgarch="$(get_build_arch)"
-	CHROMEOS_KERNEL_CONFIG="${FILESDIR}/defconfig.${cfgarch}" \
-		cros-kernel2_src_configure
+	cros-kernel2_src_configure
 	# Set the correct ROOT path in kernel config.
 	sed -i "/=/s|%ROOT%|${ROOT}|" "$(get_build_cfg)"
 }
