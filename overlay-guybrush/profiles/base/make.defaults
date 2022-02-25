@@ -70,3 +70,6 @@ USE="${USE} supplicant-next sae_h2e"
 
 # Include the g2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+
+# Disable Cr50 deep sleep during suspend
+USE="${USE} cr50_disable_sleep_in_suspend"
