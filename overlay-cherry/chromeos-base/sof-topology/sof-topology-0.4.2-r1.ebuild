@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="MT8195 SOF topology"
-SRC_URI="gs://chromeos-localmirror/distfiles/sof-topology-mt8195-${PV}.tar.gz"
+SRC_URI="gs://chromeos-localmirror/distfiles/sof-topology-cherry-${PV}.tar.gz"
 
 LICENSE="SOF"
 SLOT="0"
@@ -15,7 +15,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S=${WORKDIR}/${PN}-mt8195-${PV}
+S=${WORKDIR}/${PN}-cherry-${PV}
 
 src_install() {
 	insinto /lib/firmware/mediatek/sof-tplg
