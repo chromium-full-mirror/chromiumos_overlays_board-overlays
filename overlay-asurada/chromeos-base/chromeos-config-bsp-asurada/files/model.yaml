@@ -4,7 +4,7 @@
 # found in the LICENSE file.
 
 audio_config: &audio_config
-  main:
+  main: &audio_config_main
     cras-config-dir: "{{$device-name}}"
     ucm-suffix: "{{$device-name}}"
     files:
@@ -16,6 +16,28 @@ audio_config: &audio_config
         destination: "{{$ucm-dest}}/HiFi.conf"
       - source: "{{$ucm-source}}/{{$card}}.conf"
         destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}.conf"
+
+audio_config_2cards: &audio_config_2cards
+  main:
+    <<: *audio_config_main
+
+    files:
+      - source: "{{$cras-source}}/dsp.ini"
+        destination: "{{$cras-dest}}/dsp.ini"
+
+      - source: "{{$cras-source}}/{{$card}}"
+        destination: "{{$cras-dest}}/{{$card}}"
+      - source: "{{$ucm-source}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+        destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
+        destination: "{{$ucm-dest}}/{{$card}}.{{ucm-suffix}}/{{$card}}.{{ucm-suffix}}.conf"
+
+      - source: "{{$cras-source}}/{{$card2}}"
+        destination: "{{$cras-dest}}/{{$card2}}"
+      - source: "{{$ucm-source}}/{{$card2}}.{{ucm-suffix}}/HiFi.conf"
+        destination: "{{$ucm-dest}}/{{$card2}}.{{ucm-suffix}}/HiFi.conf"
+      - source: "{{$ucm-source}}/{{$card2}}.{{ucm-suffix}}/{{$card2}}.{{ucm-suffix}}.conf"
+        destination: "{{$ucm-dest}}/{{$card2}}.{{ucm-suffix}}/{{$card2}}.{{ucm-suffix}}.conf"
 
 common_config: &common_config
   $cras_root: "/etc/cras"
@@ -62,9 +84,11 @@ hayato-config: &hayato_config
   $fw-build-name: "hayato"
   $key-id: "DEFAULT"
   $card: "mt8192_mt6359_rt1015p_rt5682"
+  $card2: "mt8192_mt6359_rt1015p_rt5682s"
+  $ucm-dest: "{{$ucm_root}}"
   identity:
     <<: *identity
-  audio: *audio_config
+  audio: *audio_config_2cards
   wifi:
     non-tablet-mode-power-table-rtw:
       limit-2g: 108
