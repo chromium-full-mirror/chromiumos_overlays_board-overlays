@@ -14,7 +14,7 @@ dependencies or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="atlas-kvm atlas-connectivitynext atlas-kernelnext has_private_audio_topology kernel-5_4"
+IUSE="atlas-kvm atlas-connectivitynext atlas-kernelnext has_private_audio_topology kernel-4_4"
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
@@ -42,7 +42,7 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	# Install audio config files
-	if use kernel-5_4; then
+	if ! use kernel-4_4; then
 		local audio_config_dir="${FILESDIR}/kernelnext-audio-config"
 	else
 		local audio_config_dir="${FILESDIR}/audio-config"
