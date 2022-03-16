@@ -20,5 +20,6 @@ S=${WORKDIR}/${PN}-cherry-${PV}
 src_install() {
 	insinto /lib/firmware/mediatek/sof-tplg
 	doins sof-mt8195-mt6359-rt1019-rt5682.tplg
+	doins sof-mt8195-mt6359-max98390-rt5682.tplg
 	dodoc README
 }
