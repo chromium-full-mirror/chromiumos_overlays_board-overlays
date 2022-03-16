@@ -16,6 +16,7 @@ RDEPEND="
 	media-libs/adl-dsm-param
 	media-libs/adl-hotword-support
 	media-libs/adl-bandsplit-eq-param
+	media-libs/adl-aec-param
 "
 DEPEND="${RDEPEND}"
 
