@@ -50,7 +50,7 @@ USE="${USE} camera_feature_face_detection"
 USE="${USE} camera_feature_auto_framing"
 
 # Enable hpsd, go/cros-hps.
-USE="${USE} hps hpsd-roflash"
+USE="${USE} hps"
 
 # Enable LVM stateful partition.
 USE="${USE} lvm_stateful_partition thin -device-mapper-only"
