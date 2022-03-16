@@ -142,6 +142,20 @@ p-sensor-20mm-lazor-config: &p_sensor_20mm_lazor_config
       thresh-falling-hysteresis: "0"
       thresh-rising-hysteresis: "0"
 
+p-sensor-pazquel-config: &p_sensor_pazquel_config
+  $set-cellular-transmit-power-for-proximity: "1"
+  proximity-sensor:
+    lte:
+      channel: "0"
+      hardwaregain: "4"
+      sampling-frequency: "10"
+      thresh-rising: "72"
+      thresh-falling: "72"
+      thresh-falling-period: "0"
+      thresh-rising-period: "0"
+      thresh-falling-hysteresis: "0"
+      thresh-rising-hysteresis: "0"
+
 chromeos:
   devices:
     - $device-name: "trogdor"
@@ -299,14 +313,26 @@ chromeos:
         - $whitelabel-tag: "tsm"
       skus:
         - $sku-id: 0
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
           config:
-            <<: [ *pazquel_config, *camera_config_ufc ]
+            <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
         - $sku-id: 1
           config:
             <<: [ *pazquel_config, *camera_config_ufc ]
         - $sku-id: 2
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
           config:
-            <<: [ *pazquel_config, *camera_config_ufc ]
+            <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
         - $sku-id: 4
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
           config:
-            <<: [ *pazquel_config, *camera_config_ufc ]
+            <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
