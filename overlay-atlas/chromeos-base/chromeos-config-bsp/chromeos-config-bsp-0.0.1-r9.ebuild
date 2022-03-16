@@ -14,9 +14,7 @@ CROS_WORKON_LOCALNAME="platform/empty-project"
 inherit cros-workon cros-unibuild
 
 DESCRIPTION="ChromeOS model configuration"
-HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform2/+/master/chromeos-config/README.md"
-
-RDEPEND="chromeos-base/chromeos-config-bsp-baseboard"
+HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md"
 
 LICENSE="BSD-Google"
 SLOT="0"
