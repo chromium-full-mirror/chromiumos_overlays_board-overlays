@@ -21,3 +21,6 @@ USE="${USE} physical_presence_recovery"
 
 # Enable chromeos-config.
 USE="${USE} unibuild has_chromeos_config_bsp"
+
+# Report device requisition to the ChromeOS update server
+USE="${USE} report_requisition"
