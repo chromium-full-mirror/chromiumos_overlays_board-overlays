@@ -27,3 +27,6 @@ USE="${USE} has-kernelnext"
 
 # This is a 4.x -> 5.x uprev
 USE="${USE} uprev-4-to-5"
+
+# Report device requisition to the ChromeOS update server
+USE="${USE} report_requisition"
