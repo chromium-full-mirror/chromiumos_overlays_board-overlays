@@ -13,7 +13,6 @@ IUSE=""
 # These packages are for servo support:
 RDEPEND="
 	chromeos-base/chromeos-cr50-dev
-	chromeos-base/chromeos-ec
 	chromeos-base/ec-devutils
 	>=chromeos-base/ec-utils-0.0.2
 	chromeos-base/vboot_reference
