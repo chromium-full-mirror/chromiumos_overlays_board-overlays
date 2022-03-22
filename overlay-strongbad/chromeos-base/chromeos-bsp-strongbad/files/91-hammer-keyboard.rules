@@ -18,7 +18,7 @@ SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", \
   ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="5057", \
   ENV{POWERD_ROLE}="internal_keyboard"
 SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", \
-  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="505B", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="505b", \
   ENV{POWERD_ROLE}="internal_keyboard"
 
 SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
@@ -33,6 +33,6 @@ SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
 SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
   ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="5057", \
   ENV{POWERD_ROLE}="internal_touchpad"
-SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", \
-  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="505B", \
-  ENV{POWERD_ROLE}="internal_keyboard"
+SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="505b", \
+  ENV{POWERD_ROLE}="internal_touchpad"
