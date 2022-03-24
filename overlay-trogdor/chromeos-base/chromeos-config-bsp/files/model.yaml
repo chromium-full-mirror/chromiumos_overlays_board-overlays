@@ -272,3 +272,6 @@ chromeos:
             LOW 2
           config:
             <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
+        - $sku-id: 5
+          config:
+            <<: [ *pazquel_config, *camera_config_ufc ]
