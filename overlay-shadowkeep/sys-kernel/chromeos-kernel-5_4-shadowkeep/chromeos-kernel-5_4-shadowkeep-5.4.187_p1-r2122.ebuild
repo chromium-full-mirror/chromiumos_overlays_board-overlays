@@ -5,8 +5,8 @@ EAPI=7
 
 # TODO(b/209014481): Enable once this branch supports `.../kernelconfig
 # checkconfig`.
-CROS_WORKON_COMMIT="578aba4ecb7531ee5871e10709072d8fb149f20b"
-CROS_WORKON_TREE="4dd21dc78f01fdb8cf167a785e6b4cfccb8107ba"
+CROS_WORKON_COMMIT="b7e632dd5b03151425c893d8ed1ff10f3e4fc5d2"
+CROS_WORKON_TREE="cd67e748be84e4fc82da28398f71b2534bded5eb"
 RESTRICT="test"
 
 CROS_WORKON_PROJECT="chromiumos/third_party/kernel"
