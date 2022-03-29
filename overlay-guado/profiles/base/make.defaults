@@ -33,9 +33,6 @@ USE="${USE} background_blur"
 # stateful VideoDecoder.
 USE="${USE} disable_cros_video_decoder"
 
-# Enable V4L2 codec because guado can have kepler.
-USE="${USE} v4l2_codec"
-
 # Use recovery button to confirm physical presence
 USE="${USE} physical_presence_recovery"
 
