@@ -42,7 +42,7 @@ src_install() {
 	elif use zephyr_poc; then
 		doappid "{4E43EBE7-CAE7-4AF7-A2EA-E37B2C3ECE32}" "REFERENCE"
 	else
-		doappid "{DEB6CEFD-4EEE-462F-AC21-52DF1E17B52F}" "REFERENCE"
+		doappid "{DEB6CEFD-4EEE-462F-AC21-52DF1E17B52F}" "CHROMEBOOK"
 	fi
 
 	# Install audio config files
