@@ -17,6 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
+IUSE="adlnrvp"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -29,8 +30,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
-
+	if use adlnrvp; then
+		doappid "{D60D81DB-751D-4EB6-AF86-8C073A6BBB91}" "REFERENCE"
+	else
+		doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
+	fi
 	# Install audio config files
 	unibuild_install_files audio-files
 }
