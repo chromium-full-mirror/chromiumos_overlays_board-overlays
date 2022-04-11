@@ -12,7 +12,9 @@ KEYWORDS="*"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	media-libs/mt8195-dsm-param
+"
 BDEPEND=""
 
 S=${WORKDIR}/${PN}-mt8195-${PV}
