@@ -126,7 +126,7 @@ pazquel-config: &pazquel_config
   <<: *clamshell_config
   identity:
     <<: *identity_common
-    whitelabel-tag: "{{$whitelabel-tag}}"
+    custom-label-tag: "{{$custom-label-tag}}"
 
 p-sensor-20mm-lazor-config: &p_sensor_20mm_lazor_config
   $set-cellular-transmit-power-for-proximity: "1"
@@ -308,9 +308,9 @@ chromeos:
       $ufc-autofocus: True
       $ufc-1080p: False
       products:
-        - $whitelabel-tag: ""
-        - $whitelabel-tag: "orbic"
-        - $whitelabel-tag: "tsm"
+        - $custom-label-tag: ""
+        - $custom-label-tag: "orbic"
+        - $custom-label-tag: "tsm"
       skus:
         - $sku-id: 0
           $use-modemmanager-for-dynamic-sar: "1"
