@@ -13,7 +13,7 @@ KEYWORDS="-* x86 amd64"
 S=${WORKDIR}/${PN}-brya-${PV}
 
 src_install() {
-	insinto /opt/google/rtc_processing/
+	insinto /opt/google/rtc_audio_processing/
 	doins AEC_On.bin
 	doins AEC_Off.bin
 }
