@@ -149,6 +149,20 @@ wormdingler-audio-config: &wormdingler_audio_config
       - source: "{{$ucm-source}}/{{$card2}}/{{$card2}}.conf"
         destination: "{{$ucm-dest2}}/{{$card2}}.{{ucm-suffix}}.conf"
 
+p-sensor-quackingstick-config: &p_sensor_quackingstick_config
+  $set-cellular-transmit-power-for-proximity: "1"
+  proximity-sensor:
+    lte:
+      channel: "1"
+      hardwaregain: "2"
+      sampling-frequency: "33.333333"
+      thresh-rising: "512"
+      thresh-falling: "512"
+      thresh-falling-period: "0"
+      thresh-rising-period: "0"
+      thresh-falling-hysteresis: "0"
+      thresh-rising-hysteresis: "0"
+
 chromeos:
   devices:
     - $device-name: "coachz"
@@ -220,7 +234,12 @@ chromeos:
       $card: "sc7180-rt5682-max98357a-1mic"
       skus:
         - $sku-id: 1536 # AUO Panel + LTE
-          config: *detachable_config
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
+          config:
+            <<: [*detachable_config, *p_sensor_quackingstick_config ]
         - $sku-id: 1537 # AUO Panel + Wifi only
           config: *detachable_config
 
