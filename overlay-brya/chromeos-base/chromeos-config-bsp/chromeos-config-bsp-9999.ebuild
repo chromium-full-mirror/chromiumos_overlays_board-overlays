@@ -15,6 +15,7 @@ PROJECTS=(
 	"felwinter"
 	"gimble"
 	"kano"
+	"mithrax"
 	"primus"
 	"redrix"
 	"taeko"
