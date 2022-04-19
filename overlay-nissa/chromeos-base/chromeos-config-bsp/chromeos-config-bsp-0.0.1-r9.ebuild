@@ -3,15 +3,16 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="037c0f5bf0200b986bd243fa0909a5b93840c9cb"
-CROS_WORKON_TREE=("a7b25d1992726c637356cb268332f4ff535a25db" "d7fdb855feb03043aa6f741756f9308d26929a7e" "db992bbfa0c0c3d0ba2ab1c94e240c6d261fcd04")
+CROS_WORKON_COMMIT="b6effcd16b216de91fc6e586e7ed1cf44fb81c28"
+CROS_WORKON_TREE=("db992bbfa0c0c3d0ba2ab1c94e240c6d261fcd04" "ff7d3ab9b409159ddfcee7c2d502b03c7e3037f2" "d7fdb855feb03043aa6f741756f9308d26929a7e" "a7b25d1992726c637356cb268332f4ff535a25db")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"nivviks"
-	"nereid"
 	"adlnrvp"
+	"craask"
+	"nereid"
+	"nivviks"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
