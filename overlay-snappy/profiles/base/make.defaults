@@ -40,8 +40,5 @@ USE="${USE} uprev-4-to-5"
 # Kernel uprev 4.4 to 5.10, remove after chipset-apl uprev
 USE="${USE} -kernel-4_4 kernel-5_10"
 
-# Use zstd to minify ARC images. (go/arc-zstd)
-USE="${USE} arc_squashfs_zstd"
-
 # Enable chromeos-config.
 USE="${USE} unibuild has_chromeos_config_bsp"
