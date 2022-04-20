@@ -18,7 +18,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE=""
+IUSE="corsola64"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -30,7 +30,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{3C9B1B3B-E594-448D-97A7-B3A2568BCC5C}" "CHROMEBOOK"
+	if use corsola64; then
+		doappid "{C1F48641-91F3-4EBE-9E17-36E4E016706E}" "CHROMEBOOK"
+	else
+		doappid "{3C9B1B3B-E594-448D-97A7-B3A2568BCC5C}" "CHROMEBOOK"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
