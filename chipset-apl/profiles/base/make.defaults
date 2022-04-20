@@ -16,7 +16,10 @@ USE="${USE} march_silvermont"
 
 LINUX_FIRMWARE="adsp_apl i915_bxt"
 
-USE="${USE} kernel-4_4"
+USE="${USE} kernel-5_10"
+
+# To prevent cryptohome incompatibility problem while transitioning to 5.10
+USE="${USE} uprev-4-to-5"
 
 # Disable ACPI AC device and use USB PD power supply driver
 USE="${USE} -acpi_ac"
