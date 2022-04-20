@@ -39,4 +39,5 @@ USE="${USE} legacy_firmware_ui"
 # Enable Intel driver
 USE="${USE} -video_cards_iHD video_cards_i965"
 
-# TODO(b/201007427): Enable arc_squashfs_zstd after kernel uprev (crbug/1228976).
+# Use zstd to minify ARC images. (go/arc-zstd)
+USE="${USE} arc_squashfs_zstd"
