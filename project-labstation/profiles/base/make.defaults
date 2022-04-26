@@ -3,4 +3,4 @@
 
 # Initial value just for style purposes.
 USE=""
-USE="${USE} cr50_utils updater_utils"
+USE="${USE} cr50_utils updater_utils -mist -scanner"
