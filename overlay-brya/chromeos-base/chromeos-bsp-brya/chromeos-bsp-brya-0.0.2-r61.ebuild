@@ -59,4 +59,19 @@ src_install() {
 	# Install Upstart script to fix incorrect CBI values
 	insinto /etc/init
 	doins "${FILESDIR}/brya-cbi-override.conf"
+
+	# This is a hack till b/230140835 is resolved
+	insinto /etc/cras/redrix/
+	doins "${FILESDIR}/redrix/audio/cras-config/apm.ini"
+	insinto /etc/cras/redrix4es/
+	doins "${FILESDIR}/redrix/audio/cras-config/apm.ini"
+	insinto /etc/cras/anahera/
+	doins "${FILESDIR}/anahera/audio/cras-config/apm.ini"
+	insinto /etc/cras/anahera4es/
+	doins "${FILESDIR}/anahera/audio/cras-config/apm.ini"
+	insinto /etc/cras/gimble/
+	doins "${FILESDIR}/gimble/audio/cras-config/apm.ini"
+	insinto /etc/cras/gimble4es/
+	doins "${FILESDIR}/gimble/audio/cras-config/apm.ini"
+
 }
