@@ -3,14 +3,15 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="c05b6788a7db684c3c58d714cac65716595b023e"
-CROS_WORKON_TREE=("6d25bcb8ab99899248b4a0fa7ed3b2ddbd9963be" "58a48bc415484c557e75806506c5a631e2046bad")
+CROS_WORKON_COMMIT="ddbeda0903efa7a9a0bf23522a6a4a9d7f66ffbd"
+CROS_WORKON_TREE=("6d25bcb8ab99899248b4a0fa7ed3b2ddbd9963be" "58a48bc415484c557e75806506c5a631e2046bad" "42f32c6a69d41cf02dd92eee3704688680efb9aa")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
 	"kingler"
 	"krabby"
+	"steelix"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
