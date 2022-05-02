@@ -74,4 +74,11 @@ src_install() {
 	insinto /etc/cras/gimble4es/
 	doins "${FILESDIR}/gimble/audio/cras-config/apm.ini"
 
+	# Unconditionally enable hibernate in the brya-hibernate builder,
+	# and reduce the hibernate-after-x time to get more hiberate action
+	# while dogfooding.
+	if use brya-hibernate; then
+		insinto "/usr/share/power_manager/board_specific"
+		doins "${FILESDIR}"/hibernate-powerd-prefs/*
+	fi
 }
