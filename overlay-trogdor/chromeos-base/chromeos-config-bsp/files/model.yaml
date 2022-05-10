@@ -57,6 +57,8 @@ base-config: &base_config
     platform-name: "Trogdor"
     device-tree-compatible-match: "{{$fw-name}}"
     sku-id: "{{$sku-id}}"
+  ui:
+    help-content-id: "{{$help-content-id}}"
   firmware: &firmware_common
     build-targets: &firmware_build_targets_common
       bmpblk: "trogdor"
@@ -162,6 +164,7 @@ chromeos:
       $fw-name: "google,trogdor"
       $coreboot-build-name: "trogdor"
       $ec-build-name: "trogdor"
+      $help-content-id: "TROGDOR"
       $card: "sc7180-rt5682-max98357a-1mic"
       $ufc-interface: "usb"
       $ufc-autofocus: True
@@ -177,6 +180,7 @@ chromeos:
       $fw-name: "google,kingoftown"
       $coreboot-build-name: "kingoftown"
       $ec-build-name: "kingoftown"
+      $help-content-id: "KINGOFTOWN"
       $card: "sc7180-rt5682s-max98357a-1mic"
       $ufc-interface: "usb"
       $ufc-autofocus: True
@@ -198,6 +202,7 @@ chromeos:
       $fw-name: "google,lazor"
       $coreboot-build-name: "lazor"
       $ec-build-name: "lazor"
+      $help-content-id: "LAZOR"
       $internal-backlight-no-als-battery-brightness: "43"
       $card: "sc7180-rt5682-max98357a-1mic"
       $ufc-interface: "usb"
@@ -241,6 +246,7 @@ chromeos:
       $fw-name: "google,lazor"
       $coreboot-build-name: "lazor"
       $ec-build-name: "lazor"
+      $help-content-id: "LIMOZEEN"
       $card: "sc7180-rt5682-max98357a-1mic"
       $ufc-interface: "usb"
       $ufc-autofocus: True
@@ -272,6 +278,7 @@ chromeos:
       $fw-name: "google,marzipan"
       $coreboot-build-name: "marzipan"
       $ec-build-name: "marzipan"
+      $help-content-id: "MARZIPAN"
       $card: "sc7180-adau7002-max98357a"
       $ufc-interface: "usb"
       $ufc-autofocus: True
@@ -285,6 +292,7 @@ chromeos:
       $fw-name: "google,pompom"
       $coreboot-build-name: "pompom"
       $ec-build-name: "pompom"
+      $help-content-id: "POMPOM"
       $ufc-interface: "usb"
       $ufc-autofocus: True
       $ufc-1080p: False
@@ -309,8 +317,11 @@ chromeos:
       $ufc-1080p: False
       products:
         - $custom-label-tag: ""
+          $help-content-id: "PAZQUEL"
         - $custom-label-tag: "orbic"
+          $help-content-id: "PAZQUEL-ORBIC"
         - $custom-label-tag: "tsm"
+          $help-content-id: "PAZQUEL-TSM"
       skus:
         - $sku-id: 0
           $use-modemmanager-for-dynamic-sar: "1"
