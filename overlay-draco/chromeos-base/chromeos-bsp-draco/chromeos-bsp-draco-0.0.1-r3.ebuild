@@ -21,7 +21,9 @@ IUSE=""
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
-	chromeos-base/chromeos-bsp-baseboard-brya
+	chromeos-base/chromeos-bsp-baseboard-brya:=
+	chromeos-base/sof-binary:=
+	chromeos-base/sof-topology:=
 "
 DEPEND="
 	${RDEPEND}
