@@ -37,8 +37,5 @@ USE="${USE} has-kernelnext"
 # To prevent cryptohome incompatibility problem while transitioning to 5.4
 USE="${USE} uprev-4-to-5"
 
-# Kernel uprev 4.4 to 5.10, remove after chipset-apl uprev
-USE="${USE} -kernel-4_4 kernel-5_10"
-
 # Enable chromeos-config.
 USE="${USE} unibuild has_chromeos_config_bsp"
