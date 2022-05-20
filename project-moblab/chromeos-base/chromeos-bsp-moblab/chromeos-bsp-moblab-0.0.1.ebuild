@@ -12,7 +12,6 @@ SLOT="0"
 KEYWORDS="*"
 
 RDEPEND="
-	app-emulation/docker
 	net-firewall/iptables
 "
 
