@@ -16,6 +16,7 @@ PROJECTS=(
 	"gimble"
 	"kano"
 	"mithrax"
+	"osiris"
 	"primus"
 	"redrix"
 	"taeko"
