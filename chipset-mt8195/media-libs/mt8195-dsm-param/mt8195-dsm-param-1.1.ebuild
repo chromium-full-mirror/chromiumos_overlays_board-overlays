@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="MT8195 tuning DSM Param"
 SRC_URI="
-	gs://chromeos-localmirror/distfiles/dsm-param-dojo-1.0.tar.bz2
+	gs://chromeos-localmirror/distfiles/dsm-param-dojo-${PV}.tar.bz2
 "
 
 LICENSE="LICENSE.dsm"
