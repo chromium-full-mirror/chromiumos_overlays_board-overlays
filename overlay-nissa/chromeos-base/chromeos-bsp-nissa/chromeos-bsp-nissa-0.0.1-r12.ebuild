@@ -23,6 +23,7 @@ IUSE="adlnrvp bootimage zephyr_ec"
 RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	chromeos-base/touch_updater:=
 "
 DEPEND="
 	${RDEPEND}
