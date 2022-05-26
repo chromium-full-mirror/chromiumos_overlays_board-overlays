@@ -15,11 +15,6 @@ RDEPEND="
 	net-firewall/iptables
 "
 
-# Chromium OS Autotest Server and Devserver Deps.
-RDEPEND="${RDEPEND}
-	sys-apps/moblab
-"
-
 DEPEND=""
 
 S=${WORKDIR}
