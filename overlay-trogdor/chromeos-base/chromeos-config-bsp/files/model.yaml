@@ -149,7 +149,7 @@ p-sensor-pazquel-config: &p_sensor_pazquel_config
   proximity-sensor:
     lte:
       channel: "0"
-      hardwaregain: "8"
+      hardwaregain: "2"
       sampling-frequency: "10"
       thresh-rising: "72"
       thresh-falling: "72"
