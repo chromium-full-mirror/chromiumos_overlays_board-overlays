@@ -3,13 +3,16 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="5e794aa569001ad149cee2bf4695cde371f5980d"
-CROS_WORKON_TREE="654261d3fefa775bf26694a991acb83ddc588c4c"
+CROS_WORKON_COMMIT="37d0a604c891f9f6e663f6c45482cb2512806133"
+CROS_WORKON_TREE=("654261d3fefa775bf26694a991acb83ddc588c4c" "91e86a943d1fdbebe5fff865be38d201c4f6f40a" "cd08bb6432624c870d808c70d512433c7b23aa7e" "4e1dd0b4e72a0d6d34d4bf210c62237aae25b36b")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
 	"brask"
+	"kinox"
+	"kuldax"
+	"moli"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
