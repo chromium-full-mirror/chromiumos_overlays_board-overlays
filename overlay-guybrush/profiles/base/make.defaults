@@ -76,3 +76,6 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 
 # Disable Cr50 deep sleep during suspend
 USE="${USE} cr50_disable_sleep_in_suspend"
+
+# Disallow Bluez BQR feature
+USE="${USE} bluez_disallow_bqr"
