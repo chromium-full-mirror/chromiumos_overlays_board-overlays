@@ -16,5 +16,4 @@ S=${WORKDIR}/${PN}-brya-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins ./*.tplg
-	dodoc README
 }
