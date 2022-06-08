@@ -128,7 +128,7 @@ pazquel-config: &pazquel_config
   <<: *clamshell_config
   identity:
     <<: *identity_common
-    custom-label-tag: "{{$custom-label-tag}}"
+    whitelabel-tag: "{{$whitelabel-tag}}"
 
 p-sensor-20mm-lazor-config: &p_sensor_20mm_lazor_config
   $set-cellular-transmit-power-for-proximity: "1"
@@ -316,11 +316,11 @@ chromeos:
       $ufc-autofocus: True
       $ufc-1080p: False
       products:
-        - $custom-label-tag: ""
+        - $whitelabel-tag: ""
           $help-content-id: "PAZQUEL"
-        - $custom-label-tag: "orbic"
+        - $whitelabel-tag: "orbic"
           $help-content-id: "PAZQUEL-ORBIC"
-        - $custom-label-tag: "tsm"
+        - $whitelabel-tag: "tsm"
           $help-content-id: "PAZQUEL-TSM"
       skus:
         - $sku-id: 0
