@@ -10,7 +10,7 @@ CROS_WORKON_TREE="f365214c3256d3259d78a5f4516923c79940b702"
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
 CROS_WORKON_LOCALNAME="platform/empty-project"
 
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
@@ -35,4 +35,9 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	udev_dorules "${FILESDIR}/99-chromeos-brask-usb-nfc-beep.rules"
+
+	exeinto "$(get_udevdir)"
+	doexe "${FILESDIR}"/control_usb_nfc_beep.sh
 }
