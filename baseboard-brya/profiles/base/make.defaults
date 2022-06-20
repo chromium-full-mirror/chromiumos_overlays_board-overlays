@@ -33,3 +33,6 @@ USE="${USE} mmc"
 
 # Enable miniOS support
 USE="${USE} minios"
+
+# Enable LVM stateful partition.
+USE="${USE} lvm_stateful_partition thin -device-mapper-only"

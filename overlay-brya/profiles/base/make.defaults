@@ -52,8 +52,5 @@ USE="${USE} camera_feature_auto_framing"
 # Enable hpsd, go/cros-hps.
 USE="${USE} hps hpsd-roflash"
 
-# Enable LVM stateful partition.
-USE="${USE} lvm_stateful_partition thin -device-mapper-only"
-
 # Enable DSP hotword detection
 USE="${USE} enable_dsp_hotword"
