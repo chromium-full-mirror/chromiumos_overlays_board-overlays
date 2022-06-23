@@ -19,6 +19,7 @@ PROJECTS=(
 	"osiris"
 	"primus"
 	"redrix"
+	"skolas"
 	"taeko"
 	"taniks"
 	"vell"
