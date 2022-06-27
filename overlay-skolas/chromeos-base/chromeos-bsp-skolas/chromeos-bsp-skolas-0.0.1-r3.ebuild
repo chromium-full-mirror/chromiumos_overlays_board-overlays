@@ -20,7 +20,7 @@ KEYWORDS="-* amd64 x86"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
-	chromeos-base/chromeos-bsp-baseboard-skolas:=
+	chromeos-base/chromeos-bsp-baseboard-brya:=
 "
 DEPEND="
 	${RDEPEND}
