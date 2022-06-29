@@ -2,24 +2,59 @@ amp_calibrations:
   boot_time_calibration_enabled: true
   controls:
     -
-      firmware_file: "/lib/firmware/cs35l41-dsp1-spk-prot.wmfw",
-      tuning_file: "/lib/firmware/cs35l41-dsp1-spk-prot.bin",
-      dsp_booted: "Left DSP Booted",
-      preload_switch: "Left DSP1 Preload Switch",
-      firmware_type: "Left DSP1 Firmware",
-      pcm_source: "Left PCM Source",
-      cal_r: "Left DSP1 Protection cd CAL_R",
-      cal_status: "Left DSP1 Protection cd CAL_STATUS",
-      cal_checksum: "Left DSP1 Protection cd CAL_CHECKSUM",
-      cal_set_status: "Left DSP1 Protection cd CAL_SET_STATUS",
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-TL.wmfw",
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-TL.bin",
+      preload_switch: "TL DSP1 Preload Switch",
+      firmware_type: "TL DSP1 Firmware",
+      pcm_source: "TL PCM Source",
+      cal_ambient: "TL DSP1 Protection cd CAL_AMBIENT",
+      cal_r: "TL DSP1 Protection cd CAL_R",
+      cal_status: "TL DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "TL DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "TL DSP1 Protection cd CAL_SET_STATUS",
     -
-      firmware_file: "/lib/firmware/cs35l41-dsp1-spk-prot.wmfw",
-      tuning_file: "/lib/firmware/cs35l41-dsp1-spk-prot.bin",
-      dsp_booted: "Right DSP Booted",
-      preload_switch: "Right DSP1 Preload Switch",
-      firmware_type: "Right DSP1 Firmware",
-      pcm_source: "Right PCM Source",
-      cal_r: "Right DSP1 Protection cd CAL_R",
-      cal_status: "Right DSP1 Protection cd CAL_STATUS",
-      cal_checksum: "Right DSP1 Protection cd CAL_CHECKSUM",
-      cal_set_status: "Right DSP1 Protection cd CAL_SET_STATUS",
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-WL.wmfw",
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-WL.bin",
+      preload_switch: "WL DSP1 Preload Switch",
+      firmware_type: "WL DSP1 Firmware",
+      pcm_source: "WL PCM Source",
+      cal_ambient: "WL DSP1 Protection cd CAL_AMBIENT",
+      cal_r: "WL DSP1 Protection cd CAL_R",
+      cal_status: "WL DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "WL DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "WL DSP1 Protection cd CAL_SET_STATUS",
+    -
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-TR.wmfw",
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-TR.bin",
+      preload_switch: "TR DSP1 Preload Switch",
+      firmware_type: "TR DSP1 Firmware",
+      pcm_source: "TR PCM Source",
+      cal_ambient: "TR DSP1 Protection cd CAL_AMBIENT",
+      cal_r: "TR DSP1 Protection cd CAL_R",
+      cal_status: "TR DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "TR DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "TR DSP1 Protection cd CAL_SET_STATUS",
+    -
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-WR.wmfw",
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-WR.bin",
+      preload_switch: "WR DSP1 Preload Switch",
+      firmware_type: "WR DSP1 Firmware",
+      pcm_source: "WR PCM Source",
+      cal_ambient: "WR DSP1 Protection cd CAL_AMBIENT",
+      cal_r: "WR Protection cd CAL_R",
+      cal_status: "WR DSP1 Protection cd CAL_STATUS",
+      cal_checksum: "WR DSP1 Protection cd CAL_CHECKSUM",
+      cal_set_status: "WR DSP1 Protection cd CAL_SET_STATUS",
+  rdc_ranges:
+    -
+      lower: 5.525
+      upper: 7.475
+    -
+      lower: 6.885
+      upper: 9.315
+    -
+      lower: 5.525
+      upper: 7.475
+    -
+      lower: 6.885
+      upper: 9.315
