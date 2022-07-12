@@ -18,9 +18,10 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="cheets"
+IUSE="cheets modemfwd"
 
 RDEPEND="
+	modemfwd? ( chromeos-base/modemfwd-helpers-herobrine )
 	net-misc/rmtfs
 	net-misc/qc-netmgr
 	sys-apps/mosys
