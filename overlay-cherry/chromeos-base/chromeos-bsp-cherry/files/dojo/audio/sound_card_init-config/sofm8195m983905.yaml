@@ -13,3 +13,10 @@ amp_calibrations:
         temp_ctrl: "Right DSM Ambient Temp"
         calib_ctrl: "Right DSM Calibration"
         volume_ctrl: "Right Digital Volume"
+  rdc_ranges:
+    -
+        lower: 5.95
+        upper: 8.05
+    -
+        lower: 5.95
+        upper: 8.05
