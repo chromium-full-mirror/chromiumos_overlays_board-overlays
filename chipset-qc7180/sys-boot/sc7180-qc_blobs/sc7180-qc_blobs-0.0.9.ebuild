@@ -10,10 +10,9 @@ DESCRIPTION="Ebuild to mirror Qualcomm SC7180 firmware blobs hosted on coreboot.
 # 1. Bump ebuild version (not revision!), e.g. from 0.0.1 to 0.0.2.
 # 2. Download new upstream tarball from
 #    https://review.coreboot.org/plugins/gitiles/qc_blobs/+archive/HEAD.tar.gz
-# 3. Recompress with xz and rename:
-#    `gunzip HEAD.tar.gz`
-#    `xz HEAD.tar`
-#    `mv HEAD.tar.xz sc7180-qc_blobs-<new ebuild version>.tar.xz`
+# 3. Extract sc7180 part and repack with xz:
+#    `tar xf HEAD.tar.gz sc7180`
+#    `tar cJf sc7180-qc_blobs-<new ebuild version>.tar.xz sc7180`
 # 4. Upload file to
 #    https://pantheon.corp.google.com/storage/browser/chromeos-localmirror/distfiles/
 # 5. Click three dots next to file, choose Edit Permissions, Add Entry, make the
