@@ -350,3 +350,10 @@ chromeos:
         - $sku-id: 5
           config:
             <<: [ *pazquel_config, *camera_config_ufc ]
+        - $sku-id: 6
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
+          config:
+            <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
