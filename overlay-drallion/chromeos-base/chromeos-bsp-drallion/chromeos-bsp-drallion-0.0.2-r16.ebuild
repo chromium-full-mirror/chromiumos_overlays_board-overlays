@@ -17,7 +17,7 @@ dependencies or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="modemfwd"
+IUSE="modemfwd drallion-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -29,7 +29,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{ED3A4869-C380-4F79-A190-027C3E879357}" "CHROMEBOOK"
+	if use drallion-kernelnext; then
+		doappid "{4C93DC6D-D00F-4241-A2F5-E5C37E3F210E}" "CHROMEBOOK"
+	else
+		doappid "{ED3A4869-C380-4F79-A190-027C3E879357}" "CHROMEBOOK"
+	fi
 
 	# Intall a rule tagging keyboard as having updated layout
 	udev_dorules "${FILESDIR}/81-drallion-keyboard.rules"
