@@ -109,6 +109,12 @@ pazquel-config: &pazquel_config
     <<: *identity_common
     whitelabel-tag: "{{$whitelabel-tag}}"
 
+pazquel360-config: &pazquel360_config
+  <<: *convertible_config
+  identity:
+    <<: *identity_common
+    whitelabel-tag: "{{$whitelabel-tag}}"
+
 p-sensor-20mm-lazor-config: &p_sensor_20mm_lazor_config
   $set-cellular-transmit-power-for-proximity: "1"
   proximity-sensor:
@@ -300,3 +306,25 @@ chromeos:
             LOW 2
           config:
             <<: [ *pazquel_config, *camera_config_ufc, *p_sensor_pazquel_config ]
+    - $device-name: "pazquel360"
+      $fw-name: "google,pazquel"
+      $coreboot-build-name: "pazquel"
+      $ec-build-name: "pazquel"
+      $card: "sc7180-rt5682-max98357a-1mic"
+      $ufc-interface: "usb"
+      $ufc-autofocus: True
+      $ufc-1080p: False
+      products:
+        - $whitelabel-tag: ""
+          $help-content-id: "PAZQUEL360"
+      skus:
+        - $sku-id: 7
+          config:
+            <<: [ *pazquel360_config, *camera_config_ufc ]
+        - $sku-id: 8
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
+          config:
+            <<: [ *pazquel360_config, *camera_config_ufc, *p_sensor_pazquel_config ]
