@@ -104,8 +104,9 @@ USE="${USE} fsverity"
 # Enable eMMC tools
 USE="${USE} mmc"
 
-# Enable assistant DLC.
-USE="${USE} assistant-dlc"
+# Disable assistant DLC.
+# TODO(b/239994252): Enable after fix the bug.
+USE="${USE} -assistant-dlc"
 
 # Set mosys_platform
 USE="${USE} -mosys_platform_generic mosys_platform_zork"
