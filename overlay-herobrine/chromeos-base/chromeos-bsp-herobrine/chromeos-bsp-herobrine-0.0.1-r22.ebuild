@@ -20,7 +20,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE=""
+IUSE="herobrine-kernelnext"
 
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-herobrine
@@ -31,7 +31,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{C5ED9176-A346-217C-DE59-1896036F7C8A}" "CHROMEBOOK"
+	if use herobrine-kernelnext; then
+		doappid "{67EAF43A-C8C0-4190-9066-C7A628C9FF19}" "CHROMEBOOK"
+	else
+		doappid "{C5ED9176-A346-217C-DE59-1896036F7C8A}" "CHROMEBOOK"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
