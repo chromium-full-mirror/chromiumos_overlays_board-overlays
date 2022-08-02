@@ -32,4 +32,7 @@ DEPEND="
 
 src_install() {
 	doappid "{B84E1B34-0D36-4649-A7B6-B64F1BD5AD60}" "CHROMEBASE"
+
+	# Install audio config files
+	unibuild_install_files audio-files
 }
