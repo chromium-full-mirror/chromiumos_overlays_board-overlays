@@ -24,3 +24,6 @@ USE="${USE} background_blur"
 
 # Enable slow boot notification during firmware updates
 USE="${USE} enable_slow_boot_notify"
+
+# Use recovery button to confirm physical presence
+USE="${USE} physical_presence_recovery"
