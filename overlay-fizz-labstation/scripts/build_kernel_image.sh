@@ -29,5 +29,6 @@ modify_kernel_command_line() {
     # to random labstation crash/stuck in booting loop due to kernel panic.
     # See b/198650616#comment23.
     echo "i915.enable_dc=0"
+    echo "usbcore.autosuspend=-1"
   } >> "$1"
 }
