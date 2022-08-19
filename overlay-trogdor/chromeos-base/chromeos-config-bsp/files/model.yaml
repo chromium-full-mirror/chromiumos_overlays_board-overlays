@@ -318,13 +318,21 @@ chromeos:
         - $whitelabel-tag: ""
           $help-content-id: "PAZQUEL360"
       skus:
-        - $sku-id: 7
-          config:
-            <<: [ *pazquel360_config, *camera_config_ufc ]
-        - $sku-id: 8
+        - $sku-id: 20 # LTE+eSIM
           $use-modemmanager-for-dynamic-sar: "1"
           $set-cellular-transmit-power-level-mapping: |
             HIGH 1
             LOW 2
           config:
             <<: [ *pazquel360_config, *camera_config_ufc, *p_sensor_pazquel_config ]
+        - $sku-id: 21 # WiFi
+          config:
+            <<: [ *pazquel360_config, *camera_config_ufc ]
+        - $sku-id: 22 # LTE
+          $use-modemmanager-for-dynamic-sar: "1"
+          $set-cellular-transmit-power-level-mapping: |
+            HIGH 1
+            LOW 2
+          config:
+            <<: [ *pazquel360_config, *camera_config_ufc, *p_sensor_pazquel_config ]
+
