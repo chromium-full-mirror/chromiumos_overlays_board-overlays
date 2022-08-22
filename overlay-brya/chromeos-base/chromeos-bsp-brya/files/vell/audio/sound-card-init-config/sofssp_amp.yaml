@@ -2,8 +2,8 @@ amp_calibrations:
   boot_time_calibration_enabled: false
   controls:
     -
-      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-tl.wmfw"
-      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-tl.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-tl.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-tl.bin"
       preload_switch: "TL DSP1 Preload Switch"
       firmware_type: "TL DSP1 Firmware"
       pcm_source: "TL PCM Source"
@@ -13,8 +13,8 @@ amp_calibrations:
       cal_checksum: "TL DSP1 Protection cd CAL_CHECKSUM"
       cal_set_status: "TL DSP1 Protection cd CAL_SET_STATUS"
     -
-      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-wl.wmfw"
-      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-wl.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-wl.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-wl.bin"
       preload_switch: "WL DSP1 Preload Switch"
       firmware_type: "WL DSP1 Firmware"
       pcm_source: "WL PCM Source"
@@ -24,8 +24,8 @@ amp_calibrations:
       cal_checksum: "WL DSP1 Protection cd CAL_CHECKSUM"
       cal_set_status: "WL DSP1 Protection cd CAL_SET_STATUS"
     -
-      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-tr.wmfw"
-      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-tr.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-tr.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-tr.bin"
       preload_switch: "TR DSP1 Preload Switch"
       firmware_type: "TR DSP1 Firmware"
       pcm_source: "TR PCM Source"
@@ -35,8 +35,8 @@ amp_calibrations:
       cal_checksum: "TR DSP1 Protection cd CAL_CHECKSUM"
       cal_set_status: "TR DSP1 Protection cd CAL_SET_STATUS"
     -
-      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-wr.wmfw"
-      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103ca221-wr.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-wr.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-103c8c08-wr.bin"
       preload_switch: "WR DSP1 Preload Switch"
       firmware_type: "WR DSP1 Firmware"
       pcm_source: "WR PCM Source"
