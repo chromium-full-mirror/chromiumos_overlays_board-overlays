@@ -45,5 +45,4 @@ modify_kernel_command_line() {
   # Temporary WA until b:216826833 is root caused and fixed
   #                and b:243060986 is root caused and fixed
   echo "i915.enable_psr=1" >> "$1"
-  echo "i915.enable_psr2_sel_fetch=0" >> "$1"
 }
