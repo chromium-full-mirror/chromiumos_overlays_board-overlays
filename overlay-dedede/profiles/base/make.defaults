@@ -51,3 +51,7 @@ INPUT_DEVICES="${INPUT_DEVICES} himax"
 
 # Enable slow boot notification during firmware updates
 USE="${USE} enable_slow_boot_notify"
+
+# Disable subpixel rendering because it causes visual artifacts for rotated
+# displays.
+USE="${USE} -subpixel_rendering"
