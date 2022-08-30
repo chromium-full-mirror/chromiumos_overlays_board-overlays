@@ -31,6 +31,9 @@ INPUT_DEVICES="${INPUT_DEVICES} goodix"
 # Include the elan i2chid touchpad firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
 
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
 # Enable biometrics support
 USE="${USE} biod"
 
