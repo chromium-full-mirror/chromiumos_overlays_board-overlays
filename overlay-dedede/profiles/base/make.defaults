@@ -5,7 +5,7 @@
 LINUX_FIRMWARE=""
 USE=""
 
-USE="${USE} dedede cros_ec touchview"
+USE="${USE} dedede cros_ec"
 
 # Comment these lines to de-activate the serial port.
 # Enable kernel serial drivers
