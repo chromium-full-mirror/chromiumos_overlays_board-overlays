@@ -41,3 +41,6 @@ BOARD_COMPILER_FLAGS="${BOARD_COMPILER_FLAGS} --unwindlib=libunwind"
 # To prevent cryptohome incompatibility problem while transitioning to 5.10
 USE="${USE} uprev-4-to-5"
 USE="${USE} -kernel-4_4 kernel-5_10"
+
+# Use zstd to minify ARC images. (go/arc-zstd)
+USE="${USE} arc_squashfs_zstd"
