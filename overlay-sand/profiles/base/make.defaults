@@ -14,3 +14,7 @@ USE="${USE} background_blur"
 
 # Enable chromeos-config.
 USE="${USE} unibuild has_chromeos_config_bsp"
+
+# To prevent cryptohome incompatibility problem while transitioning to 5.10
+USE="${USE} uprev-4-to-5"
+USE="${USE} -kernel-4_4 kernel-5_10"
