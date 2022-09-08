@@ -49,4 +49,10 @@ modify_kernel_command_line() {
   #                   Model: 2678
   #                   Made in week 25 of 2021
   echo "i915.enable_psr=1" >> "$1"
+
+  #disable UAS only for Framework storage card.
+  #The expansion card supports UAS disappeared in
+  #the Files app when the system woke up from s0ix.
+  #Add usb-storage.quirks=13fe:6500:u to disable UAS
+  echo "usb-storage.quirks=13fe:6500:u" >> "$1"
 }
