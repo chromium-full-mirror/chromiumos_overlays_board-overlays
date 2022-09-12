@@ -70,8 +70,4 @@ src_install() {
 		insinto "/usr/share/power_manager/board_specific"
 		doins "${FILESDIR}"/hibernate-powerd-prefs/*
 	fi
-
-	# Install rule of disabling UAS driver for specified devices
-	insinto /etc/modprobe.d
-	doins "${FILESDIR}/disable-uas.conf"
 }
