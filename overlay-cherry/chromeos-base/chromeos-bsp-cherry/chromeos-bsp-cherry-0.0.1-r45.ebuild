@@ -6,7 +6,7 @@ EAPI=7
 
 CROS_WORKON_COMMIT="e8d0ce9c4326f0e57235f1acead1fcbc1ba2d0b9"
 CROS_WORKON_TREE="f365214c3256d3259d78a5f4516923c79940b702"
-inherit appid cros-unibuild cros-workon
+inherit appid arc-build-constants cros-unibuild cros-workon
 
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
@@ -19,7 +19,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="cherry64"
+IUSE="cheets cherry64"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -43,4 +43,12 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install cpuset adjustments.
+	if use cheets; then
+		arc-build-constants-configure
+
+		insinto "${ARC_PREFIX:?}/vendor/etc/init"
+		doins "${FILESDIR}/init.cpusets.rc"
+	fi
 }
