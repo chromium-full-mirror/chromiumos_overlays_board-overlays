@@ -5,6 +5,10 @@
 # Initial value just for style purposes.
 USE=""
 INPUT_DEVICE=""
+LINUX_FIRMWARE=""
+
+# Include Realtek Ethernet firmware - needed for osiris chromebook.
+LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl8125b-2"
 
 USE="${USE} brya"
 USE="${USE} cros_ec"
