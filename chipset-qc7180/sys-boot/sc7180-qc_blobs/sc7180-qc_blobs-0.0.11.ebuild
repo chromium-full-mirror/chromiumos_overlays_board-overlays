@@ -15,7 +15,7 @@ DESCRIPTION="Ebuild to mirror Qualcomm SC7180 firmware blobs hosted on coreboot.
 #    `tar cJf sc7180-qc_blobs-<new ebuild version>.tar.xz sc7180`
 # 4. Upload file to
 #    https://pantheon.corp.google.com/storage/browser/chromeos-localmirror/distfiles/
-# 5. Click three dots next to file, choose Edit Permissions, Add Entry, make the
+# 5. Click three dots next to file, choose Edit acces, Add Entry, make the
 #    new entry Public, allUsers, Reader.
 # 6. Run `ebuild-trogdor <path to this file> manifest`.
 # 7. Commit ebuild changes and upload to Gerrit.
