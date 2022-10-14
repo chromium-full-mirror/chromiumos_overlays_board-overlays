@@ -12,6 +12,7 @@ PROJECTS=(
 	"magikarp"
 	"steelix"
 	"tentacruel"
+	"voltorb"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
