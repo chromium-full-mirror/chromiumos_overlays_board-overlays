@@ -23,6 +23,7 @@ IUSE="skyrim-chausie skyrim-kernelnext"
 RDEPEND="
 	chromeos-base/sof-binary
 	chromeos-base/sof-topology
+	chromeos-base/touch_updater
 "
 DEPEND="
 	${RDEPEND}
