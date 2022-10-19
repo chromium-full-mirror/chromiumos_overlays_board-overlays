@@ -69,6 +69,16 @@ chromeos:
       $chassis: MAPLE
       skus:
         - config: *device_config
+    - $loem: PHOEBE
+      $model: hanawl
+      $chassis: HANAWL
+      skus:
+        - config: *device_config
+    - $loem: PROWISE
+      $model: hanawl
+      $chassis: HANAWL
+      skus:
+        - config: *device_config
     - $loem: OEM1
       $model: hana
       $chassis: HANA
