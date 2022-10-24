@@ -102,8 +102,8 @@
         <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
             <Limit name="measured-frame-rate-320x180" range="556-1222" />
             <Limit name="measured-frame-rate-640x360" range="347-517" />
-            <Limit name="measured-frame-rate-1280x720" range="186-186" /> <!-- N=48 v95%=1.5 -->
-            <Limit name="measured-frame-rate-1920x1080" range="115-115" /> <!-- N=48 v95%=1.4 -->
+            <Limit name="measured-frame-rate-1280x720" range="186-372" />
+            <Limit name="measured-frame-rate-1920x1080" range="115-230" />
         </MediaCodec>
     </Decoders>
 </MediaCodecs>
