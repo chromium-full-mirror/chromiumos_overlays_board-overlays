@@ -30,3 +30,6 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
+
+# Include g2touch firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
