@@ -1,39 +1,36 @@
-# Copyright 2021 The ChromiumOS Authors
+# Copyright 2022 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="b9c83b5625cee8c9d973912aec5af5a3704c5179"
-CROS_WORKON_TREE=("654261d3fefa775bf26694a991acb83ddc588c4c" "6c87b6087a93e2e3383a53274ed136fd62d3f2e2" "43788ae27de81a8a75342e3244ae8dfb27b9ce87" "933fa635bef13ad735ca08574ff06d2022dd30f0")
+CROS_WORKON_COMMIT="ad946c44985f9ccab21b26ad60aa09f875d432a3"
+CROS_WORKON_TREE="02d686dda6107da8679036e959dee7cbab1c934e"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"brask"
-	"kinox"
-	"kuldax"
-	"moli"
+	"shotzo"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "brask/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "dedede/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( brask )
+CROS_BOARDS=( shotzo )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for brask"
+DESCRIPTION="Chrome OS Model configuration package for shotzo"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-brask"
 
+RDEPEND="!chromeos-base/chromeos-config-bsp-shotzo"
 
 src_compile() {
 	platform_json_compile

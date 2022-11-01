@@ -3,34 +3,34 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="e629fb1250ae475d1b0351f669a510568e8c6b6e"
-CROS_WORKON_TREE="7de4d3806b955b4d35ea597574a38a91a11141ab"
+CROS_WORKON_COMMIT="ad946c44985f9ccab21b26ad60aa09f875d432a3"
+CROS_WORKON_TREE="7b924b08239dc24f5c790166102528ce7372e741"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"guybrush"
+	"majolica"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "guybrush/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "majolica/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( guybrush )
+CROS_BOARDS=( majolica )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package"
+DESCRIPTION="Chrome OS Model configuration package for Majolica"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
+RDEPEND="!chromeos-base/chromeos-config-bsp-majolica"
 
-RDEPEND="!chromeos-base/chromeos-config-bsp-guybrush"
 
 src_compile() {
 	platform_json_compile
