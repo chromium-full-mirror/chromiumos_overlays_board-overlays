@@ -40,5 +40,10 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} mt7921e-bt"
 # Enable eMMC tools
 USE="${USE} mmc"
 
+# Set mosys_platform
+# TODO: replace with the commented line when Geralt is ready in mosys
+# USE="${USE} -mosys_platform_generic mosys_platform_geralt"
+USE="${USE} mosys_platform_generic"
+
 # Hack: Use TPM2 simulator for early bring-up
 USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer vtpm_proxy -cr50_onboard"
