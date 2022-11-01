@@ -20,7 +20,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="zork-arc-r zork-borealis zork-kernelnext zork-minios zork-connectivitynext modemfwd"
+IUSE="zork-arc-r zork-borealis zork-kernelnext zork-connectivitynext modemfwd"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -42,8 +42,6 @@ src_install() {
 		doappid "{AD30E25F-9915-480B-B00D-2D8F5D87FE16}" "CHROMEBOOK"
 	elif use zork-kernelnext; then
 		doappid "{D694EA84-A2C3-11EA-98E4-DFA8D65B1A07}" "CHROMEBOOK"
-	elif use zork-minios; then
-		doappid "{0456DB64-6AE0-4806-8D2E-96D57FE411F3}" "CHROMEBOOK"
 	else
 		doappid "{0BE68F68-A2F2-46B7-A7B4-B51B63F64FBA}" "CHROMEBOOK"
 	fi
