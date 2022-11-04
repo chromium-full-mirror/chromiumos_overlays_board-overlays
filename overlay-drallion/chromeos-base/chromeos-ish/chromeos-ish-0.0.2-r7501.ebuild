@@ -1,11 +1,11 @@
-# Copyright 2022 The ChromiumOS Authors
+# Copyright 2019 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE.makefile file.
 
 EAPI=7
 
-CROS_WORKON_COMMIT=("3dcbbe1f41af95beb807f5f4f01143a6b7d3f88f" "0dd679081b9c8bfa2583d74e3a17a413709ea362")
-CROS_WORKON_TREE=("25560e3f48c672c684c0d10b6430989e8c69da65" "d99abee3f825248f344c0638d5f9fcdce114b744")
+CROS_WORKON_COMMIT=("1ce62eb825053fcc11ed4b1b53b48b0f0afb6b23" "0dd679081b9c8bfa2583d74e3a17a413709ea362")
+CROS_WORKON_TREE=("3dc85adb79d3bc9455fb5eff96e8da27558df119" "d99abee3f825248f344c0638d5f9fcdce114b744")
 CROS_WORKON_PROJECT=(
 	"chromiumos/platform/ec"
 	"chromiumos/third_party/cryptoc"
