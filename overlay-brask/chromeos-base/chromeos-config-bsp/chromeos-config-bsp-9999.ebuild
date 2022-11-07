@@ -8,6 +8,7 @@ CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
 	"brask"
+	"gladios"
 	"kinox"
 	"kuldax"
 	"lisbon"
