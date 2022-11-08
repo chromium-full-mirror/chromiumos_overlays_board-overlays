@@ -63,4 +63,5 @@ USE="${USE} builtin_fw_mali_g57"
 USE="${USE} direncription_allow_v2"
 
 # Use libYUV instead of MDP for MM21 converion
-USE="${USE} prefer_libyuv_image_processor"
+# FIXME(b/258071656) Temporarily disable libyuv.
+# USE="${USE} prefer_libyuv_image_processor"
