@@ -32,6 +32,9 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 # this indicates that this board has a -borealis overlay
 USE="${USE} has-borealis"
 
+# Enable detachable UI in recovery mode.
+USE="${USE} detachable"
+
 # Disable subpixel rendering because it causes visual artifacts
 # for vertical displays. crbug.com/1194230
 USE="${USE} -subpixel_rendering"
