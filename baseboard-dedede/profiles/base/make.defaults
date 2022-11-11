@@ -33,6 +33,9 @@ USE="${USE} -acpi_ac"
 # Enable serial console
 TTY_CONSOLE="ttyS0"
 
+# Allow Chrome to use Tablet mode
+USE="${USE} touchview"
+
 # Enable VMs
 USE="${USE} kvm_host crosvm-gpu virtio_gpu"
 
