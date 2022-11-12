@@ -46,4 +46,7 @@ src_install() {
 
 	# Install audio config
 	unibuild_install_files audio-files
+
+	# Install semtech configuration files
+	unibuild_install_files proximity-sensor-files
 }
