@@ -26,3 +26,10 @@ HOMEPAGE="https://www.chromium.org/chromium-os/ec-development"
 
 LICENSE="BSD-Google"
 KEYWORDS="*"
+
+src_install() {
+	cros-ish_src_install
+
+	insinto /etc/modprobe.d
+	doins "${FILESDIR}/ish.conf"
+}
