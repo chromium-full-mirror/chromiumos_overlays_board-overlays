@@ -1,11 +1,11 @@
-# Copyright 2022 The ChromiumOS Authors
+# Copyright 2019 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE.makefile file.
 
 EAPI=7
 
-CROS_WORKON_COMMIT=("40170ee693204db9a8245d0874fb834766226755" "0dd679081b9c8bfa2583d74e3a17a413709ea362")
-CROS_WORKON_TREE=("e2b7b55e33dd3506a4006cca90ca0f53210edddf" "d99abee3f825248f344c0638d5f9fcdce114b744")
+CROS_WORKON_COMMIT=("f8db72bf954cfc85b78cf25dece7e2d5f6a5ca04" "0dd679081b9c8bfa2583d74e3a17a413709ea362")
+CROS_WORKON_TREE=("e1497d3328de4f7341aff4e576bb8a4dcdacb3c1" "d99abee3f825248f344c0638d5f9fcdce114b744")
 CROS_WORKON_PROJECT=(
 	"chromiumos/platform/ec"
 	"chromiumos/third_party/cryptoc"
@@ -26,10 +26,3 @@ HOMEPAGE="https://www.chromium.org/chromium-os/ec-development"
 
 LICENSE="BSD-Google"
 KEYWORDS="*"
-
-src_install() {
-	cros-ish_src_install
-
-	insinto /etc/modprobe.d
-	doins "${FILESDIR}/ish.conf"
-}
