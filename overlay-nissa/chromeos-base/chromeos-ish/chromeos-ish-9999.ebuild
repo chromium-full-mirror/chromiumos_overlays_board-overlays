@@ -4,6 +4,8 @@
 
 EAPI=7
 
+CROS_WORKON_MANUAL_UPREV="1"
+
 CROS_WORKON_PROJECT=(
 	"chromiumos/platform/ec"
 	"chromiumos/third_party/cryptoc"
