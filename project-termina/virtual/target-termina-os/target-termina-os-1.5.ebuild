@@ -25,7 +25,6 @@ RDEPEND="
 	chromeos-base/mcastd
 	chromeos-base/minijail
 	chromeos-base/ndproxyd
-	chromeos-base/termina-chrony-config
 	chromeos-base/vm_guest_tools
 	sys-apps/iproute2
 	sys-auth/pambase
