@@ -38,4 +38,10 @@ src_install() {
 	fi
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}"/common/udev/*.rules
+
+	insinto /etc/modprobe.d
+	doins "${FILESDIR}/common/ish/ish.conf"
 }
