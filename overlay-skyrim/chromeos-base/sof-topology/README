@@ -5,14 +5,10 @@ found in the LICENSE file.
 This file should always contain information regarding which branch/commit
 the firmware was built from.
 
-This firmware is not an official build. It's provided by AMD which includes
-2 dmic support, psp fence register update and TDM support. It will not be
-used in the released projects.
-
 repo      : https://github.com/thesofproject/sof/
-branch    : AMD local branch
-commit id : AMD local commit
+branch    : main
+commit id : e4f7e518e848084e5c1971a1398c08ed56b0da50
 
 Md5sum
-9d83a71b959b7efbd5d2b2a1191138ea  sof-acp-rmb.tplg
-c62b2d6fc52fa419785b6467beceb7e7  sof-rmb-nau8825-max98360.tplg
+3a03aa1f487f87788f0b7b4c1ecc445f  sof-acp-rmb.tplg
+5fdb48244e7d7495e174cd45971e7500  sof-rmb-nau8825-max98360.tplg
