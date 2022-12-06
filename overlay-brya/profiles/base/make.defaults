@@ -58,3 +58,6 @@ USE="${USE} hps"
 
 # Enable DSP hotword detection
 USE="${USE} enable_dsp_hotword"
+
+# Build ufs tools
+USE="${USE} ufs"
