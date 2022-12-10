@@ -23,6 +23,7 @@ IUSE="octopus-arc-r octopus-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/chromeos-bsp-baseboard-octopus:=
 "
 DEPEND="
@@ -31,6 +32,9 @@ DEPEND="
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use octopus-arc-r; then
 		doappid "{312CD618-BD44-49ED-9E2B-AB4C5C99BF54}" "CHROMEBOOK"
 	elif use octopus-kernelnext; then

@@ -21,6 +21,7 @@ IUSE="brya-manatee brya-nopkvm brya-pkvm adlrvp brya-lvm-stateful zephyr_poc bry
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/chromeos-bsp-baseboard-brya:=
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
@@ -33,6 +34,9 @@ DEPEND="
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use brya-manatee; then
 		doappid "{8C4F1DCA-AC34-11EB-8FD3-7B09B37DFAB3}" "REFERENCE"
 	elif use brya-nopkvm; then

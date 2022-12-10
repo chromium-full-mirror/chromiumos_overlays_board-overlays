@@ -24,6 +24,7 @@ IUSE="zork-arc-r zork-borealis zork-kernelnext zork-connectivitynext modemfwd"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/rmi4utils:=
 	chromeos-base/touch_updater:=
 	modemfwd? ( chromeos-base/modemfwd-helpers )
@@ -34,6 +35,9 @@ DEPEND="
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use zork-arc-r; then
 		doappid "{63ADFE60-D637-416A-A595-E5BA72D185FF}" "CHROMEBOOK"
 	elif use zork-borealis; then

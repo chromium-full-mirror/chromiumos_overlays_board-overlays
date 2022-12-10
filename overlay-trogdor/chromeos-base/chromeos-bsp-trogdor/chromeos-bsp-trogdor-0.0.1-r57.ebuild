@@ -23,11 +23,15 @@ IUSE="trogdor64 trogdor-arc-r trogdor-kernelnext trogdor-userdebug zephyr_ec tro
 
 
 RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/chromeos-bsp-baseboard-trogdor
 "
 DEPEND="${RDEPEND}"
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use zephyr_ec; then
 		doappid "{486D6593-708E-4878-8CC9-A7E9AF2F5811}" "CHROMEBOOK"
 	elif use trogdor64; then

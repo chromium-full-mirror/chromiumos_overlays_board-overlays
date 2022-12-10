@@ -21,6 +21,7 @@ KEYWORDS="-* amd64 x86"
 IUSE=""
 
 RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/sof-binary
 	chromeos-base/sof-topology
 	chromeos-base/touch_updater
@@ -30,6 +31,9 @@ DEPEND="${RDEPEND}
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	doappid "{E0DD1258-E890-493E-ADA3-0C755240B89C}" "CHROMEBOOK"
 
 	# Install audio config files

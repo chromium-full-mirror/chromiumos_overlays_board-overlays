@@ -17,6 +17,13 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 
+RDEPEND="
+	!<chromeos-base/gestures-conf-0.0.2
+"
+
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	doappid "{C924E0C4-AF80-4B6B-A6F0-DD75EDBCC37C}" "CHROMEBOOK"
 }

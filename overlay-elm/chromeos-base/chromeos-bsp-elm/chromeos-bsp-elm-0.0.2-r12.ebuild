@@ -23,11 +23,15 @@ IUSE="elm-arc64 elm-cheets elm-kernelnext elm-connectivitynext"
 # Add dependencies on other ebuilds from within this board overlay
 DEPEND=""
 RDEPEND="${DEPEND}
+	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/chromeos-bsp-baseboard-oak:=
 	sys-apps/ethtool
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use elm-arc64; then
 		doappid "{AB7C8669-9930-4EE3-BC66-46C7F27CC8FA}" "CHROMEBOOK"
 	elif use elm-cheets; then
