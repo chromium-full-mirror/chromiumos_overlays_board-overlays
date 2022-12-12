@@ -26,3 +26,6 @@ USE="${USE} ac_only"
 
 # Include Realtek Ethernet firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl8125b-2 rtl8168h-2"
+
+# Build ufs tools
+USE="${USE} ufs"
