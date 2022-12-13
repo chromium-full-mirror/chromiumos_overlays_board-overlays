@@ -1,0 +1,16 @@
+repo: "https://github.com/thesofproject/sof.git"
+branch: "mt8186/v0.2"
+commit: "ba6a29d5a8355c78b15fe6d36a07579961ca4367"
+tarball: "sof-topology-corsola"
+version: "0.2.3"
+topology: {
+  docker: {
+    use: true
+    identifier: "gsoftools:latest"
+  }
+}
+artifact: {
+  name: "sof-mt8186.tplg"
+  built_path: "tools/build_tools/topology/sof-mt8186.tplg"
+  sha256: "4205ae7fb8386697926c88fb4007a0aed05a54f389808e91536e63e5fe048607"
+}
