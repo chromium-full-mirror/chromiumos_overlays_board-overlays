@@ -1,0 +1,17 @@
+Copyright 2022 The ChromiumOS Authors
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+
+This file should always contain information regarding which branch/commit
+the firmware was built from.
+
+ADL 004 drop stable release.
+
+repo      : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private/
+branch    : adl-004-drop-stable
+commit id : 6b60a3c073c1aa0eaad20b94bb2a9efcc70489e2
+
+Md5sum
+bf27f7a9888ac415819b5a976cf4d25f  sof-adl-nau8825.tplg
+572ec6fc0f4bf7e71afce955c0481906  sof-adl-rt1015-nau8825.tplg
+b4e0349bb5949bae360bda8a599c8c87  sof-adl-rt5682.tplg
