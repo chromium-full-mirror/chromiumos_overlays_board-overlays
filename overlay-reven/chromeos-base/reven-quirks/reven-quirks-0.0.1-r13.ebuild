@@ -14,13 +14,10 @@ CROS_WORKON_LOCALNAME="platform/empty-project"
 inherit cros-workon udev
 
 DESCRIPTION="System configuration files containing quirks"
-HOMEPAGE="https://chrome-internal.googlesource.com/chromeos/overlays/overlay-reven-private"
 
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-
-RDEPEND="!<=chromeos-base/chromeos-bsp-reven-private-0.0.1-r13"
 
 src_install() {
 	# Install udev files.
