@@ -8,3 +8,6 @@ chromeos-base/chromeos-chrome -accessibility
 sys-process/criu selinux
 app-emulation/docker -aufs -btrfs -device-mapper hardened
 app-emulation/containerd -btrfs
+
+# Remove genesys plugin(b/262261828)
+sys-apps/fwupd -gusb
