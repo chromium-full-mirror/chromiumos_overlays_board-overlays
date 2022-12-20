@@ -46,6 +46,13 @@
         "size": "8 GiB"
       }
     ],
+    "factory_install": [
+      {
+        "num": 3,
+        "size": "440 MiB",
+        "fs_size": "420 MiB"
+      }
+    ],
     "recovery":[
       {
         "num": 3,
