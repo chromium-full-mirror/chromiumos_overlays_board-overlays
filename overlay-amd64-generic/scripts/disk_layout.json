@@ -49,8 +49,8 @@
     "factory_install": [
       {
         "num": 3,
-        "size": "440 MiB",
-        "fs_size": "420 MiB"
+        "size": "480 MiB",
+        "fs_size": "460 MiB"
       }
     ],
     "recovery":[
