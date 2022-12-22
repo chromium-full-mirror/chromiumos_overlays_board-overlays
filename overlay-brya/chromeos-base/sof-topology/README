@@ -6,33 +6,27 @@ found in the LICENSE file.
 This file should always contain information regarding which branch/commit
 the firmware was built from.
 
-ADL 004 drop stable release. Include topology for cs35l41.
+RPL 001 drop stable release.
 
 repo      : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private/
-branch    : adl-004-drop-stable
-commit id : e05306694cc77008a6cbcf0fcfdd7e5a98bea178
-
-sof-adl-cs35l41.tplg
-repo + CL : https://chrome-internal-review.googlesource.com/c/chromeos/third_party/sound-open-firmware-private/+/4797354/1
-
-nohotword/sof-adl-max98373-nau8825.tplg
-CL checkout: https://chrome-internal-review.googlesource.com/c/chromeos/third_party/sound-open-firmware-private/+/4993438
+branch    : rpl-001-drop-stable
+commit id : 2ee6af547560ab13ae4b8c0d3291e7b41e695645
 
 Md5sum
-8823de71cce073c8505cd14429115b24  sof-adl-max98357a-rt5682-2way.tplg
-d15d65da2967bb11aedc92156bcfee5f  sof-adl-max98357a-rt5682-4ch.tplg
-fb2ba63fd470d05beffeb6818d3beb8f  sof-adl-max98357a-rt5682.tplg
-d0029893b6884440bc8becdaee2c0498  sof-adl-max98360a-nau8825.tplg
-e58a791f7daa24bf691405f4779edba3  sof-adl-max98360a-rt5682-2way.tplg
-0dcae6120eda8d8f639cc74ba8dbd817  sof-adl-max98360a-rt5682-4ch.tplg
-8731736d88e9ba6be3c24e554e357235  sof-adl-max98360a-rt5682.tplg
-2bdaca784bf5ffec786b38588501977e  sof-adl-max98373-nau8825.tplg
-b00d3759ceb0280f0ba212188d8c49ea  sof-adl-max98390-rt5682-google-aec.tplg
-dc96bb8f444addaa736366d3fb02c04f  sof-adl-max98390-rt5682.tplg
-06fcbf9bd56b970a73da0c8df8c16a86  sof-adl-max98390-ssp2-rt5682-ssp0.tplg
-6065f5801af55c3f83dab2b36fc34e78  sof-adl-rt1019-nau8825.tplg
-0af1a879e27924fd7ec8970c098945f3  sof-adl-rt5682-ssp0-max98373-ssp2.tplg
-b624e354fd185297629a94cf38a890be  sof-adl-sdw-max98373-rt5682.tplg
-ec5ebf2bc89bf94f7b93c362dc090255  sof-adl-cs35l41.tplg
-37a94ae13291d258eba2bafcfcb5be46  pdm1/sof-adl-max98360a-rt5682-2way.tplg
-92d679f927c524c175408c510bf39a92  nohotword/sof-adl-max98373-nau8825.tplg
+1bd709e0413d4b6b1c3c6a835ee17746  sof-adl-cs35l41.tplg
+ae17af1ed62f6691dd2659a59c98d480  sof-adl-max98357a-rt5682-4ch.tplg
+dccea758e5ed23d97a803f3cf6f7cc14  sof-adl-max98357a-rt5682.tplg
+04d5e3d703e5a0ce44da71ee797d6e1e  sof-adl-max98360a-nau8825.tplg
+c0066632d5a8e19ab1e5b6fbd7f25802  sof-adl-max98360a-rt5682-2way.tplg
+fc39b4159532569c1e8300bc7b643aa9  sof-adl-max98360a-rt5682-4ch.tplg
+b601b70f6db9bd65eea37a836b8a8236  sof-adl-max98360a-rt5682.tplg
+977050ccf86bd43c6671c0a044e42d6d  sof-adl-max98373-nau8825.tplg
+1f8af79fc70b7df78523b8f582728f17  sof-adl-max98390-rt5682.tplg
+c02dca4a2a7b15519eba3e664e7b9b70  sof-adl-max98390-ssp2-rt5682-ssp0.tplg
+e822262d5fee4f16d440a9f939b821cf  sof-adl-nau8825.tplg
+fbead14bab0a599342ef761009e9e3f4  sof-adl-rt1019-nau8825.tplg
+d93fad46acb9c9bea12e6d23d31d15f8  sof-adl-rt1019-rt5682.tplg
+ef33ade4ad59aa285f72b1f3667caaac  sof-adl-rt5682.tplg
+db14e0a21e66b94fb61abf233cb77ca6  sof-adl-rt711.tplg
+b8c0e3e96c24842dae2ed7c8eed8dc91  sof-adl-sdw-max98373-rt5682.tplg
+84a6d4528620e4e6441d9816d6dbf058  pdm1/sof-adl-max98360a-rt5682-2way.tplg

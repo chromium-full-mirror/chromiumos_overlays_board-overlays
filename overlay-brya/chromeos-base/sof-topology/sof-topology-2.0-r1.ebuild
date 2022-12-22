@@ -18,8 +18,6 @@ src_install() {
 	doins ./*.tplg
 	insinto /lib/firmware/intel/sof-tplg/pdm1
 	doins ./pdm1/*.tplg
-	insinto /lib/firmware/intel/sof-tplg/nohotword
-	doins ./nohotword/*.tplg
 
 	dosym ./sof-adl-max98360a-rt5682.tplg /lib/firmware/intel/sof-tplg/sof-adl-max98360a-cs42l42.tplg
 }
