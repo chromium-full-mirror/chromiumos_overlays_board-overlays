@@ -1,0 +1,16 @@
+# Copyright 2022 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+This file should always contain information regarding which
+branch/commit the firmware was built from.
+
+RPL-001 drop stable
+
+repo : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private
+branch : rpl-001-drop-stable
+commit id : 2ee6af547560ab13ae4b8c0d3291e7b41e695645
+
+MD5sums:
+f1dc9c336aeb135f044c76717d6cdffe  sof-adl.ldc
+ae53e2c9341f0a8d6b54b349ccc91d3a  sof-adl.ri
