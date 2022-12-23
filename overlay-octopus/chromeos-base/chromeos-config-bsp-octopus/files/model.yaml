@@ -81,6 +81,10 @@ audio-main-files:
   files-map-card2-conf: &files_map_card2_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}/{{$card2}}.conf"
     destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/{{$card2}}.{{ucm-suffix}}.conf"
+  # ALSA UCM configuration file of $card2
+  files-map-card2-conf-extra-suffix: &files_map_card2_conf_extra_suffix
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}.{{$ucm_extra_suffix}}/{{$card2}}.conf"
+    destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/{{$card2}}.{{ucm-suffix}}.conf"
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card
   files-map-HiFi-conf: &files_map_HiFi_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card}}.{{$num-mic-locations}}loc{{$num-mics}}/HiFi.conf"
@@ -92,6 +96,10 @@ audio-main-files:
   # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card2
   files-map-HiFi-card2-conf: &files_map_HiFi_card2_conf
     source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}/HiFi.conf"
+    destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/HiFi.conf"
+  # ALSA UCM SectionUseCase configuration (defined in UCM conf file) of $card2
+  files-map-HiFi-card2-conf-extra-suffix: &files_map_HiFi_card2_conf_extra_suffix
+    source: "{{$ucm_src_root}}/audio/ucm-config/{{$card2}}.{{$num-mic-locations}}loc{{$num-mics}}.{{$ucm_extra_suffix}}/HiFi.conf"
     destination: "{{$ucm_root}}/{{$card2}}.{{ucm-suffix}}/HiFi.conf"
   # the board.ini file
   files-map-board-ini: &files_map_board_ini
@@ -136,6 +144,20 @@ audio-two-cards-boardini-setting: &audio_two_cards_boardini_setting
         - *files_map_HiFi_card2_conf
         - *files_map_board_ini
 
+audio-two-cards-boardini-setting-extra-suffix: &audio_two_cards_boardini_setting_extra_suffix
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings
+        - *files_map_card2_settings
+        - *files_map_dsp_ini
+        - *files_map_card_conf_extra_suffix
+        - *files_map_card2_conf_extra_suffix
+        - *files_map_HiFi_conf_extra_suffix
+        - *files_map_HiFi_card2_conf_extra_suffix
+        - *files_map_board_ini
+
 audio-setting-extra-suffix: &audio_setting_extra_suffix
   <<: *unprovisioned_config
   audio:
@@ -146,6 +168,20 @@ audio-setting-extra-suffix: &audio_setting_extra_suffix
         - *files_map_dsp_ini
         - *files_map_card_conf_extra_suffix
         - *files_map_HiFi_conf_extra_suffix
+
+audio-setting-two-cards-extra-suffix: &audio_setting_two_cards_extra_suffix
+  <<: *unprovisioned_config
+  audio:
+    main:
+      <<: *audio_main_common
+      files:
+        - *files_map_card_settings
+        - *files_map_card2_settings
+        - *files_map_dsp_ini
+        - *files_map_card_conf_extra_suffix
+        - *files_map_card2_conf_extra_suffix
+        - *files_map_HiFi_conf_extra_suffix
+        - *files_map_HiFi_card2_conf_extra_suffix
 
 device-config: &device_config
   <<: *unprovisioned_config
@@ -807,70 +843,126 @@ chromeos:
       $fw-name: "Bloog"
       $num-mic-locations: 1
       $ucm_src_root: "{{$device-name}}"
-      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 49
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 50
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 51
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 52
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 53
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 54
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 55
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
         - $sku-id-val: 56
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
+        - $sku-id-val: 61
+          $ucm_extra_suffix: "blooguard.2ndcam"
+          config:
+            <<: *convertible_config
+            <<: *audio_setting_two_cards_extra_suffix
+        - $sku-id-val: 62
+          $ucm_extra_suffix: "blooguard.2ndcam"
+          $has-keyboard-backlight: 1
+          config:
+            <<: *convertible_config
+            <<: *audio_setting_two_cards_extra_suffix
+        - $sku-id-val: 63
+          $ucm_extra_suffix: "blooguard.2ndcam"
+          config:
+            <<: *convertible_config
+            <<: *audio_setting_two_cards_extra_suffix
+        - $sku-id-val: 64
+          $ucm_extra_suffix: "blooguard.2ndcam"
+          $has-keyboard-backlight: 1
+          config:
+            <<: *convertible_config
+            <<: *audio_setting_two_cards_extra_suffix
     - $device-name: "blooglet"
       $fw-name: "Bloog"
       $num-mic-locations: 1
       $ucm_src_root: "{{$device-name}}"
-      $ucm_extra_suffix: "{{$device-name}}"
       skus:
         - $sku-id-val: 65
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           $keyboard-backlight-no-als-brightness: 20
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 66
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 67
+          $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: 1
           $keyboard-backlight-no-als-brightness: 20
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting
         - $sku-id-val: 68
+          $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting
+        - $sku-id-val: 69
+          $ucm_extra_suffix: "blooglet.2ndcam"
+          $has-keyboard-backlight: 1
+          $keyboard-backlight-no-als-brightness: 20
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_boardini_setting_extra_suffix
+        - $sku-id-val: 70
+          $ucm_extra_suffix: "blooglet.2ndcam"
+          config:
+            <<: *clamshell_touchscreen_config
+            <<: *audio_two_cards_boardini_setting_extra_suffix
+        - $sku-id-val: 71
+          $ucm_extra_suffix: "blooglet.2ndcam"
+          $has-keyboard-backlight: 1
+          $keyboard-backlight-no-als-brightness: 20
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_boardini_setting_extra_suffix
+        - $sku-id-val: 72
+          $ucm_extra_suffix: "blooglet.2ndcam"
+          config:
+            <<: *clamshell_config
+            <<: *audio_two_cards_boardini_setting_extra_suffix
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
