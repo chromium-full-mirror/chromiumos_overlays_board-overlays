@@ -1,8 +1,8 @@
 repo: "https://github.com/thesofproject/sof.git"
 branch: "mt8186/v0.2"
-commit: "ba6a29d5a8355c78b15fe6d36a07579961ca4367"
+commit: "714c6d4d8917684b4b1c44ebb61bc9483f915cfe"
 tarball: "sof-binary-mt8186"
-version: "0.2.3"
+version: "0.2.4"
 firmware: {
   docker: {
     use: true
@@ -13,10 +13,10 @@ firmware: {
 artifact: {
   name: "sof-mt8186.ri"
   built_path: "build_mt8186_xcc/sof-mt8186.ri"
-  sha256: "8c1cfc6375a2ccaa3e8eb2a23d959cf11c05aa66f0796d2fd826614cd6f68408"
+  sha256: "5b8e483718c190a078dda356c5756d75f0889a95280a11f91982038146fc2ef1"
 }
 artifact: {
   name: "sof-mt8186.ldc"
   built_path: "build_mt8186_xcc/sof-mt8186.ldc"
-  sha256: "da609ee90fce236b055b2155033548e683f6b4a2c5e2ac9405aab91a7fc6fcae"
+  sha256: "cf2a8cc5f6d69c332689c7a157985e8aae01504ee2d7da2098382b95c6e3ab37"
 }
