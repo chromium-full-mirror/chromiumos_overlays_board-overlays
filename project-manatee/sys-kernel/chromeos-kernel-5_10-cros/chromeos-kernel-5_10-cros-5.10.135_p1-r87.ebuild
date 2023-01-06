@@ -16,7 +16,8 @@ HOMEPAGE="https://www.chromium.org/chromium-os/chromiumos-design-docs/chromium-o
 DESCRIPTION="Chrome OS Linux Kernel 5.10 manatee guest"
 KEYWORDS="*"
 
-RDEPEND+="!sys-kernel/chromeos-kernel-5_10"
+RDEPEND+="!sys-kernel/chromeos-kernel-5_10
+	!sys-kernel/chromeos-kernel-5_19-cros"
 # This is Manatee specific 5.10 kernel temporarily branched in order to allow
 # development for teamfood. We will undiverge and remove this soon!
 #
