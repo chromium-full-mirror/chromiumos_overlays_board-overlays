@@ -18,7 +18,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="cheets corsola64"
+IUSE="cheets corsola-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -33,8 +33,8 @@ DEPEND="
 "
 
 src_install() {
-	if use corsola64; then
-		doappid "{C1F48641-91F3-4EBE-9E17-36E4E016706E}" "CHROMEBOOK"
+	if use corsola-kernelnext; then
+		doappid "{A373B826-5687-43D0-B5D1-E049E1683F50}" "CHROMEBOOK"
 	else
 		doappid "{3C9B1B3B-E594-448D-97A7-B3A2568BCC5C}" "CHROMEBOOK"
 	fi
