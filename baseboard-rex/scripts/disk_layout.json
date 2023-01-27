@@ -5,5 +5,42 @@
   },
   "parent": "disk_layout_v3.json",
   "layouts": {
+    "base": [
+      {
+        # Bump up the size of ROOT-A for extra buffer as limit is being hit.
+        "num": 3,
+        "fs_size": "2500 MiB"
+      }
+    ],
+    "usb": [
+      {
+        "num": 3,
+        "fs_size": "2500 MiB",
+        "size": "2700 MiB"
+      }
+    ],
+    "usb-updatable": [
+      {
+        "num": 3,
+        "fs_size": "2500 MiB",
+        "size": "2700 MiB"
+      },
+      {
+        "num": 5,
+        "size": "2700 MiB"
+      }
+    ],
+    "recovery": [
+      {
+        # Shrunken rootfs partition to support smaller USB sticks,
+        # and smaller recovery downloads.
+        # Installation will expand this to size from base.
+        # The offset to the beginning of this partition, and the FS
+        # size must match base exactly to allow secure boot.
+        "num": 3,
+        "fs_size": "2500 MiB",
+        "size": "2700 MiB"
+      }
+    ]
   }
 }
