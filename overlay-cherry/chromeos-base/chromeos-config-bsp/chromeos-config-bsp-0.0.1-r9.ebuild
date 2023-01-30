@@ -1,40 +1,43 @@
-# Copyright 2020 The ChromiumOS Authors
+# Copyright 2021 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CROS_WORKON_COMMIT="ad946c44985f9ccab21b26ad60aa09f875d432a3"
-CROS_WORKON_TREE="7b924b08239dc24f5c790166102528ce7372e741"
+CROS_WORKON_COMMIT="5ffa9adaa34d95e5b9a8884b58e44daab034d5de"
+CROS_WORKON_TREE=("0cf53ce56f04f7d9565fe3ccbdecb19aad76f2b2" "367f282bc0b93887347b25d9235f007e561a3da1" "d9c7aafb0a03a558a5bb25661986013d37d19dcf")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"majolica"
+	"cherry"
+	"dojo"
+	"tomato"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "majolica/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( majolica )
+CROS_BOARDS=( cherry )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for Majolica"
+DESCRIPTION="Chrome OS Model configuration package for cherry"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-majolica"
+KEYWORDS="*"
+RDEPEND="!chromeos-base/chromeos-config-bsp-cherry"
 
 
 src_compile() {
 	platform_json_compile
 }
+
 
 src_install() {
 	platform_json_install
