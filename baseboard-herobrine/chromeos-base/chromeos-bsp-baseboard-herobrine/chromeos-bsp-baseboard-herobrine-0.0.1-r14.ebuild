@@ -24,7 +24,6 @@ RDEPEND="
 	modemfwd? ( chromeos-base/modemfwd-helpers-herobrine )
 	net-misc/rmtfs
 	net-misc/qc-netmgr
-	sys-apps/mosys
 "
 DEPEND="${RDEPEND}"
 
