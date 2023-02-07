@@ -3,36 +3,35 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="88c0318fa6e882bacfde918db4604a66c9b830fe"
-CROS_WORKON_TREE=("10a3195f72ca3525169f392d65ea106dffcdc580" "fa0e53445e1770533157144cccc6acb696e35afc" "aeaba9efe8bff73e3113cafb3fa1742c904034da" "f2953c23e745d361ab4e13ac15454cfec83129d5")
+CROS_WORKON_COMMIT="ce176c12872faaa9c7e7fedc6cc515a55a99c7f8"
+CROS_WORKON_TREE=("b11537b30f8cae5aaf0a5b9d8ed94ffe82a7a6fb" "489b9fbf52f5c51513e1475dfbc047a907efc468" "f26221c990f8b0d654c4beb04ba4d16c0fd032d8")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"adlnrvp"
-	"craask"
-	"nereid"
-	"nivviks"
+	"cherry"
+	"dojo"
+	"tomato"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "nissa/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( nissa )
+CROS_BOARDS=( cherry )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for nissa"
+DESCRIPTION="Chrome OS Model configuration package for cherry"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-nissa"
+KEYWORDS="*"
+RDEPEND="!chromeos-base/chromeos-config-bsp-cherry"
 
 
 src_compile() {

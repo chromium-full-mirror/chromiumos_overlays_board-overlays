@@ -1,36 +1,40 @@
 # Copyright 2021 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CROS_WORKON_COMMIT="5ffa9adaa34d95e5b9a8884b58e44daab034d5de"
-CROS_WORKON_TREE=("6524d683d4104a08d4a5ffe845831fc7c5ec743d" "8c10521ecd0c3ea5eb5a33b48ede81eee92892dc")
+CROS_WORKON_COMMIT="ce176c12872faaa9c7e7fedc6cc515a55a99c7f8"
+CROS_WORKON_TREE=("d8558b70030a88e00542cba4b6c1adfdada7ce1d" "03090219d7c9d30583fd63c2ad57278bf6ba3a63" "0e3ba8ceb641565397ce6cd84dc7467605221cac" "2d7ee8f70b6ddf67e2e6e951e49bbd614b4b0075" "317da8b696f6bbfaca0199dd5dbc0e5fcba0db27" "2d570c993c247feccb9f93ed988d5098ec62d987")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"skyrim15w"
-	"skyrim6w"
+	"brask"
+	"gladios"
+	"kinox"
+	"kuldax"
+	"lisbon"
+	"moli"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "skyrim/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "brask/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( nissa )
+CROS_BOARDS=( brask )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for skyrim"
+DESCRIPTION="Chrome OS Model configuration package for brask"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
-RDEPEND=""
+RDEPEND="!chromeos-base/chromeos-config-bsp-brask"
 
 
 src_compile() {
