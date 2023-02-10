@@ -9,12 +9,12 @@ RPL-001 drop stable
 
 repo : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private
 branch : rpl-001-drop-stable
-commit id : 2ee6af547560ab13ae4b8c0d3291e7b41e695645
+commit id : 3a400aa5b96c72fb8a3b27c7d72845e058a17e88
 
-sof-adl-rt1019-rt5682.tplg:
-repo + CL : https://chrome-internal-review.googlesource.com/c/chromeos/third_party/sound-open-firmware-private/+/5325549
+and cherry-pick commits from the following PRs:
+https://github.com/thesofproject/sof/pull/7056
 
 MD5SUMs
-04d5e3d703e5a0ce44da71ee797d6e1e  sof-adl-max98360a-nau8825.tplg
-b601b70f6db9bd65eea37a836b8a8236  sof-adl-max98360a-rt5682.tplg
-925340f071f02810e68524fe11caad70  sof-adl-rt1019-rt5682.tplg
+e2104dd408abe169e11407dafb0b90b4  sof-adl-max98360a-nau8825.tplg
+3d0d87af062382855310abc24b54a5aa  sof-adl-max98360a-rt5682.tplg
+714f6958c4be4b7b0729468927982cc4  sof-adl-rt1019-rt5682.tplg
