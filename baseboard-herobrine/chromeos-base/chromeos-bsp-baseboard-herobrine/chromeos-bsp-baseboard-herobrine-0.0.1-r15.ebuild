@@ -59,6 +59,9 @@ src_install() {
 	# udev rule to enable wakeup for smp2p devices
 	udev_dorules "${FILESDIR}/99-qcom-smp2p-wakeup.rules"
 
+	# udev rule to set the RPS mask of the modem network interfaces
+	udev_dorules "${FILESDIR}/99-mmdata-mgr.rules"
+
 	# Install modem FSG verification init script
 	insinto "/etc/init"
 	doins "${FILESDIR}/verify_fsg.conf"
