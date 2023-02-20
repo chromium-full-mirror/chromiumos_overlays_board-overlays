@@ -15,6 +15,6 @@ SRC_URI="gs://chromeos-localmirror/distfiles/${P}.tbz2"
 S=${WORKDIR}/${P}
 
 src_install() {
-	insinto /lib/firmware/
+	insinto /lib/firmware/mediatek/mt8186/
 	doins scp.img
 }
