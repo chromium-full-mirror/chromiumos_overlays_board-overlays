@@ -1,40 +1,41 @@
-# Copyright 2020 The ChromiumOS Authors
+# Copyright 2022 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CROS_WORKON_COMMIT="ce176c12872faaa9c7e7fedc6cc515a55a99c7f8"
-CROS_WORKON_TREE="a515b020a1d9e8c1e80df03e15d059000135d7a9"
+CROS_WORKON_COMMIT="68a78cc19b00e8867c9122cdf0981a7f8b6e1750"
+CROS_WORKON_TREE="9edd597c079eda8d938aa51cadbbf3507e4421b9"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"majolica"
+	"passionfruit"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "majolica/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "passionfruit/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( majolica )
+CROS_BOARDS=( passionfruit )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for Majolica"
+DESCRIPTION="Chrome OS Model configuration package for passionfruit"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-majolica"
+KEYWORDS="*"
+RDEPEND="!chromeos-base/chromeos-config-bsp-passionfruit"
 
 
 src_compile() {
 	platform_json_compile
 }
+
 
 src_install() {
 	platform_json_install

@@ -3,35 +3,39 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="36b5c747998b4cc777ad3bf4826b993a61ab10b3"
-CROS_WORKON_TREE=("eb9120408f0d1305a75a58bb717d51b137b577bc" "b23b8712f2ce845cc08545717153d51377e96e51")
+CROS_WORKON_COMMIT="68a78cc19b00e8867c9122cdf0981a7f8b6e1750"
+CROS_WORKON_TREE=("be2297aab60038255b48879e851e43bb7ee8bdc6" "259be6f2b15ef8fff9250336e4de95e1c56d5c52" "12a42bf0a6c8750bce76a7bf20fd9adb206a7cbd" "85be603d5026f35f2ca8666e03d77d675c23cbd0" "1fa21490bb3d9533779f4ff0ab46203bc00eec4d" "28a9ce6fa88b62b917811bb563a0d6872163000e")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"rex"
-	"mtlrvp"
+	"brask"
+	"gladios"
+	"kinox"
+	"kuldax"
+	"lisbon"
+	"moli"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "rex/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "brask/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( rex )
+CROS_BOARDS=( brask )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for rex"
+DESCRIPTION="Chrome OS Model configuration package for brask"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
+RDEPEND="!chromeos-base/chromeos-config-bsp-brask"
 
-RDEPEND=""
 
 src_compile() {
 	platform_json_compile

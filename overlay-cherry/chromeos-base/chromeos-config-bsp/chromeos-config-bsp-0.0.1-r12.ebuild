@@ -3,33 +3,35 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="c35f597cc39fc9e238340cb6d0feeb6b79d618f6"
-CROS_WORKON_TREE="ee22313409456317ea7ac07a5d480b9dad315098"
+CROS_WORKON_COMMIT="68a78cc19b00e8867c9122cdf0981a7f8b6e1750"
+CROS_WORKON_TREE=("e42791889d5ad9444f6dd92b61a76b4391cdb747" "e4ba593a7c1451ae1537d74cd1986b8daf541169" "ec735a804819d85fd462a6196ddbb5584cdeeeab")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"draco"
+	"cherry"
+	"dojo"
+	"tomato"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "draco/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( draco )
+CROS_BOARDS=( cherry )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for draco"
+DESCRIPTION="Chrome OS Model configuration package for cherry"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-draco"
+KEYWORDS="*"
+RDEPEND="!chromeos-base/chromeos-config-bsp-cherry"
 
 
 src_compile() {

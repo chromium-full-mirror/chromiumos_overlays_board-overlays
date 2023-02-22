@@ -1,37 +1,35 @@
-# Copyright 2021 The ChromiumOS Authors
+# Copyright 2023 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="ce176c12872faaa9c7e7fedc6cc515a55a99c7f8"
-CROS_WORKON_TREE=("b11537b30f8cae5aaf0a5b9d8ed94ffe82a7a6fb" "489b9fbf52f5c51513e1475dfbc047a907efc468" "f26221c990f8b0d654c4beb04ba4d16c0fd032d8")
+CROS_WORKON_COMMIT="68a78cc19b00e8867c9122cdf0981a7f8b6e1750"
+CROS_WORKON_TREE="207c691868b375f84241afce99951700dbc11163"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"cherry"
-	"dojo"
-	"tomato"
+	"hades"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "hades/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( cherry )
+CROS_BOARDS=( hades )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for cherry"
+DESCRIPTION="Chrome OS Model configuration package for hades"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="*"
-RDEPEND="!chromeos-base/chromeos-config-bsp-cherry"
+KEYWORDS="* amd64 x86"
+RDEPEND="!chromeos-base/chromeos-config-bsp-hades"
 
 
 src_compile() {
