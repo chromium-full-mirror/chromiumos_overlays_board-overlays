@@ -24,7 +24,6 @@ RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
 	chromeos-base/touch_updater:=
-	!iioservice? ( chromeos-base/chromeos-accelerometer-init )
 "
 DEPEND="
 	${RDEPEND}
