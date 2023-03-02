@@ -21,6 +21,7 @@ KEYWORDS="-* arm64 arm"
 IUSE="arcvm cheets"
 
 RDEPEND="
+	chromeos-base/ec-utils
 	net-misc/rmtfs
 	net-misc/qc-netmgr
 "
@@ -54,6 +55,9 @@ src_install() {
 
 	# Loosen iommu strictness for USB and SD/MMC
 	udev_dorules "${FILESDIR}/98-qcom-nonstrict-iommu.rules"
+
+	# Shorten the hibernation delay
+	udev_dorules "${FILESDIR}/99-ec-hibdelay.rules"
 
 	# udev rules to enable USB wakeup
 	udev_dorules "${FILESDIR}/99-usb-wakeup.rules"
