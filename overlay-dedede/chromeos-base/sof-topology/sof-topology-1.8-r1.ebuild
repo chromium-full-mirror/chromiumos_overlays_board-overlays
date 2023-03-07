@@ -1,4 +1,4 @@
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2020 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -16,4 +16,5 @@ S=${WORKDIR}/${PN}-dedede-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins ./*.tplg
+	dosym ./sof-jsl-rt5682-rt1015.tplg /lib/firmware/intel/sof-tplg/sof-jsl-rt5682-rt1019.tplg
 }
