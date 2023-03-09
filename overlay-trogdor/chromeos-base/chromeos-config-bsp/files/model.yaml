@@ -317,6 +317,9 @@ chromeos:
       products:
         - $whitelabel-tag: ""
           $help-content-id: "PAZQUEL360"
+        - $custom-label-tag: "prowise"
+          $help-content-id: "PAZQUEL360-PROWISE"
+
       skus:
         - $sku-id: 20 # LTE+eSIM
           $use-modemmanager-for-dynamic-sar: "1"
