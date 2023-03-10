@@ -16,6 +16,5 @@ S=${WORKDIR}/${PN}-dedede-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins ./*.tplg
-	dosym ./sof-jsl-rt5682-rt1015.tplg /lib/firmware/intel/sof-tplg/sof-jsl-rt5682-rt1019.tplg
 	dodoc README
 }
