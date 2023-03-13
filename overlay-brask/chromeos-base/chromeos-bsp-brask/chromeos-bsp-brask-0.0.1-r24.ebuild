@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE=""
+IUSE="brask-labstation"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -31,7 +31,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{94144292-1100-4882-AC53-51E04BB29F9E}" "CHROMEBOX"
+	if use brask-labstation; then
+		doappid "{BB2F7FE3-BC46-4F46-8DA0-D50CDBAA4B20}" "CHROMEBOX"
+	else
+		doappid "{94144292-1100-4882-AC53-51E04BB29F9E}" "CHROMEBOX"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
