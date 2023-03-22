@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="adlnrvp bootimage zephyr_ec"
+IUSE="adlnrvp bootimage nissa-kernelnext zephyr_ec"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -35,6 +35,8 @@ DEPEND="
 src_install() {
 	if use adlnrvp; then
 		doappid "{D60D81DB-751D-4EB6-AF86-8C073A6BBB91}" "REFERENCE"
+	elif use nissa-kernelnext; then
+		doappid "{D54FD0B1-5EBA-499C-89B9-F0FA42E11614}" "REFERENCE"
 	else
 		doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
 	fi
