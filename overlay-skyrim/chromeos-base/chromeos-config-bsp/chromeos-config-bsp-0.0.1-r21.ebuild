@@ -3,7 +3,7 @@
 
 EAPI=6
 
-CROS_WORKON_COMMIT="68a78cc19b00e8867c9122cdf0981a7f8b6e1750"
+CROS_WORKON_COMMIT="e87596422ffab9ccd8bee02f4a3e318c9720e0c1"
 CROS_WORKON_TREE=("6e560e57c2067aae3e29f9fc49865ee9f485039b" "1e985f232101eac4df38c35ae484394c31d279b7")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
@@ -19,7 +19,7 @@ CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
 CROS_WORKON_SUBTREE=( "$(printf "skyrim/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( nissa )
+CROS_BOARDS=( skyrim )
 
 inherit cros-unibuild cros-workon
 
