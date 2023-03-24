@@ -1,4 +1,4 @@
-USE="-coreboot -encrypted_stateful"
+USE="-coreboot"
 
 # TODO crbug.com/412430 (sbasi) - Re-enable these tests once overlay-specific
 # test baselines are supported.
