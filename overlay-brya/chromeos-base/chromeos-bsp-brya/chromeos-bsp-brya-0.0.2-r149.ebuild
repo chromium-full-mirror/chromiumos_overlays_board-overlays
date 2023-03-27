@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="brya-arc-t brya-manatee brya-manatee-kernelnext brya-nopkvm brya-pkvm adlrvp brya-lvm-stateful zephyr_poc brya-hibernate brya-kernelnext brya-connectivitynext"
+IUSE="brya-arc-t brya-manatee brya-manatee-kernelnext brya-nopkvm brya-pkvm adlrvp brya-lvm-stateful zephyr_poc brya-hibernate brya-kernelnext brya-connectivitynext brya-pvs"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -57,6 +57,8 @@ src_install() {
 		doappid "{0BB14857-2FC4-4DE2-9739-63F70E978D85}" "REFERENCE"
 	elif use brya-lvm-stateful; then
 		doappid "{84BBC912-D9F5-4EF2-89B8-7AED7592AB49}" "REFERENCE"
+	elif use brya-pvs; then
+		doappid "{4B3CA730-C8D3-42F1-8F33-A898F24B1EE5}" "REFERENCE"
 	elif use zephyr_poc; then
 		doappid "{4E43EBE7-CAE7-4AF7-A2EA-E37B2C3ECE32}" "REFERENCE"
 	else
