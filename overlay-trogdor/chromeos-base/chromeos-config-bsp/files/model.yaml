@@ -317,7 +317,7 @@ chromeos:
       products:
         - $whitelabel-tag: ""
           $help-content-id: "PAZQUEL360"
-        - $custom-label-tag: "prowise"
+        - $whitelabel-tag: "prowise"
           $help-content-id: "PAZQUEL360-PROWISE"
 
       skus:
