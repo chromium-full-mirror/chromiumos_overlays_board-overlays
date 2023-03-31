@@ -18,11 +18,15 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
+IUSE="vpu_driver"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	vpu_driver? (
+		chromeos-base/intel-vpu-umd:=
+	)
 "
 DEPEND="
 	${RDEPEND}
