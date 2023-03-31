@@ -21,7 +21,7 @@
             <Limit name="measured-frame-rate-320x240" range="353-579" /> <!-- N=350 -->
             <!-- measured 98%:144-494 med:250 FLAKY(mn=105.1 < 125 - 534 < mx=545.0) -->
             <Limit name="measured-frame-rate-720x480" range="199-301" /> <!-- N=332 v98%=1.9 -->
-            <Limit name="measured-frame-rate-1280x720" range="56-122" /> <!-- N=344 v98%=1.8 -->
+            <Limit name="measured-frame-rate-1280x720" range="77-169" /> <!-- N=344 v98%=1.8 -->
             <!-- measured 98%:24-131 med:73 FLAKY(mn=16.4 < 24 - 132 < mx=133.9) variance:2.3 -->
             <Limit name="measured-frame-rate-1920x1080" range="36-79" /> <!-- N=344 -->
         </MediaCodec>
