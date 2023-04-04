@@ -34,6 +34,8 @@ audio_common: &audio_common
       destination: "{{$cras-dest}}/{{$card2}}"
     - source: "{{$cras-source}}/dsp.ini"
       destination: "{{$cras-dest}}/dsp.ini"
+    - source: "{{$cras-source}}/board.ini"
+      destination: "{{$cras-dest}}/board.ini"
     - source: "{{$ucm-source1}}/HiFi.conf"
       destination: "{{$ucm-dest1}}/HiFi.conf"
     - source: "{{$ucm-source1}}/{{$card1}}.conf"
