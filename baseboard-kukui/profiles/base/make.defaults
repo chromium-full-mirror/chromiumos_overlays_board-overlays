@@ -45,3 +45,6 @@ USE="${USE} -mosys_platform_generic mosys_platform_kukui"
 # virtgpu_cross_domain backend in minigbm, so that allocations no longer have
 # to go through host virglrenderer (avoid creating vrend context).
 USE="${USE} cross_domain_context"
+
+# ARCVM needs a CPU boost in order to perform adequately (b/217825939)
+USE="${USE} arcvm-cpu-boost"

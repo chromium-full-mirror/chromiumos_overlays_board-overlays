@@ -63,3 +63,6 @@ USE="${USE} virtgpu_native_context"
 
 # Enable hermes for eSIM support.
 USE="${USE} esim"
+
+# ARCVM needs a CPU boost in order to perform adequately (b/217825939)
+USE="${USE} arcvm-cpu-boost"
