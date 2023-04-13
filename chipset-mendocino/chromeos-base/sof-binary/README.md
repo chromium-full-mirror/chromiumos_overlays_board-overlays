@@ -2,9 +2,9 @@ This file should always contain information regarding which branch/commit
 the firmware was built from.
 
 repo      : https://github.com/thesofproject/sof/
-branch    : main
-commit id : 8bfcf59980b7302bc3621dc3b889ac279ad81ae4
+branch    : amd-rmb-stable
+commit id : 114af199db6ea69e0e978bfed3f519d2540f8ed6
 
 Md5sum
-763738834032cdce4527f683a5d7dc4c  sof-rmb.ldc
-acf6af00742676dc6668df5f61d4b3d4  sof-rmb.ri
+8a4c70a97855f9c95a9c88126f9045c1  sof-rmb.ldc
+83710bc947053b54f46fdab47053061d  sof-rmb.ri
