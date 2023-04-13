@@ -16,4 +16,5 @@ S=${WORKDIR}/${PN}-nissa-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins ./*.tplg
+	dosym ./sof-adl-max98360a-rt5682.tplg /lib/firmware/intel/sof-tplg/sof-adl-max98360a-cs42l42.tplg
 }
