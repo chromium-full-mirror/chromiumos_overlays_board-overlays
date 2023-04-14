@@ -17,12 +17,12 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="iioservice puff-borealis puff-kernelnext"
+IUSE="iioservice puff-borealis puff-kernelnext kernel-4_19"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
-	chromeos-base/sof-binary:=
-	chromeos-base/sof-topology:=
+	kernel-4_19? ( chromeos-base/sof-binary:= chromeos-base/sof-topology:= )
+	!kernel-4_19? ( sys-firmware/sof-firmware:= )
 	chromeos-base/touch_updater:=
 "
 DEPEND="
