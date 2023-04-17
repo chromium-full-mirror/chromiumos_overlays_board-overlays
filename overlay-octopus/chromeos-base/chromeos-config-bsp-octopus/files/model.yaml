@@ -1074,6 +1074,7 @@ chromeos:
         - $whitelabel-tag: "ctl"
         - $whitelabel-tag: "tekno"
         - $whitelabel-tag: "pixart"
+        - $whitelabel-tag: "multilaser"
       skus:
         - $sku-id-val: 49
           config:
