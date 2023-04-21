@@ -91,6 +91,7 @@ base-config: &base_config
   scheduler-tune:
     boost-urgent: 60
     boost-top-app: 60
+    boost-arcvm: 0.82
 
 zephyr-firmware-common: &zephyr_firmware_common
   <<: *firmware_common
