@@ -146,6 +146,7 @@ common_config: &common_config
     psu-type: battery
   scheduler-tune:
     boost-urgent: 40
+    boost-arcvm: 0.4
   rmad: *rmad_common
 
 identity-sku-config: &identity_sku_config
