@@ -7,11 +7,11 @@ USE=""
 
 USE="${USE} staryu"
 
-# TODO: Enable AP firmware build later
-#USE="${USE} bootimage"
+# Enable AP firmware build
+USE="${USE} bootimage"
 
-# TODO: Enable EC firmware build later
-#USE="${USE} zephyr_ec"
+# Enable EC firmware build
+USE="${USE} zephyr_ec"
 
 # Enable unibuild
 USE="${USE} unibuild has_chromeos_config_bsp"
