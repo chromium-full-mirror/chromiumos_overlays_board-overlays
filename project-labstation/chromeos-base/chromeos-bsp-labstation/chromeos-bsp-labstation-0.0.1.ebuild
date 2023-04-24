@@ -3,8 +3,6 @@
 
 EAPI="7"
 
-inherit tmpfiles
-
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies or portage actions"
 
 LICENSE="BSD-Google"
@@ -70,8 +68,6 @@ DEPEND=""
 S=${WORKDIR}
 
 src_install() {
-	dotmpfiles "${FILESDIR}"/init/tmpfiles.d/*.conf
-
 	insinto /etc/init
 	doins "${FILESDIR}"/init/*.conf
 	# HACK HACK HACK TODO(kevcheng):
@@ -83,7 +79,4 @@ src_install() {
 
 	insinto /etc/sysctl.d
 	doins "${FILESDIR}"/sysctl.d/*.conf
-
-	insinto /etc/rsyslog.d
-	doins "${FILESDIR}"/rsyslog.d/*.conf
 }
