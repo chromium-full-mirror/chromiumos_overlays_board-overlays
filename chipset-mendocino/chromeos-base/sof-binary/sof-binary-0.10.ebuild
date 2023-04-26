@@ -17,5 +17,5 @@ src_install() {
 	insinto /lib/firmware/amd/sof/community
 	doins sof-rmb.ri
 	doins sof-rmb.ldc
-	dodoc README
+	dodoc README.md
 }
