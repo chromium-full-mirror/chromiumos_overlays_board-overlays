@@ -51,7 +51,8 @@ enable_gpio() {
 }
 
 main() {
-  local fw=$(cros_config /modem firmware-variant)
+  local fw
+  fw=$(cros_config /modem firmware-variant)
   if [ -z "${fw}" ]; then
     exit 0
   fi

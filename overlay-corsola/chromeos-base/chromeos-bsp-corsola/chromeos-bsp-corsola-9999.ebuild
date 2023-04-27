@@ -21,7 +21,6 @@ IUSE="corsola64"
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-corsola
-	chromeos-base/lte_power_control
 	chromeos-base/sof-binary
 	chromeos-base/sof-topology
 "

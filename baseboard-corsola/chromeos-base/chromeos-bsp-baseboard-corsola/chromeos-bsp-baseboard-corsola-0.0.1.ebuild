@@ -16,7 +16,7 @@ KEYWORDS="-* arm64 arm"
 S="${WORKDIR}"
 IUSE=""
 
-DEPEND=""
+DEPEND="chromeos-base/lte_power_control"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
