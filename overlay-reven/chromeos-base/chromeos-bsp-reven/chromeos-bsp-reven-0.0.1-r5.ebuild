@@ -20,6 +20,7 @@ KEYWORDS="*"
 RDEPEND="
 	!<chromeos-base/gestures-conf-0.0.2
 	!<chromeos-base/chromeos-bsp-reven-private-0.0.1-r20
+	chromeos-base/flex_bluetooth
 	chromeos-base/reven-hwdb
 	chromeos-base/reven-quirks
 "
