@@ -3,8 +3,8 @@ the firmware was built from.
 
 repo      : https://github.com/thesofproject/sof/
 branch    : amd-rmb-stable
-commit id : e11dfe13ed3dfa05742bb864062870afd2ca58bb
+commit id : b30d28387d872d10fab0e92b5cb4d54cbfcdc387
 
 Md5sum
-abb03920b5c076a5574cb1c740f1bf11  sof-rmb.ldc
-199b4be227c573f72499b5adc7c89220  sof-rmb.ri
+dde1ac0594c5fcc4ac4d5699da21456a  sof-rmb.ldc
+36c29bba2ea47dde99a9913ba8d1a8e1  sof-rmb.ri
