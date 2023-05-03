@@ -17,6 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
+IUSE="birman"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND=""
@@ -26,5 +27,9 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{5ECED2E3-D919-4DF9-B42A-C9FC136C55BD}" "REFERENCE"
+	if use birman; then
+		doappid "{91CE340A-9272-4019-B14B-59C00F926DFA}" "OTHER"
+	else
+		doappid "{5ECED2E3-D919-4DF9-B42A-C9FC136C55BD}" "REFERENCE"
+	fi
 }
