@@ -12,13 +12,6 @@
         "fs_size": "2600 MiB",
         "size": "4096 MiB"
       }
-    ],
-    "factory_install": [
-      {
-        # Kernel for Slot B. Identical to kernel A except for signing.
-        "num": 4,
-        "size": "32 MiB"
-      }
     ]
   }
 }
