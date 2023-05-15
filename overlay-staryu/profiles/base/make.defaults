@@ -21,3 +21,6 @@ USE="${USE} unibuild has_chromeos_config_bsp"
 USE="${USE} pcserial"
 # Declare set of enabled consoles
 TTY_CONSOLE="ttyS0"
+
+# Enable hammerd for updating base firmware
+USE="${USE} hammerd"
