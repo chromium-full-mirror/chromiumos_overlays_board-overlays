@@ -29,7 +29,7 @@
         </MediaCodec>
         <MediaCodec name="c2.android.avc.encoder" type="video/avc" update="true">
             <!-- min:125 max:1601 -->
-            <Limit name="measured-frame-rate-320x240" range="331-728" />
+            <Limit name="measured-frame-rate-320x240" range="728-1600" />
             <!-- min:85 max:682 -->
             <Limit name="measured-frame-rate-720x480" range="166-365" />
             <!-- min:72 max:370 -->
