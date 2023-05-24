@@ -5,7 +5,7 @@ EAPI=7
 
 CROS_WORKON_COMMIT="d2d95e8af89939f893b1443135497c1f5572aebc"
 CROS_WORKON_TREE="776139a53bc86333de8672a51ed7879e75909ac9"
-inherit appid cros-unibuild cros-workon
+inherit appid cros-unibuild cros-workon udev
 
 # This ebuild only cares about its own FILESDIR and ebuild file, so it tracks
 # the canonical empty project.
@@ -36,4 +36,10 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install a rule tagging keyboard as internal
+	udev_dorules "${FILESDIR}/91-hammer-keyboard.rules"
+
+	# Install hammerd udev rules and override for chromeos-base/hammerd.
+	udev_dorules "${FILESDIR}/99-hammerd.rules"
 }
