@@ -24,3 +24,6 @@ TTY_CONSOLE="ttyS0"
 
 # Enable hammerd for updating base firmware
 USE="${USE} hammerd"
+
+# Include the himax firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} himax"
