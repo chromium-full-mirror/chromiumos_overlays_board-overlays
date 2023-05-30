@@ -30,12 +30,14 @@ set_gpio() {
   local gpio="$1"
   local gpio_level="$2"
   local gpio_path
-  echo "${gpio}" > "${GPIO_DIR}/export"
-  ret="$?"
-  if [ "${ret}" -ne 0 ]; then
-    exit 1
-  fi
   gpio_path="${GPIO_DIR}/gpio${gpio}"
+  if [ ! -e "${gpio_path}" ]; then
+    echo "${gpio}" > "${GPIO_DIR}/export"
+    ret="$?"
+    if [ "${ret}" -ne 0 ]; then
+      exit 1
+    fi
+  fi
   echo "${gpio_level}" > "${gpio_path}/direction"
   echo "${gpio}" > "${GPIO_DIR}/unexport"
 }
