@@ -1,37 +1,38 @@
 # Copyright 2021 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CROS_WORKON_COMMIT="e87596422ffab9ccd8bee02f4a3e318c9720e0c1"
-CROS_WORKON_TREE=("6e560e57c2067aae3e29f9fc49865ee9f485039b" "1e985f232101eac4df38c35ae484394c31d279b7")
+CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
+CROS_WORKON_TREE=("0f7898df06c9b8aee3d8c5c8d496f844ce74f4f1" "c6aa33f199411821dcdf886f8d80fda7bbf9ec61" "2857b3b1cb08543395f0b8b775e3eb9a21d8fc72")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"skyrim15w"
-	"skyrim6w"
+	"mtlrvp"
+	"rex"
+	"screebo"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "skyrim/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "rex/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( skyrim )
+CROS_BOARDS=( rex )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for skyrim"
+DESCRIPTION="Chrome OS Model configuration package for rex"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
-RDEPEND=""
 
+RDEPEND=""
 
 src_compile() {
 	platform_json_compile

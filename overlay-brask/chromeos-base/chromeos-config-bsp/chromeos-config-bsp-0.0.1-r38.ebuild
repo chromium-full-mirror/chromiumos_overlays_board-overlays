@@ -3,36 +3,38 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="5fa11d8297c405a7b1e8da3ed17a2114a739215c"
-CROS_WORKON_TREE=("6c17057db7603bce53b497ff6c11834833cc96e3" "34f55c99990451777d806577345848951ac73a87" "2db2f8541b0f2679ebf44c803cb5859425054b68" "e733adbdaf36614d1c3ab3e8dbfab38f3778f6d8")
+CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
+CROS_WORKON_TREE=("f0bee617eb77579d7bc8e2ac05e20edcd176d80b" "e511dc716b106ac3a1c7e0b716282ae28a4a2d61" "8e1ca6ded9cad75ebdd112b3febd91055252a8ea" "5c1dae070e155c65d74754eca6689e4aa893d463" "27513567e25d29331424a6331d1ee1f1e49aa0c5" "dbbb97cf1571d62b37bf5f3213fe7ebb3b4b5f64")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"adlnrvp"
-	"craask"
-	"nereid"
-	"nivviks"
+	"brask"
+	"gladios"
+	"kinox"
+	"kuldax"
+	"lisbon"
+	"moli"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "nissa/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "brask/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( nissa )
+CROS_BOARDS=( brask )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for nissa"
+DESCRIPTION="Chrome OS Model configuration package for brask"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
-RDEPEND="!chromeos-base/chromeos-config-bsp-nissa"
+RDEPEND="!chromeos-base/chromeos-config-bsp-brask"
 
 
 src_compile() {
