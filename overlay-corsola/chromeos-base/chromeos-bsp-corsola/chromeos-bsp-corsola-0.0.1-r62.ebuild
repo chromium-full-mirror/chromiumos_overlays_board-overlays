@@ -18,7 +18,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="corsola-kernelnext"
+IUSE="corsola-arc-t corsola-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -32,7 +32,9 @@ DEPEND="
 "
 
 src_install() {
-	if use corsola-kernelnext; then
+	if use corsola-arc-t; then
+		doappid "{6EBDE1FC-D0DB-4BB4-B9E7-23EBFBB72123}" "CHROMEBOOK"
+	elif use corsola-kernelnext; then
 		doappid "{A373B826-5687-43D0-B5D1-E049E1683F50}" "CHROMEBOOK"
 	else
 		doappid "{3C9B1B3B-E594-448D-97A7-B3A2568BCC5C}" "CHROMEBOOK"
