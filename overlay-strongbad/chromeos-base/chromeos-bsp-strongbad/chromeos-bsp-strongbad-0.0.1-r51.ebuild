@@ -19,7 +19,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="strongbad-kernelnext strongbad-userdebug strongbad64"
+IUSE="strongbad-kernelnext strongbad-userdebug"
 
 RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-trogdor
@@ -31,8 +31,6 @@ src_install() {
 		doappid "{CAF7DF76-5722-4B6F-9994-D7D222F191D7}" "CHROMEBOOK"
 	elif use strongbad-userdebug; then
 		doappid "{9B15802E-94AF-24C2-5DC4-D9A3A80E0FF5}" "CHROMEBOOK"
-	elif use strongbad64; then
-		doappid "{7872C88E-130B-7EDB-17EE-4555B7C0B9F9}" "CHROMEBOOK"
 	else
 		doappid "{ABD68995-5A83-31CA-9AC6-49D8194EEA52}" "CHROMEBOOK"
 	fi
