@@ -25,6 +25,7 @@ RDEPEND="
 	chromeos-base/sof-topology:=
 	chromeos-base/touch_updater:=
 	media-sound/sound_card_init:=
+	net-wireless/ax211-updater
 "
 DEPEND="
 	${RDEPEND}
