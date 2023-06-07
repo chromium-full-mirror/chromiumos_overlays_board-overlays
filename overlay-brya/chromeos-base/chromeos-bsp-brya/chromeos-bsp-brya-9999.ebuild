@@ -26,6 +26,7 @@ RDEPEND="
 	chromeos-base/touch_updater:=
 	media-sound/sound_card_init:=
 	modemfwd? ( chromeos-base/modemfwd-helpers )
+	net-wireless/ax211-updater
 "
 DEPEND="
 	${RDEPEND}

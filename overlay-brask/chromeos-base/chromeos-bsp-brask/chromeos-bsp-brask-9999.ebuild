@@ -22,6 +22,7 @@ RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-brya:=
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	net-wireless/ax211-updater
 "
 DEPEND="
 	${RDEPEND}
