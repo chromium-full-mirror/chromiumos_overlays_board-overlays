@@ -16,34 +16,43 @@ DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
 
 LICENSE="BSD-Google"
-KEYWORDS="-* amd64 x86"
-IUSE="brask-labstation midna"
+KEYWORDS="* amd64 x86"
+IUSE="adlnrvp bootimage nissa-kernelnext zephyr_ec nissa-pvs"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
-	chromeos-base/chromeos-bsp-baseboard-brya:=
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
+	chromeos-base/touch_updater:=
+	net-wireless/ax211-updater
 "
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
+	bootimage? ( sys-boot/chromeos-bootimage:= )
+	zephyr_ec? ( chromeos-base/chromeos-zephyr:= )
 "
 
 src_install() {
-	if use brask-labstation; then
-		doappid "{BB2F7FE3-BC46-4F46-8DA0-D50CDBAA4B20}" "CHROMEBOX"
-	elif use midna; then
-		doappid "{BB55D437-14B9-48D9-A6B2-1C6B994E307F}" "CHROMEBOX"
+	if use adlnrvp; then
+		doappid "{D60D81DB-751D-4EB6-AF86-8C073A6BBB91}" "REFERENCE"
+	elif use nissa-kernelnext; then
+		doappid "{D54FD0B1-5EBA-499C-89B9-F0FA42E11614}" "REFERENCE"
+	elif use nissa-pvs; then
+		doappid "{99582A00-F79E-4E99-A440-37E461A98E8D}" "REFERENCE"
 	else
-		doappid "{94144292-1100-4882-AC53-51E04BB29F9E}" "CHROMEBOX"
+		doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
 	fi
-
 	# Install audio config files
 	unibuild_install_files audio-files
 
-	udev_dorules "${FILESDIR}/99-chromeos-brask-usb-nfc-beep.rules"
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}"/common/udev/*.rules
 
-	exeinto "$(get_udevdir)"
-	doexe "${FILESDIR}"/control_usb_nfc_beep.sh
+	insinto /etc/modprobe.d
+	doins "${FILESDIR}/common/ish/ish.conf"
+
+	# Install platform specific config files for power_manager.
+	insinto "/usr/share/power_manager/board_specific"
+	doins "${FILESDIR}"/powerd_prefs/*
 }
