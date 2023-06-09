@@ -57,3 +57,6 @@ USE="${USE} kvm_invept_global"
 
 # Allows Chrome to start in the presence of multiple threads.
 USE="${USE} gpu_sandbox_start_early"
+
+# Disable VP9 hardware decoding because it causes hard-to-repro hangs.
+USE="${USE} disable_VP9_dec"
