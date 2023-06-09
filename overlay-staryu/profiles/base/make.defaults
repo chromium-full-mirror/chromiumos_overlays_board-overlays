@@ -19,6 +19,9 @@ USE="${USE} cros_ec"
 # Enable unibuild
 USE="${USE} unibuild has_chromeos_config_bsp"
 
+# Enable detachable UI in recovery mode.
+USE="${USE} detachable"
+
 # Uncomment these lines to activate the serial port.
 # Enable kernel serial drivers
 USE="${USE} pcserial"
