@@ -18,7 +18,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops modemfwd "
+IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops modemfwd rex-arc-t"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -44,7 +44,11 @@ DEPEND="
 "
 
 src_install() {
-	doappid "{2B8D1068-48CF-4256-A2D5-335849F11718}" "REFERENCE"
+	if use rex-arc-t; then
+		doappid "{2A32B309-108B-421D-8DFD-CBC48790E12B}" "CHROMEBOOK"
+	else
+		doappid "{2B8D1068-48CF-4256-A2D5-335849F11718}" "REFERENCE"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
