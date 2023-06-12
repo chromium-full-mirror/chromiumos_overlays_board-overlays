@@ -22,6 +22,7 @@ IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops modemfwd rex-arc-t"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
+	chromeos-base/touch_updater
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
 	vpu_driver? (
