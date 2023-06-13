@@ -1,0 +1,6 @@
+# Release branch fix for b/284728129
+argv: "sh"
+argv: "-c"
+argv: "echo 0 > /proc/sys/kernel/hung_task_panic"
+respawn: false
+wait_for_exit: true
