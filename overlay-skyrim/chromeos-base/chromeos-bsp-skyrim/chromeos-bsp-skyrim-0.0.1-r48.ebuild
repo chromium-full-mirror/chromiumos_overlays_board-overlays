@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="skyrim-chausie skyrim-kernelnext"
+IUSE="skyrim-arc-t skyrim-chausie skyrim-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -31,7 +31,9 @@ DEPEND="
 "
 
 src_install() {
-	if use skyrim-chausie; then
+	if use skyrim-arc-t; then
+		doappid "{C370AF51-F808-46B6-9399-74CD87CD9BCC}" "CHROMEBOOK"
+	elif use skyrim-chausie; then
 		doappid "{DFBA47A4-988E-441D-A7C0-6FCA69C62878}" "CHROMEBOOK"
 	elif use skyrim-kernelnext; then
 		doappid "{EAAAC01D-3DBC-4F72-A2FF-9233F2838831}" "CHROMEBOOK"
