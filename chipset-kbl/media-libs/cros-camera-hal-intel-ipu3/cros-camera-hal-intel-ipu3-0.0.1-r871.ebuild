@@ -3,8 +3,8 @@
 
 EAPI=5
 
-CROS_WORKON_COMMIT=("91ac10a0ccfcd551da72b79264b79938fbabedd2" "268f097da7b67a0943fddde3d30df2d366e825b7")
-CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "606ecdf2b5a5ecfbf052bc5cfd32f56624f184f6" "07513a10b8bf51e64e4950cb2ff2ad9ef265bafc")
+CROS_WORKON_COMMIT=("df36df5c8566f93b6a9c1515d4065a6310d8a69d" "268f097da7b67a0943fddde3d30df2d366e825b7")
+CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "c9df498f38f62545b69c6a528e43a7a9b4558242" "07513a10b8bf51e64e4950cb2ff2ad9ef265bafc")
 CROS_WORKON_PROJECT=("chromiumos/platform2" "chromiumos/platform/camera")
 CROS_WORKON_LOCALNAME=("../platform2" "../platform/camera")
 CROS_WORKON_DESTDIR=("${S}/platform2" "${S}/platform2/platform_camera")
