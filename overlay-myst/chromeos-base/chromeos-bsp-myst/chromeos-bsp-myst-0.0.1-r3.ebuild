@@ -32,4 +32,7 @@ src_install() {
 	else
 		doappid "{5ECED2E3-D919-4DF9-B42A-C9FC136C55BD}" "REFERENCE"
 	fi
+	# Install cpufreq driver config.
+	insinto /etc
+	doins "${FILESDIR}"/cpufreq.conf
 }
