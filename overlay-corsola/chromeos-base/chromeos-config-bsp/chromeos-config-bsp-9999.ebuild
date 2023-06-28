@@ -10,6 +10,7 @@ PROJECTS=(
 	"kingler"
 	"krabby"
 	"magikarp"
+	"ponyta"
 	"steelix"
 	"tentacruel"
 	"voltorb"
