@@ -269,8 +269,13 @@ chromeos:
       $ufc-1080p: False
       products:
         - $whitelabel-tag: ""
+          $help-content-id: "PAZQUEL"
         - $whitelabel-tag: "orbic"
+          $help-content-id: "PAZQUEL-ORBIC"
         - $whitelabel-tag: "tsm"
+          $help-content-id: "PAZQUEL-TSM"
+        - $whitelabel-tag: "liva"
+          $help-content-id: "PAZQUEL-LIVA"
       skus:
         - $sku-id: 0
           $use-modemmanager-for-dynamic-sar: "1"
@@ -319,7 +324,7 @@ chromeos:
           $help-content-id: "PAZQUEL360"
         - $whitelabel-tag: "prowise"
           $help-content-id: "PAZQUEL360-PROWISE"
-        - $custom-label-tag: "mcj"
+        - $whitelabel-tag: "mcj"
           $help-content-id: "PAZQUEL360-MCJ"
 
       skus:
