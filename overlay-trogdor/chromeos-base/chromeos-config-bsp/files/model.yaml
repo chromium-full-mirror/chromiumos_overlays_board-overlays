@@ -319,6 +319,8 @@ chromeos:
           $help-content-id: "PAZQUEL360"
         - $whitelabel-tag: "prowise"
           $help-content-id: "PAZQUEL360-PROWISE"
+        - $custom-label-tag: "mcj"
+          $help-content-id: "PAZQUEL360-MCJ"
 
       skus:
         - $sku-id: 20 # LTE+eSIM
