@@ -18,7 +18,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* arm64 arm"
-IUSE="hana-arc64 hana-kernelnext"
+IUSE="hana-arc64 hana-kernelnext kernel-5_15"
 
 # Add dependencies on other ebuilds from within this board overlay
 DEPEND=""
@@ -38,8 +38,8 @@ src_install() {
 
 	# Install audio config files.
 	local audio_config_dir="${FILESDIR}/audio-config"
-	if use hana-kernelnext; then
-		audio_config_dir="${FILESDIR}/kernelnext-audio-config"
+	if use kernel-5_15; then
+		audio_config_dir="${FILESDIR}/5_15-audio-config"
 	fi
 	install_audio_configs hana "${audio_config_dir}"
 

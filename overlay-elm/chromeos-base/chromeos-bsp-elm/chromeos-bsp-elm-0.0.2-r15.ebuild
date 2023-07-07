@@ -18,7 +18,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* arm64 arm"
-IUSE="elm-arc64 elm-cheets elm-kernelnext elm-connectivitynext"
+IUSE="elm-arc64 elm-cheets elm-kernelnext elm-connectivitynext kernel-5_15"
 
 # Add dependencies on other ebuilds from within this board overlay
 DEPEND=""
@@ -46,8 +46,8 @@ src_install() {
 
 	# Install audio config files.
 	local audio_config_dir="${FILESDIR}/audio-config"
-	if use elm-kernelnext; then
-		audio_config_dir="${FILESDIR}/kernelnext-audio-config"
+	if use kernel-5_15; then
+		audio_config_dir="${FILESDIR}/5_15-audio-config"
 	fi
 	install_audio_configs elm "${audio_config_dir}"
 
