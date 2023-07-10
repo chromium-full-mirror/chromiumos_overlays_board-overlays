@@ -33,3 +33,6 @@ INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
 # Include g2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
