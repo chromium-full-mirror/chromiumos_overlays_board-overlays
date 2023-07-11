@@ -7,5 +7,12 @@
   },
   "parent": "disk_layout_v3.json",
   "layouts": {
+    "factory_install": [
+      {
+        # Kernel for Slot B. Identical to kernel A except for signing.
+        "num": 4,
+        "size": "32 MiB"
+      }
+    ]
   }
 }
