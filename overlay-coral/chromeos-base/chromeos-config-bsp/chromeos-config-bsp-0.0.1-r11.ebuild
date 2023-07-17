@@ -20,15 +20,11 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 RDEPEND="!chromeos-base/chromeos-config-bsp-coral"
-IUSE="kernel-5_10"
+IUSE=""
 
 src_install() {
 	insinto "${UNIBOARD_YAML_DIR}"
 	doins "${FILESDIR}/model.yaml"
 	insinto "${UNIBOARD_YAML_DIR}/include"
-	if use kernel-5_10; then
-		newins "${FILESDIR}/audio_5_10.yaml" "audio.yaml"
-	else
-		newins "${FILESDIR}/audio_4_4.yaml" "audio.yaml"
-	fi
+	doins "${FILESDIR}/audio.yaml"
 }
