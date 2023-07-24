@@ -35,4 +35,6 @@ src_install() {
 	# Install cpufreq driver config.
 	insinto /etc
 	doins "${FILESDIR}"/cpufreq.conf
+
+	unibuild_install_files audio-files
 }
