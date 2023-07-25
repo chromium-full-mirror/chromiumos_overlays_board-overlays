@@ -18,6 +18,9 @@ INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 # Include the pixart firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
 
+# Include the weida firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} weida"
+
 # Add EC logging
 USE="${USE} eclog"
 
