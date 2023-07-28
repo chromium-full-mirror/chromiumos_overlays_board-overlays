@@ -19,6 +19,10 @@ USE="${USE} unibuild has_chromeos_config_bsp"
 # Uncomment these lines to activate the serial port.
 # Enable kernel serial drivers
 USE="${USE} pcserial"
+
+# modemfwd is used for updating modem firmware.
+USE="${USE} modemfwd"
+
 # Declare set of enabled consoles
 TTY_CONSOLE="ttyS0"
 
