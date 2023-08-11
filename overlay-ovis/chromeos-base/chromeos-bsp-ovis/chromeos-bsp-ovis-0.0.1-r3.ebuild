@@ -18,13 +18,21 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-IUSE="vpu_driver"
+IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	chromeos-base/sof-binary:=
 	vpu_driver? (
 		chromeos-base/intel-vpu-umd:=
+	)
+	nnapi? (
+		vendor-nnhal? (
+			chromeos-base/intel-nnhal:=
+		)
+	)
+	nnapi_custom_ops? (
+		sci-libs/tensorflow:=
 	)
 "
 DEPEND="
