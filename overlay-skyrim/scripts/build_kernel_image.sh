@@ -20,6 +20,5 @@ modify_kernel_command_line() {
 
     echo "rtc-cmos.use_acpi_alarm=1"
     echo "amd-pmc.enable_stb=1"
-    echo "amd_iommu=force_isolation"
   } >> "$1"
 }
