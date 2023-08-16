@@ -1,9 +1,9 @@
 # Copyright 2020 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI="7"
 
-CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
+CROS_WORKON_COMMIT="8100a8b22b9c77451e285be1ee9f24b77da037bc"
 CROS_WORKON_TREE="364ec691c9216547820aa57ac7664e3c0dfacf03"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
