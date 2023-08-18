@@ -10,7 +10,7 @@ CROS_WORKON_OUTOFTREE_BUILD=1
 CROS_WORKON_PROJECT="chromiumos/platform/moblab"
 CROS_WORKON_LOCALNAME="../platform/moblab"
 
-inherit cros-workon
+inherit cros-workon toolchain-funcs
 
 DESCRIPTION="Install moblab, a test scheduling infrastructure"
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform/moblab/+/master/src/"
@@ -24,7 +24,12 @@ RDEPEND="
 	dev-python/grpcio
 	dev-python/protobuf-python
 	dev-python/netifaces
+	virtual/libusb:1=
 "
 
 DEPEND="${RDEPEND}
 "
+
+src_configure() {
+	tc-export CC PKG_CONFIG
+}
