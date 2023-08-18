@@ -3,32 +3,33 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
-CROS_WORKON_TREE="1913c14c12c96d4c5ef5729abe8479ac60dba449"
+CROS_WORKON_COMMIT="c369ae705e9f4f195867b625d2cda58eff70a13c"
+CROS_WORKON_TREE="ee1ebb39fd395ff6bc93bd6196cf596bff668323"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"myst"
+	"ovis"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "myst/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "ovis/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( myst )
+CROS_BOARDS=( ovis )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for myst"
+DESCRIPTION="Chrome OS Model configuration package for ovis"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
 KEYWORDS="* amd64 x86"
+
 RDEPEND=""
 
 src_compile() {

@@ -1,36 +1,37 @@
 # Copyright 2021 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
-CROS_WORKON_TREE=("f5766cfd94d4da5e0ef81df22605a9e6137fc3c9" "ba53d468db60c0228fb9139053585e58b4ce15e6")
+CROS_WORKON_COMMIT="c369ae705e9f4f195867b625d2cda58eff70a13c"
+CROS_WORKON_TREE=("ecc6ab7c467d04656d6f40fca9ac0b324c48dea0" "2769b85f0aa73d53e2c78d897f0fa4b4334c5406" "1dc5e4fb4474052839d933f3e55a51431c1c4cdd")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"skyrim15w"
-	"skyrim6w"
+	"cherry"
+	"dojo"
+	"tomato"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "skyrim/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "cherry/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( skyrim )
+CROS_BOARDS=( cherry )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for skyrim"
+DESCRIPTION="Chrome OS Model configuration package for cherry"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
-RDEPEND=""
+KEYWORDS="*"
+RDEPEND="!chromeos-base/chromeos-config-bsp-cherry"
 
 
 src_compile() {

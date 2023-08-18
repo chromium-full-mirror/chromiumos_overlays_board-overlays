@@ -3,40 +3,37 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="4e96af261c9bd1a2b9ae4f6b14bd3501ae0b8631"
-CROS_WORKON_TREE=("7c6c7b2fd071ea1045c5bcbc352e0e327adea481" "6a09290d8d3bb651e9bee291e1d1c67db93a9146")
+CROS_WORKON_COMMIT="c369ae705e9f4f195867b625d2cda58eff70a13c"
+CROS_WORKON_TREE="521c6a7e2bca446c899f212f712c6b8331a43909"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"starmie"
-	"staryu"
+	"myst"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "staryu/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "myst/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( staryu )
+CROS_BOARDS=( myst )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for staryu"
+DESCRIPTION="Chrome OS Model configuration package for myst"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="*"
-
-RDEPEND="!chromeos-base/chromeos-config-bsp-staryu"
+KEYWORDS="* amd64 x86"
+RDEPEND=""
 
 src_compile() {
 	platform_json_compile
 }
-
 
 src_install() {
 	platform_json_install

@@ -1,38 +1,36 @@
 # Copyright 2022 The ChromiumOS Authors
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file.
+# Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="ec9763b30821336369a943695924d2615f7921a8"
-CROS_WORKON_TREE=("1faa28f684c9c47e45a0d65ac782adec550a27b4" "e3fa379be71502ba4dc7935b0b14811f8ef2dc88")
+CROS_WORKON_COMMIT="c369ae705e9f4f195867b625d2cda58eff70a13c"
+CROS_WORKON_TREE="b56c2bbd52258e15b57bcfbb916947ca3abd0885"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"ciri"
-	"geralt"
+	"shotzo"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "geralt/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "dedede/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( geralt )
+CROS_BOARDS=( shotzo )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for geralt"
+DESCRIPTION="Chrome OS Model configuration package for shotzo"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="*"
+KEYWORDS="* amd64 x86"
 
-RDEPEND="!chromeos-base/chromeos-config-bsp-geralt"
+RDEPEND="!chromeos-base/chromeos-config-bsp-shotzo"
 
 src_compile() {
 	platform_json_compile

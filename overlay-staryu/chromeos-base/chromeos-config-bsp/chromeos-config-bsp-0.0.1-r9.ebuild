@@ -1,36 +1,37 @@
-# Copyright 2022 The ChromiumOS Authors
+# Copyright 2023 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-CROS_WORKON_COMMIT="b055a12c5cdedac4e8e29559297b2c5dcf5a111b"
-CROS_WORKON_TREE="36b6a07cb134278f276317b3a319e2f3883b3c9c"
+CROS_WORKON_COMMIT="c369ae705e9f4f195867b625d2cda58eff70a13c"
+CROS_WORKON_TREE=("6893b1e0fae1a5139714043cadcd697477b5cf12" "6a09290d8d3bb651e9bee291e1d1c67db93a9146")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
-	"shotzo"
+	"starmie"
+	"staryu"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
 
 CROS_WORKON_PROJECT=( "chromiumos/project" )
 CROS_WORKON_LOCALNAME=( "project_public" )
-CROS_WORKON_SUBTREE=( "$(printf "dedede/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
+CROS_WORKON_SUBTREE=( "$(printf "staryu/%s/${CONFIG_PATH} " "${PROJECTS[@]}")" )
 CROS_WORKON_DESTDIR=( "${PROJECTS[@]/#/${S}/}" )
-CROS_BOARDS=( shotzo )
+CROS_BOARDS=( staryu )
 
 inherit cros-unibuild cros-workon
 
-DESCRIPTION="Chrome OS Model configuration package for shotzo"
+DESCRIPTION="Chrome OS Model configuration package for staryu"
 HOMEPAGE="https://www.chromium.org/chromium-os"
 SRC_URI=""
 
 LICENSE="BSD-Google"
 SLOT="0/${PF}"
-KEYWORDS="* amd64 x86"
+KEYWORDS="*"
 
-RDEPEND="!chromeos-base/chromeos-config-bsp-shotzo"
+RDEPEND="!chromeos-base/chromeos-config-bsp-staryu"
 
 src_compile() {
 	platform_json_compile
