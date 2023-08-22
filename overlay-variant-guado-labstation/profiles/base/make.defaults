@@ -4,3 +4,9 @@
 
 # Uncomment this line to activate the serial port.
 #TTY_CONSOLE="ttyS0"
+
+# Initial value just for style purposes.
+USE=""
+
+# Enable chromeos-config.
+USE="${USE} unibuild has_chromeos_config_bsp"

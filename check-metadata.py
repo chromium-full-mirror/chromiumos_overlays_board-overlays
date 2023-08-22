@@ -339,7 +339,6 @@ MISSING_OVERLAYS_OWNERS = {
     "overlay-snappy",
     "overlay-soraka",
     "overlay-soraka-libcamera",
-    "overlay-variant-guado-labstation",
     "overlay-volteer",
     "project-satlab",
     "project-wilco",
