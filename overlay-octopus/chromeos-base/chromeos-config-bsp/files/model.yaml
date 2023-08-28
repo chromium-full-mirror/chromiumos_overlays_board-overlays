@@ -40,11 +40,12 @@ bluetooth-flags: &bluetooth_flags
 bluetooth-default: &bluetooth_default
   flags: *bluetooth_flags
 
-bluetooth-stop-on-suspend: &bluetooth_stop_on_suspend
+bluetooth-stop-on-suspend-and-block-floss: &bluetooth_stop_on_suspend_and_block_floss
   <<: *bluetooth_default
   flags:
     <<: *bluetooth_flags
     stop-on-suspend: true
+    block-floss-availability: true
 
 audio-main-common: &audio_main_common
   <<: *kernel-info
@@ -1313,14 +1314,14 @@ chromeos:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 66
           $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 67
           $ucm_extra_suffix: "{{$device-name}}"
           $has-keyboard-backlight: "1"
@@ -1329,14 +1330,14 @@ chromeos:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 68
           $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 69
           $ucm_extra_suffix: "blooglet.2ndcam"
           $has-keyboard-backlight: "1"
@@ -1345,14 +1346,14 @@ chromeos:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting_extra_suffix
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 70
           $ucm_extra_suffix: "blooglet.2ndcam"
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_boardini_setting_extra_suffix
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 71
           $ucm_extra_suffix: "blooglet.2ndcam"
           $has-keyboard-backlight: "1"
@@ -1361,14 +1362,14 @@ chromeos:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting_extra_suffix
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
         - $sku-id-val: 72
           $ucm_extra_suffix: "blooglet.2ndcam"
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_boardini_setting_extra_suffix
             <<: *cros_healthd_sku_number_enabled
-            bluetooth: *bluetooth_stop_on_suspend
+            bluetooth: *bluetooth_stop_on_suspend_and_block_floss
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
