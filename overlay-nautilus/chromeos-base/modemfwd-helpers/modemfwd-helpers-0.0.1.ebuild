@@ -30,7 +30,7 @@ src_install() {
 
 	udev_dorules "${FILESDIR}/94-l850gl-gpio.rules"
 
-	cellular_dofirmware "${FILESDIR}/firmware_manifest.prototxt"
+	cellular_dofirmware "${FILESDIR}/firmware_manifest.textproto"
 	# cellular_dofirmware cannot handle this case yet (multiple directories/modems)
 	insinto "$(_cellular_get_firmwaredir)/l850"
 	doins -r cellular-firmware-fibocom-l850-*/*
