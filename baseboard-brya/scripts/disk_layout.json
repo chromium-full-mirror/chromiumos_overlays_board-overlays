@@ -59,8 +59,8 @@
     "factory_install": [
       {
         "num": 3,
-        "size": "620 MiB",
-        "fs_size": "600 MiB"
+        "size": "1 GiB",
+        "fs_size": "900 MiB"
       }
     ],
     "16gb-rootfs": [
