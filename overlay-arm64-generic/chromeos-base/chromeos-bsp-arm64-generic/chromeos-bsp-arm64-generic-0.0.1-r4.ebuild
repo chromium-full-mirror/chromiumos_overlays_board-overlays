@@ -21,6 +21,7 @@ IUSE="arm64_vm"
 RDEPEND="
 	arm64_vm? (
 		chromeos-base/chromeos-gce-l1-vkms
+		chromeos-base/chromeos-visl
 		sys-boot/grub
 	)
 "
