@@ -23,7 +23,6 @@ IUSE="arcvm cheets"
 RDEPEND="
 	chromeos-base/ec-utils
 	net-misc/rmtfs
-	net-misc/qc-netmgr
 "
 DEPEND="${RDEPEND}"
 
