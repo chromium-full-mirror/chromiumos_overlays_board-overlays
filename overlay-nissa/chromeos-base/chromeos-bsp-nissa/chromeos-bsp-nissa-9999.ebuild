@@ -15,7 +15,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="~* ~amd64 ~x86"
-IUSE="adlnrvp bootimage nissa-arc-t nissa-kernelnext zephyr_ec nissa-pvs"
+IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec nissa-pvs"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -36,6 +36,8 @@ src_install() {
 		doappid "{D60D81DB-751D-4EB6-AF86-8C073A6BBB91}" "REFERENCE"
 	elif use nissa-arc-t; then
 		doappid "{334D3052-1921-4434-AD6D-84A8D5C5F97A}" "REFERENCE"
+	elif use nissa-cbx; then
+		doappid "{92CAA1E8-1A1E-4C85-97BC-3C17EF0CDF5E}" "REFERENCE"
 	elif use nissa-kernelnext; then
 		doappid "{D54FD0B1-5EBA-499C-89B9-F0FA42E11614}" "REFERENCE"
 	elif use nissa-pvs; then

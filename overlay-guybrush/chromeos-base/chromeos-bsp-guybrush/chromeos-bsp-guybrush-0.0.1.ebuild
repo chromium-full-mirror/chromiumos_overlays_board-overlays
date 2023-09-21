@@ -13,7 +13,7 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 S="${WORKDIR}"
-IUSE="guybrush-arc-t guybrush-kernelnext"
+IUSE="guybrush-arc-t guybrush-cbx guybrush-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -28,6 +28,8 @@ DEPEND="
 src_install() {
 	if use guybrush-arc-t; then
 		doappid "{62B84D24-99F9-4A42-A179-567347BFDD0A}" "CHROMEBOOK"
+	elif use guybrush-cbx; then
+		doappid "{B8D13D0E-C535-4EC9-AB00-7C7DFA83C77A}" "CHROMEBOOK"
 	elif use guybrush-kernelnext; then
 		doappid "{39ECC3D3-D4FC-4977-A3A1-9C5859E55AE5}" "CHROMEBOOK"
 	else
