@@ -19,7 +19,7 @@ dependencies or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="octopus-arc-r octopus-kernelnext"
+IUSE="octopus-arc-r octopus-arc-t octopus-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -37,6 +37,8 @@ src_install() {
 
 	if use octopus-arc-r; then
 		doappid "{312CD618-BD44-49ED-9E2B-AB4C5C99BF54}" "CHROMEBOOK"
+	elif use octopus-arc-t; then
+		doappid "{862DC12E-B70B-419D-92D3-56101E4253C3}" "CHROMEBOOK"
 	elif use octopus-kernelnext; then
 		doappid "{37D471DD-3774-4DA2-AF6D-6BA7F5A3B255}" "CHROMEBOOK"
 	else
