@@ -39,6 +39,9 @@ USE="${USE} disable_cros_video_decoder"
 # TODO(b/194744558): Disable CrOS video decoder at ARC.
 USE="${USE} arc_disable_cros_video_decoder"
 
+# MT8173 minigbm
+USE="${USE} minigbm_platform_mt8173"
+
 # Enable HW codecs using V4L2 API.
 USE="${USE} v4l2_codec"
 
