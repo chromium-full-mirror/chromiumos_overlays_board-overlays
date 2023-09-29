@@ -27,13 +27,14 @@
             <Limit name="measured-frame-rate-1280x720" range="36-36" /> <!-- N=40 v95%=1.7 -->
             <Limit name="measured-frame-rate-1920x1080" range="22-22" /> <!-- N=28 v90%=1.4 -->
         </MediaCodec>
-        <MediaCodec name="c2.mojo.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="92-92" /> <!-- N=490 v98%=1.5 -->
-            <Limit name="measured-frame-rate-720x480" range="74-74" /> <!-- N=59 v96%=1.5 -->
-            <Limit name="measured-frame-rate-1280x720" range="42-42" /> <!-- N=60 v97%=1.8 -->
+        <!-- Disabled per b/290500688 -->
+        <!-- <MediaCodec name="c2.mojo.avc.encoder" type="video/avc" update="true"> -->
+        <!--  <Limit name="measured-frame-rate-320x240" range="92-92" /> --> <!-- N=490 v98%=1.5 -->
+        <!--  <Limit name="measured-frame-rate-720x480" range="74-74" /> --> <!-- N=59 v96%=1.5 -->
+        <!--  <Limit name="measured-frame-rate-1280x720" range="42-42" /> --> <!-- N=60 v97%=1.8 -->
             <!-- measured 96%:11-45 med:35 FLAKY(mn=8.3 < 11 - 46) -->
-            <Limit name="measured-frame-rate-1920x1080" range="11-23" /> <!-- N=60 v96%=2.0 -->
-        </MediaCodec>
+        <!--  <Limit name="measured-frame-rate-1920x1080" range="11-23" /> --> <!-- N=60 v96%=2.0 -->
+        <!-- </MediaCodec> -->
         <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
             <!-- measured 96%:152-707 med:573 FLAKY(mn=144.7 < 153 - 708 < mx=710.7) variance:2.2 -->
             <Limit name="measured-frame-rate-176x144" range="305-354" /> <!-- N=52 -->

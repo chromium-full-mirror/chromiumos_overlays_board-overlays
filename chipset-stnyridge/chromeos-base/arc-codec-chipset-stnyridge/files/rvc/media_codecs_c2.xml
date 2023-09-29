@@ -16,6 +16,7 @@
 
 <MediaCodecs>
     <Encoders>
+      <!-- Disabled per b/290500688
         <MediaCodec name="c2.mojo.avc.encoder" type="video/avc">
             <Limit name="size" min="96x96" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
@@ -25,6 +26,7 @@
             <Limit name="concurrent-instances" max="8" />
             <Limit name="performance-point-1280x720" range="30-30" />
         </MediaCodec>
+      -->
     </Encoders>
     <Decoders>
         <MediaCodec name="c2.mojo.avc.decoder" type="video/avc" >
