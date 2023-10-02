@@ -13,7 +13,7 @@
       },
       {
         "num": 1,
-        "size": "4400 MiB"
+        "size": "4800 MiB"
       }
     ],
     "usb": [
@@ -24,7 +24,7 @@
       },
       {
         "num": 1,
-        "size": "4400 MiB"
+        "size": "4800 MiB"
       }
     ],
     "usb-updatable": [
@@ -39,7 +39,7 @@
       },
       {
         "num": 1,
-        "size": "4400 MiB"
+        "size": "4800 MiB"
       }
     ],
     "recovery": [
