@@ -119,6 +119,9 @@ hayato-config: &hayato_config
   power:
     <<: *power_common
     set-wifi-transmit-power-for-tablet-mode: "1"
+  bluetooth:
+    flags:
+      block-floss-availability: true
 
 identity-sku-config: &identity_sku_config
   <<: *identity
