@@ -47,6 +47,12 @@ bluetooth-stop-on-suspend-and-block-floss: &bluetooth_stop_on_suspend_and_block_
     stop-on-suspend: true
     block-floss-availability: true
 
+bluetooth-block-floss: &bluetooth_block_floss
+  <<: *bluetooth_default
+  flags:
+    <<: *bluetooth_flags
+    block-floss-availability: true
+
 audio-main-common: &audio_main_common
   <<: *kernel-info
   # If the generic 1 or 2 mic locations configuration is not sufficient, the
@@ -1050,6 +1056,7 @@ chromeos:
             <<: *convertible_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 50
           $stylus-category: "external"
           $has-keyboard-backlight: "1"
@@ -1059,12 +1066,14 @@ chromeos:
             <<: *convertible_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 51
           $ucm_extra_suffix: "{{$device-name}}"
           config:
             <<: *convertible_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 52
           $ucm_extra_suffix: "{{$device-name}}"
           $stylus-category: "external"
@@ -1092,6 +1101,7 @@ chromeos:
               geo-offsets-rest-of-world:
                 offset-2g: 0
                 offset-5g: 36
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 53
           $ucm_extra_suffix: "{{$device-name}}"
           $sub_cras_config: ".bipship"
@@ -1122,6 +1132,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 54
           $ucm_extra_suffix: "{{$device-name}}"
           $sub_cras_config: ".bipship"
@@ -1154,6 +1165,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 55
           $ucm_extra_suffix: "{{$device-name}}"
           $sub_cras_config: ".bipship"
@@ -1184,6 +1196,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 56
           $ucm_extra_suffix: "{{$device-name}}"
           $sub_cras_config: ".bipship"
@@ -1216,6 +1229,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 61
           $ucm_extra_suffix: "blooguard.2ndcam"
           $sub_cras_config: ".bipship"
@@ -1226,6 +1240,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 62
           $ucm_extra_suffix: "blooguard.2ndcam"
           $sub_cras_config: ".bipship"
@@ -1238,6 +1253,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 63
           $ucm_extra_suffix: "blooguard.2ndcam"
           $sub_cras_config: ".bipship"
@@ -1268,6 +1284,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 64
           $ucm_extra_suffix: "blooguard.2ndcam"
           $sub_cras_config: ".bipship"
@@ -1300,6 +1317,7 @@ chromeos:
             power:
               <<: *power_convertible
               internal-backlight-no-als-battery-brightness: "63"
+            bluetooth: *bluetooth_block_floss
     - $device-name: "blooglet"
       $fw-name: "Bloog"
       $fw-build-name: "bloog"
