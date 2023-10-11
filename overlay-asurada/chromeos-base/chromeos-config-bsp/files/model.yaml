@@ -137,6 +137,9 @@ spherion-config: &spherion_config
   identity:
     <<: *identity_sku_config
   audio: *audio_config_2cards
+  bluetooth:
+    flags:
+      block-floss-availability: true
 
 spherion-config-sar-mtk: &spherion_config_sar_mtk
   <<: *spherion_config
