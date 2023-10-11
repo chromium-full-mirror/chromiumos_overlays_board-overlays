@@ -845,11 +845,13 @@ chromeos:
             <<: *clamshell_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 66
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
     # This is a temporary model with SKU ID - 255 which is expected to be
     # provisioned with correct SKU ID in the factory flow. And HWID verification
     # will also catch the DUT still with 255 and report error.
