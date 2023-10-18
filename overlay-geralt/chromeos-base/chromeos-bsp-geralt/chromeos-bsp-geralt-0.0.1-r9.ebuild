@@ -25,6 +25,8 @@ IUSE="cheets"
 RDEPEND="
 	chromeos-base/chromeos-config
 	chromeos-base/chromeos-bsp-baseboard-geralt
+	chromeos-base/sof-binary
+	chromeos-base/sof-topology
 "
 DEPEND="${RDEPEND}"
 
