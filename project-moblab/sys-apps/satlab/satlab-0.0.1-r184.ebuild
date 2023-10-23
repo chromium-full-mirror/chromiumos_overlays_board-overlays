@@ -5,12 +5,14 @@ EAPI="7"
 
 CROS_WORKON_COMMIT="a59f2d410b730d7c10ad59067998de6041d3ae5f"
 CROS_WORKON_TREE="8dc9032b2cba2d1a38a8a0bcd63bcaebe4f6ecde"
+PYTHON_COMPAT=( python3_{8..11} )
+
 CROS_WORKON_INCREMENTAL_BUILD=1
 CROS_WORKON_OUTOFTREE_BUILD=1
 CROS_WORKON_PROJECT="chromiumos/platform/satlab"
 CROS_WORKON_LOCALNAME="../platform/satlab"
 
-inherit cros-workon
+inherit cros-workon python-single-r1
 
 DESCRIPTION="Install satlab, a test scheduling infrastructure"
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform/satlab/+/main/"
@@ -21,9 +23,11 @@ KEYWORDS="*"
 
 RDEPEND="
 	app-emulation/docker
-	dev-lang/python:3.6
-	dev-python/grpcio
-	dev-python/protobuf-python
+	${PYTHON_DEPS}
+	$(python_gen_cond_dep '
+		dev-python/grpcio[${PYTHON_USEDEP}]
+		dev-python/protobuf-python[${PYTHON_USEDEP}]
+		' -3)
 	net-firewall/iptables
 "
 
