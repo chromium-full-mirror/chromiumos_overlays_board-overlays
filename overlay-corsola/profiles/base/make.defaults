@@ -36,3 +36,7 @@ INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 
 # Include the pixart firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
+# Include ilitek firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
+
