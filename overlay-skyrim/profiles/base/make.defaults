@@ -79,3 +79,6 @@ USE="${USE} payload-compress-lz4 -payload-compress-lzma"
 
 # Enable for daisydog
 USE="${USE} watchdog"
+
+# Enable firmware bootsplash
+USE="${USE} firmware-bootsplash"
