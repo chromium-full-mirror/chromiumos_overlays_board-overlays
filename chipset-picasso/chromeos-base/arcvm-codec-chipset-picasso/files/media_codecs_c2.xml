@@ -15,9 +15,58 @@
 -->
 <MediaCodecs>
     <Decoders>
-        <!-- Disabled per b/306684165 -->
+        <MediaCodec name="c2.v4l2.avc.decoder" type="video/avc" >
+            <Limit name="size" min="64x64" max="4096x2304" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="16" max="2073600" />
+            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="concurrent-instances" max="8" />
+            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="c2.v4l2.avc.decoder.secure" type="video/avc" >
+            <Limit name="size" min="64x64" max="4096x2304" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="16" max="2073600" />
+            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="concurrent-instances" max="8" />
+            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
+        </MediaCodec>
+        <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" >
+            <Limit name="size" min="64x64" max="4096x2304" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="16" max="2073600" />
+            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="concurrent-instances" max="8" />
+            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="c2.v4l2.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
+            <Limit name="size" min="64x64" max="4096x2304" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="16" max="2073600" />
+            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="concurrent-instances" max="8" />
+            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
+        </MediaCodec>
     </Decoders>
     <Encoders>
-        <!-- Disabled per b/306684165 -->
+        <MediaCodec name="c2.v4l2.avc.encoder" type="video/avc" >
+            <Limit name="size" min="64x64" max="4096x2160" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="16" max="1036800" />
+            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="concurrent-instances" max="8" />
+            <Limit name="performance-point-3840x2160" range="30-30" />
+        </MediaCodec>
     </Encoders>
 </MediaCodecs>
