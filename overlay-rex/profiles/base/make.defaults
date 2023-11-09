@@ -33,5 +33,8 @@ USE="${USE} ipu6epmtl camera_feature_hdrnet camera_feature_intel_still_capture_t
 # Include the ilitek_its firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
+# Use ANGLE as the GL backend for the cros-camera
+USE="${USE} camera_angle_backend"
+
 # Compress the rw payload with LZ4 instead of LZMA
 USE="${USE} rw-payload-compress-lz4 -rw-payload-compress-lzma"
