@@ -33,3 +33,5 @@ USE="${USE} mmc"
 
 # Enable miniOS support
 USE="${USE} minios"
+
+USE="${USE} firmware-bootsplash"
