@@ -27,3 +27,10 @@ f20c7d4c0461f171fcb657820cd5b8cf  sof-adl-rt1019-rt5682.tplg
 db14e0a21e66b94fb61abf233cb77ca6  sof-adl-rt711.tplg
 b76933bb1d0d2bd98aa2a54c86448fe5  sof-adl-sdw-max98373-rt5682.tplg
 aceeadd259635497c2291cbf42ced01e  pdm1/sof-adl-max98360a-rt5682-2way.tplg
+
+repo      : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private/
+branch    : cavs2.5-001-drop-stable
+commit id : 32994bc147a66307e0d454642b762f10b2a415e3
+
+Md5sum
+1c3aa0cfa50f8112972cb300f6e15b06  sof-adl-rt5650.tplg
