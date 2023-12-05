@@ -5,8 +5,8 @@ CAVS2.5-001 drop stable
 
 repo : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private
 branch : cavs2.5-001-drop-stable
-commit id : 0360a4d87f614911c272b687c4d265befb4e806b
+commit id : 32994bc147a66307e0d454642b762f10b2a415e3
 
 MD5sums:
-fbcc50c01274d8a54c8b526f942c1d11  sof-adl.ldc
-52d40e4f11f600d4873ad7c6020b9374  sof-adl.ri
+d06eca02bbd0f03fdf07cb820ff9c702  sof-adl.ldc
+11ea21cc02618eb7be48ea9c0e7ce62c  sof-adl.ri
