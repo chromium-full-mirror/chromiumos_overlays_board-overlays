@@ -26,7 +26,7 @@ src_install() {
 	insinto /etc/init/
 	doins "${FILESDIR}/modemfwd-helpers.conf"
 
-	udev_dorules "${FILESDIR}/94-l850gl-gpio.rules"
+	udev_dorules "${FILESDIR}/94-usb-modem-gpio.rules"
 
 	cellular_dofirmware "${FILESDIR}/firmware_manifest.textproto"
 	# cellular_dofirmware cannot handle this case yet (multiple directories/modems)
