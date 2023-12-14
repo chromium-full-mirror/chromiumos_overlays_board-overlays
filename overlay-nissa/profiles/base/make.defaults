@@ -21,6 +21,9 @@ INPUT_DEVICES="${INPUT_DEVICES} pixart"
 # Include the weida firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} weida"
 
+# Include ilitek firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
+
 # Add EC logging
 USE="${USE} eclog"
 
