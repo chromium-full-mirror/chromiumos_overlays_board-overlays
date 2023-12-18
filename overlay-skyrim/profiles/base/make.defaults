@@ -54,6 +54,9 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} mt7922"
 # Enable Mediatek 7922 BT firmware.
 LINUX_FIRMWARE="${LINUX_FIRMWARE} mt7922-bt"
 
+# Enable Ti50 support
+USE="${USE} -tpm tpm2 ti50_onboard"
+
 # Add EC logging
 USE="${USE} eclog"
 # TODO: Default enable for debug purpose, need to disable later
