@@ -4,7 +4,7 @@
 # Initial value just for style purposes.
 USE=""
 
-CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-arm64"
+CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-arm64-generic"
 
 BOARD_COMPILER_FLAGS="-march=armv8-a"
 # TODO(gbiv): Porting -mtune may be interesting, but clang seems to currently
