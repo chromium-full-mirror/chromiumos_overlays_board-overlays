@@ -10,6 +10,7 @@ PROJECTS=(
 	"chinchou"
 	"kingler"
 	"krabby"
+	"kyogre"
 	"magikarp"
 	"ponyta"
 	"steelix"
