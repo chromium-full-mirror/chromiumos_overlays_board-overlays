@@ -27,6 +27,7 @@ PROJECTS=(
 	"vell"
 	"volmar"
 	"vyhar"
+	"xol"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
