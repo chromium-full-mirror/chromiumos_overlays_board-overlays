@@ -63,3 +63,5 @@ INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
 # Enable LVM application containers.
 USE="${USE} lvm_application_containers"
+
+USE="${USE} firmware-bootsplash"
