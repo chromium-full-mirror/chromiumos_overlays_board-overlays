@@ -5,6 +5,11 @@ found in the LICENSE file.
 This file should always contain information regarding which
 branch/commit the firmware was built from.
 
+Note: sof-topology-nissa-1.5 is specific for factory branch factory-nissa-15199.B.
+      Topology files inside come from two sources. The existing files are inherited
+      from sof-topology-nissa-1.4, and the ones for new codecs are manually picked
+      from main branch. (related issues e.g. b/289969623, b/313389965, b/317443066)
+
 repo: https://github.com/thesofproject/sof/
 branch    : adl-004-drop-stable
 commit id : 6cb6a98d9fa602a0e4135d2269ff66c95c784a40
@@ -13,3 +18,11 @@ MD5SUMs
 40f9f2ad262058d83713328d52aaf4c6  sof-adl-max98360a-nau8825.tplg
 6d5557dc1529411b12e887ba5016551a  sof-adl-max98360a-rt5682.tplg
 a7905c1f55f9d9398404d9eeb92a0198  sof-adl-rt1019-rt5682.tplg
+
+repo : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private
+branch : cavs2.5-001-drop-stable
+commit id : ed0a4c7fa045e12897746f224e8396c56f1bdecb
+
+MD5SUMs
+e313e87fc8141bc62d9fb67853546685  sof-adl-max98360a-da7219.tplg
+1c3aa0cfa50f8112972cb300f6e15b06  sof-adl-rt5650.tplg
