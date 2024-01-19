@@ -12,6 +12,12 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-ma"
 # WiFi firmware for GaP2
 LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-gl"
 
+# BT firmware for GfP2 with MTL(different than generic GfP2 firmware)
+LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt_ax211_mtl"
+
+# BT firmware for GaP2
+LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt_be200"
+
 # Add EC logging
 USE="${USE} eclog"
 
