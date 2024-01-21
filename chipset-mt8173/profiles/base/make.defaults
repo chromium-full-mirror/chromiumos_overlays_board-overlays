@@ -31,7 +31,9 @@ USE="${USE} watchdog"
 # with that patch.
 USE="${USE} force_breakpad"
 
-USE="${USE} v4l2_flat_stateful_video_decoder"
+# Disable CrOS video decoder on this board because we haven't implement V4L2
+# stateful VideoDecoder.
+USE="${USE} disable_cros_video_decoder"
 
 # TODO(b/194744558): Disable CrOS video decoder at ARC.
 USE="${USE} arc_disable_cros_video_decoder"
