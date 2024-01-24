@@ -15,6 +15,9 @@ modify_kernel_command_line() {
   {
     echo "amdgpu.dcfeaturemask=0x8"
 
+    # See b/306665683
+    echo "amdgpu.ppfeaturemask=0xfff73fff"
+
     # See b/160277722
     echo "rtc-cmos.use_acpi_alarm=1"
 
