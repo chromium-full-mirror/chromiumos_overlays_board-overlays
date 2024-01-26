@@ -29,7 +29,7 @@
       -->
     </Encoders>
     <Decoders>
-        <MediaCodec name="c2.mojo.avc.decoder" type="video/avc" >
+        <MediaCodec name="c2.mojo-legacy.avc.decoder" type="video/avc" >
             <Limit name="size" min="64x64" max="4096x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
@@ -39,7 +39,7 @@
             <Limit name="performance-point-3840x2160" range="30-30" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-        <MediaCodec name="c2.mojo.avc.decoder.secure" type="video/avc" >
+        <MediaCodec name="c2.mojo-legacy.avc.decoder.secure" type="video/avc" >
             <Limit name="size" min="64x64" max="4096x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
