@@ -23,11 +23,5 @@ modify_kernel_command_line() {
 
     # See b/271817196
     echo "clearcpuid=xsaves"
-
-    # See b/247635516
-    echo "initcall_blacklist=amdtee_driver_init" >> "$1"
-
-    # See b/247635189. Remove when b/273577446 is finished
-    echo "iommu=soft" >> "$1"
   } >> "$1"
 }
