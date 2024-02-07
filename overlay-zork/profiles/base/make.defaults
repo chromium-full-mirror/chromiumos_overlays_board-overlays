@@ -32,9 +32,6 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl_bt-8852ae-usb"
 
 USE="${USE} zork"
 
-# Use kernel 5.15
-USE="${USE} -kernel-5_4 kernel-5_15"
-
 # Enable tpm2
 USE="${USE} -tpm tpm2 cr50_onboard"
 
