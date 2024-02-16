@@ -21,7 +21,7 @@ USE="${USE} march_goldmont"
 LINUX_FIRMWARE="${LINUX_FIRMWARE} i915_kbl"
 
 # Specify default kernel
-USE="${USE} kernel-5_15"
+USE="${USE} kernel-4_19"
 
 # Identify the vendor
 USE="${USE} intel_cpu"
