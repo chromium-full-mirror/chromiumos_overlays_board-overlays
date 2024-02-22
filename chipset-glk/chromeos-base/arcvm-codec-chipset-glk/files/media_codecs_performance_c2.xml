@@ -19,8 +19,9 @@
         <MediaCodec name="c2.v4l2.avc.encoder" type="video/avc" update="true">
             <!-- measured 98%:87-212 med:137 FLAKY(mn=56.1 < 68 - 272) -->
             <Limit name="measured-frame-rate-320x240" range="92-203" /> <!-- N=248 v98%=1.6 -->
-            <Limit name="measured-frame-rate-720x480" range="92-98" /> <!-- N=248 v98%=1.6 -->
-            <Limit name="measured-frame-rate-1280x720" range="64-64" /> <!-- N=248 v98%=1.6 -->
+            <Limit name="measured-frame-rate-720x480" range="84-184" /> <!-- N=1040 v98%=1.6 -->
+            <!-- measured 98%:55-195 med:132 FLAKY(mn=51.1 < 52 - 208) -->
+            <Limit name="measured-frame-rate-1280x720" range="48-104" /> <!-- N=1002 v98%=1.9 -->
             <!-- measured 98%:27-59 med:45 FLAKY(mn=17.2 < 20 - 80) -->
             <Limit name="measured-frame-rate-1920x1080" range="30-64" /> <!-- N=248 v98%=1.5 -->
         </MediaCodec>
