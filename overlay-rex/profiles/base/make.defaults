@@ -35,3 +35,6 @@ INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
 # Compress the rw payload with LZ4 instead of LZMA
 USE="${USE} rw-payload-compress-lz4 -rw-payload-compress-lzma"
+
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
