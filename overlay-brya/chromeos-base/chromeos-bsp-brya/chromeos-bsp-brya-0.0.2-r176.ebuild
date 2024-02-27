@@ -24,6 +24,7 @@ IUSE="
 	brya-connectivitynext
 	brya-hibernate
 	brya-kernelnext
+	brya-lvm-rootfs
 	brya-lvm-stateful
 	brya-pvs
 	modemfwd
@@ -60,6 +61,8 @@ src_install() {
 		doappid "{A9D880C3-5FE1-4C7F-B948-9ACA87D3F484}" "REFERENCE"
 	elif use brya-kernelnext; then
 		doappid "{0BB14857-2FC4-4DE2-9739-63F70E978D85}" "REFERENCE"
+	elif use brya-lvm-rootfs; then
+		doappid "{F7414857-80C5-42E0-9F19-3C03ABEADA25}" "REFERENCE"
 	elif use brya-lvm-stateful; then
 		doappid "{84BBC912-D9F5-4EF2-89B8-7AED7592AB49}" "REFERENCE"
 	elif use brya-pvs; then
