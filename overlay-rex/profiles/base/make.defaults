@@ -38,3 +38,6 @@ USE="${USE} rw-payload-compress-lz4 -rw-payload-compress-lzma"
 
 # Include the pixart firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
+# Include the elan firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
