@@ -3,14 +3,15 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="955e960a7e234dc9de5eff812a2dea693952f323"
-CROS_WORKON_TREE=("6f9b6a81e6c1b73c2f0b062ea5846c0d037d38af" "6a09290d8d3bb651e9bee291e1d1c67db93a9146")
+CROS_WORKON_COMMIT="ba32e0650fba3fe2fd6728c735760bb177d9d84c"
+CROS_WORKON_TREE=("6f9b6a81e6c1b73c2f0b062ea5846c0d037d38af" "6a09290d8d3bb651e9bee291e1d1c67db93a9146" "f61ad78af3d9b23499d36639ff0045812ee01be3")
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
 	"starmie"
 	"staryu"
+	"wugtrio"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
