@@ -61,5 +61,8 @@ USE="${USE} cross_domain_context"
 # Enable virtgpu native context (go/virtgpu-native-context)
 USE="${USE} virtgpu_native_context"
 
+# Disable crosvm fixed-blob-mapping (b/246334944#comment44)
+USE="${USE} -crosvm-fixed-blob-mapping"
+
 # Enable hermes for eSIM support.
 USE="${USE} esim"
