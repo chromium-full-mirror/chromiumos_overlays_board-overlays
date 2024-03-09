@@ -5,7 +5,7 @@
 EAPI=7
 
 DESCRIPTION="SOF topology files for Brya"
-SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-brya-${PV}.tar.bz2"
+SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-brya-${PV}.tar.xz"
 
 LICENSE="SOF"
 SLOT="0"
