@@ -1,36 +1,62 @@
 This file should always contain information regarding which branch/commit
 the firmware was built from.
 
-CAVS2.5 001 drop stable release.
+CAVS2.5 001 drop stable release, with dynamic pipeline removed.
 
 repo      : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private/
 branch    : cavs2.5-001-drop-stable
-commit id : ce5fe7eccf8b1e63d9d04fb9c9e6a8f58b9c1108
+commit id : d3799fa0e43992c6b5b4fa426957d43b35afda98
+
+and cherry-pick the following commit(s):
+https://chrome-internal-review.googlesource.com/c/chromeos/third_party/sound-open-firmware-private/+/7050433
+
+
+Once built, copy and rename topology files as the following map:
+[DRC/EQ-integrated]
+tools/build_tools/topology/sof-adl-cs35l41-drceq.tplg                   renamed to sof-adl-cs35l41.tplg
+tools/build_tools/topology/sof-adl-max98357a-rt5682-drceq.tplg          renamed to sof-adl-max98357a-rt5682.tplg
+tools/build_tools/topology/sof-adl-max98360a-da7219-drceq.tplg          renamed to sof-adl-max98360a-da7219.tplg
+tools/build_tools/topology/sof-adl-max98360a-nau8825-drceq.tplg         renamed to sof-adl-max98360a-nau8825.tplg
+tools/build_tools/topology/sof-adl-max98360a-rt5682-drceq.tplg          renamed to sof-adl-max98360a-rt5682.tplg
+tools/build_tools/topology/sof-adl-max98390-rt5682-drceq.tplg           renamed to sof-adl-max98390-rt5682.tplg
+tools/build_tools/topology/sof-adl-max98390-ssp2-rt5682-ssp0-drceq.tplg renamed to sof-adl-max98390-ssp2-rt5682-ssp0.tplg
+tools/build_tools/topology/sof-adl-rt1015-nau8825-drceq.tplg            renamed to sof-adl-rt1015-nau8825.tplg
+tools/build_tools/topology/sof-adl-rt1019-nau8825-drceq.tplg            renamed to sof-adl-rt1019-nau8825.tplg
+tools/build_tools/topology/sof-adl-rt1019-rt5682-drceq.tplg             renamed to sof-adl-rt1019-rt5682.tplg
+tools/build_tools/topology/sof-adl-rt5650-drceq.tplg                    renamed to sof-adl-rt5650.tplg
+[PDM1]
+tools/build_tools/topology/sof-adl-max98360a-rt5682-2way-pdm1.tplg      renamed to pdm1/sof-adl-max98360a-rt5682-2way.tplg
+
+Copy the following topology files:
+tools/build_tools/topology/sof-adl-max98357a-rt5682-4ch.tplg
+tools/build_tools/topology/sof-adl-max98360a-rt5682-2way.tplg
+tools/build_tools/topology/sof-adl-max98360a-rt5682-4ch.tplg
+tools/build_tools/topology/sof-adl-max98373-nau8825.tplg
+tools/build_tools/topology/sof-adl-nau8318-nau8825.tplg
+tools/build_tools/topology/sof-adl-nau8825.tplg
+tools/build_tools/topology/sof-adl-rt5682.tplg
+tools/build_tools/topology/sof-adl-rt711.tplg
+tools/build_tools/topology/sof-adl-sdw-max98373-rt5682.tplg
 
 Md5sum
-458aa24b8aff90e566ba19920a0818fd  sof-adl-cs35l41.tplg
-957bbbc78a0fbebbe5a04bb3cd8aca0f  sof-adl-max98357a-rt5682-4ch.tplg
-e979c7eb842aa971a919cd460a5216f2  sof-adl-max98357a-rt5682.tplg
-9db2c9aa5fd5c10321cf16c3b3457fb1  sof-adl-max98360a-nau8825.tplg
-fa62fafa1db311c267737f51695fd327  sof-adl-max98360a-rt5682-2way.tplg
-edf7454335b6dea09a3796f9798c650f  sof-adl-max98360a-rt5682-4ch.tplg
-b4b5b22e13f36196f4d58803fb8abd54  sof-adl-max98360a-rt5682.tplg
+3ae2fe040eab3f0184c683bc067da6e5  sof-adl-cs35l41.tplg
+fa6667f1d2815e074c3b3e42d6f31d25  sof-adl-max98357a-rt5682-4ch.tplg
+f5d4ee4f615bb6e377c46e6688c2c894  sof-adl-max98357a-rt5682.tplg
+9573b8a59e8c93bdad0fb9b64efdd002  sof-adl-max98360a-da7219.tplg
+81697d13d9f10d0008fe979c2df620cc  sof-adl-max98360a-nau8825.tplg
+ae727de38b8fd9389dc62fd90e0f221d  sof-adl-max98360a-rt5682-2way.tplg
+76bf8c5e3061f86e122335e0559300e3  sof-adl-max98360a-rt5682-4ch.tplg
+af22fd43229ed6a849768a8163716572  sof-adl-max98360a-rt5682.tplg
 2cb2ebb3dbb0f51a69c76e3b88b7e87b  sof-adl-max98373-nau8825.tplg
-77eaf6e63a2c8839c3deeca750f18117  sof-adl-max98390-rt5682.tplg
-8686f269513b5083847131057f1a07c2  sof-adl-max98390-ssp2-rt5682-ssp0.tplg
+171693a401c6acbe3e176b34120ea44e  sof-adl-max98390-rt5682.tplg
+77a02c4d98858f21a833fdccbb1890d5  sof-adl-max98390-ssp2-rt5682-ssp0.tplg
 e2104dd408abe169e11407dafb0b90b4  sof-adl-nau8318-nau8825.tplg
-71ef8b18abdbdb5801a51951c3577e22  sof-adl-nau8825.tplg
-1217b39bac9f001bbfdc86dce105d6f5  sof-adl-rt1015-nau8825.tplg
-62578becc0e4cbb786fc1da25afe6fbf  sof-adl-rt1019-nau8825.tplg
-f20c7d4c0461f171fcb657820cd5b8cf  sof-adl-rt1019-rt5682.tplg
-5b018d608e40ed96a2b9eff35017bc61  sof-adl-rt5682.tplg
+e822262d5fee4f16d440a9f939b821cf  sof-adl-nau8825.tplg
+ec09adf23d8529dd7979c64beecfad72  sof-adl-rt1015-nau8825.tplg
+118c702b2e714a406c6e3df978b85fac  sof-adl-rt1019-nau8825.tplg
+6da21c3d653cb96f3cdbe8725d9a8758  sof-adl-rt1019-rt5682.tplg
+aac137f4c2d2ef39a42026404cf729a3  sof-adl-rt5650.tplg
+1680e57948f92e60afdacb3882769bc6  sof-adl-rt5682.tplg
 db14e0a21e66b94fb61abf233cb77ca6  sof-adl-rt711.tplg
-b76933bb1d0d2bd98aa2a54c86448fe5  sof-adl-sdw-max98373-rt5682.tplg
-aceeadd259635497c2291cbf42ced01e  pdm1/sof-adl-max98360a-rt5682-2way.tplg
-
-repo      : https://chrome-internal.googlesource.com/chromeos/third_party/sound-open-firmware-private/
-branch    : cavs2.5-001-drop-stable
-commit id : 32994bc147a66307e0d454642b762f10b2a415e3
-
-Md5sum
-1c3aa0cfa50f8112972cb300f6e15b06  sof-adl-rt5650.tplg
+b8c0e3e96c24842dae2ed7c8eed8dc91  sof-adl-sdw-max98373-rt5682.tplg
+8959f1d7c734df128b120e2cc223bc3c  pdm1/sof-adl-max98360a-rt5682-2way.tplg
