@@ -7,8 +7,8 @@ inherit unpacker
 
 DESCRIPTION="PowerVR Rogue GLES2 hardware driver, binary only install"
 SRC_URI="
-	arm? (http://commondatastorage.googleapis.com/chromeos-localmirror/distfiles/img-ddk-oak-${PV}.run)
-	arm64? (http://commondatastorage.googleapis.com/chromeos-localmirror/disfiles/img-ddk-oak64-${PV}.run)
+arm? ( http://commondatastorage.googleapis.com/chromeos-localmirror/distfiles/img-ddk-oak-${PV}.run )
+arm64? ( http://commondatastorage.googleapis.com/chromeos-localmirror/disfiles/img-ddk-oak64-${PV}.run )
 "
 
 LICENSE="Google-TOS"
