@@ -13,10 +13,6 @@
 
 modify_kernel_command_line() {
   echo "cpuidle.governor=teo" >> "$1"
-  # TODO (b/329756745): A workaround that enabling OPTEE logging requires kernel
-  # serial console to be on, or the system will crash on boot.
-  # Remove this when a real fix lands or OPTEE logging is turned off by default.
-  echo "console=ttyS0,115200n8 loglevel=0" >> "$1"
   # TODO (b/316517822): pseudo-NMI causes kernel hard lockup on Geralt, so
   # disable it for now.
   # Uncomment below and ask MTK to investigate when they have time to.
