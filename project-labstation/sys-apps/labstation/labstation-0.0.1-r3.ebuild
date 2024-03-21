@@ -21,6 +21,9 @@ LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
 
+RDEPEND="sys-power/uhubctl
+"
+
 DEPEND="${RDEPEND}
 "
 
