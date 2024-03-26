@@ -44,6 +44,3 @@ INPUT_DEVICES="${INPUT_DEVICES} pixart"
 
 # Include the elan firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
-
-# Use ANGLE as the GL backend for cros_camera_service
-USE="${USE} camera_angle_backend"
