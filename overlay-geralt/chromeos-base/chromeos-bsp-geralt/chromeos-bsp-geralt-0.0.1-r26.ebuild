@@ -28,6 +28,7 @@ RDEPEND="
 	chromeos-base/sof-binary
 	chromeos-base/sof-topology
 	chromeos-base/touch_updater
+	media-sound/sound_card_init
 "
 DEPEND="${RDEPEND}"
 
