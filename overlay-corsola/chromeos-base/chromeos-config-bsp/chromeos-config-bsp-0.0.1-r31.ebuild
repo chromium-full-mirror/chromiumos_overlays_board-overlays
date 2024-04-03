@@ -15,6 +15,7 @@ PROJECTS=(
 	"kyogre"
 	"magikarp"
 	"ponyta"
+	"skitty"
 	"steelix"
 	"tentacruel"
 	"voltorb"
