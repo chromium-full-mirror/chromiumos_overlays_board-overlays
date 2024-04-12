@@ -366,6 +366,7 @@ chromeos:
           $fw-name: "Phaser"
           $fw-build-name: "phaser"
           config: *unprovisioned_convertible_config
+          bluetooth: *bluetooth_block_floss
     - $device-name: "phaser"
       $fw-name: "Phaser"
       $fw-build-name: "phaser"
@@ -377,6 +378,7 @@ chromeos:
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_setting
+            bluetooth: *bluetooth_block_floss
     - $device-name: "phaser360"
       $fw-name: "Phaser"
       $fw-build-name: "phaser"
@@ -394,6 +396,7 @@ chromeos:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
             $set-wifi-transmit-power-for-tablet-mode: "0"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 3
           $stylus-category: "internal"
           $num-mic-locations: 2
@@ -403,6 +406,7 @@ chromeos:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
             $set-wifi-transmit-power-for-tablet-mode: "0"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 4
           $num-mic-locations: 2
           $ucm_src_root: "{{$device-name}}"
@@ -411,6 +415,7 @@ chromeos:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
             $set-wifi-transmit-power-for-tablet-mode: "0"
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 5
           $num-mic-locations: 1
           $ucm_src_root: "{{$device-name}}"
@@ -420,6 +425,7 @@ chromeos:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
             $set-wifi-transmit-power-for-tablet-mode: "0"
+            bluetooth: *bluetooth_block_floss
     - $device-name: "laser14"
       $fw-name: "Phaser"
       $fw-build-name: "phaser"
@@ -783,12 +789,14 @@ chromeos:
             <<: *clamshell_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 34
           $has-keyboard-backlight: "1"
           config:
             <<: *clamshell_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
             keyboard:
               backlight: True
         - $sku-id-val: 35
@@ -796,12 +804,14 @@ chromeos:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
         - $sku-id-val: 36
           $has-keyboard-backlight: "1"
           config:
             <<: *clamshell_touchscreen_config
             <<: *audio_two_cards_setting
             <<: *cros_healthd_sku_number_enabled
+            bluetooth: *bluetooth_block_floss
             keyboard:
               backlight: True
     - $device-name: "vortininja"
