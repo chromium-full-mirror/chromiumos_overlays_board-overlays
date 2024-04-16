@@ -20,6 +20,7 @@ KEYWORDS="-* amd64 x86"
 IUSE="
 	adlrvp
 	brya-arc-t
+	brya-arcnext
 	brya-cbx
 	brya-connectivitynext
 	brya-hibernate
@@ -51,10 +52,12 @@ src_install() {
 	insinto "/etc/gesture"
 	doins "${FILESDIR}"/gesture/*
 
-	if use brya-arc-t; then
-		doappid "{665664DA-5CBF-4B1C-8915-69D2C7361FCB}" "REFERENCE"
-	elif use adlrvp; then
+	if use adlrvp; then
 		doappid "{CA89482B-8F28-4ED4-B4E0-14C3FB7FCDF3}" "REFERENCE"
+	elif use brya-arc-t; then
+		doappid "{665664DA-5CBF-4B1C-8915-69D2C7361FCB}" "REFERENCE"
+	elif use brya-arcnext; then
+		doappid "{08EC9BDD-8ECB-4823-ACC8-995F65689F1E}" "REFERENCE"
 	elif use brya-connectivitynext; then
 		doappid "{A081017C-BF31-43CA-BA8F-C3B2DD4B308E}" "REFERENCE"
 	elif use brya-hibernate; then
