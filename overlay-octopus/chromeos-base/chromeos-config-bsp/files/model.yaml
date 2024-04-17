@@ -395,8 +395,8 @@ chromeos:
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
-            $set-wifi-transmit-power-for-tablet-mode: "0"
             bluetooth: *bluetooth_block_floss
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 3
           $stylus-category: "internal"
           $num-mic-locations: 2
@@ -405,8 +405,8 @@ chromeos:
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
-            $set-wifi-transmit-power-for-tablet-mode: "0"
             bluetooth: *bluetooth_block_floss
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 4
           $num-mic-locations: 2
           $ucm_src_root: "{{$device-name}}"
@@ -414,8 +414,8 @@ chromeos:
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
-            $set-wifi-transmit-power-for-tablet-mode: "0"
             bluetooth: *bluetooth_block_floss
+            $set-wifi-transmit-power-for-tablet-mode: "0"
         - $sku-id-val: 5
           $num-mic-locations: 1
           $ucm_src_root: "{{$device-name}}"
@@ -424,8 +424,8 @@ chromeos:
           config:
             <<: *convertible_wl_config
             <<: *audio_two_cards_setting
-            $set-wifi-transmit-power-for-tablet-mode: "0"
             bluetooth: *bluetooth_block_floss
+            $set-wifi-transmit-power-for-tablet-mode: "0"
     - $device-name: "laser14"
       $fw-name: "Phaser"
       $fw-build-name: "phaser"
