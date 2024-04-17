@@ -55,10 +55,12 @@
             <!-- measured 98%:190-594 med:346 FLAKY(mn=158.1 < 168 - 672) -->
             <Limit name="measured-frame-rate-720x480" range="200-440" /> <!-- N=250 v98%=1.8 -->
             <Limit name="measured-frame-rate-1280x720" range="200-400" />
-            <Limit name="measured-frame-rate-1920x1080" range="200-218" /> <!-- N=244 v98%=1.3 -->
+            <!-- measured 98%:231-498 med:479 FLAKY(mn=137.9 < 170 - 678) -->
+            <Limit name="measured-frame-rate-1920x1080" range="200-339" /> <!-- N=1366 v98%=1.5 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="377-391" /> <!-- N=248 v98%=1.8 -->
+            <!-- measured 98%:333-1011 med:684 FLAKY(mn=264.8 < 290 - 1160) -->
+            <Limit name="measured-frame-rate-320x180" range="400-580" /> <!-- N=1104 v98%=1.7 -->
             <!-- measured 98%:230-669 med:374 FLAKY(mn=165.6 < 187 - 784) -->
             <Limit name="measured-frame-rate-640x360" range="252-392" /> <!-- N=268 v98%=1.7 -->
             <Limit name="measured-frame-rate-1280x720" range="221-321" /> <!-- N=244 v98%=1.4 -->
