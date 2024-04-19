@@ -18,6 +18,7 @@ PROJECTS=(
 	"skitty"
 	"steelix"
 	"tentacruel"
+	"veluza"
 	"voltorb"
 )
 
