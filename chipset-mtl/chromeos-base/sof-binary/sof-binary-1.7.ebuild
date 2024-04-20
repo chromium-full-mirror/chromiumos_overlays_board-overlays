@@ -5,7 +5,7 @@
 EAPI=7
 
 DESCRIPTION="Meteor Lake SOF firmware binary"
-SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-mtl-${PV}.tar.gz"
+SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-mtl-${PV}.tar.bz2"
 
 LICENSE="SOF"
 SLOT="0"
@@ -16,5 +16,4 @@ S=${WORKDIR}/${PN}-mtl-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-ipc4/mtl/community
 	doins sof-mtl.ri
-	doins sof-mtl.ldc
 }
