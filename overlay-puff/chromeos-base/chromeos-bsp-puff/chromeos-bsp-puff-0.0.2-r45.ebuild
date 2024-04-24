@@ -49,5 +49,7 @@ src_install() {
 		insinto /etc/init
 		doins "${FILESDIR}/puff-quirk.conf"
 		dosbin "${FILESDIR}/puff_quirk.sh"
+		udev_dorules "${FILESDIR}/99-chromeos-puff-aspm-quirk.rules"
+		dosbin "${FILESDIR}/puff_aspm.sh"
 	fi
 }
