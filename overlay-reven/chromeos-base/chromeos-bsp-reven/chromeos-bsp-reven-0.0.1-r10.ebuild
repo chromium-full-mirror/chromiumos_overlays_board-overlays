@@ -28,6 +28,16 @@ RDEPEND="
 	sys-firmware/fwupd-uefi-dbx
 "
 
+# Normally the libinput dep is added by chromeos-chrome with the
+# libinput USE flag, but sometimes with local builds the chromeos-chrome
+# package ends up being the amd64-generic package, which doesn't have
+# that USE flag enabled. In that case, libinput doesn't end up in the
+# image. If you then use the Simple Chrome Workflow to deploy a proper
+# reven browser, it will fail to start due to the missing libinput
+# library. Adding this explicit dep ensures that the image always has
+# libinput available.
+RDEPEND="${RDEPEND} dev-libs/libinput"
+
 src_install() {
 	insinto "/etc/gesture"
 	doins "${FILESDIR}"/gesture/*
