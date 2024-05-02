@@ -12,7 +12,8 @@ KEYWORDS="-* arm arm64"
 
 SRC_URI="gs://chromeos-localmirror/distfiles/${P}.tbz2"
 
-S="${WORKDIR}"
+S="${WORKDIR}/${P}"
+
 src_install() {
 	insinto /lib/firmware/mediatek/mt8188/
 	doins scp.img
