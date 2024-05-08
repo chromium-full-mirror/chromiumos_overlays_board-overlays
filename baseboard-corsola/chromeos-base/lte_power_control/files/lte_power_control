@@ -7,6 +7,44 @@
 
 readonly GPIO_DIR="/sys/class/gpio"
 
+rw101_disable_gpios() {
+  # lte-w-disable
+  disable_gpio 493
+
+  # sar-detect
+  disable_gpio 494
+
+  # reset and sleep 20ms
+  disable_gpio 497
+  sleep 0.02
+
+  # poweroff and sleep 100ms
+  disable_gpio 496
+  sleep 0.1
+
+  # m2-power
+  disable_gpio 495
+}
+
+rw101_enable_gpios() {
+  # lte-w-disable
+  enable_gpio 493
+
+  # sar-detect"
+  enable_gpio 494
+
+  # m2-power and sleep 2ms
+  enable_gpio 495
+  sleep 0.002
+
+  # poweroff and sleep 14ms
+  enable_gpio 496
+  sleep 0.014
+
+  #reset
+  enable_gpio 497
+}
+
 fm101_disable_gpios() {
   # lte-w-disable
   disable_gpio 493
@@ -122,6 +160,9 @@ main() {
       "fm101")
           fm101_enable_gpios
           ;;
+      "rw101")
+          rw101_enable_gpios
+          ;;
       "em060")
           em060_enable_gpios
           ;;
@@ -130,6 +171,9 @@ main() {
     case ${fw#*_} in
       "fm101")
           fm101_disable_gpios
+          ;;
+      "rw101")
+          rw101_disable_gpios
           ;;
       "em060")
           em060_disable_gpios
