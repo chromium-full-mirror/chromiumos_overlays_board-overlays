@@ -32,5 +32,9 @@ modify_kernel_command_line() {
     # The 5G driver requires a lot of swiotlb buffers (b/284465894)
     # So increase the swiotlb slots from default 32768 (64MB) to 65536 (128MB)
     echo "swiotlb=65536"
+
+    # DPT has been implicated in stability issues on resume. The feature is of
+    # limited value to ChromeOS, so disable it. See b:327056620
+    echo "i915.enable_dpt=0 " >> "$1"
   } >> "$1"
 }
