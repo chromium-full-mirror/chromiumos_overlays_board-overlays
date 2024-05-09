@@ -24,7 +24,7 @@ IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops"
 RDEPEND="
 	chromeos-base/sof-binary:=
 	vpu_driver? (
-		chromeos-base/intel-vpu-umd:=
+		chromeos-base/intel-npu-umd:=
 	)
 	nnapi? (
 		vendor-nnhal? (

@@ -26,7 +26,7 @@ RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
 	vpu_driver? (
-		chromeos-base/intel-vpu-umd:=
+		chromeos-base/intel-npu-umd:=
 	)
 	nnapi? (
 		vendor-nnhal? (
