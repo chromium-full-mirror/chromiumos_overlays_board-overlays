@@ -16,7 +16,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops modemfwd rex-arc-t rex-kernelnext"
+IUSE="vpu_driver nnapi vendor-nnhal nnapi_custom_ops modemfwd rex-arc-t rex-cbx rex-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -45,6 +45,8 @@ DEPEND="
 src_install() {
 	if use rex-arc-t; then
 		doappid "{2A32B309-108B-421D-8DFD-CBC48790E12B}" "CHROMEBOOK"
+	elif use rex-cbx; then
+		doappid "{8462C5D1-C5B9-4FAF-9C71-653891BDF91A}" "CHROMEBOOK"
 	elif use rex-kernelnext; then
 		doappid "{C12624CB-267A-44B6-AF78-5D3152BBE508}" "CHROMEBOOK"
 	else
