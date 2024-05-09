@@ -34,3 +34,6 @@ INPUT_DEVICES="${INPUT_DEVICES} himax"
 
 # Include the ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_tddi"
+
+# Include the ilitek firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
