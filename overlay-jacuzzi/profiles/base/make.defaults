@@ -41,3 +41,6 @@ USE="${USE} rmad"
 
 # Enable cross-domain context
 USE="${USE} cross_domain_context"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

@@ -48,3 +48,6 @@ USE="${USE} tablet_form_factor"
 
 # Enable on-device grammar check
 USE="${USE} ondevice_grammar"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

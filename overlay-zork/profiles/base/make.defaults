@@ -103,3 +103,6 @@ USE="${USE} pcserial"
 
 # Enable serial console
 TTY_CONSOLE="ttyS0"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

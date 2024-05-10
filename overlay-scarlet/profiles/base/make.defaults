@@ -17,3 +17,6 @@ USE="${USE} has_chromeos_config_bsp"
 
 # This indicates that this board has a -kernelnext overlay.
 USE="${USE} has-kernelnext"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

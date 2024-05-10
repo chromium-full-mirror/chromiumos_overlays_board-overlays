@@ -87,3 +87,6 @@ USE="${USE} unsigned-psp-verstage"
 
 # Enable single frame super resolution.
 USE="${USE} camera_feature_super_res"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

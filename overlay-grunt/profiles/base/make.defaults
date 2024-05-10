@@ -51,3 +51,6 @@ USE="${USE} broken_24hours_wake"
 
 # Enable Shimless RMA
 USE="${USE} rmad"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

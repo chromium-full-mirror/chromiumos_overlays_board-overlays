@@ -24,3 +24,6 @@ USE="${USE} unibuild has_chromeos_config_bsp"
 
 # This is a 4.x -> 5.x uprev
 USE="${USE} uprev-4-to-5"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"

@@ -86,3 +86,6 @@ USE="${USE} fbpreprocessord"
 
 # Use Vulkan for raster/composite in Chrome
 USE="${USE} vulkan_chrome"
+
+# Enable Crosier testing support.
+USE="${USE} crosier_binary"
