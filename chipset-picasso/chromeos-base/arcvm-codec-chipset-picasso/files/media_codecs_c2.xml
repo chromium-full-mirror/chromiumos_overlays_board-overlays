@@ -36,24 +36,26 @@
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
         </MediaCodec>
-        <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" >
-            <Limit name="size" min="64x64" max="4096x2304" />
+            <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" >
+            <!-- HW VP9 decoding of 4K was disabled due to memory issues on low end devices. See b/336176247 -->
+            <Limit name="size" min="64x64" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="16" max="2073600" />
-            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="blocks-per-second" min="16" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
             <Limit name="concurrent-instances" max="8" />
-            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Limit name="performance-point-1920x1088" range="30-30" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp9.decoder.secure" type="video/x-vnd.on2.vp9" >
-            <Limit name="size" min="64x64" max="4096x2304" />
+            <!-- HW VP9 decoding of 4K was disabled due to memory issues on low end devices. See b/336176247 -->
+            <Limit name="size" min="64x64" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="16" max="2073600" />
-            <Limit name="bitrate" range="1-209715200" />
+            <Limit name="blocks-per-second" min="16" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
             <Limit name="concurrent-instances" max="8" />
-            <Limit name="performance-point-3840x2160" range="30-30" />
+            <Limit name="performance-point-1920x1088" range="30-30" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
         </MediaCodec>

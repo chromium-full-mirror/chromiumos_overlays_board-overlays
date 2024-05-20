@@ -33,7 +33,8 @@
             <!-- measured 98%:211-650 med:323 SLOW -->
             <Limit name="measured-frame-rate-1280x720" range="322-371" /> <!-- N=196 v98%=1.8 -->
             <Limit name="measured-frame-rate-1920x1080" range="212-224" /> <!-- N=196 v98%=1.7 -->
-            <Limit name="measured-frame-rate-3840x2160" range="52-52" /> <!-- N=196 v98%=1.7 -->
+            <!-- HW VP9 decoding of 4K was disabled due to memory issues on low end devices. See b/336176247 -->
+            <!-- <Limit name="measured-frame-rate-3840x2160" range="52-52" /> --> <!-- N=196 v98%=1.7 --> 
         </MediaCodec>
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
             <!-- measured 98%:476-1165 med:663 SLOW -->
