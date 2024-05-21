@@ -22,6 +22,8 @@ SLOT="0"
 KEYWORDS="*"
 IUSE=""
 
+RDEPEND="sys-boot/grub"
+
 src_install() {
 	doappid "{46072CCF-0056-421B-8A42-B53B6DCCB651}" "OTHER"
 }
