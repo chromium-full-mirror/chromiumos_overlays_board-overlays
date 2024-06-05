@@ -22,6 +22,7 @@ SLOT="0"
 KEYWORDS="*"
 
 RDEPEND="sys-power/uhubctl
+	dev-util/dolos
 "
 
 DEPEND="${RDEPEND}
