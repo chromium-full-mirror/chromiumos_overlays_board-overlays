@@ -28,6 +28,7 @@ IUSE="
 	brya-lvm-rootfs
 	brya-lvm-stateful
 	brya-pvs
+	brya-flossnext
 	modemfwd
 	zephyr_poc
 "
@@ -70,6 +71,8 @@ src_install() {
 		doappid "{84BBC912-D9F5-4EF2-89B8-7AED7592AB49}" "REFERENCE"
 	elif use brya-pvs; then
 		doappid "{4B3CA730-C8D3-42F1-8F33-A898F24B1EE5}" "REFERENCE"
+	elif use brya-flossnext; then
+		doappid "{A06BE0A5-DC6B-4B02-A418-1902B4F3354F}" "REFERENCE"
 	elif use brya-cbx; then
 		doappid "{733377B5-F6B5-47DB-9AC7-6093F639669C}" "REFERENCE"
 	elif use zephyr_poc; then
