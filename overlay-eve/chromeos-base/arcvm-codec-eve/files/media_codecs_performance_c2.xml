@@ -35,7 +35,7 @@
             <Limit name="measured-frame-rate-176x144" range="870-870" /> <!-- N=60 v97%=1.2 -->
         </MediaCodec>
         <MediaCodec name="c2.android.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="43-43" /> <!-- N=380 v98%=1.9 -->
+            <Limit name="measured-frame-rate-320x180" range="62-84" /> <!-- N=92 v98%=1.7 -->
             <Limit name="measured-frame-rate-640x360" range="42-42" /> <!-- N=380 v98%=1.6 -->
             <Limit name="measured-frame-rate-1280x720" range="22-22" /> <!-- N=70 v97%=1.2 -->
             <Limit name="measured-frame-rate-1920x1080" range="18-18" /> <!-- N=70 v97%=1.3 -->
