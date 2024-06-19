@@ -46,6 +46,9 @@ src_install() {
 		doins "${FILESDIR}/init.cpusets.rc"
 	fi
 
+	insinto /etc/init
+	doins "${FILESDIR}/upstart/set_lru_gen_min_ttl_ms.conf"
+
 	# Install hammerd udev rules and override for chromeos-base/hammerd.
 	udev_dorules "${FILESDIR}/99-hammerd.rules"
 }
