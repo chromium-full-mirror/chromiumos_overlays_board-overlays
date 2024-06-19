@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-CROS_WORKON_COMMIT=("67db3a3877f0736e9afa28b42d2f5937d343c815" "43f45b08727e4941b08ef6ba7e8a57b4e4ce69d3")
+CROS_WORKON_COMMIT=("b739eb2a89f3b03de6b00d786e0cf15666217f55" "43f45b08727e4941b08ef6ba7e8a57b4e4ce69d3")
 CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "ac34bb62d782369992a68b90f13241b30d35a6a3" "5c2aab22b816d4bb49f20630b47a675d3c2a59b2")
 CROS_WORKON_PROJECT=("chromiumos/platform2" "chromiumos/platform/camera")
 CROS_WORKON_LOCALNAME=("../platform2" "../platform/camera")
@@ -20,6 +20,9 @@ DESCRIPTION="Rockchip ISP1 Chrome OS camera HAL"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="-* arm arm64"
+
+IUSE="cros_camera_algo""
+REQUIRED_USE="cros_camera_algo"
 
 RDEPEND="
 	dev-libs/expat
