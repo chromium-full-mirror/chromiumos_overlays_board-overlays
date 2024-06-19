@@ -27,8 +27,8 @@ src_install() {
 
 	insinto "${UNIBOARD_YAML_DIR}/include"
 	if use kernel-5_4; then
-		newins "${FILESDIR}/include/kernelnext.yaml" "kernel-info.yaml"
+		newins "${FILESDIR}/include/audio-5_4.yaml" "audio.yaml"
 	else
-		newins "${FILESDIR}/include/kernel-info.yaml" "kernel-info.yaml"
+		newins "${FILESDIR}/include/audio-latest.yaml" "audio.yaml"
 	fi
 }
