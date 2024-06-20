@@ -30,9 +30,9 @@
             <Limit name="measured-frame-rate-320x180" range="161-353" /> <!-- N=344 v98%=2.0 -->
             <!-- measured 98%:107-406 med:163 SLOW FLAKY(82 - 418 < mx=418.1) -->
             <Limit name="measured-frame-rate-640x360" range="110-241" /> <!-- N=344 v98%=1.9 -->
-            <Limit name="measured-frame-rate-1280x720" range="111-121" /> <!-- N=344 v98%=1.8 -->
-            <!-- measured 98%:32-124 med:68 FLAKY(mn=24.1 < 32 - 128) -->
-            <Limit name="measured-frame-rate-1920x1080" range="31-68" /> <!-- N=344 v98%=1.9 -->
+            <Limit name="measured-frame-rate-1280x720" range="145-172" /> <!-- N=824 v98%=1.8 -->
+            <!-- measured 98%:52-168 med:97 FLAKY(mn=41.4 < 47 - 188) -->
+            <Limit name="measured-frame-rate-1920x1080" range="81-94" /> <!-- N=784 v98%=1.8 -->
         </MediaCodec>
 
         <MediaCodec name="c2.android.h263.encoder" type="video/3gpp" update="true">
