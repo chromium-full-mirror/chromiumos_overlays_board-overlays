@@ -12,6 +12,9 @@
 # See crrev.com/i/216896 as an example.
 
 modify_kernel_command_line() {
+  # See b/348649388
+  echo "kvm.tdp_mmu=0" >> "$1"
+
   # Avoid a cosmetic TPM error (Work around for b/113527055)
   sed -i -e '/tpm_tis.force/d' "$1"
   {
