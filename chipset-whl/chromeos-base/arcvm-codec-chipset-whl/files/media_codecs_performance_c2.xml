@@ -20,10 +20,8 @@
             <!-- measured 98%:245-856 med:314 SLOW -->
             <Limit name="measured-frame-rate-320x240" range="314-500" /> <!-- N=262 v98%=1.9 -->
             <Limit name="measured-frame-rate-720x480" range="242-284" /> <!-- N=194 v98%=1.8 -->
-            <!-- measured 90%:77-143 med:85 SLOW -->
-            <Limit name="measured-frame-rate-1280x720" range="84-105" /> <!-- N=24 v90%=1.4 -->
-            <!-- measured 90%:39-82 med:41 SLOW -->
-            <Limit name="measured-frame-rate-1920x1080" range="41-57" /> <!-- N=24 v90%=1.4 -->
+            <Limit name="measured-frame-rate-1280x720" range="128-162" /> <!-- N=154 v98%=1.7 -->
+            <Limit name="measured-frame-rate-1920x1080" range="61-87" /> <!-- N=140 v98%=1.6 --> 
         </MediaCodec>
 
         <MediaCodec name="c2.android.h263.encoder" type="video/3gpp" update="true">
