@@ -12,3 +12,14 @@ SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", \
 SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
   ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="5061", \
   ENV{POWERD_ROLE}="internal_touchpad"
+
+# Tell powerd that spikyrock is actually "internal"
+# keyboard/touchpad
+
+SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="5067", \
+  ENV{POWERD_ROLE}="internal_keyboard"
+
+SUBSYSTEM=="input", ENV{ID_INPUT_TOUCHPAD}=="1", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="5067", \
+  ENV{POWERD_ROLE}="internal_touchpad"
