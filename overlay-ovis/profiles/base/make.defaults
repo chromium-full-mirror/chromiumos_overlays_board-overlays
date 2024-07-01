@@ -28,8 +28,5 @@ USE="${USE} ac_only"
 # intel_psr tells if Intel PSR(platform service record) is supported or not.
 USE="${USE} intel_psr"
 
-# Enable HDRnet.
-USE="${USE} ipu6epmtl camera_feature_hdrnet"
-
 # Include Realtek Ethernet firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl8168h-2"
