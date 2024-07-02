@@ -17,8 +17,8 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="c2.v4l2.avc.encoder" type="video/avc" update="true">
-            <!-- measured 90%:115-285 med:169 FLAKY(85 - 362 < mx=434.6) -->
-            <Limit name="measured-frame-rate-320x240" range="133-291" /> <!-- N=145 v90%=1.6 -->
+            <!-- measured 98%:217-733 med:665 FLAKY(mn=175.7 < 200 - 798) -->
+            <Limit name="measured-frame-rate-320x240" range="320-450" /> <!-- N=152 v98%=1.8 -->
             <!-- measured 98%:85-294 med:126 SLOW -->
             <Limit name="measured-frame-rate-720x480" range="125-275" /> <!-- N=146 v98%=1.8 -->
             <Limit name="measured-frame-rate-1280x720" range="89-195" /> <!-- N=146 v98%=1.9 -->
