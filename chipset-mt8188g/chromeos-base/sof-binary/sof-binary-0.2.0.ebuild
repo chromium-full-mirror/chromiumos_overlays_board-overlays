@@ -14,6 +14,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="
 	media-libs/mt8188g-max98390-dsm-param-geralt
+	media-libs/mt8188g-tas2563-dsm-param-ciri
 "
 BDEPEND=""
 
