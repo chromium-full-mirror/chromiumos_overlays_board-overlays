@@ -5,14 +5,13 @@ EAPI="7"
 
 PYTHON_COMPAT=( python3_{8..11} )
 
-CROS_WORKON_INCREMENTAL_BUILD=1
-CROS_WORKON_OUTOFTREE_BUILD=1
 CROS_WORKON_PROJECT="chromiumos/platform/labstation"
 CROS_WORKON_LOCALNAME="../platform/labstation"
 
-inherit cros-workon toolchain-funcs python-single-r1
 
-DESCRIPTION="Install labstation specific tooling"
+inherit cros-workon distutils-r1 toolchain-funcs cros-sanitizers
+
+DESCRIPTION="Install labstation specific tooling."
 HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform/labstation/+/HEAD/src/"
 
 LICENSE="BSD-Google"
@@ -27,5 +26,21 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	tc-export CC PKG_CONFIG
+	cd usb_hubs || die
+	sanitizers-setup-env
+	distutils-r1_src_configure
+}
+
+src_compile() {
+	cd usb_hubs || die
+	distutils-r1_src_compile
+}
+
+src_install() {
+	insinto /usr/share/cros
+	doins "${S}"/os-dependent/chromeos/servod_utils.sh
+	insinto /etc/init
+	doins "${S}"/os-dependent/chromeos/upstart-scripts/*.conf
+	cd usb_hubs || die
+	distutils-r1_src_install
 }
