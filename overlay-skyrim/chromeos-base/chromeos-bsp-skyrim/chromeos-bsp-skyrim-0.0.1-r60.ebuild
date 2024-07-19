@@ -30,12 +30,6 @@ DEPEND="
 	chromeos-base/chromeos-config
 "
 
-src_install_upstart() {
-	insinto /etc/init
-
-	doins "${FILESDIR}/common/upstart/skyrim_startup.conf"
-}
-
 src_install() {
 	if use skyrim-arc-t; then
 		doappid "{C370AF51-F808-46B6-9399-74CD87CD9BCC}" "CHROMEBOOK"
@@ -52,7 +46,4 @@ src_install() {
 	unibuild_install_files audio-files
 
 	udev_dorules "${FILESDIR}/common/50-mendocino-xhci.rules"
-
-	# Install Upstart scripts.
-	src_install_upstart
 }
