@@ -35,6 +35,9 @@ INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
 # Include the pixart firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
 
+# Include the zinitix firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} zinitix"
+
 # Enable biometrics support
 USE="${USE} biod"
 
