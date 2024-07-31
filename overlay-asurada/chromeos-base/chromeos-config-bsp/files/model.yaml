@@ -76,7 +76,6 @@ common_config: &common_config
         shared-library: "libxnn-driver.so"
   scheduler-tune:
     boost-top-app: 60
-    boost-arcvm: 0.5
 
 base-zephyr-firmware: &common_config_with_zephyr
   <<: *common_config
