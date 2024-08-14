@@ -1,5 +1,5 @@
 amp_calibrations:
-  boot_time_calibration_enabled: true
+  boot_time_calibration_enabled: false
   controls:
     -
         dsm_param: "/lib/firmware/dsm_param.bin"
