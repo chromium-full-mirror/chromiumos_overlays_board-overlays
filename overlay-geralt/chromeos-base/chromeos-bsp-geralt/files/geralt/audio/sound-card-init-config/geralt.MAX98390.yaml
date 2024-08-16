@@ -9,7 +9,7 @@ amp_calibrations:
         calib_ctrl: "Front Left DSM Calibration"
         volume_ctrl: "Front Left Digital Volume"
         safe_mode_volume: 138
-        normal_mode_volume: 153
+        normal_mode_volume: 160
     -
         dsm_param: "/lib/firmware/dsm_param.bin"
         adaptive_rdc_ctrl: "Front Right DSM Adaptive Rdc"
@@ -18,7 +18,7 @@ amp_calibrations:
         calib_ctrl: "Front Right DSM Calibration"
         volume_ctrl: "Front Right Digital Volume"
         safe_mode_volume: 138
-        normal_mode_volume: 153
+        normal_mode_volume: 160
   rdc_ranges:
     -
         lower: 6.8
