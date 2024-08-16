@@ -1,0 +1,15 @@
+amp_calibrations:
+  boot_time_calibration_enabled: ture
+  controls:
+    -
+      cal_data: "Speaker Calibrated Data"
+    -
+      cal_data: "Speaker Calibrated Data"
+  rdc_ranges:
+    -
+        lower: 5.942
+        upper: 8.039
+    -
+        lower: 5.942
+        upper: 8.039
+
