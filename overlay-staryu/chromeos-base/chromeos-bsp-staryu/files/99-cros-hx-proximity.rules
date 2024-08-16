@@ -1,3 +1,2 @@
 ACTION=="add", SUBSYSTEM=="iio", ATTR{name}=="hx9023s", \
-DEVPATH=="*/11011000.i2c/i2c-4/4-0028/*", SYMLINK+="proximity-lte", \
-ATTR{events/in_proximity1_thresh_either_en}="1", GROUP="power"
+DEVPATH=="*/11011000.i2c/i2c-4/4-0028/*", SYMLINK+="proximity-cellular"
