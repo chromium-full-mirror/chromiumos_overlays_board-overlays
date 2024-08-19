@@ -46,3 +46,6 @@ INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
 # Enable Chrome OS RMA daemon
 USE="${USE} rmad"
+
+# Let CrOS IIO service owns sar sensors
+USE="${USE} iioservice_proximity"
