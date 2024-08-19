@@ -40,3 +40,6 @@ INPUT_DEVICES="${INPUT_DEVICES} ilitek_tddi"
 
 # Include the ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
+
+# Let CrOS IIO service owns sar sensors
+USE="${USE} iioservice_proximity"
