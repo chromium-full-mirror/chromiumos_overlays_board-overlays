@@ -41,6 +41,9 @@ INPUT_DEVICES="${INPUT_DEVICES} pixart"
 # Include the zinitix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} zinitix"
 
+# Include ilitek firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
+
 # Enable biometrics support
 USE="${USE} biod"
 
