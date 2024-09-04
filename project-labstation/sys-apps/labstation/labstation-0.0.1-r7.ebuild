@@ -3,8 +3,8 @@
 
 EAPI="7"
 
-CROS_WORKON_COMMIT="d078e815e17ff614c6e81d3d09774266e311bfaa"
-CROS_WORKON_TREE="c2e064050f3192d2226513497621b6f7f1e91f94"
+CROS_WORKON_COMMIT="7df838c526089ed656f227ab1bc9296fd4b1566b"
+CROS_WORKON_TREE="c56888e03397c194cd33c9ebf233f2a08f17d331"
 PYTHON_COMPAT=( python3_{8..11} )
 
 CROS_WORKON_PROJECT="chromiumos/platform/labstation"
@@ -22,6 +22,7 @@ KEYWORDS="*"
 
 RDEPEND="sys-power/uhubctl
 	dev-util/dolos
+	app-misc/cambronix-firmware
 "
 
 DEPEND="${RDEPEND}
