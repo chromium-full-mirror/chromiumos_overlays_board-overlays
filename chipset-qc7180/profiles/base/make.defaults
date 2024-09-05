@@ -27,7 +27,6 @@ USE="${USE} qualcomm_cpu"
 USE="${USE} gpu_sandbox_start_early"
 
 # Enable HW codecs using V4L2 API.
-USE="${USE} v4l2_flat_stateful_video_decoder"
 USE="${USE} v4l2_codec"
 
 # Enable vulkan, but only for cros (see package.use)
