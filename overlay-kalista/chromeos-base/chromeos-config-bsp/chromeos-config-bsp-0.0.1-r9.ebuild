@@ -19,16 +19,16 @@ HOMEPAGE="https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos
 LICENSE="BSD-Google"
 KEYWORDS="*"
 RDEPEND="!chromeos-base/chromeos-config-bsp-kalista"
-IUSE="kernel-4_4"
+IUSE="kernel-5_4"
 
 src_install() {
 	insinto "${UNIBOARD_YAML_DIR}"
 	doins "${FILESDIR}/model.yaml"
 
 	insinto "${UNIBOARD_YAML_DIR}/include"
-	if use kernel-4_4; then
-		newins "${FILESDIR}/include/kernel-info_kernel_4_4.yaml" "kernel-info.yaml"
+	if use kernel-5_4; then
+		newins "${FILESDIR}/include/audio-5_4.yaml" "audio.yaml"
 	else
-		doins "${FILESDIR}/include/kernel-info.yaml"
+		doins "${FILESDIR}/include/audio.yaml"
 	fi
 }
