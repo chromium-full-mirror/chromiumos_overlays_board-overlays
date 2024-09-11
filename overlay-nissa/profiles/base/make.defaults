@@ -24,6 +24,9 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 # Include ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
+# Include paradetech firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} paradetech"
+
 # Add EC logging
 USE="${USE} eclog"
 
