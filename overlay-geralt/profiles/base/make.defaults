@@ -37,6 +37,10 @@ TTY_CONSOLE="ttyS0"
 # to go through host virglrenderer (avoid creating vrend context).
 USE="${USE} cross_domain_context"
 
+# Disable some specific holdback Finch experiments on Ash features.
+# TODO(http://b/367799751): Remove when the issue gets fixed.
+USE="${USE} ignore_holdback_experiments"
+
 # Include the himax firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} himax"
 
