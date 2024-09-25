@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="brask-labstation midna"
+IUSE="brask-kernelnext brask-labstation midna"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -32,7 +32,9 @@ DEPEND="
 "
 
 src_install() {
-	if use brask-labstation; then
+	if use brask-kernelnext; then
+		doappid "{F33472D0-B468-422A-8A47-17613CD50732}" "CHROMEBOX"
+	elif use brask-labstation; then
 		doappid "{BB2F7FE3-BC46-4F46-8DA0-D50CDBAA4B20}" "CHROMEBOX"
 	elif use midna; then
 		doappid "{BB55D437-14B9-48D9-A6B2-1C6B994E307F}" "CHROMEBOX"
