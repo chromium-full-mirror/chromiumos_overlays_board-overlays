@@ -24,7 +24,6 @@ RDEPEND="
 	chromeos-base/sof-binary:=
 	chromeos-base/sof-topology:=
 	chromeos-base/touch_updater:=
-	net-wireless/ax211-updater
 "
 DEPEND="
 	${RDEPEND}
