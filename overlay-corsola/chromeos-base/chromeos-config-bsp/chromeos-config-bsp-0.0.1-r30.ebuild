@@ -12,10 +12,13 @@ PROJECTS=(
 	"chinchou"
 	"kingler"
 	"krabby"
+	"kyogre"
 	"magikarp"
 	"ponyta"
+	"skitty"
 	"steelix"
 	"tentacruel"
+	"veluza"
 	"voltorb"
 )
 
