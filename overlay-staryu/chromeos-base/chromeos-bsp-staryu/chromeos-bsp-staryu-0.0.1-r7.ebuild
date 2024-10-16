@@ -42,4 +42,8 @@ src_install() {
 
 	# Install hammerd udev rules and override for chromeos-base/hammerd.
 	udev_dorules "${FILESDIR}/99-hammerd.rules"
+
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}/99-cros-sx-proximity.rules"
+	udev_dorules "${FILESDIR}/99-cros-hx-proximity.rules"
 }
