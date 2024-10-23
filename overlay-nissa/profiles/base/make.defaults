@@ -24,6 +24,9 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 # Include ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
+# Include focaltech firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} focaltech"
+
 # Include paradetech firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} paradetech"
 
