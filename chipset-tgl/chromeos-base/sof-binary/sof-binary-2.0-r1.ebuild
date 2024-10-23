@@ -1,1 +1,0 @@
-sof-binary-2.0.ebuild

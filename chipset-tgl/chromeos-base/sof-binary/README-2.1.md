@@ -5,8 +5,8 @@ Release build from branch cros-internal/cavs2.5-001-drop-stable for TGL
 
 repo      : https://chrome-internal-review.googlesource.com/q/project:chromeos%252Fthird_party%252Fsound-open-firmware-private
 branch    : cros-internal/cavs2.5-001-drop-stable
-commit id : 183f44ac4fbeca2f7db8b0cecea191c45cda600d
+commit id : 504b41685e34dfeacbba05dc04e6b3326a57d943
 
 Md5sum
-790be6427ae3ca5ef0ac65874c917eb2  sof-tgl.ldc
-3cc7005b88366a43095af71095d104c6  sof-tgl.ri
+81ff092dac2934746d818fb4e20b6254  sof-tgl.ldc
+c19b068268dee604af5b8c8e8c510910  sof-tgl.ri
