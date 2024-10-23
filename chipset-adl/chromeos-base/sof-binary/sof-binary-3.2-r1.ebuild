@@ -1,1 +1,0 @@
-sof-binary-3.2.ebuild
