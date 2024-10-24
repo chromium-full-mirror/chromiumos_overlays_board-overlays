@@ -83,7 +83,7 @@
         <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
             <!-- measured 98%:343-1698 med:714 FLAKY(mn=314.7 < 344 - 1698 < mx=1776.2) variance:2.2 -->
             <Limit name="measured-frame-rate-320x180" range="660-1452" /> <!-- N=604 -->
-            <Limit name="measured-frame-rate-640x360" range="496-1090" />
+            <Limit name="measured-frame-rate-640x360" range="716-1684" />
             <Limit name="measured-frame-rate-1280x720" range="484-1064" />
             <!-- measured 98%:264-909 med:381 SLOW -->
             <Limit name="measured-frame-rate-1920x1080" range="380-563" /> <!-- N=590 v98%=1.9 -->
