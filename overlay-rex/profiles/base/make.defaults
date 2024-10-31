@@ -8,8 +8,8 @@ INPUT_DEVICE=""
 
 USE="${USE} rex"
 
-# Enable Zephyr-based EC.
-USE="${USE} zephyr_ec"
+# Disable Zephyr-based EC in factory branch.
+USE="${USE} -zephyr_ec"
 
 # Enable unibuild
 USE="${USE} unibuild"
