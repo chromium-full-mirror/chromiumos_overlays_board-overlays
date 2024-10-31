@@ -5,7 +5,7 @@
 EAPI=7
 
 DESCRIPTION="SOF topology files for Rex"
-SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-rex-${PV}.tar.gz"
+SRC_URI="gs://chromeos-localmirror/distfiles/${PN}-rex-${PV}.tar.bz2"
 
 LICENSE="SOF"
 SLOT="0"
@@ -19,6 +19,4 @@ src_install() {
 
 	insinto /lib/firmware/intel/sof-ace-tplg/pdm1
 	doins ./pdm1/*.tplg
-
-	dosym ./sof-mtl-max98360a-rt5682.tplg /lib/firmware/intel/sof-ace-tplg/sof-mtl-rt5650.tplg
 }
