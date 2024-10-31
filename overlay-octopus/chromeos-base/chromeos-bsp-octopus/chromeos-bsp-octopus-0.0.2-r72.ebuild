@@ -19,12 +19,13 @@ dependencies or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* amd64 x86"
-IUSE="octopus-arc-r octopus-arc-t octopus-kernelnext"
+IUSE="modemfwd octopus-arc-r octopus-arc-t octopus-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/chromeos-bsp-baseboard-octopus:=
+	modemfwd? ( chromeos-base/modemfwd-helpers )
 "
 DEPEND="
 	${RDEPEND}
