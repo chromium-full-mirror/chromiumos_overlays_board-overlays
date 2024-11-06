@@ -396,6 +396,24 @@ treeya360-config: &treeya360_config
         destination: "{{$fw_dest}}/2A34_0.0.3298220.bin"
         symlink: "{{$fw_root}}/hid-06CB_2A34"
 
+treeya360-config-with-two-cameras: &treeya360_config_with_two_cameras
+  <<: *treeya360_config
+  camera:
+    count: 2
+    devices:
+      - interface: "usb"
+        facing: "front"
+        orientation: 0
+        flags:
+          support-autofocus: False
+          support-1080p: False
+      - interface: "usb"
+        facing: "back"
+        orientation: 0
+        flags:
+          support-autofocus: True
+          support-1080p: True
+
 treeya360-alc5682-config: &treeya360_alc5682_config
   <<: [ *treeya_config, *convertible_base_config ]
   $audio-config: "treeya"
@@ -439,6 +457,24 @@ treeya360-alc5682-config: &treeya360_alc5682_config
       - source: "touch/synaptics/7817_0.0.3209178.bin"
         destination: "{{$fw_dest}}/7817_0.0.3209178.bin"
         symlink: "{{$fw_root}}/hid-06CB_7817"
+
+treeya360-alc5682-config-with-two-cameras: &treeya360_alc5682_config_with_two_cameras
+  <<: *treeya360_alc5682_config
+  camera:
+    count: 2
+    devices:
+      - interface: "usb"
+        facing: "front"
+        orientation: 0
+        flags:
+          support-autofocus: False
+          support-1080p: False
+      - interface: "usb"
+        facing: "back"
+        orientation: 0
+        flags:
+          support-autofocus: True
+          support-1080p: True
 
 nuwani-config: &nuwani_config
   <<: *base_config
@@ -724,27 +760,24 @@ chromeos:
           config: *treeya360_config
 
         - $sku-id: 169
-          $camera-count: 2
           $num-mic-locations: 2
-          config: *treeya360_config
+          config: *treeya360_config_with_two_cameras
 
         - $sku-id: 174
           $num-mic-locations: 1
           config: *treeya360_config
 
         - $sku-id: 175
-          $camera-count: 2
           $num-mic-locations: 2
-          config: *treeya360_config
+          config: *treeya360_config_with_two_cameras
 
         - $sku-id: 190
           $num-mic-locations: 1
           config: *treeya360_alc5682_config
 
         - $sku-id: 191
-          $camera-count: 2
           $num-mic-locations: 2
-          config: *treeya360_alc5682_config
+          config: *treeya360_alc5682_config_with_two_cameras
 
     - $device-name: "nuwani"
       $num-mic-locations: 1
