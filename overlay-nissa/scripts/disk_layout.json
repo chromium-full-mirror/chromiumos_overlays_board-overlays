@@ -42,8 +42,8 @@
     "factory_install": [
       {
         "num": 3,
-        "size": "608 MiB",
-        "fs_size": "600 MiB"
+        "size": "808 MiB",
+        "fs_size": "800 MiB"
       },
       {
         # Kernel for Slot B. Identical to kernel A except for signing.
