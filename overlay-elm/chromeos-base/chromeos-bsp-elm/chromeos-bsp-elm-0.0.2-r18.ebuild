@@ -18,7 +18,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="-* arm64 arm"
-IUSE="elm-arc64 elm-cheets elm-kernelnext elm-connectivitynext kernel-5_15"
+IUSE="elm-arc64 elm-cheets elm-connectivitynext kernel-5_15"
 
 # Add dependencies on other ebuilds from within this board overlay
 DEPEND=""
@@ -38,8 +38,6 @@ src_install() {
 		doappid "{3DFF3394-F97E-4971-83C6-2C5C06A9953D}" "CHROMEBOOK"
 	elif use elm-connectivitynext; then
 		doappid "{22EB1075-F58B-4881-BC88-E5FDC17BE66D}" "CHROMEBOOK"
-	elif use elm-kernelnext; then
-		doappid "{5C030156-1D45-11EA-871D-230545999E89}" "CHROMEBOOK"
 	else
 		doappid "{5BF597B2-ADE3-52C9-1DDA-95719C914AFF}" "CHROMEBOOK"
 	fi
