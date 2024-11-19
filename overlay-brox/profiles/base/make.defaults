@@ -48,3 +48,6 @@ USE="${USE} camera_angle_backend"
 
 # Make it possible to collect firmware dumps in feedback reports
 USE="${USE} fbpreprocessord"
+
+# Include the pixart firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} pixart"
