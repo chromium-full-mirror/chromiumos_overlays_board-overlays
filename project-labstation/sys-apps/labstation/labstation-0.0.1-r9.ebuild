@@ -28,15 +28,25 @@ RDEPEND="sys-power/uhubctl
 DEPEND="${RDEPEND}
 "
 
+DIRS="usb_hubs image_downloader"
+
+src_prepare() {
+	for dir in ${DIRS}; do
+		(cd "${dir}" || die ; distutils-r1_src_prepare)
+	done
+}
+
 src_configure() {
-	cd usb_hubs || die
-	sanitizers-setup-env
-	distutils-r1_src_configure
+	for dir in ${DIRS}; do
+		(cd "${dir}" || die ; sanitizers-setup-env)
+		(cd "${dir}" || die ; distutils-r1_src_configure)
+	done
 }
 
 src_compile() {
-	cd usb_hubs || die
-	distutils-r1_src_compile
+	for dir in ${DIRS}; do
+		(cd "${dir}" || die ; distutils-r1_src_compile)
+	done
 }
 
 src_install() {
@@ -44,6 +54,7 @@ src_install() {
 	doins "${S}"/os-dependent/chromeos/servod_utils.sh
 	insinto /etc/init
 	doins "${S}"/os-dependent/chromeos/upstart-scripts/*.conf
-	cd usb_hubs || die
-	distutils-r1_src_install
+	for dir in ${DIRS}; do
+		(cd "${dir}" || die ; distutils-r1_src_install)
+	done
 }
