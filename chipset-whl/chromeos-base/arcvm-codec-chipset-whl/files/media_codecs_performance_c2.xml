@@ -58,8 +58,8 @@
             <Limit name="measured-frame-rate-1920x1080" range="354-715" /> <!-- N=26 v90%=1.0 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <!-- b/189791118: Enlarge range for small resolution, geometric mean: 688 -->
-            <Limit name="measured-frame-rate-320x180" range="464-1020" />
+            <!-- measured 98%:446-2674 med:2304 FLAKY(mn=383.9 < 446 - 2674 < mx=2681.0) variance:2.4 -->
+            <Limit name="measured-frame-rate-320x180" range="608-1337" /> <!-- N=114 -->
             <!-- b/189791118: Enlarge range for small resolution, geometric mean: 692 -->
             <Limit name="measured-frame-rate-640x360" range="467-1027" />
             <!-- b/189791118: Enlarge range for small resolution, geometric mean: 649 -->
@@ -67,8 +67,8 @@
             <Limit name="measured-frame-rate-1920x1080" range="334-334" /> <!-- N=26 v90%=1.1 -->
         </MediaCodec>
         <MediaCodec name="c2.v4l2.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <!-- b/188733447: Enlarge range for small resolution, geometric mean: 685 -->
-            <Limit name="measured-frame-rate-320x180" range="462-1016" />
+            <!-- measured 98%:531-2539 med:2183 FLAKY(mn=426.8 < 531 - 2540 < mx=2604.2) variance:2.2 -->
+            <Limit name="measured-frame-rate-320x180" range="870-1270" /> <!-- N=88 -->
             <!-- b/188733447: Enlarge range for small resolution, geometric mean: 655 -->
             <Limit name="measured-frame-rate-640x360" range="442-972" />
             <!-- b/188733447: Enlarge range for small resolution, geometric mean: 593 -->
