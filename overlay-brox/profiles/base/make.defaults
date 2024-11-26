@@ -21,6 +21,9 @@ INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
 # Include the focal firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} focaltech"
 
+# Include the goodix firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} goodix"
+
 # Enable biometrics support
 USE="${USE} biod"
 
