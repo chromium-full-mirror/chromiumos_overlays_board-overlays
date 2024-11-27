@@ -19,7 +19,7 @@ or portage actions."
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* arm64 arm"
-IUSE="cheets"
+IUSE="cheets geralt-kernelnext"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -33,7 +33,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_install() {
-	doappid "{F2F02F3F-E04D-4867-BA41-8E90F8A34A87}" "CHROMEBOOK"
+	if use geralt-kernelnext; then
+		doappid "{F5511B74-7685-47D0-BFD9-6BE494213F0A}" "CHROMEBOOK"
+	else
+		doappid "{F2F02F3F-E04D-4867-BA41-8E90F8A34A87}" "CHROMEBOOK"
+	fi
 
 	# Install audio config files
 	unibuild_install_files audio-files
