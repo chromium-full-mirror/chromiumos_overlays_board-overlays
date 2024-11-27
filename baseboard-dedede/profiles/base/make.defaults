@@ -23,6 +23,9 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} rtw8852b"
 # RTL8852B USB BT firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl_bt-8852be-usb"
 
+# RTL8852BE-VT BT USB firmware
+LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl_bt-8852be-vt-usb"
+
 # Google USBPD peripheral firmwares
 LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
