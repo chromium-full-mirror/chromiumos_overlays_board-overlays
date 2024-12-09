@@ -85,7 +85,8 @@
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
             <!-- measured 98%:416-1133 med:835 FLAKY(mn=243.0 < 344 - 1374 < mx=1406.5) -->
             <Limit name="measured-frame-rate-176x144" range="416-915" /> <!-- N=763 v98%=1.6 -->
-            <Limit name="measured-frame-rate-352x288" range="528-528" /> <!-- N=470 v98%=1.7 -->
+            <!-- measured 98%:576-1047 med:810 FLAKY(mn=258.5 < 388 - 1552) -->
+            <Limit name="measured-frame-rate-352x288" range="528-776" /> <!-- N=212 v98%=1.3 -->
         </MediaCodec>
         <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
             <!-- measured 98%:124-600 med:417 FLAKY(mn=82.4 < 125 - 600 < mx=701.8) variance:2.2 -->
