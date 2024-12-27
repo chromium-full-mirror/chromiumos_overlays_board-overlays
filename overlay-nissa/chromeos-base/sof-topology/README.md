@@ -13,7 +13,6 @@ tools/build_tools/topology/sof-adl-max98360a-nau8825-drceq.tplg        renamed t
 tools/build_tools/topology/sof-adl-max98360a-rt5682-drceq.tplg         renamed to sof-adl-max98360a-rt5682.tplg
 tools/build_tools/topology/sof-adl-rt1019-rt5682-drceq.tplg            renamed to sof-adl-rt1019-rt5682.tplg
 tools/build_tools/topology/sof-adl-rt1019-rt5682-ramptime700.tplg      renamed to riven/sof-adl-rt1019-rt5682.tplg
-tools/build_tools/topology/sof-adl-rt5650-drceq.tplg                   renamed to sof-adl-rt5650.tplg
 tools/build_tools/topology/sof-adl-rt5650-ramptime700.tplg             renamed to craaskov/sof-adl-rt5650.tplg
 
 MD5SUMs
@@ -21,7 +20,7 @@ MD5SUMs
 81697d13d9f10d0008fe979c2df620cc  sof-adl-max98360a-nau8825.tplg
 af22fd43229ed6a849768a8163716572  sof-adl-max98360a-rt5682.tplg
 6da21c3d653cb96f3cdbe8725d9a8758  sof-adl-rt1019-rt5682.tplg
-aac137f4c2d2ef39a42026404cf729a3  sof-adl-rt5650.tplg
+1c3aa0cfa50f8112972cb300f6e15b06  sof-adl-rt5650.tplg
 9fc2792b84cbe7e85d99d19f29d84c59  sof-hda-generic-2ch.tplg
 cccbc85342c3f63632477a93c918a00b  sof-hda-generic-4ch.tplg
 51d2efeb51778adad2bcc964ff80aa40  craaskov/sof-adl-rt5650.tplg
