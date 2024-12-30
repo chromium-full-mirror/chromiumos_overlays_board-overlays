@@ -58,5 +58,7 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	insinto "/lib/firmware/intel"
-	newins "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ish_fw.bin
+	if [[ -f "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ]]; then
+		newins "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ish_fw.bin
+	fi
 }
