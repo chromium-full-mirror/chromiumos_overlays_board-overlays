@@ -73,6 +73,9 @@ USE="${USE} lvm_stateful_partition"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
+# Enable biometrics support
+USE="${USE} biod"
+
 # Enable LVM application containers.
 USE="${USE} lvm_application_containers"
 
