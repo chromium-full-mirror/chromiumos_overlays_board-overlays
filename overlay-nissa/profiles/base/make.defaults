@@ -7,7 +7,7 @@ USE=""
 INPUT_DEVICES=""
 
 USE="${USE} nissa"
-USE="${USE} zephyr_ec cros_ec"
+USE="${USE} zephyr_ec cros_ec zephyr_ish"
 
 # Include the elan firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"

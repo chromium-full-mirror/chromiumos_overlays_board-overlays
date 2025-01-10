@@ -15,7 +15,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="~* ~amd64 ~x86"
-IUSE="adlnrvp bootimage zephyr_ec"
+IUSE="adlnrvp bootimage zephyr_ec zephyr_ish"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -26,6 +26,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
+	zephyr_ish? ( chromeos-base/chromeos-zephyr-ish:= )
 	bootimage? ( sys-boot/chromeos-bootimage:= )
 	zephyr_ec? ( chromeos-base/chromeos-zephyr:= )
 "
