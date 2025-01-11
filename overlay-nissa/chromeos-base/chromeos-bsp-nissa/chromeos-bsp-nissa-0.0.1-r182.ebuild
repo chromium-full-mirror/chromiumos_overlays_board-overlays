@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec nissa-pvs"
+IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish nissa-pvs"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -28,7 +28,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
-	chromeos-base/chromeos-zephyr-ish:=
+	zephyr_ish? ( chromeos-base/chromeos-zephyr-ish:= )
 	bootimage? ( sys-boot/chromeos-bootimage:= )
 	zephyr_ec? ( chromeos-base/chromeos-zephyr:= )
 "
