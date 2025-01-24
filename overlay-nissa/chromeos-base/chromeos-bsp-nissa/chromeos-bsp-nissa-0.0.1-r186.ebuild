@@ -59,6 +59,7 @@ src_install() {
 
 	insinto "/lib/firmware/intel"
 	if [[ -f "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ]]; then
-		newins "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ish_fw.bin
+		# TODO (b/365585969) use the built file from FW branch
+		doins "${FILESDIR}/common/ish/ish_fw.bin"
 	fi
 }
