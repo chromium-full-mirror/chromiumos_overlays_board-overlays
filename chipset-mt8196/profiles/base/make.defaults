@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-mediatek"
+CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-mediatek-mt8196"
 CHROMEOS_KERNEL_ARCH="arm64"
 
 # Initial value just for style purposes.
