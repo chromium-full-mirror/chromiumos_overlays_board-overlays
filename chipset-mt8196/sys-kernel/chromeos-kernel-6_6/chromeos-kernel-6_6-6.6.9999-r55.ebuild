@@ -1,0 +1,1 @@
+chromeos-kernel-6_6-6.6.9999.ebuild
