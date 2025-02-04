@@ -10,6 +10,7 @@ LINUX_FIRMWARE=""
 USE="${USE} nissa"
 USE="${USE} zephyr_ec"
 USE="${USE} zephyr_ish"
+USE="${USE} zephyr_ish_pinned"
 
 # Include the elan firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} elan_i2chid"
