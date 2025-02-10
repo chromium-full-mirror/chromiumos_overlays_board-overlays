@@ -8,14 +8,14 @@ amp_calibrations:
   calibration_profile_id: 1
   rdc_ranges:
     -
-        lower: 3.2
-        upper: 4.8
+        lower: 3.3
+        upper: 4.9
     -
-        lower: 3.2
-        upper: 4.8
+        lower: 3.3
+        upper: 4.9
     -
-        lower: 3.2
-        upper: 4.8
+        lower: 3.5
+        upper: 5.3
     -
-        lower: 3.2
-        upper: 4.8
+        lower: 3.5
+        upper: 5.3
