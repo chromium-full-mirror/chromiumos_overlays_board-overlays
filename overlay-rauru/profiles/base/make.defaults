@@ -21,6 +21,9 @@ USE="${USE} biod"
 # Include ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
+# Include the goodix firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} goodix"
+
 # Include focaltech firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} focaltech"
 
