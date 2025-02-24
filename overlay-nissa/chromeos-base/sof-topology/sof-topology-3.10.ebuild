@@ -16,7 +16,8 @@ S=${WORKDIR}/${PN}-nissa-${PV}
 src_install() {
 	insinto /lib/firmware/intel/sof-tplg
 	doins ./*.tplg
-	# TODO(b/358520389): Remove this part when b/379795350 is fixed.
+
+	# Topology with extra delay due to DMIC issues. See b/379795350 for details.
 	insinto /lib/firmware/intel/sof-tplg/craaskov
 	doins ./craaskov/*.tplg
 	insinto /lib/firmware/intel/sof-tplg/riven
