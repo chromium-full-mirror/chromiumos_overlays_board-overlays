@@ -17,7 +17,14 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish nissa-pvs"
+IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish zephyr_ish_pinned nissa-pvs"
+
+RESTRICT="mirror"
+
+GS_FW_BUCKET="gs://chromeos-binaries/HOME/bcs-nissa-private/overlay-nissa-private/chromeos-base/chromeos-firmware-nissa"
+SRC_URI="
+	zephyr_ish? ( zephyr_ish_pinned? ( ${GS_FW_BUCKET}/Trulo_ISH.16196.0.0.tbz2 ) )
+"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
@@ -28,10 +35,59 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
-	zephyr_ish? ( chromeos-base/chromeos-zephyr-ish:= )
+	zephyr_ish? (
+		zephyr_ish_pinned? ( !chromeos-base/chromeos-zephyr-ish:= )
+		!zephyr_ish_pinned? ( chromeos-base/chromeos-zephyr-ish:= )
+	)
 	bootimage? ( sys-boot/chromeos-bootimage:= )
 	zephyr_ec? ( chromeos-base/chromeos-zephyr:= )
 "
+BDEPEND="
+	chromeos-base/chromeos-config-host
+"
+
+_foreach_ish() {
+	local func_name="$1"
+	while read -r project && read -r ish_name; do
+		if [[ -z "${ish_name}" ]]; then
+			continue
+		fi
+		# Orisa is broken right now, just skip it, it's not being used
+		if [ "${project}" == "orisa" ]; then
+			continue
+		fi
+		"${func_name}" "${project}" "${ish_name}"
+	done < <(cros_config_host "get-firmware-build-combinations" ish || die)
+}
+
+_unpack_ish() {
+	local project="$1"
+	local firmware_name="$2"
+	local bundle=$(cros_config_host "get-firmware-version" "${project}" ish || die)
+
+	unpack "${bundle}.tbz2" || die
+	mkdir -p "${S}/${project}" || die
+	mv "${WORKDIR}/ish_fw.bin" "${S}/${project}/"
+}
+
+_install_pinned_ish() {
+	local project="$1"
+	local firmware_name="$2"
+	newins "${S}/${project}/ish_fw.bin" ish_fw.bin
+}
+
+_install_local_ish() {
+	local project="$1"
+	local firmware_name="$2"
+	newins "${SYSROOT}/lib/firmware/intel/${firmware_name}.bin" ish_fw.bin
+}
+
+src_unpack() {
+	mkdir -p "${S}"
+	if use zephyr_ish && use zephyr_ish_pinned ; then
+		_foreach_ish "_unpack_ish"
+	fi
+}
 
 src_install() {
 	if use adlnrvp; then
@@ -58,8 +114,11 @@ src_install() {
 	doins "${FILESDIR}"/powerd_prefs/*
 
 	insinto "/lib/firmware/intel"
-	if [[ -f "${SYSROOT}/lib/firmware/intel/orisa_ish.bin" ]]; then
-		# TODO (b/365585969) use the built file from FW branch
-		doins "${FILESDIR}/common/ish/ish_fw.bin"
+	if use zephyr_ish ; then
+		if use zephyr_ish_pinned ; then
+			_foreach_ish _install_pinned_ish
+		else
+			_foreach_ish _install_local_ish
+		fi
 	fi
 }
