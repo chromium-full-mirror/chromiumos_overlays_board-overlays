@@ -109,3 +109,6 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-gl"
 
 # BT firmware for BE200
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt_be200"
+
+# Enable support for default-key-stateful.
+USE="${USE} default_key_stateful"
