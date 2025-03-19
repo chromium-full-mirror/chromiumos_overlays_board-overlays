@@ -68,7 +68,8 @@ _unpack_ish() {
 _install_pinned_ish() {
 	local project="$1"
 	local firmware_name="$2"
-	newins "${S}/${project}/ish_fw.bin" "${firmware_name}.bin"
+	local output_name=${firmware_name//-/_}
+	newins "${S}/${project}/ish_fw.bin" "${output_name}.bin"
 }
 
 src_unpack() {
