@@ -16,9 +16,6 @@ USE="${USE} zephyr_ec"
 USE="${USE} unibuild"
 USE="${USE} has_chromeos_config_bsp"
 
-# Disable AC ACPI driver
-USE="${USE} -acpi_ac"
-
 # Use recovery button to confirm physical presence
 USE="${USE} physical_presence_recovery"
 
