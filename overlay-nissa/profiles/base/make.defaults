@@ -30,6 +30,15 @@ INPUT_DEVICES="${INPUT_DEVICES} focaltech"
 # Include paradetech firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} paradetech"
 
+# Include the zinitix firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} zinitix"
+
+# Include the wacom firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} wacom"
+
+# Include the himax firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} himax"
+
 # RTL8852B WiFi firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtw8852b"
 
