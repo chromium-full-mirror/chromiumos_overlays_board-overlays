@@ -34,6 +34,9 @@ src_install() {
 	doins "${FILESDIR}/udev-trigger-codec.conf"
 	udev_dorules "${FILESDIR}/50-media.rules"
 
+	# rauru-specific upstart job to accommodate MCDI init delay
+	doins "${FILESDIR}/mcdi-init-wait.conf"
+
 	# Install cpuset adjustments.
 	if use cheets; then
 		arc-build-constants-configure
