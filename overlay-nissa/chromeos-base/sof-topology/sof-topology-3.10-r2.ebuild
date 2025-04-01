@@ -1,1 +1,0 @@
-sof-topology-3.10.ebuild
