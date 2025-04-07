@@ -5,6 +5,7 @@
 # Initial value just for style purposes.
 USE=""
 INPUT_DEVICES=""
+LINUX_FIRMWARE=""
 
 USE="${USE} nissa"
 USE="${USE} zephyr_ec"
@@ -116,3 +117,6 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} iwlwifi-gl"
 
 # BT firmware for BE200
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ibt_be200"
+
+# Include Realtek Ethernet firmware
+LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl8168h-2"
