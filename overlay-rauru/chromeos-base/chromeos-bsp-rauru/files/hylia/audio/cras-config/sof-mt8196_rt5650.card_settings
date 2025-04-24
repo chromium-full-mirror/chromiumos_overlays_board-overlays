@@ -103,5 +103,5 @@
   db_at_0 =-7550
 [Headphone]
   volume_curve = simple_step
-  volume_step = 55
+  volume_step = 70
   max_volume = 0
