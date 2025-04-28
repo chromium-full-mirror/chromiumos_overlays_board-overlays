@@ -57,6 +57,3 @@ USE="${USE} crosier_binary"
 
 # Enable reading on-disk finalization data
 USE="${USE} encstateful_ondisk_finalization"
-
-# Enable ipcz by default
-USE="${USE} ipcz"
