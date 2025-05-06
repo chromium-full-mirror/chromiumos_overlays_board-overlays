@@ -23,8 +23,5 @@ modify_kernel_command_line() {
 
     # See b/271817196
     echo "clearcpuid=xsaves"
-
-    #see b/399422076
-    echo "cs_watchdog_tolerate_skew=1" >> "$1"
   } >> "$1"
 }
