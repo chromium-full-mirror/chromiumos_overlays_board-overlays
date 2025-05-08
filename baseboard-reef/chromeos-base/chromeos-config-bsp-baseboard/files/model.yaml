@@ -8,6 +8,8 @@ identity-common: &identity_common
 
 base-config: &base_config
   brand-code: "{{$brand-code}}"
+  camera:
+    legacy-usb: True
   firmware:
     build-targets:
       coreboot: "{{$firmware-target}}"
@@ -36,22 +38,6 @@ nonzerg-base-config: &nonzerg_base_config
 reef-config: &reef_config
   <<: *zerg_base_config
   $zerg-group: reef
-  camera:
-    count: 2
-    devices:
-      - interface: "usb"
-        facing: "front"
-        orientation: 0
-        flags:
-          support-autofocus: False
-          support-1080p: False
-      - interface: "usb"
-        facing: "back"
-        orientation: 0
-        flags:
-          support-autofocus: True
-          support-1080p: True
-    legacy-usb: True
   nnpalm:
     touch-compatible: True
     model: "alpha"
@@ -68,20 +54,6 @@ snappy-config: &snappy_config
   <<: *zerg_base_config
   $zerg-group: snappy
   camera:
-    count: 2
-    devices:
-      - interface: "usb"
-        facing: "front"
-        orientation: 0
-        flags:
-          support-autofocus: False
-          support-1080p: False
-      - interface: "usb"
-        facing: "back"
-        orientation: 0
-        flags:
-          support-autofocus: False
-          support-1080p: True
     legacy-usb: True
   cros-healthd:
     cached-vpd:
@@ -118,31 +90,11 @@ snappy-config: &snappy_config
 
 pyro-config: &pyro_config
   <<: *nonzerg_base_config
-  camera:
-    count: 1
-    devices:
-      - interface: "usb"
-        facing: "front"
-        orientation: 0
-        flags:
-          support-autofocus: False
-          support-1080p: False
-    legacy-usb: True
   power:
     low-battery-shutdown-percent: '4.0'
 
 sand-config: &sand_config
   <<: *nonzerg_base_config
-  camera:
-    count: 1
-    devices:
-      - interface: "usb"
-        facing: "front"
-        orientation: 0
-        flags:
-          support-autofocus: False
-          support-1080p: False
-    legacy-usb: True
   power:
     has-keyboard-backlight: '1'
     power-supply-full-factor: '0.94'
