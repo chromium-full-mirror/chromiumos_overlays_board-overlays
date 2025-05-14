@@ -54,7 +54,11 @@ _foreach_ish() {
 _unpack_ish() {
 	local project="$1"
 	local firmware_name="$2"
-	local bundle=$(cros_config_host "get-firmware-version" "${project}" ish || die)
+	local bundle=$(cros_config_host "get-firmware-version" "${project}" ish)
+
+	if [[ -z "${bundle}" ]]; then
+		return
+	fi
 
 	unpack "${bundle}.tbz2" || die
 	mkdir -p "${S}/${project}" || die
@@ -65,7 +69,14 @@ _install_pinned_ish() {
 	local project="$1"
 	local firmware_name="$2"
 	local output_name=${firmware_name//-/_}
-	newins "${S}/${project}/ish_fw.bin" "${output_name}.bin"
+	if [[ -e "${S}/${project}/ish_fw.bin" ]]; then
+		# Only install the file if it exists. If a new project is being
+		# brought up it might not yet have a pinned version that's
+		# unpacked.
+		newins "${S}/${project}/ish_fw.bin" "${output_name}.bin"
+	else
+		newins "${ROOT}/firmware/${project}/${firmware_name}/ish_fw.bin" "${output_name}.bin"
+	fi
 }
 
 src_unpack() {
