@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-CROS_WORKON_COMMIT=("891e8fdfb067e4fefdd1249cd07ab6568c24ea7e" "3f4cba786bcb0931642dd2a89386bf46b89fe6b6")
+CROS_WORKON_COMMIT=("4a09943a6ed585bb6090bfac40d30765b0118565" "3f4cba786bcb0931642dd2a89386bf46b89fe6b6")
 CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "f74d54a4d8774bc6b335920011192bac72af8590" "2bcc3b35eed8edfa1cd6e2d7e15e191cefcfd8e4")
 CROS_WORKON_PROJECT=("chromiumos/platform2" "chromiumos/platform/camera")
 CROS_WORKON_LOCALNAME=("../platform2" "../platform/camera")
@@ -25,18 +25,20 @@ IUSE="cros_camera_algo"
 REQUIRED_USE="cros_camera_algo"
 
 RDEPEND="
-	chromeos-base/chromeos-config-tools
-	chromeos-base/cros-camera-android-deps
-	chromeos-base/cros-camera-libs
-	media-libs/libsync
-	media-libs/mtk-isp-3a-libs-bin
-	media-libs/mtk-sensor-metadata
-	media-libs/mtk-tuning-libs-bin"
+	chromeos-base/chromeos-config-tools:=
+	chromeos-base/cros-camera-android-deps:=
+	chromeos-base/cros-camera-libs:=
+	dev-cpp/abseil-cpp:=
+	media-libs/libsync:=
+	media-libs/mtk-isp-3a-libs-bin:=
+	media-libs/mtk-sensor-metadata:=
+	media-libs/mtk-tuning-libs-bin:="
+
+BDEPEND="virtual/pkgconfig"
 
 DEPEND="${RDEPEND}
 	media-libs/libyuv
-	sys-kernel/linux-headers
-	virtual/pkgconfig"
+	sys-kernel/linux-headers"
 
 MTK_HAL_LIBRARIES=(
 	"libcam.device3.so"
