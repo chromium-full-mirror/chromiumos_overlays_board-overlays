@@ -47,10 +47,6 @@ _foreach_ish() {
 		if [[ -z "${ish_name}" ]]; then
 			continue
 		fi
-		# Orisa is broken right now, just skip it, it's not being used
-		if [ "${project}" == "orisa" ]; then
-			continue
-		fi
 		"${func_name}" "${project}" "${ish_name}"
 	done < <(cros_config_host "get-firmware-build-combinations" ish || die)
 }
