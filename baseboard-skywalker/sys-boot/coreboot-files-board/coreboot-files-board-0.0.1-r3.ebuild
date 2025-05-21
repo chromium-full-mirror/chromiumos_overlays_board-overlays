@@ -19,7 +19,7 @@ CROS_WORKON_LOCALNAME="../platform/empty-project"
 inherit cros-workon
 
 DEPEND="
-	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-1.71.1
-	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-1.71.1
+	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-0.39.1
+	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-0.39.1
 "
 RDEPEND="${DEPEND}"
