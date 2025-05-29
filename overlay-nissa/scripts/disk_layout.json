@@ -42,7 +42,7 @@
     "factory_install": [
       {
         "num": 3,
-        "size": "1208 MiB",
+        "size": "1280 MiB",
         "fs_size": "1200 MiB"
       },
       {
