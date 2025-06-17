@@ -48,3 +48,6 @@ USE="${USE} fbpreprocessord"
 
 # Include the pixart firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} pixart"
+
+# Include Realtek Ethernet firmware
+LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl8168h-2"
