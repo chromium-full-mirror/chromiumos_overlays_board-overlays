@@ -54,3 +54,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} rtw8852c"
 
 # Enable LVM stateful partition.
 USE="${USE} lvm_stateful_partition"
+
+# Until we go to kernel 6.6, disable hardware overlays on
+# Chromebox-for-Meetings to eliminate flickering b/282220742#comment59
+USE="${USE} set_hw_overlay_strategy_none"
