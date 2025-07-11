@@ -24,6 +24,7 @@ RESTRICT="mirror"
 GS_FW_BUCKET="gs://chromeos-binaries/HOME/bcs-nissa-private/overlay-nissa-private/chromeos-base/chromeos-firmware-nissa"
 SRC_URI="
 	zephyr_ish? ( zephyr_ish_pinned? ( ${GS_FW_BUCKET}/Trulo_ISH.16211.0.0.tbz2 ) )
+	zephyr_ish? ( zephyr_ish_pinned? ( ${GS_FW_BUCKET}/Uldrenite_ISH.16339.0.0.tbz2 ) )
 "
 
 # Add dependencies on other ebuilds from within this board overlay
