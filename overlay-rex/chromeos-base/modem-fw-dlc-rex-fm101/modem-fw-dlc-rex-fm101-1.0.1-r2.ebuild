@@ -33,6 +33,9 @@ MODEM_FW_DLC_PREALLOC_SIZE_MB="${MODEM_FW_DLC_FM101_DEFAULT_SIZE_3FW}"
 
 src_unpack() {
 	cros-workon_src_unpack
+	# Because we are not pulling in any sources, we need to have an empty
+	# source directory to satisfy the build success.
+	S="${WORKDIR}"
 	default
 }
 
