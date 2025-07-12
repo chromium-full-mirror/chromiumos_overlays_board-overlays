@@ -45,6 +45,9 @@ DEPEND="
 "
 
 src_install() {
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
+
 	if use rex-arc-t; then
 		doappid "{2A32B309-108B-421D-8DFD-CBC48790E12B}" "CHROMEBOOK"
 	elif use rex-cbx; then
