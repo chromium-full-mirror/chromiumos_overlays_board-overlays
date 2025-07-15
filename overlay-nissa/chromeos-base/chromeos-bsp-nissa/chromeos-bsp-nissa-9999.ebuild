@@ -8,7 +8,7 @@ EAPI=7
 CROS_WORKON_PROJECT="chromiumos/infra/build/empty-project"
 CROS_WORKON_LOCALNAME="platform/empty-project"
 
-inherit appid cros-unibuild cros-workon udev
+inherit appid cros-ish-utils cros-unibuild cros-workon udev
 
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
@@ -101,6 +101,16 @@ src_unpack() {
 	fi
 }
 
+BDEPEND="
+	chromeos-base/chromeos-config-host
+"
+
+export CROS_ISH_UTILS_INSTALL_PATH="/lib/firmware/intel"
+
+src_unpack() {
+	cros-ish-utils-src-unpack
+}
+
 src_install() {
 	if use adlnrvp; then
 		doappid "{D60D81DB-751D-4EB6-AF86-8C073A6BBB91}" "REFERENCE"
@@ -124,6 +134,8 @@ src_install() {
 	# Install platform specific config files for power_manager.
 	insinto "/usr/share/power_manager/board_specific"
 	doins "${FILESDIR}"/powerd_prefs/*
+
+	cros-ish-utils-src-install
 
 	dosbin "${FILESDIR}/r8169_aspm_quirk.sh"
 	if use zephyr_ish ; then
