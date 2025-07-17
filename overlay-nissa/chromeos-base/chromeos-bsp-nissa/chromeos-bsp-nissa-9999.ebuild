@@ -15,7 +15,16 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="~* ~amd64 ~x86"
-IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec nissa-pvs"
+IUSE="adlnrvp bootimage nirva nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish nissa-pvs"
+
+RESTRICT="mirror"
+
+GS_FW_BUCKET="gs://chromeos-binaries/HOME/bcs-nissa-private/overlay-nissa-private/chromeos-base/chromeos-firmware-nissa"
+SRC_URI="
+	zephyr_ish? ( ${GS_FW_BUCKET}/Trulo_ISH.16211.0.0.tbz2 )
+	zephyr_ish? ( ${GS_FW_BUCKET}/Pujjolo_ISH.16360.0.0.tbz2 )
+	zephyr_ish? ( ${GS_FW_BUCKET}/Uldrenite_ISH.16367.0.0.tbz2 )
+"
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
