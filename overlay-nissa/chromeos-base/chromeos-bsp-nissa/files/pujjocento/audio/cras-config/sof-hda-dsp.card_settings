@@ -1,11 +1,11 @@
 [Speaker]
   volume_curve = explicit
-  db_at_100 = 0
-  db_at_99 = 0
-  db_at_98 = 0
-  db_at_97 = -150
-  db_at_96 = -150
-  db_at_95 = -150
+  db_at_100 =-100
+  db_at_99 = -100
+  db_at_98 = -150
+  db_at_97 = -200
+  db_at_96 = -200
+  db_at_95 = -200
   db_at_94 = -250
   db_at_93 = -250
   db_at_92 = -250
@@ -104,4 +104,4 @@
 [Headphone]
   volume_curve = simple_step
   volume_step = 55
-  max_volume = -100
+  max_volume = -250
