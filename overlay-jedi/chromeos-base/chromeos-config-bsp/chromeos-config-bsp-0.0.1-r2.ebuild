@@ -4,13 +4,14 @@
 
 EAPI=7
 
-CROS_WORKON_COMMIT="fcb96a9f0abc907e0b58efcdb2f1e293aad1c42b"
+CROS_WORKON_COMMIT="fef96b3c1aa76bd52bae3a4af451998a3502cabf"
 CROS_WORKON_TREE="396209237e2f2a81f80ac79ff2f571fad87fd48d"
 inherit cros-constants
 CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 
 PROJECTS=(
 	"jedi"
+	"padme"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
