@@ -71,7 +71,13 @@ _unpack_ish() {
 _install_pinned_ish() {
 	local project="$1"
 	local firmware_name="$2"
-	newins "${S}/${project}/ish_fw.bin" "${firmware_name}.bin"
+	newins "${S}/${project}/ish_fw.bin" ish_fw.bin
+}
+
+_install_local_ish() {
+	local project="$1"
+	local firmware_name="$2"
+	newins "${SYSROOT}/lib/firmware/intel/${firmware_name}.bin" ish_fw.bin
 }
 
 src_unpack() {
@@ -110,6 +116,8 @@ src_install() {
 	if use zephyr_ish ; then
 		if use zephyr_ish_pinned ; then
 			_foreach_ish _install_pinned_ish
+		else
+			_foreach_ish _install_local_ish
 		fi
 	fi
 }
