@@ -33,6 +33,7 @@ src_install() {
 	insinto "/etc/init"
 	doins "${FILESDIR}/udev-trigger-codec.conf"
 	udev_dorules "${FILESDIR}/50-media.rules"
+	udev_dorules "${FILESDIR}/99-touchscreen.rules"
 
 	# skywalker-specific upstart job to accommodate MCDI init delay
 	doins "${FILESDIR}/mcdi-init-wait.conf"
