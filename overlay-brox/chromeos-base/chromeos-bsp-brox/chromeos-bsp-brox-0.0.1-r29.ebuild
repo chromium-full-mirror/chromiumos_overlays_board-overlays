@@ -38,4 +38,8 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	udev_dorules "${FILESDIR}"/udev/*.rules
+
+	dosbin "${FILESDIR}/r8169_aspm_quirk.sh"
 }
