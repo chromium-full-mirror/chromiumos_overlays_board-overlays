@@ -20,6 +20,8 @@ inherit cros-workon
 
 DEPEND="
 	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-0.41.1
+	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-0.41.1
+	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-0.41.1
 	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-0.41.1
 	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-0.41.1
 "
