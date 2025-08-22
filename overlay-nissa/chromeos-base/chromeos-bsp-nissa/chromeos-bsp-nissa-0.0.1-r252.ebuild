@@ -24,7 +24,7 @@ RESTRICT="mirror"
 GS_FW_BUCKET="gs://chromeos-binaries/HOME/bcs-nissa-private/overlay-nissa-private/chromeos-base/chromeos-firmware-nissa"
 SRC_URI="
 	zephyr_ish? ( ${GS_FW_BUCKET}/Trulo_ISH.16211.0.0.tbz2 )
-	zephyr_ish? ( ${GS_FW_BUCKET}/Pujjolo_ISH.16360.0.0.tbz2 )
+	zephyr_ish? ( ${GS_FW_BUCKET}/Pujjolo_ISH.16388.0.0.tbz2 )
 	zephyr_ish? ( ${GS_FW_BUCKET}/Uldrenite_ISH.16367.0.0.tbz2 )
 	zephyr_ish? ( ${GS_FW_BUCKET}/Kaladin_ISH.16380.0.0.tbz2 )
 "
