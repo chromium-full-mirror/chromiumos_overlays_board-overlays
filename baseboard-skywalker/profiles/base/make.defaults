@@ -58,3 +58,6 @@ USE="${USE} vulkan_chrome"
 # Declare TPM model.
 USE="${USE} -tpm tpm2"
 USE="${USE} ti50_onboard"
+
+# Enable default-key-stateful layout.
+USE="${USE} default_key_stateful"
