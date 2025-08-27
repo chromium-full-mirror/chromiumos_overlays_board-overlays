@@ -1,7 +1,0 @@
-diff --git a/localversion-skywalker b/localversion-skywalker
-new file mode 100644
-index 000000000000..aabbccddeeff
---- /dev/null
-+++ b/localversion-skywalker
-@@ -0,0 +1 @@
-+-CL6140086-v146
