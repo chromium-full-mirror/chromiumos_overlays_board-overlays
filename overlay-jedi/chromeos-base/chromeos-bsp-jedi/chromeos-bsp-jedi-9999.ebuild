@@ -35,4 +35,7 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}/99-cros-sx-proximity.rules"
 }
