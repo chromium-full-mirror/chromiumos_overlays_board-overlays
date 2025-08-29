@@ -45,3 +45,6 @@ USE="${USE} esim"
 
 # Enable modemfwd
 USE="${USE} modemfwd"
+
+# Let CrOS IIO service owns sar sensors
+USE="${USE} iioservice_proximity"
