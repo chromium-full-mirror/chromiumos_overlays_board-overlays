@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="adlnrvp bootimage nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish zephyr_ish_pinned nissa-pvs"
+IUSE="adlnrvp bootimage nirva nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish zephyr_ish_pinned nissa-pvs"
 
 RESTRICT="mirror"
 
@@ -66,12 +66,16 @@ _unpack_ish() {
 	unpack "${bundle}.tbz2" || die
 	mkdir -p "${S}/${project}" || die
 	mv "${WORKDIR}/ish_fw.bin" "${S}/${project}/"
+	# The component manifest must be packed in the released tarball.
+	mv "${WORKDIR}/component_manifest.json" "${S}/${project}/"
 }
 
 _install_pinned_ish() {
 	local project="$1"
 	local firmware_name="$2"
 	local output_name=${firmware_name//-/_}
+
+	insinto "/lib/firmware/intel"
 	if [[ -e "${S}/${project}/ish_fw.bin" ]]; then
 		# Only install the file if it exists. If a new project is being
 		# brought up it might not yet have a pinned version that's
@@ -79,6 +83,17 @@ _install_pinned_ish() {
 		newins "${S}/${project}/ish_fw.bin" "${output_name}.bin"
 	else
 		newins "${ROOT}/firmware/${project}/${firmware_name}/ish_fw.bin" "${output_name}.bin"
+	fi
+}
+
+_install_ish_manifest() {
+	local project="$1"
+	local firmware_name="$2"
+
+	if [[ -e "${S}/${project}/component_manifest.json" ]]; then
+		# Only install the component manifest for a pinned firmware.
+		insinto "/usr/share/cme/ish/${firmware_name}"
+		doins "${S}/${project}/component_manifest.json"
 	fi
 }
 
@@ -100,6 +115,8 @@ src_install() {
 		doappid "{D54FD0B1-5EBA-499C-89B9-F0FA42E11614}" "REFERENCE"
 	elif use nissa-pvs; then
 		doappid "{99582A00-F79E-4E99-A440-37E461A98E8D}" "REFERENCE"
+	elif use nirva; then
+		doappid "{4A0296DB-F5D5-46A0-8825-77826B2A79D6}" "REFERENCE"
 	else
 		doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
 	fi
@@ -113,10 +130,10 @@ src_install() {
 	insinto "/usr/share/power_manager/board_specific"
 	doins "${FILESDIR}"/powerd_prefs/*
 
-	insinto "/lib/firmware/intel"
 	if use zephyr_ish ; then
 		if use zephyr_ish_pinned ; then
 			_foreach_ish _install_pinned_ish
+			_foreach_ish _install_ish_manifest
 		fi
 	fi
 
