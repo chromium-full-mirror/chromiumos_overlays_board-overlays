@@ -40,6 +40,9 @@ INPUT_DEVICES="${INPUT_DEVICES} focaltech"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
+# Include the G2touch firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} g2touch"
+
 # Enable biometrics support
 USE="${USE} biod"
 
