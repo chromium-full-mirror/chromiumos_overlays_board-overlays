@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-CHROMEOS_DTBS="mt8189-*.dtb"
+CHROMEOS_DTB_CONFIG="mediatek/mt8189-skywalker.yaml"
 
 # Initial values just for style purposes.
 USE=""
@@ -61,3 +61,6 @@ USE="${USE} ti50_onboard"
 
 # Enable default-key-stateful layout.
 USE="${USE} default_key_stateful"
+
+# Enable device tree overlay.
+USE="${USE} device_tree_overlay"
