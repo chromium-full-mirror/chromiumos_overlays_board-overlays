@@ -8,10 +8,10 @@ USE=""
 USE="${USE} jedi"
 
 # Enable AP firmware
-#USE="${USE} bootimage"
+USE="${USE} bootimage"
 
 # Enable EC firmware
-#USE="${USE} zephyr_ec"
+USE="${USE} zephyr_ec"
 
 # Enable unibuild
 USE="${USE} unibuild has_chromeos_config_bsp"
