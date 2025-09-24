@@ -28,7 +28,6 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	chromeos-base/chromeos-config:=
-	chromeos-base/chromeos-zephyr-ish:=
 	bootimage? ( sys-boot/chromeos-bootimage:= )
 	zephyr_ec? ( chromeos-base/chromeos-zephyr:= )
 "
