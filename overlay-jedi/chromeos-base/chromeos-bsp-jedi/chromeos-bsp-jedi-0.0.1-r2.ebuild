@@ -26,6 +26,7 @@ IUSE=""
 RDEPEND="
 	chromeos-base/chromeos-config
 	chromeos-base/chromeos-bsp-baseboard-skywalker
+	chromeos-base/lte_power_control
 "
 DEPEND="
 		${RDEPEND}
@@ -36,4 +37,7 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	# Install Proximity sensor rules
+	udev_dorules "${FILESDIR}/99-cros-sx-proximity.rules"
 }
