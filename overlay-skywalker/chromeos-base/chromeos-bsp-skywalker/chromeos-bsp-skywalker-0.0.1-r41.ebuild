@@ -38,4 +38,7 @@ src_install() {
 
 	# Install audio config files
 	unibuild_install_files audio-files
+
+	insinto /etc/init
+	doins "${FILESDIR}/upstart/set_lru_gen_min_ttl_ms.conf"
 }
