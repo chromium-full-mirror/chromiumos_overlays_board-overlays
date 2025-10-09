@@ -48,3 +48,6 @@ USE="${USE} modemfwd"
 
 # Let CrOS IIO service owns sar sensors
 USE="${USE} iioservice_proximity"
+
+# Enable hammerd for updating base firmware
+USE="${USE} hammerd"
