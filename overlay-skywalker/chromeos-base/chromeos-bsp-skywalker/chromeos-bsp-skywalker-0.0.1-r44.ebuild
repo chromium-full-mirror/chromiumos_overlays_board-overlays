@@ -27,6 +27,7 @@ RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-skywalker
 	chromeos-base/lte_power_control
 	chromeos-base/touch_updater
+	media-libs/mt8189-dsm-param-padme
 "
 DEPEND="${RDEPEND}"
 
