@@ -1,0 +1,35 @@
+amp_calibrations:
+  boot_time_calibration_enabled: false
+  controls:
+    -
+      firmware_file: "/lib/firmware/cirrus/10430000_250918_V0_A1.wmfw"
+      tuning_file: "/lib/firmware/cirrus/10430000_250918_V0_A0_cal.bin"
+      preload_switch: "Left DSP1 Preload Switch"
+      firmware_type: "Left DSP1 Firmware"
+      pcm_source: "Left PCM Source"
+      cal_ambient: "Left DSP1 Protection cd CAL_AMBIENT"
+      cal_r: "Left DSP1 Protection cd CAL_R"
+      cal_r_selected: "Left DSP1 Protection cd CAL_R_SELECTED"
+      cal_status: "Left DSP1 Protection cd CAL_STATUS"
+      cal_checksum: "Left DSP1 Protection cd CAL_CHECKSUM"
+      cal_set_status: "Left DSP1 Protection cd CAL_SET_STATUS"
+    -
+      firmware_file: "/lib/firmware/cirrus/10430000_250918_V0_A1.wmfw"
+      tuning_file: "/lib/firmware/cirrus/10430000_250918_V0_A1_cal.bin"
+      preload_switch: "Right DSP1 Preload Switch"
+      firmware_type: "Right DSP1 Firmware"
+      pcm_source: "Right PCM Source"
+      cal_ambient: "Right DSP1 Protection cd CAL_AMBIENT"
+      cal_r: "Right DSP1 Protection cd CAL_R"
+      cal_r_selected: "Right DSP1 Protection cd CAL_R_SELECTED"
+      cal_status: "Right DSP1 Protection cd CAL_STATUS"
+      cal_checksum: "Right DSP1 Protection cd CAL_CHECKSUM"
+      cal_set_status: "Right DSP1 Protection cd CAL_SET_STATUS"
+  rdc_ranges:
+    -
+      lower: 4476
+      upper: 5594
+    -
+      lower: 4476
+      upper: 5594
+

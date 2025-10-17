@@ -26,6 +26,7 @@ RDEPEND="
 	chromeos-base/chromeos-bsp-baseboard-skywalker
 	chromeos-base/lte_power_control
 	media-libs/mt8189-dsm-param-padme
+	media-sound/sound_card_init
 "
 DEPEND="
 		${RDEPEND}
