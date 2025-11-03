@@ -10,6 +10,7 @@ CROS_WORKON_REPO="${CROS_GIT_HOST_URL}"
 PROJECTS=(
 	"anakin"
 	"baze"
+	"dooku"
 	"grogu"
 	"skywalker"
 )
