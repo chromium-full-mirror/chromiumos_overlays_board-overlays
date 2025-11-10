@@ -66,3 +66,6 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} rtw8852b"
 
 # Enable RTL8852BE-VT BT firmware.
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl_bt-8852be-vt-usb"
+
+# Include synaptics firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} synaptics"
