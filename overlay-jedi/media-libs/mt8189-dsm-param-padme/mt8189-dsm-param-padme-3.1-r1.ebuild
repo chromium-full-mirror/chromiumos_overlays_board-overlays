@@ -17,11 +17,11 @@ S="${WORKDIR}"
 src_install() {
 	insinto /lib/firmware/cirrus
 
-	doins 10430000_250918_V0_A0.bin
-	doins 10430000_250918_V0_A0_cal.bin
-	doins 10430000_250918_V0_A1.bin
-	doins 10430000_250918_V0_A1_cal.bin
-	doins 10430000_250918_V0_A0.wmfw
+	doins cs35l41-dsp1-spk-prot-104315ee-left.bin
+	doins cs35l41-dsp1-spk-cali-104315ee-left.bin
+	doins cs35l41-dsp1-spk-prot-104315ee-right.bin
+	doins cs35l41-dsp1-spk-cali-104315ee-right.bin
+	doins cs35l41-dsp1-spk-prot-104315ee.wmfw
 	# All speakers share the same extended firmware file (.wmfw)
-	dosym ./10430000_250918_V0_A0.wmfw /lib/firmware/cirrus/10430000_250918_V0_A1.wmfw
+	dosym ./cs35l41-dsp1-spk-prot-104315ee.wmfw /lib/firmware/cirrus/cs35l41-dsp1-spk-cali-104315ee.wmfw
 }
