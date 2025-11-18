@@ -2,8 +2,8 @@ amp_calibrations:
   boot_time_calibration_enabled: false
   controls:
     -
-      firmware_file: "/lib/firmware/cirrus/10430000_250918_V0_A1.wmfw"
-      tuning_file: "/lib/firmware/cirrus/10430000_250918_V0_A0_cal.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104315ee.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104315ee-left.bin"
       preload_switch: "Left DSP1 Preload Switch"
       firmware_type: "Left DSP1 Firmware"
       pcm_source: "Left PCM Source"
@@ -14,8 +14,8 @@ amp_calibrations:
       cal_checksum: "Left DSP1 Protection cd CAL_CHECKSUM"
       cal_set_status: "Left DSP1 Protection cd CAL_SET_STATUS"
     -
-      firmware_file: "/lib/firmware/cirrus/10430000_250918_V0_A1.wmfw"
-      tuning_file: "/lib/firmware/cirrus/10430000_250918_V0_A1_cal.bin"
+      firmware_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104315ee.wmfw"
+      tuning_file: "/lib/firmware/cirrus/cs35l41-dsp1-spk-prot-104315ee-right.bin"
       preload_switch: "Right DSP1 Preload Switch"
       firmware_type: "Right DSP1 Firmware"
       pcm_source: "Right PCM Source"
@@ -32,4 +32,3 @@ amp_calibrations:
     -
       lower: 4476
       upper: 5594
-
