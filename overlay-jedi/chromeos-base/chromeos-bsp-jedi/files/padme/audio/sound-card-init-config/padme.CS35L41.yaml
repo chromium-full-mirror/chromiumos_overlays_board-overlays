@@ -27,8 +27,8 @@ amp_calibrations:
       cal_set_status: "Right DSP1 Protection cd CAL_SET_STATUS"
   rdc_ranges:
     -
-      lower: 4476
-      upper: 5594
+      lower: 3.2
+      upper: 4.0
     -
-      lower: 4476
-      upper: 5594
+      lower: 3.2
+      upper: 4.0
