@@ -69,3 +69,6 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} rtl_bt-8852be-vt-usb"
 
 # Include synaptics firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} synaptics"
+
+# Include elan i2chid touchpad firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
