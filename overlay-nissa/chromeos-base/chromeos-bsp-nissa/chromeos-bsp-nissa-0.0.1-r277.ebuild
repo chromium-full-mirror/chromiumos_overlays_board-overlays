@@ -27,7 +27,7 @@ SRC_URI="
 	zephyr_ish? ( ${GS_FW_BUCKET}/Pujjolo_ISH.16433.2.212.tbz2 )
 	zephyr_ish? ( ${GS_FW_BUCKET}/Lite_ISH.16421.0.0.tbz2 )
 	zephyr_ish? ( ${GS_FW_BUCKET}/Uldrenite_ISH.16367.0.0.tbz2 )
-	zephyr_ish? ( ${GS_FW_BUCKET}/Kaladin_ISH.16463.2.110.tbz2 )
+	zephyr_ish? ( ${GS_FW_BUCKET}/Kaladin_ISH.16463.2.178.tbz2 )
 "
 
 # Add dependencies on other ebuilds from within this board overlay
