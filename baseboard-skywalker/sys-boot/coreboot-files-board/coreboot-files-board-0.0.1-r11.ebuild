@@ -24,5 +24,6 @@ DEPEND="
 	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.2.3-r1
 	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.2.3-r1
 	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.2.3-r1
+	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-0.47.4
 "
 RDEPEND="${DEPEND}"
