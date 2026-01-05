@@ -6,7 +6,6 @@ CHROMEOS_DTBS="mt8189-*.dtb"
 
 # Initial values just for style purposes.
 USE=""
-FW_BLOBS=""
 LINUX_FIRMWARE=""
 
 # Add EC logging
@@ -23,14 +22,6 @@ USE="${USE} watchdog"
 
 # Enable coreboot-files-board ebuild
 USE="${USE} coreboot-files-board"
-
-# PDC firmware
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453_GOOG0B00.bin"
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453_GOOG0B01.bin"
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453_GOOG0B02.bin"
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453_GOOG0C00.bin"
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453_GOOG0D00.bin"
-FW_BLOBS="${FW_BLOBS} rts5453/rts5453vb_GOOG0U00.bin"
 
 # Google USBPD peripheral firmwares
 LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
