@@ -33,7 +33,7 @@ src_install() {
 	while read -r name && read -r depthcharge; do
 		local fw_names=()
 		case "${depthcharge}" in
-			anakin|baze|tarkin)
+			anakin|tarkin)
 				fw_names+=("rts5453_GOOG0B00")
 				;;
 			dooku)
@@ -45,7 +45,7 @@ src_install() {
 			obiwan)
 				fw_names+=("rts5453_GOOG0D00" "rts5453_GOOG0B02")
 				;;
-			padme)
+			baze|padme)
 				fw_names+=("rts5453vb_GOOG0U00" "rts5453_GOOG0B00")
 				;;
 			skywalker)
