@@ -51,6 +51,9 @@ src_install() {
 			skywalker)
 				fw_names+=("rts5453_GOOG0C00" "rts5453_GOOG0B00")
 				;;
+			vader)
+				fw_names+=("rts5453_GOOG0C00" "rts5453_GOOG0B00")
+				;;
 			yoda)
 				fw_names+=("rts5453_GOOG0D00" "rts5453_GOOG0B01")
 				;;
