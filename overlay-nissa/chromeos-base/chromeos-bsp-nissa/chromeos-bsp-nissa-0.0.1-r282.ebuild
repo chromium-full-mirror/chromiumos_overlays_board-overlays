@@ -17,7 +17,7 @@ or portage actions."
 
 LICENSE="BSD-Google"
 KEYWORDS="* amd64 x86"
-IUSE="adlnrvp bootimage nirva nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish nissa-pvs"
+IUSE="adlnrvp bootimage nirva nissa2 nissa-arc-t nissa-cbx nissa-kernelnext zephyr_ec zephyr_ish nissa-pvs"
 
 RESTRICT="mirror"
 
@@ -66,6 +66,8 @@ src_install() {
 		doappid "{99582A00-F79E-4E99-A440-37E461A98E8D}" "REFERENCE"
 	elif use nirva; then
 		doappid "{4A0296DB-F5D5-46A0-8825-77826B2A79D6}" "REFERENCE"
+	elif use nissa2; then
+		doappid "{EFB35BA1-A5A3-4E78-837D-A89CC70BD84F}" "REFERENCE"
 	else
 		doappid "{A5F9E181-D0BE-4D6D-B67D-125069233535}" "REFERENCE"
 	fi
