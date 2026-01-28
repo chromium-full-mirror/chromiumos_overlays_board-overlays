@@ -12,6 +12,7 @@ PROJECTS=(
 	"gladios"
 	"kinox"
 	"kuldax"
+	"kulnex"
 	"lisbon"
 	"moli"
 )
