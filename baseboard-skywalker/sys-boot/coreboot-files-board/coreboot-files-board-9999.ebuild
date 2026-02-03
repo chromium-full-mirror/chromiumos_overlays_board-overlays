@@ -60,7 +60,12 @@ src_install() {
 				fw_names+=("rts5453_GOOG0B03")
 				;;
 			yoda)
-				fw_names+=("rts5453_GOOG0D00" "rts5453_GOOG0B01")
+				fw_names+=(
+				"rts5453_GOOG0D00"
+				"rts5453_GOOG0B01"
+				"rts5453vb_GOOG0U00"
+				"rts5453vb_GOOG0W00"
+				)
 				;;
 		esac
 
