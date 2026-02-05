@@ -18,6 +18,7 @@ PROJECTS=(
 	"pujjogatwin"
 	"pujjoniru"
 	"quandiso"
+	"rynar"
 )
 
 CONFIG_PATH="sw_build_config/platform/chromeos-config"
