@@ -14,6 +14,7 @@ PROJECTS=(
 	"baze"
 	"dooku"
 	"grogu"
+	"jaina"
 	"skywalker"
 )
 
