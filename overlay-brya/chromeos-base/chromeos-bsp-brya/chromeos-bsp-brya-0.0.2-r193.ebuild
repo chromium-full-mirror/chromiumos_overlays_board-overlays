@@ -90,10 +90,6 @@ src_install() {
 	insinto /etc/init
 	doins "${FILESDIR}/hpsd.override"
 
-	# Install Upstart script to fix incorrect CBI values
-	insinto /etc/init
-	doins "${FILESDIR}/brya-cbi-override.conf"
-
 	# Unconditionally enable hibernate in the brya-hibernate builder,
 	# and reduce the hibernate-after-x time to get more hiberate action
 	# while dogfooding.
