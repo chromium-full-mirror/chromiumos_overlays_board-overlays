@@ -18,15 +18,16 @@ inherit cros-workon
 
 DEPEND="
 	chromeos-base/chromeos-config:=
-	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-16.7.4
-	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-16.7.4
-	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.7.4
-	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-0.52.4
-	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.7.4
-	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.7.4
-	=sys-firmware/realtek-rts5453-GOOG0E00-firmware-16.7.4
-	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.7.4
-	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.7.4
+	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-16.8.4
+	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.8.4
+	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-0.53.4
+	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453-GOOG0E00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.8.4
+	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-0.53.4
 "
 RDEPEND="${DEPEND}"
 
@@ -44,6 +45,9 @@ src_install() {
 				;;
 			grogu)
 				fw_names+=("rts5453_GOOG0E00")
+				;;
+			jaina)
+				fw_names+=("rts5453vb_GOOG0X00")
 				;;
 			obiwan)
 				fw_names+=(
