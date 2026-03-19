@@ -66,7 +66,7 @@ src_install() {
 				fw_names+=("rts5453_GOOG0C00" "rts5453_GOOG0B00")
 				;;
 			vader)
-				fw_names+=("rts5453_GOOG0B03")
+				fw_names+=("rts5453_GOOG0B00" "rts5453vb_GOOG0U00")
 				;;
 			yoda)
 				fw_names+=(
