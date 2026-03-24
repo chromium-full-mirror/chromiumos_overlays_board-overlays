@@ -8,7 +8,6 @@ INPUT_DEVICE=""
 LINUX_FIRMWARE=""
 
 USE="${USE} brox"
-USE="${USE} zephyr_ec"
 USE="${USE} ti50_onboard"
 
 # Enable unibuild
