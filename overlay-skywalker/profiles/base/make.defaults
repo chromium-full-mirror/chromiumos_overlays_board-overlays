@@ -75,3 +75,6 @@ INPUT_DEVICES="${INPUT_DEVICES} etphidiap"
 
 # Include the weida firmware updating tool.
 INPUT_DEVICES="${INPUT_DEVICES} weida"
+
+# Include the cirque firmware updating tool.
+INPUT_DEVICES="${INPUT_DEVICES} cirque"
