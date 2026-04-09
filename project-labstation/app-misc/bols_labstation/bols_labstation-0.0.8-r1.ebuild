@@ -1,1 +1,0 @@
-bols_labstation-0.0.8.ebuild
