@@ -12,6 +12,7 @@ PROJECTS=(
         "pujjogatwin"
 	"adlnrvp"
 	"craask"
+	"dirkson"
 	"nereid"
 	"nivviks"
 	"quandiso"
