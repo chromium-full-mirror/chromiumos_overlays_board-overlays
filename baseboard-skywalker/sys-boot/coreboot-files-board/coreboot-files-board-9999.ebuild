@@ -60,6 +60,9 @@ src_install() {
 			r2d2)
 				fw_names+=("rts5453_GOOG0B03")
 				;;
+			sheev)
+				fw_names+=("rts5453_GOOG0E00")
+				;;
 			skywalker)
 				fw_names+=("rts5453_GOOG0C00" "rts5453_GOOG0B00")
 				;;
