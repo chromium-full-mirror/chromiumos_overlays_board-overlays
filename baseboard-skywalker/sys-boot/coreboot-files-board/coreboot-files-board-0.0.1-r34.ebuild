@@ -23,13 +23,13 @@ DEPEND="
 	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-16.13.4
 	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.13.4
-	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-0.59.4
+	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-16.13.4
 	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453-GOOG0E00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.13.4
-	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-0.59.4
+	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-16.13.4
 "
 RDEPEND="${DEPEND}"
 
