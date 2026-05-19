@@ -58,7 +58,7 @@ src_install() {
 				)
 				;;
 			r2d2)
-				fw_names+=("rts5453_GOOG0B03")
+				fw_names+=("rts5453_GOOG0B00")
 				;;
 			sheev)
 				fw_names+=("rts5453_GOOG0E00")
