@@ -28,6 +28,7 @@ DEPEND="
 	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.13.4
 	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-16.13.4
+	=sys-firmware/ti-tps6699x-GOOG0K00-firmware-19.32.8-r1
 "
 RDEPEND="${DEPEND}"
 
@@ -38,7 +39,11 @@ src_install() {
 		local fw_names=()
 		case "${depthcharge}" in
 			anakin|baze|padme|tarkin)
-				fw_names+=("rts5453vb_GOOG0U00" "rts5453_GOOG0B00")
+				fw_names+=(
+					"rts5453vb_GOOG0U00"
+					"rts5453_GOOG0B00"
+					"tps6699x_GOOG0K00"
+				)
 				;;
 			dooku)
 				fw_names+=("rts5453vb_GOOG0U00")
@@ -79,14 +84,26 @@ src_install() {
 				;;
 		esac
 
-		# Silently ignore models that don't need rts5453 files.
+		# Silently ignore models that don't need PDC Firmware.
 		[[ "${#fw_names[@]}" -eq 0 ]] && continue
-
-		local rts5453_fw_dir="${SYSROOT}/firmware/rts5453"
 		insinto "/firmware/cbfs-rw-compress-override/${name}"
 		for fw_name in "${fw_names[@]}"; do
-			local fw_bin="${rts5453_fw_dir}/${fw_name}.bin"
-			local fw_hash="${rts5453_fw_dir}/${fw_name}.hash"
+			local fw_dir
+
+			case "${fw_name}" in
+				rts5453*)
+					fw_dir="${SYSROOT}/firmware/rts5453"
+					;;
+				tps6699x*)
+					fw_dir="${SYSROOT}/firmware/tps6699x"
+					;;
+				*)
+					die "Unknown firmware type: ${fw_name}"
+					;;
+			esac
+
+			local fw_bin="${fw_dir}/${fw_name}.bin"
+			local fw_hash="${fw_dir}/${fw_name}.hash"
 			doins "${fw_bin}"
 			doins "${fw_hash}"
 		done
