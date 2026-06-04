@@ -22,6 +22,7 @@ DEPEND="
 	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-16.14.4
+	=sys-firmware/realtek-rts5453-GOOG0B04-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0E00-firmware-16.14.4
@@ -63,7 +64,7 @@ src_install() {
 				)
 				;;
 			r2d2)
-				fw_names+=("rts5453_GOOG0B00")
+				fw_names+=("rts5453_GOOG0B04")
 				;;
 			sheev)
 				fw_names+=("rts5453_GOOG0E00")
