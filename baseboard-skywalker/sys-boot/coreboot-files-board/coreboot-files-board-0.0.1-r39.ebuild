@@ -31,7 +31,7 @@ DEPEND="
 	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-16.14.4
-	=sys-firmware/ti-tps6699x-GOOG0K00-firmware-19.32.8-r1
+	=sys-firmware/ti-tps6699x-GOOG0K00-firmware-19.32.28
 "
 RDEPEND="${DEPEND}"
 
