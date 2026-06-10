@@ -7,5 +7,26 @@
   },
   "parent": "disk_layout_v3.json",
   "layouts": {
+    "base": [
+      {
+        # Stateful partition to store temporary files during updates
+        "num": 1,
+        "size": "7 GiB"
+      }
+    ],
+    "usb": [
+      {
+        # Stateful partition to store temporary files during updates
+        "num": 1,
+        "size": "7 GiB"
+      }
+    ],
+    "usb-updatable": [
+      {
+        # Stateful partition to store temporary files during updates
+        "num": 1,
+        "size": "7 GiB"
+      }
+    ]
   }
 }
