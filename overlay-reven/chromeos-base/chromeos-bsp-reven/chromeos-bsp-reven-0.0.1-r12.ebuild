@@ -28,6 +28,7 @@ RDEPEND="
 	chromeos-base/flex_hwis
 	chromeos-base/reven-hwdb
 	chromeos-base/reven-quirks
+	media-sound/sound_card_init
 	sys-firmware/fwupd-uefi-dbx
 "
 
