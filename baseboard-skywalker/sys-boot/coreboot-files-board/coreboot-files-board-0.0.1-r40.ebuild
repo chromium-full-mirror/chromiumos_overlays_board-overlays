@@ -20,7 +20,7 @@ inherit cros-workon
 
 DEPEND="
 	chromeos-base/chromeos-config:=
-	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-16.14.4
+	=sys-firmware/realtek-rts5453-GOOG0B00-firmware-16.18.4
 	=sys-firmware/realtek-rts5453-GOOG0B01-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0B02-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0B03-firmware-16.14.4
@@ -28,9 +28,9 @@ DEPEND="
 	=sys-firmware/realtek-rts5453-GOOG0C00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0D00-firmware-16.14.4
 	=sys-firmware/realtek-rts5453-GOOG0E00-firmware-16.14.4
-	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.14.4
+	=sys-firmware/realtek-rts5453vb-GOOG0U00-firmware-16.18.4
 	=sys-firmware/realtek-rts5453vb-GOOG0W00-firmware-16.14.4
-	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-16.14.4
+	=sys-firmware/realtek-rts5453vb-GOOG0X00-firmware-16.18.4
 	=sys-firmware/ti-tps6699x-GOOG0K00-firmware-19.32.28
 "
 RDEPEND="${DEPEND}"
