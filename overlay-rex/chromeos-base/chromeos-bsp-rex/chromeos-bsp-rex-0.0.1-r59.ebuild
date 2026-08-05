@@ -58,4 +58,9 @@ src_install() {
 
 	# Install udev rules
 	udev_dorules "${FILESDIR}"/udev/*.rules
+
+	# Install pre_suspend/post_resume quirks
+	exeinto /usr/sbin
+	doexe "${FILESDIR}"/powerd_pre_suspend_quirk
+	doexe "${FILESDIR}"/powerd_post_resume_quirk
 }
