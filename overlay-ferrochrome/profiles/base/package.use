@@ -1,2 +1,0 @@
-# Disabling CFI for Chrome (b/308096101)
-chromeos-base/chromeos-chrome -cfi
