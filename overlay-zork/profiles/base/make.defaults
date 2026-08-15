@@ -78,9 +78,6 @@ USE="${USE} nvme"
 # Avoid inhibiting the keyboard (which reports events from side buttons).
 USE="${USE} keyboard_includes_side_buttons"
 
-# This board has a -borealis overlay
-USE="${USE} has-borealis"
-
 # Enable MBO
 USE="${USE} mbo"
 

@@ -49,9 +49,6 @@ USE="${USE} modemfwd"
 # Enable on-device text suggestions
 USE="${USE} ondevice_text_suggestions"
 
-# this indicates that this board has a -borealis overlay
-USE="${USE} has-borealis"
-
 # Enable required fs features for Android R
 USE="${USE} fsverity prjquota"
 

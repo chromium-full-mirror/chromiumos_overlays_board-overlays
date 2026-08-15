@@ -47,9 +47,6 @@ USE="${USE} builtin_fw_guc_tgl builtin_fw_huc_tgl"
 USE="${USE} builtin_fw_guc_adl builtin_fw_huc_adl"
 USE="${USE} builtin_fw_guc_adl_kernelnext builtin_fw_huc_adl_kernelnext"
 
-# this indicates that this board has a -borealis overlay
-USE="${USE} has-borealis"
-
 # Enable VMs
 USE="${USE} kvm_host crosvm-gpu virtio_gpu"
 

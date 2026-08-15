@@ -38,9 +38,6 @@ USE="${USE} mbo"
 # Enable DSP hotword detection
 USE="${USE} enable_dsp_hotword"
 
-# This board has a -borealis overlay
-USE="${USE} has-borealis"
-
 # Enable libglvnd for big GL support
 USE="${USE} libglvnd"
 
