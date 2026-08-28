@@ -13,6 +13,7 @@ PROJECTS=(
 	"dooku"
 	"grogu"
 	"jaina"
+	"obiwan"
 	"r2d2"
 	"sheev"
 	"skywalker"
