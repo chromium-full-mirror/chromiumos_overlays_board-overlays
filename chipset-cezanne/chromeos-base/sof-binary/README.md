@@ -5,8 +5,8 @@ AMD Cezanne SOF Firmware built by RI-2019.1-linux
 
 repo      : https://chrome-internal-review.googlesource.com/q/project:chromeos%252Fthird_party%252Fsound-open-firmware-private
 branch    : amd-rn-prod-001
-commit id : 00113f217d3ad16c7ebeb512767b6fc2ecef3dd1
+commit id : eed75a5351cdcc607fb092c24b97bb67e0b5d6f2
 
 Md5sum
-3bd233f9259c627fdf8b99219e3dee58  sof-rn.ldc
-21ef308d576c527ba0b2d63552ddd2fb  sof-rn.ri
+54f255d26d18e7b6b1a758f613e75eb6  sof-rn.ldc
+ff06764a5c445f3db5ab9e6b63cbb941  sof-rn.ri
