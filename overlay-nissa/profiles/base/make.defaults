@@ -45,6 +45,9 @@ INPUT_DEVICES="${INPUT_DEVICES} wacom"
 # Include the himax firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} himax"
 
+# Include the lxs firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
+
 # RTL8852B WiFi firmware
 LINUX_FIRMWARE="${LINUX_FIRMWARE} rtw8852b"
 
