@@ -23,6 +23,9 @@ INPUT_DEVICES="${INPUT_DEVICES} focaltech"
 # Include the G2touch firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 
+# Include the lxs firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
+
 # Enable biometrics support
 USE="${USE} biod"
 
