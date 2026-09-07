@@ -27,6 +27,9 @@ INPUT_DEVICES="${INPUT_DEVICES} g2touch"
 # Include the goodix firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} goodix"
 
+# Include the lxs firmware updating tool
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
+
 # Enable biometrics support
 USE="${USE} biod"
 
