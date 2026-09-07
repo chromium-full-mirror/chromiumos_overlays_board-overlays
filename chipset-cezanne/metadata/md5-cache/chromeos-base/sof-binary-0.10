@@ -4,5 +4,5 @@ EAPI=7
 KEYWORDS=*
 LICENSE=SOF
 SLOT=0
-SRC_URI=gs://chromeos-localmirror/distfiles/sof-binary-cezanne-0.9.tar.bz2
+SRC_URI=gs://chromeos-localmirror/distfiles/sof-binary-cezanne-0.10.tar.bz2
 _md5_=6ff298aa108d5e7ef1be7b05e96d63f5
