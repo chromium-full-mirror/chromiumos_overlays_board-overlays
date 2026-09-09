@@ -1,36 +1,35 @@
-# Copyright 2017 The ChromiumOS Authors
+# Copyright 2018 The ChromiumOS Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
 
-CROS_WORKON_COMMIT=("ce21d753d47fd93b24f5dba47a341fb507b0cdf4" "b720cf3f3c930fa4b213a0141bd2f8178a5f0836")
-CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "a7972e2c10a8da8f8fd834d92cbf4065ed4bb4be" "c742d8c2e518ce9c4891de8434e151858f140345")
+CROS_WORKON_COMMIT=("ba441598b4159e1c0467f760896b2ba4a933d209" "b720cf3f3c930fa4b213a0141bd2f8178a5f0836")
+CROS_WORKON_TREE=("f91b6afd5f2ae04ee9a2c19109a3a4a36f7659e6" "a1d5e63cc5f06ff0b701532faa28e9e7b30035db" "5c2aab22b816d4bb49f20630b47a675d3c2a59b2")
 CROS_WORKON_PROJECT=("chromiumos/platform2" "chromiumos/platform/camera")
 CROS_WORKON_LOCALNAME=("../platform2" "../platform/camera")
 CROS_WORKON_DESTDIR=("${S}/platform2" "${S}/platform2/platform_camera")
-CROS_WORKON_SUBTREE=(".gn common-mk" "hal/intel/ipu3")
+CROS_WORKON_SUBTREE=(".gn common-mk" "hal/rockchip")
 CROS_WORKON_INCREMENTAL_BUILD="1"
 
-PLATFORM_SUBDIR="platform_camera/hal/intel/ipu3"
+PLATFORM_SUBDIR="platform_camera/hal/rockchip"
 
 inherit cros-camera cros-workon platform
 
-DESCRIPTION="Intel IPU3 (Image Processing Unit) Chrome OS camera HAL"
+DESCRIPTION="Rockchip ISP1 Chrome OS camera HAL"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="-* amd64"
+KEYWORDS="-* arm arm64"
 
 IUSE="cros_camera_algo"
 REQUIRED_USE="cros_camera_algo"
 
 RDEPEND="
+	dev-libs/expat
 	chromeos-base/cros-camera-android-deps
 	chromeos-base/cros-camera-libs
-	dev-libs/expat
-	media-libs/intel-3a-libs-bin
-	media-libs/intel-pvl-libs-bin
-	media-libs/libsync"
+	media-libs/libsync
+	media-libs/rockchip-isp1-3a-libs-bin"
 
 DEPEND="${RDEPEND}
 	media-libs/libyuv
