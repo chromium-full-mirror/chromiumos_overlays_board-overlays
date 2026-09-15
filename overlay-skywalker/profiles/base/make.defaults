@@ -78,3 +78,6 @@ INPUT_DEVICES="${INPUT_DEVICES} weida"
 
 # Include the cirque firmware updating tool.
 INPUT_DEVICES="${INPUT_DEVICES} cirque"
+
+# Include the lxs firmware updating tool.
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
