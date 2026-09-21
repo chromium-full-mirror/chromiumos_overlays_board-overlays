@@ -28,7 +28,13 @@ modify_kernel_command_line() {
   # Disable USB 3.0 LPM for Logitech Tap Display (Displaylink)
   quirks+="17e9:ff13:k,"
   # Disable USB 3.0 LPM for Logitech HDMI Capture
-  quirks+="046d:0876:k"
+  quirks+="046d:0876:k,"
+  # Disable USB 3.0 LPM for Logitech Rally Bar
+  quirks+="046d:089b:k,"
+  # Disable USB 3.0 LPM for Logitech Rally Bar Mini
+  quirks+="046d:08d3:k,"
+  # Disable USB 3.0 LPM for Logitech Rally Bar Huddle
+  quirks+="046d:087c:k"
   # Aggregate and export
   echo "usbcore.quirks=${quirks}"
 
