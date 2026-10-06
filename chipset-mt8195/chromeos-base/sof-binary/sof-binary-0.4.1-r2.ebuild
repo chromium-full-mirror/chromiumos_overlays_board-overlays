@@ -1,1 +1,0 @@
-sof-binary-0.4.1.ebuild
