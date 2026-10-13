@@ -85,8 +85,8 @@
             <Limit name="measured-frame-rate-720x480" range="145-160" /> <!-- N=46 v95%=1.6 -->
             <!-- measured 90%:44-139 med:77 FLAKY(mn=16.2 < 39 - 156) -->
             <Limit name="measured-frame-rate-1280x720" range="77-78" /> <!-- N=48 v90%=1.8 -->
-            <!-- measured 90%:9-70 med:40 FLAKY(mn=7.4 < 9 - 70 < mx=74.9) variance:2.8 -->
-            <Limit name="measured-frame-rate-1920x1080" range="18-35" /> <!-- N=50 -->
+            <!-- measured 98%:56-97 med:93 FLAKY(24 - 228) -->
+            <Limit name="measured-frame-rate-1920x1080" range="48-114" /> <!-- N=240 v98%=1.3 -->
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="783-793" /> <!-- N=46 v95%=1.5 -->
