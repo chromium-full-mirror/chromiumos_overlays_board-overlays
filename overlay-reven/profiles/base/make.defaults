@@ -58,7 +58,7 @@ USE="${USE} libglvnd"
 USE="${USE} gpu_sandbox_start_early"
 
 # Intel graphics
-VIDEO_CARDS="i965 intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12"
+VIDEO_CARDS="intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12"
 
 # Nvidia graphics
 VIDEO_CARDS="${VIDEO_CARDS} nouveau"
