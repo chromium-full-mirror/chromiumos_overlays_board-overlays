@@ -8,5 +8,5 @@ KEYWORDS=-* amd64 x86
 LICENSE=BSD-Google
 RDEPEND=!<chromeos-base/gestures-conf-0.0.2 kernel-4_19? ( chromeos-base/sof-binary chromeos-base/sof-topology ) !kernel-4_19? ( sys-firmware/sof-firmware ) media-sound/sound_card_init has_chromeos_config_bsp? ( chromeos-base/chromeos-config-bsp:= ) has_chromeos_config_bsp_private? ( chromeos-base/chromeos-config-bsp-private:= ) has_chromeos_config_bsp_baseboard? ( chromeos-base/chromeos-config-bsp-baseboard:= ) has_chromeos_config_bsp_baseboard_private? ( chromeos-base/chromeos-config-bsp-baseboard-private:= ) unibuild? ( chromeos-base/chromeos-config:= )
 SLOT=0
-_eclasses_=appid	7246d2a9f30b76802a858973725910c7	cros-unibuild	20e99cb053588c1793c4de8687bfba83
+_eclasses_=appid	7246d2a9f30b76802a858973725910c7	cros-unibuild	0588a6d4d30f20c5f01610a4a02b81d0
 _md5_=87c564c37ca1672f50806374681d5ff2
