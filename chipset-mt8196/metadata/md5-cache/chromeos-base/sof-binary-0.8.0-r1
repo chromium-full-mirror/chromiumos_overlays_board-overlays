@@ -5,5 +5,5 @@ KEYWORDS=*
 LICENSE=SOF
 RDEPEND=media-libs/mt8196-tas2563-dsm-param-navi
 SLOT=0
-SRC_URI=gs://chromeos-localmirror/distfiles/sof-binary-mt8196-0.7.0.tar.xz
+SRC_URI=gs://chromeos-localmirror/distfiles/sof-binary-mt8196-0.8.0.tar.xz
 _md5_=42f9dc8149e859a61192f108157ae087
