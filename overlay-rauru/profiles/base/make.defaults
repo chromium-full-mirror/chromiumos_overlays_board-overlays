@@ -53,3 +53,6 @@ USE="${USE} camera_feature_super_res"
 
 # Enable TFLite Neuron Delegate to accelerate ML workloads on NPU.
 USE="${USE} mtk_neuron_delegate"
+
+# Enable coreboot-files-board ebuild to install PDC firmware.
+USE="${USE} coreboot-files-board"
