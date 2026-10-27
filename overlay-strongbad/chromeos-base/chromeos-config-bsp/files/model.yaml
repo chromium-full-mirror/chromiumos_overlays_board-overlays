@@ -80,7 +80,6 @@ base-config: &base_config
     suspend-to-idle: "1"
     wake-on-dp: "1"
   audio: *audio_config
-  rmad: *rmad_common
   scheduler-tune:
     boost-urgent: 70
     boost-top-app: 70
@@ -126,6 +125,7 @@ coachz-handwriting-settings: &coachz_handwriting_settings
     handwriting-recognition-web-platform-api: true
 
 homestar-button-settings: &homestar_button_settings
+  rmad: *rmad_common
   ui:
     power-button:
       edge: left
@@ -135,6 +135,7 @@ homestar-button-settings: &homestar_button_settings
       side: top
 
 wormdingler-button-settings: &wormdingler_button_settings
+  rmad: *rmad_common
   ui:
     power-button:
       edge: left
