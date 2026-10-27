@@ -136,7 +136,6 @@ base-config: &base_config
   hardware-properties: &hardware_properties_common
     form-factor: CHROMEBOOK
     psu-type: battery
-  rmad: *rmad_common
 
 audio_files: &audio_files_with_sound_card_init
   # ALSA module config
@@ -180,6 +179,10 @@ jinlon-config: &jinlon_config
     side-volume-button:
       region: keyboard
       side: left
+
+kled-config: &kled_config
+  <<: *base_config
+  rmad: *rmad_common
 
 chromeos:
   devices:
@@ -261,16 +264,16 @@ chromeos:
       $cras_card_config: "kled"
       skus:
         - $sku-id: 1
-          config: *base_config
+          config: *kled_config
         - $sku-id: 2
           config:
-            <<: *base_config
+            <<: *kled_config
             keyboard:
               backlight: True
         - $sku-id: 3
-          config: *base_config
+          config: *kled_config
         - $sku-id: 4
-          config: *base_config
+          config: *kled_config
     - $device-name: "kindred"
       $fw-name: "Kindred"
       $ec-build-name: "kindred"
