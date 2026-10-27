@@ -82,7 +82,6 @@ common_config: &common_config
     boost-top-app: 60
     boost-arcvm: 0.5
     boost-urgent: 40
-  rmad: *rmad_common
 
 base-zephyr-firmware: &common_config_with_zephyr
   <<: *common_config
@@ -141,6 +140,7 @@ spherion-config: &spherion_config
   identity:
     <<: *identity_sku_config
   audio: *audio_config_2cards
+  rmad: *rmad_common
 
 spherion-config-sar-mtk: &spherion_config_sar_mtk
   <<: *spherion_config
