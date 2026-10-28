@@ -7,5 +7,5 @@ KEYWORDS=*
 LICENSE=BSD-Google
 RESTRICT=mirror
 SLOT=0
-SRC_URI=amd64? ( cipd://chromiumos/infra/cft/bols_labstation/linux-amd64:4wpNf0QUqcHU8kXqOiM1Scglasb_2BIoziS4YDGtmtkC -> bols_labstation-0.0.13-amd64.zip )
-_md5_=26a934a7f98bd5257f3e9874edbfc641
+SRC_URI=amd64? ( cipd://chromiumos/infra/cft/bols_labstation/linux-amd64:SqCxJt14P5SYm_yBjd7dQNZaLKMuG9ph22JlCbpz-rMC -> bols_labstation-0.0.14-amd64.zip )
+_md5_=fe77dff747d004f33a030232c2df5539
