@@ -52,11 +52,6 @@ src_install() {
 	# Install device specific udev rules.
 	udev_dorules "${FILESDIR}"/udev/*.rules
 
-	# Install /etc/init/generate_rdc_update.conf, which reads DSM calibration
-	# data from VPD and writes to /run/cras/rdc_update.bin
-	insinto /etc/init
-	doins "${FILESDIR}"/init/generate_rdc_update.conf
-
 	# Install device-specific automatic brightness model parameters.
 	insinto "/usr/share/chromeos-assets/autobrightness"
 	doins "${FILESDIR}/autobrightness/model_params.json"
