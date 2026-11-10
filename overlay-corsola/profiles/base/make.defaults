@@ -40,3 +40,5 @@ INPUT_DEVICES="${INPUT_DEVICES} pixart"
 # Include ilitek firmware updating tool
 INPUT_DEVICES="${INPUT_DEVICES} ilitek_its"
 
+# Include the lxs firmware updating tool.
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
