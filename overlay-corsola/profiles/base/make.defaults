@@ -48,3 +48,6 @@ USE="${USE} rmad"
 
 # Disable Vboot CBFS Integration
 USE="${USE} vboot_disable_cbfs_integration"
+
+# Include the lxs firmware updating tool.
+INPUT_DEVICES="${INPUT_DEVICES} lxs"
