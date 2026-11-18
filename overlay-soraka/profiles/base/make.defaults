@@ -6,6 +6,9 @@ USE=""
 
 USE="${USE} soraka"
 
+# Enable kernel 6.6.
+USE="${USE} kernel-6_6"
+
 # Enable Chrome's tablet mode code and disable ACPI AC driver.
 USE="${USE} touchview -acpi_ac"
 

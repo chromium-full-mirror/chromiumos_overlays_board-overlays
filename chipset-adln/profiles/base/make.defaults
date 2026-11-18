@@ -23,7 +23,7 @@ BOARD_RUSTFLAGS="-Ctarget-cpu=alderlake -Ctarget-feature=-gfni"
 USE="${USE} march_alderlake"
 
 # Specify default kernel
-USE="${USE} kernel-5_15"
+USE="${USE} kernel-6_6"
 
 # Enable DPTF
 USE="${USE} dptf"

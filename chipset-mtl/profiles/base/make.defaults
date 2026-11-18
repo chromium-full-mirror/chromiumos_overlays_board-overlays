@@ -23,7 +23,7 @@ BOARD_RUSTFLAGS="-Ctarget-cpu=meteorlake -Ctarget-feature=-gfni"
 USE="${USE} march_alderlake"
 
 # Specify default kernel
-USE="${USE} kernel-6_1"
+USE="${USE} kernel-6_6"
 
 # Identify the vendor
 USE="${USE} intel_cpu"

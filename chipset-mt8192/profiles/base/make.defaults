@@ -31,8 +31,8 @@ USE="${USE} neon"
 # For the device tree installation
 USE="${USE} device_tree"
 
-# use kernel 5.4
-USE="${USE} kernel-5_4"
+# use kernel 6.1
+USE="${USE} kernel-6_1"
 
 # Enable VMs
 USE="${USE} kvm_host crosvm-gpu virtio_gpu"

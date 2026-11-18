@@ -22,7 +22,7 @@ BOARD_RUSTFLAGS="-Ctarget-cpu=skylake"
 USE="${USE} march_skylake"
 
 # Specify default kernel
-USE="${USE} kernel-5_4"
+USE="${USE} kernel-6_12"
 
 # Identify the vendor
 USE="${USE} intel_cpu"
@@ -44,8 +44,8 @@ USE="${USE} android_aep"
 # Enable iHD media driver
 USE="${USE} -video_cards_i965 video_cards_iHD video_cards_iHD_g12"
 
-# Embed GuC and HuC firmware for TGL into the kernel
-USE="${USE} builtin_fw_guc_tgl builtin_fw_huc_tgl"
+# Embed GuC, HuC, and DMC firmware for TGL into the kernel
+USE="${USE} builtin_fw_guc_tgl builtin_fw_huc_tgl builtin_fw_dmc_tgl"
 
 # Enable GpuMemoryBuffers backed by dma-bufs.
 USE="${USE} native_gpu_memory_buffers"

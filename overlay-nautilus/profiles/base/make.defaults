@@ -8,6 +8,9 @@ LINUX_FIRMWARE=""
 
 USE="${USE} nautilus"
 
+# Enable kernel 6.6.
+USE="${USE} kernel-6_6"
+
 # Disable ACPI AC device
 USE="${USE} -acpi_ac"
 
